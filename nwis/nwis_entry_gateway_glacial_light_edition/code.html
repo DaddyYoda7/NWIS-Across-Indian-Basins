@@ -1,0 +1,668 @@
+<!DOCTYPE html><html lang="en" style=""><head></head><body class="font-sans text-astral antialiased min-h-screen flex flex-col justify-between topo-layer"><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NWIS — Nearby Wells Intelligence Gateway</title>
+<!-- Tailwind CSS CDN with Forms & Container Queries plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Leaflet.js Live Geospatial Satellite Map Engine -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            diamond: '#E3EDF5',        /* Diamond White primary background */
+            reflection: '#CBD8E2',     /* Blue Reflection soft borders & lines */
+            astral: '#203848',         /* Astral Nomad dark slate hero & buttons */
+            meditative: '#95A7B3',     /* Meditative subtle secondary slate */
+            turbulent: '#546C7B',      /* Turbulent Sea mid slate */
+            glacialCanvas: '#F3F8FC',  /* Very pale glacial fill */
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Visual & Topographic Styles -->
+<style data-purpose="topographic-background">
+    body {
+      background-color: #E3EDF5;
+      background-image: 
+        radial-gradient(ellipse 90% 70% at 50% 0%, #FFFFFF 0%, #E3EDF5 80%),
+        repeating-linear-gradient(45deg, rgba(203, 216, 226, 0.25) 0, rgba(203, 216, 226, 0.25) 1px, transparent 0, transparent 48px);
+      background-attachment: fixed;
+    }
+
+    /* Subtle geological contour lines simulation overlay */
+    .topo-layer {
+      background-image: radial-gradient(circle at 50% 120px, rgba(149, 167, 179, 0.12) 1px, transparent 1px),
+                        radial-gradient(circle at 10% 300px, rgba(149, 167, 179, 0.08) 120px, transparent 121px),
+                        radial-gradient(circle at 90% 280px, rgba(149, 167, 179, 0.09) 160px, transparent 161px);
+    }
+  </style>
+<style data-purpose="gis-map-canvas-styling">
+    .gis-viewport-bg {
+      background: radial-gradient(circle at 50% 48%, #142836 0%, #0d1a24 75%, #081119 100%);
+      box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.55), 0 20px 45px -15px rgba(32, 56, 72, 0.25);
+    }
+
+    .gis-grid-overlay {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(149, 167, 179, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(149, 167, 179, 0.07) 1px, transparent 1px);
+    }
+
+    /* Pulse animation for active drilling well head beacon */
+    @keyframes sentry-pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+
+    .beacon-ring {
+      animation: sentry-pulse 2.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    }
+  </style>
+<!-- END: Custom Visual & Topographic Styles -->
+
+
+<!-- BEGIN: TopFloatingHeader -->
+<header class="w-full max-w-[1440px] mx-auto px-6 pt-5 pb-2" data-purpose="global-header">
+<div class="bg-white/80 backdrop-blur-md rounded-2xl border border-reflection/80 shadow-[0_4px_24px_rgba(84,108,123,0.06)] px-5 py-3 flex items-center justify-between">
+<!-- Brand & Security Authenticated Badge -->
+<div class="flex items-center space-x-4">
+<!-- Subsurface crosshair icon mark -->
+<div class="w-9 h-9 rounded-xl bg-astral flex items-center justify-center text-diamond shadow-sm">
+<svg class="w-5 h-5 text-diamond" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 2v20M2 12h20M7 12a5 5 0 1110 0 5 5 0 01-10 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center space-x-2.5">
+<span class="font-semibold text-astral tracking-wider text-base">NWIS</span>
+<span class="text-reflection text-xs font-mono">/</span>
+<span class="text-xs uppercase tracking-wider text-turbulent font-medium">Nearby Wells Intelligence System</span>
+</div>
+</div>
+
+</div>
+<!-- Right Meta Controls & User Profile -->
+<div class="flex items-center space-x-3.5">
+<!-- System Help -->
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-turbulent hover:text-astral hover:bg-reflection/30 transition-colors" title="Knowledge Base &amp; Protocols">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- System Alerts Bell -->
+<button class="relative w-8 h-8 rounded-lg flex items-center justify-center text-turbulent hover:text-astral hover:bg-reflection/30 transition-colors" title="Recent Well Anomalies">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-astral rounded-full border border-white"></span>
+</button>
+<div class="h-5 w-px bg-reflection/60"></div>
+<!-- User Profile Pill -->
+<div class="flex items-center space-x-2.5 pl-1.5 py-1 pr-1 bg-glacialCanvas/80 border border-reflection/50 rounded-xl">
+<div class="text-right">
+<div class="text-xs font-semibold text-astral leading-tight">David Chen</div>
+<div class="text-[10px] font-mono text-meditative leading-tight">Lead Drilling Eng.</div>
+</div>
+<!-- Profile avatar image reference from prompt image store -->
+<img alt="David Chen" class="w-7 h-7 rounded-lg object-cover ring-1 ring-reflection shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/100x100?text=DC';" src="https://lh3.googleusercontent.com/aida/AEtjO1UcNvgeb3r9Bu0kAAFXsXe9iGAGJ2RvJS9-Zu5n0V34p0M0DJpH3nFS01X4t2LJ8ighLX1HeZxp9SfDLcHr-iJORAp5Qs2OnofZJEEBcdOc8y8A0bc0kRnwqgqJIDKooiCv45xzfr7FZDx5W4lmn7Zou7ett8secHBa7P1zQV15piBPB0MP5yDuUja_fVwSExYUQYRyE77zohwWHAvAt11jxjSfM7BS0npAt3gYU4i0HhHR7aMbdNjPHLY">
+</div>
+</div>
+</div>
+</header>
+<!-- END: TopFloatingHeader -->
+<!-- BEGIN: HeroSearchSection -->
+<main class="w-full max-w-[1440px] mx-auto px-6 py-4 flex-1 flex flex-col justify-start" data-purpose="search-and-intelligence-workspace">
+<!-- Central Hero Headline -->
+<div class="text-center pt-3 pb-4">
+<h1 class="text-3xl md:text-4xl font-light tracking-tight text-astral">
+        Explore the Intelligence <span class="font-semibold underline decoration-reflection/80 underline-offset-8">Around Your Well</span>.
+      </h1>
+<p class="mt-2 text-sm text-turbulent max-w-2xl mx-auto font-normal">
+        Search wells, locations, formations, coordinates or historical drilling events across calibrated geological models.
+      </p>
+</div>
+<!-- Central Floating Search Bar -->
+<div class="w-full max-w-3xl mx-auto mb-3" data-purpose="nl-search-bar-container">
+<div class="relative bg-white/90 backdrop-blur-xl border border-reflection rounded-2xl shadow-[0_12px_36px_rgba(32,56,72,0.08)] flex items-center p-2.5 transition-all focus-within:ring-2 focus-within:ring-astral/20 focus-within:border-turbulent">
+<!-- Search Glyph -->
+<div class="pl-3.5 pr-2 text-turbulent">
+<svg class="w-5 h-5 text-meditative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Query Input with populated prompt text -->
+<input class="flex-1 bg-transparent border-0 text-sm font-medium text-astral placeholder-meditative focus:ring-0 focus:outline-none px-2" placeholder="Type natural language drilling query, borehole ID, or seismic coordinate..." type="text" value="Show wells within 10 km of Duliajan with mud-loss events around 2,800 m">
+<!-- Voice Query Assistant Icon -->
+<button class="p-2 text-meditative hover:text-turbulent transition-colors" title="Voice Search">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Clear Search -->
+<button class="p-2 text-meditative hover:text-astral transition-colors" title="Clear query">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Main Analyze Action Button -->
+<button class="ml-2 px-5 py-2.5 bg-astral hover:bg-astral/90 text-diamond rounded-xl font-medium text-xs tracking-wide flex items-center space-x-2 transition-all shadow-sm">
+<span class="">Analyze</span>
+<span class="text-sm leading-none font-mono">→</span>
+</button>
+</div>
+<!-- Suggestion Query Chips -->
+<div class="mt-2.5 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+<span class="text-[11px] text-meditative font-medium mr-1">Suggested:</span>
+<button class="px-2.5 py-1 bg-white/70 hover:bg-white border border-reflection text-astral rounded-lg transition-colors font-mono text-[11px]">W-204 Borehole</button>
+<button class="px-2.5 py-1 bg-white/70 hover:bg-white border border-reflection text-astral rounded-lg transition-colors text-[11px]">Wells near Duliajan</button>
+<button class="px-2.5 py-1 bg-white/70 hover:bg-white border border-reflection text-astral rounded-lg transition-colors font-mono text-[11px]">Wells around 2,800 m</button>
+<button class="px-2.5 py-1 bg-white/70 hover:bg-white border border-reflection text-astral rounded-lg transition-colors text-[11px]">Kiparissia SS Formation</button>
+<button class="px-2.5 py-1 bg-white/70 hover:bg-white border border-reflection text-astral rounded-lg transition-colors text-[11px]">Historical mud-loss events</button>
+</div>
+<!-- Natural-Language Interpretation Strip -->
+
+</div>
+<!-- END: HeroSearchSection -->
+<!-- BEGIN: GeospatialCanvasSection -->
+<div class="relative w-full rounded-2xl overflow-hidden border border-reflection/80 shadow-[0_16px_40px_rgba(32,56,72,0.12)] min-h-[460px] flex-1 flex flex-col justify-between gis-viewport-bg gis-grid-overlay" data-purpose="gis-geospatial-investigation-canvas">
+<!-- Top GIS Map Controls Bar -->
+<div class="relative z-20 flex items-center justify-between p-4 bg-astral/70 backdrop-blur-md border-b border-meditative/20">
+<!-- Subsurface sector & UTM coordinate readout -->
+<div class="flex items-center space-x-3 text-xs font-mono text-diamond">
+<div class="flex items-center space-x-1.5 bg-white/10 px-2.5 py-1 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="tracking-wider uppercase font-semibold">GIS TELEMETRY • KATAKOLO SECTOR</span>
+</div>
+<span class="text-meditative hidden md:inline">|</span>
+<span class="text-meditative text-[11px] hidden md:inline">CRS: UTM 34N (EPSG:32634)</span>
+<span class="text-meditative hidden md:inline">|</span>
+<span class="text-[11px] text-diamond font-medium">12 Target Wells Projected</span>
+</div>
+<!-- Radius Selector & Map Layers Toggles -->
+<div class="flex items-center space-x-2 text-xs">
+<!-- Concentric Radius Switcher -->
+<div class="flex items-center bg-white/10 rounded-lg p-0.5 border border-white/10 text-diamond font-mono">
+<button class="px-2.5 py-0.8 rounded text-[11px] hover:text-white transition-colors">5 km</button>
+<button class="px-2.5 py-0.8 rounded bg-diamond text-astral font-semibold text-[11px] shadow-sm">10 km</button>
+<button class="px-2.5 py-0.8 rounded text-[11px] hover:text-white transition-colors">25 km</button>
+</div>
+<!-- Layers toggle dropdown button -->
+<button class="flex items-center space-x-1.5 bg-white/10 hover:bg-white/15 text-diamond border border-white/10 px-3 py-1 rounded-lg transition-colors font-medium">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Layers</span>
+</button>
+<!-- Zoom control pills -->
+<div class="flex items-center bg-white/10 rounded-lg border border-white/10 text-diamond font-mono overflow-hidden">
+<button class="w-7 h-6 flex items-center justify-center hover:bg-white/20 transition-colors">+</button>
+<div class="w-px h-3 bg-white/20"></div>
+<button class="w-7 h-6 flex items-center justify-center hover:bg-white/20 transition-colors">-</button>
+</div>
+</div>
+<!-- FREE LIVE GEOSPATIAL SATELLITE MAP ENGINE (Esri World Imagery Live Geo-Sat Layer) -->
+<div id="gateway-leaflet-map" class="absolute inset-0 z-0 w-full h-full bg-[#0a151d]"></div>
+<!-- Main GIS Canvas Overlay: Split Floating Panels (Left Well Discovery List & Right Dossier Card) -->
+<div class="relative z-10 p-4 flex flex-col md:flex-row justify-between items-start gap-4 pointer-events-none">
+<!-- Left Floating Panel: Indian Landmark Wells -->
+<div class="flex flex-col items-start gap-2 pointer-events-auto">
+<button id="btn-toggle-landmark-wells" onclick="toggleLandmarkWellsPanel()" class="flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-astral/90 hover:bg-astral border border-cyan-400/50 text-white shadow-xl backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer group" title="Toggle Landmark Wells Panel">
+  <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+  <span class="text-xs font-semibold tracking-wide">Indian Landmark Wells</span>
+  <span class="text-[10px] font-mono px-1.5 py-0.2 bg-white/15 rounded text-cyan-200">5 Archive</span>
+  <span id="landmark-wells-chevron" class="material-symbols-outlined text-[16px] text-cyan-300 transition-transform group-hover:translate-y-0.5">expand_more</span>
+</button>
+
+<div id="landmark-wells-panel" class="w-full md:w-80 bg-astral/95 backdrop-blur-xl border border-cyan-400/40 rounded-xl p-3 shadow-2xl text-diamond transition-all duration-300 origin-top-left" data-purpose="wells-discovered-sidebar">
+<div class="flex items-center justify-between pb-2 border-b border-white/15 mb-2">
+<span class="text-xs font-bold tracking-wide uppercase text-diamond">Indian Landmark Wells</span>
+<div class="flex items-center space-x-1">
+  <button onclick="toggleLandmarkWellsCompact()" id="btn-landmark-size" class="w-6 h-6 rounded flex items-center justify-center text-reflection hover:text-white hover:bg-white/10 transition-colors" title="Toggle Compact / Standard Size">
+    <span class="text-xs">↕</span>
+  </button>
+  <button onclick="toggleLandmarkWellsPanel(false)" class="w-6 h-6 rounded flex items-center justify-center text-reflection hover:text-white hover:bg-white/10 transition-colors" title="Minimize to Map Button">
+    <span class="text-xs">✕</span>
+  </button>
+</div>
+</div>
+<div id="landmark-wells-list" class="space-y-1.5 text-xs max-h-52 overflow-y-auto pr-1">
+<!-- Well item 1: Nahorkatiya-1 -->
+<div onclick="selectGatewayWell('WELL-NHK-01')" class="gw-well-item bg-white/15 border border-white/30 rounded-lg p-2 cursor-pointer transition-all hover:bg-white/20">
+<div class="flex items-center justify-between">
+<span class="font-bold text-white font-mono">Nahorkatiya NHK-01</span>
+<span class="text-[9px] font-mono bg-cyan-900/60 text-cyan-200 px-1.5 py-0.2 rounded border border-cyan-400/40 font-bold">SELECTED</span>
+</div>
+<p class="text-[11px] text-reflection mt-0.5 font-mono">TD: 3,571 m • Barail Pay • OIL Discovery</p>
+</div>
+<!-- Well item 2: Digboi-1 -->
+<div onclick="selectGatewayWell('WELL-DGB-01')" class="gw-well-item bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-2 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-medium text-white font-mono">Digboi Well No. 1</span>
+<span class="text-[9px] font-mono text-amber-300 font-bold">1889 Historic</span>
+</div>
+<p class="text-[11px] text-meditative mt-0.5 font-mono">TD: 202 m • Asia's First Commercial Well</p>
+</div>
+<!-- Well item 3: Mumbai High -->
+<div onclick="selectGatewayWell('WELL-MH-H1-1')" class="gw-well-item bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-2 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-medium text-white font-mono">Mumbai High H-1-1</span>
+<span class="text-[9px] font-mono text-cyan-300 font-bold">1974 Offshore</span>
+</div>
+<p class="text-[11px] text-meditative mt-0.5 font-mono">Sagar Samrat • 962 m Miocene Limestone</p>
+</div>
+<!-- Well item 4: Mangala-1 -->
+<div onclick="selectGatewayWell('WELL-MGL-01')" class="gw-well-item bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-2 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-medium text-white font-mono">Mangala-1 (Barmer)</span>
+<span class="text-[9px] font-mono text-emerald-300 font-bold">2004 Giant</span>
+</div>
+<p class="text-[11px] text-meditative mt-0.5 font-mono">Fatehgarh Sandstone • Waxy Crude</p>
+</div>
+<!-- Well item 5: KG-D6 -->
+<div onclick="selectGatewayWell('WELL-KGD6-D1')" class="gw-well-item bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg p-2 cursor-pointer transition-all">
+<div class="flex items-center justify-between">
+<span class="font-medium text-white font-mono">KG-D6 Dhirubhai-1</span>
+<span class="text-[9px] font-mono text-blue-300 font-bold">Deepwater Gas</span>
+</div>
+<p class="text-[11px] text-meditative mt-0.5 font-mono">WD: 1,024 m • Pliocene</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Right Floating Panel: Selected Well Intelligence Dossier (Top Right) -->
+<div class="flex flex-col items-end gap-2 pointer-events-auto ml-auto">
+<button id="btn-toggle-dossier" onclick="toggleDossierPanel()" class="flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-white/95 hover:bg-white border border-reflection text-astral shadow-xl backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer group" title="Toggle Well Intelligence Dossier">
+  <span class="text-amber-500">⚡</span>
+  <span class="text-xs font-bold tracking-tight">Well Dossier</span>
+  <span id="dossier-pill-badge" class="text-[10px] font-mono font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">NHK-01</span>
+  <span id="dossier-chevron" class="text-xs text-turbulent transition-transform">▼</span>
+</button>
+
+<div id="dossier-panel" class="w-full md:w-84 max-w-sm bg-white/95 backdrop-blur-xl border border-reflection rounded-xl p-3.5 shadow-2xl text-astral transition-all duration-300 origin-top-right" data-purpose="selected-target-dossier-card">
+<div class="flex items-center justify-between pb-2 border-b border-reflection/60">
+<div class="flex items-center space-x-1.5">
+  <span class="text-[10px] font-mono font-bold tracking-wider text-turbulent uppercase">WELL INTELLIGENCE DOSSIER</span>
+  <span id="gateway-dossier-status" class="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800">OPERATIONAL PRECEDENT</span>
+</div>
+<div class="flex items-center space-x-1">
+  <button onclick="toggleDossierCompact()" id="btn-dossier-size" class="w-6 h-6 rounded flex items-center justify-center text-turbulent hover:text-astral hover:bg-reflection/30 transition-colors" title="Toggle Compact / Full View">
+    <span class="text-xs">↕</span>
+  </button>
+  <button onclick="toggleDossierPanel(false)" class="w-6 h-6 rounded flex items-center justify-center text-turbulent hover:text-astral hover:bg-reflection/30 transition-colors" title="Minimize to Map Button">
+    <span class="text-xs">✕</span>
+  </button>
+</div>
+</div>
+<div class="mt-2">
+<div id="gateway-dossier-name" class="text-base font-bold tracking-tight text-astral leading-tight">Nahorkatiya Discovery Well No. 1</div>
+<div id="gateway-dossier-sector" class="text-[11px] text-turbulent font-medium">Upper Assam Valley (Brahmaputra Shelf) • Barail Sandstone Member (Oligocene)</div>
+</div>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-2 gap-2 mt-2.5 text-xs font-mono">
+<div class="bg-glacialCanvas p-2 rounded-lg border border-reflection/50">
+<div class="text-[9px] text-meditative uppercase font-semibold">TOTAL DEPTH</div>
+<div id="gateway-dossier-depth" class="text-xs font-bold text-astral">3571 m <span class="text-[9px] font-normal text-meditative">(11715 ft)</span></div>
+</div>
+<div class="bg-glacialCanvas p-2 rounded-lg border border-reflection/50">
+<div class="text-[9px] text-meditative uppercase font-semibold">OPERATOR / RIG</div>
+<div id="gateway-dossier-operator" class="text-xs font-bold text-astral truncate">Assam Oil Company / National-130</div>
+</div>
+</div>
+<!-- Predictive Advisory Summary Note -->
+<div id="dossier-advisory-container" class="mt-2.5 p-2 rounded-lg bg-diamond/60 border border-reflection/70 text-xs">
+<div class="flex items-center space-x-1 text-astral font-semibold text-[10px]">
+<svg class="w-3 h-3 text-turbulent shrink-0" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" fill-rule="evenodd"></path>
+</svg>
+<span id="gateway-advisory-title">Drilling History &amp; Difficulties:</span>
+</div>
+<p id="gateway-advisory-text" class="text-[11px] text-turbulent mt-1 leading-snug">
+Severe hydration, swelling, and mechanical spalling of brittle overpressured Barail shales and Girujan clays, causing recurrent drillstring drag, tight hole, and pipe sticking during trips.
+</p>
+</div>
+<!-- PRIMARY ACTION: Launch Directly into Command Center (SCREEN_29) -->
+<div class="mt-3 space-y-1.5">
+<a class="w-full py-2 px-3 bg-astral hover:bg-astral/90 active:scale-[0.99] text-diamond rounded-xl font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-1.5 transition-all shadow-md group cursor-pointer" href="../nwis_command_center_glacial_minimal_edition_page_02/code.html" data-path="command-center">
+<span>⚡ OPEN COMMAND CENTER</span>
+<span class="font-mono text-xs group-hover:translate-x-1 transition-transform">→</span>
+</a>
+<button onclick="location.href='../nwis_well_intelligence_w_204_profile_page_04/code.html'" data-path="well-intelligence" class="w-full py-1.5 px-3 bg-white hover:bg-glacialCanvas border border-reflection text-turbulent hover:text-astral rounded-xl text-[11px] font-medium transition-colors cursor-pointer">
+View Technical Well Dossier
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Inset Banner: Active Offset Inspection Prompt -->
+<div class="relative z-10 m-3 px-4 py-2 bg-astral/85 backdrop-blur-md rounded-xl border border-reflection/30 flex items-center justify-between text-xs text-diamond font-mono">
+<div class="flex items-center space-x-2.5">
+<span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+<span id="gateway-bottom-title" class="text-diamond font-medium">Nahorkatiya NHK-01 Selected:</span>
+<span id="gateway-bottom-desc" class="text-reflection hidden sm:inline">Upper Assam Shelf • Spud 1952-05-26 • Barail Sandstone Member (Oligocene)</span>
+</div>
+<button id="gateway-bottom-btn" onclick="location.href='../nwis_well_intelligence_w_204_profile_page_04/code.html'" class="text-[11px] uppercase tracking-wider text-cyan-300 hover:text-white font-semibold flex items-center space-x-1 transition-colors cursor-pointer">
+<span>CLICK MARKER TO INSPECT</span>
+<span>→</span>
+</button>
+</div>
+</div>
+<!-- END: GeospatialCanvasSection -->
+</main>
+<!-- BEGIN: BottomStatusBar -->
+<footer class="w-full max-w-[1440px] mx-auto px-6 py-3" data-purpose="subsurface-status-bar">
+<div class="flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-meditative px-2 gap-2 border-t border-reflection/50 pt-2">
+<div class="flex items-center space-x-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-turbulent">GIS Telemetry Grid Active</span>
+<span class="">•</span>
+<span class="">Spatial Ref: WGS84 / UTM Zone 34N</span>
+</div>
+<div class="flex items-center space-x-4">
+<span class="">Calibrated to 48,290 Offset Boreholes</span>
+<span class="">•</span>
+<span class="text-turbulent font-medium">Secure Operations Stream</span>
+</div>
+</div>
+</footer>
+<!-- END: BottomStatusBar -->
+
+<script>
+(function() {
+  let landmarkWellsOpen = true;
+  let dossierOpen = true;
+  let landmarkCompact = false;
+  let dossierCompact = false;
+
+  window.toggleLandmarkWellsPanel = function(forceState) {
+    const panel = document.getElementById('landmark-wells-panel');
+    const chevron = document.getElementById('landmark-wells-chevron');
+    if (!panel) return;
+    landmarkWellsOpen = typeof forceState === 'boolean' ? forceState : !landmarkWellsOpen;
+    if (landmarkWellsOpen) {
+      panel.classList.remove('hidden');
+      if (chevron) chevron.textContent = 'expand_less';
+    } else {
+      panel.classList.add('hidden');
+      if (chevron) chevron.textContent = 'expand_more';
+    }
+  };
+
+  window.toggleLandmarkWellsCompact = function() {
+    const list = document.getElementById('landmark-wells-list');
+    const btn = document.getElementById('btn-landmark-size');
+    if (!list) return;
+    landmarkCompact = !landmarkCompact;
+    if (landmarkCompact) {
+      list.classList.remove('max-h-52');
+      list.classList.add('max-h-24');
+    } else {
+      list.classList.remove('max-h-24');
+      list.classList.add('max-h-52');
+    }
+  };
+
+  window.toggleDossierPanel = function(forceState) {
+    const panel = document.getElementById('dossier-panel');
+    const chevron = document.getElementById('dossier-chevron');
+    if (!panel) return;
+    dossierOpen = typeof forceState === 'boolean' ? forceState : !dossierOpen;
+    if (dossierOpen) {
+      panel.classList.remove('hidden');
+      if (chevron) chevron.textContent = '▲';
+    } else {
+      panel.classList.add('hidden');
+      if (chevron) chevron.textContent = '▼';
+    }
+  };
+
+  window.toggleDossierCompact = function() {
+    const adv = document.getElementById('dossier-advisory-container');
+    if (!adv) return;
+    dossierCompact = !dossierCompact;
+    if (dossierCompact) {
+      adv.classList.add('hidden');
+    } else {
+      adv.classList.remove('hidden');
+    }
+  };
+
+  const WELLS = {
+    'W-204': {
+      name: 'W-204 Borehole',
+      status: 'DRILLING ACTIVE',
+      statusClass: 'bg-emerald-100 text-emerald-800',
+      sector: 'Kiparissia Sandstone Reservoir Sector',
+      depth: '2,810.4 m MD',
+      hazards: '5 Precedents',
+      advisoryTitle: 'Subsurface Mud-Loss Horizon:',
+      advisoryText: 'Offset well W-117 experienced severe circulation loss (420 bbl) within next 45m interval. Pre-drill envelope alert active.',
+      bottomTitle: 'W-204 (Active Rig Selected):',
+      bottomDesc: 'Bit: 2,810.4 m • Karstic formation boundary at 2,840 m'
+    },
+    'W-117': {
+      name: 'W-117 Historical Offset',
+      status: '420 bbl MUD LOSS',
+      statusClass: 'bg-rose-100 text-rose-800',
+      sector: '620m NW • Katakolo Sector 4',
+      depth: '2,862.0 m MD',
+      hazards: 'Total Loss Event',
+      advisoryTitle: 'Critical Circulation Loss Event:',
+      advisoryText: 'Severe total mud loss (420 bbl synthetic mud) in karstic vugular limestone at 2,862m. Required 150 bbl LCM pill to re-establish returns.',
+      bottomTitle: 'W-117 (Historical Offset Selected):',
+      bottomDesc: 'Offset 620m NW • Documented mud loss of 420 bbl @ 2,862m MD'
+    },
+    'W-151': {
+      name: 'W-151 Historical Offset',
+      status: 'DIFFERENTIAL STICKING',
+      statusClass: 'bg-amber-100 text-amber-800',
+      sector: '1.9 km NE • Formation Flank',
+      depth: '3,140.0 m MD',
+      hazards: 'Stuck Pipe',
+      advisoryTitle: 'Mechanical Risk Warning:',
+      advisoryText: 'Differential pipe sticking occurred at 2,910m MD in permeable sandstone. High overbalance pressure identified as root cause.',
+      bottomTitle: 'W-151 (Historical Offset Selected):',
+      bottomDesc: 'Offset 1.9km NE • 88% Match • Differential Sticking'
+    },
+    'W-103': {
+      name: 'W-103 Historical Offset',
+      status: 'GAS SEEPAGE',
+      statusClass: 'bg-amber-100 text-amber-800',
+      sector: '2.4 km S • Fault Block Splay',
+      depth: '2,904.0 m MD',
+      hazards: 'Gas Trace',
+      advisoryTitle: 'Pore Pressure Influx Warning:',
+      advisoryText: 'Gas seepage trace and minor circulation loss (65 bbl) at 2,880m during lithology transition. Required mud weight adjustment to 1.20 SG.',
+      bottomTitle: 'W-103 (Historical Offset Selected):',
+      bottomDesc: 'Offset 2.4km S • Seepage Trace & Gas Show'
+    },
+    'W-181': {
+      name: 'W-181 Historical Offset',
+      status: 'NORMAL DRILLING',
+      statusClass: 'bg-blue-100 text-blue-800',
+      sector: '3.1 km SE • Distal Basin',
+      depth: '3,210.0 m MD',
+      hazards: '0 Critical Events',
+      advisoryTitle: 'Stable Lithology Baseline:',
+      advisoryText: 'Drilled to total depth without circulation loss. Consistent pore pressure envelope between 2,750m and 3,100m.',
+      bottomTitle: 'W-181 (Historical Offset Selected):',
+      bottomDesc: 'Offset 3.1km SE • Stable Lithology Profile'
+    },
+    'W-144': {
+      name: 'W-144 Historical Offset',
+      status: 'HISTORICAL PROBE',
+      statusClass: 'bg-slate-100 text-slate-800',
+      sector: '1.4 km W • Tight Limestone',
+      depth: '2,750.0 m MD',
+      hazards: 'Slow Penetration',
+      advisoryTitle: 'Low Porosity Zone:',
+      advisoryText: 'Hard dolomitic limestone interbedding observed. Low rate of penetration (2.1 m/hr) recorded.',
+      bottomTitle: 'W-144 (Historical Offset Selected):',
+      bottomDesc: 'Offset 1.4km W • Historical Exploration Probe'
+    }
+  };
+
+  function selectWell(wellKey) {
+    const data = WELLS[wellKey];
+    if (!data) return;
+
+    const elStatus = document.getElementById('gateway-dossier-status');
+    const elName = document.getElementById('gateway-dossier-name');
+    const elSector = document.getElementById('gateway-dossier-sector');
+    const elDepth = document.getElementById('gateway-dossier-depth');
+    const elHazards = document.getElementById('gateway-dossier-hazards');
+    const elAdvTitle = document.getElementById('gateway-advisory-title');
+    const elAdvText = document.getElementById('gateway-advisory-text');
+    const elBottomTitle = document.getElementById('gateway-bottom-title');
+    const elBottomDesc = document.getElementById('gateway-bottom-desc');
+
+    if (elStatus) {
+      elStatus.className = 'text-[10px] font-mono font-semibold px-2 py-0.5 rounded ' + data.statusClass;
+      elStatus.textContent = data.status;
+    }
+    if (elName) elName.textContent = data.name;
+    if (elSector) elSector.textContent = data.sector;
+    if (elDepth) elDepth.innerHTML = data.depth + ' <span class="text-[10px] font-normal text-meditative">MD</span>';
+    if (elHazards) elHazards.textContent = data.hazards;
+    if (elAdvTitle) elAdvTitle.textContent = data.advisoryTitle;
+    if (elAdvText) elAdvText.textContent = data.advisoryText;
+    if (elBottomTitle) elBottomTitle.textContent = data.bottomTitle;
+    if (elBottomDesc) elBottomDesc.textContent = data.bottomDesc;
+
+    document.querySelectorAll('[data-purpose="wells-discovered-sidebar"] [data-well]').forEach(item => {
+      const match = item.getAttribute('data-well') === wellKey;
+      item.classList.toggle('bg-white/15', match);
+      item.classList.toggle('border-white/30', match);
+      item.classList.toggle('bg-white/5', !match);
+      item.classList.toggle('border-white/10', !match);
+    });
+  }
+
+  const sidebarItems = document.querySelectorAll('[data-purpose="wells-discovered-sidebar"] > div > div');
+  const wellKeys = ['W-204', 'W-117', 'W-151', 'W-103'];
+  sidebarItems.forEach((item, idx) => {
+    const key = wellKeys[idx];
+    if (key) {
+      item.setAttribute('data-well', key);
+      item.addEventListener('click', () => selectWell(key));
+    }
+  });
+
+  const pinSelectors = [
+    { selector: '.absolute.left-1\\/2.top-\\[52\\%\\]', key: 'W-204' },
+    { selector: '.absolute.left-\\[35\\%\\].top-\\[40\\%\\]', key: 'W-117' },
+    { selector: '.absolute.left-\\[64\\%\\].top-\\[48\\%\\]', key: 'W-151' },
+    { selector: '.absolute.left-\\[43\\%\\].top-\\[70\\%\\]', key: 'W-103' },
+    { selector: '.absolute.left-\\[62\\%\\].top-\\[72\\%\\]', key: 'W-181' },
+    { selector: '.absolute.left-\\[36\\%\\].top-\\[60\\%\\]', key: 'W-144' }
+  ];
+
+  pinSelectors.forEach(({ selector, key }) => {
+    const pin = document.querySelector(selector);
+    if (pin) {
+      pin.setAttribute('data-well', key);
+      pin.addEventListener('click', () => selectWell(key));
+    }
+  });
+
+<script>
+(function() {
+  const WELL_COORDINATES = {
+    'WELL-NHK-01': { lat: 27.2882, lng: 95.3411, label: 'Nahorkatiya NHK-01', sub: 'OIL DISCOVERY • 1953', zoom: 12 },
+    'WELL-DGB-01': { lat: 27.3820, lng: 95.6320, label: 'Digboi Well No. 1', sub: 'HISTORIC • 1889', zoom: 13 },
+    'WELL-MH-H1-1': { lat: 19.4180, lng: 71.3320, label: 'Mumbai High H-1-1', sub: 'SAGAR SAMRAT • 1974', zoom: 11 },
+    'WELL-MGL-01': { lat: 25.8540, lng: 71.2510, label: 'Mangala-1', sub: 'BARMER GIANT • 2004', zoom: 12 },
+    'WELL-KGD6-D1': { lat: 16.5500, lng: 82.3500, label: 'KG-D6 Dhirubhai-1', sub: 'DEEPWATER GAS', zoom: 11 }
+  };
+
+  let gatewayMap = null;
+  let rangeCircles = [];
+  let markersMap = {};
+  let selectedWellId = 'WELL-NHK-01';
+
+  function initMap() {
+    const mapEl = document.getElementById('gateway-leaflet-map');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    const coords = WELL_COORDINATES[selectedWellId] || WELL_COORDINATES['WELL-NHK-01'];
+    gatewayMap = L.map('gateway-leaflet-map', {
+      center: [coords.lat, coords.lng],
+      zoom: coords.zoom || 12,
+      zoomControl: false,
+      attributionControl: false
+    });
+
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Esri Satellite'
+    }).addTo(gatewayMap);
+
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      opacity: 0.75
+    }).addTo(gatewayMap);
+
+    L.control.zoom({ position: 'bottomright' }).addTo(gatewayMap);
+
+    // Fault lines
+    L.polyline([[27.05, 94.90], [27.20, 95.20], [27.35, 95.50], [27.50, 95.80], [27.65, 96.10]], {
+      color: '#38bdf8', weight: 2.5, dashArray: '8, 6', opacity: 0.75
+    }).addTo(gatewayMap);
+
+    // Range rings
+    L.circle([coords.lat, coords.lng], { radius: 5000, color: '#CBD8E2', dashArray: '3, 4', weight: 1, fill: false }).addTo(gatewayMap);
+    L.circle([coords.lat, coords.lng], { radius: 10000, color: '#38BDF8', dashArray: '6, 4', weight: 1.5, fill: true, fillColor: '#0284c7', fillOpacity: 0.08 }).addTo(gatewayMap);
+
+    // Markers
+    Object.keys(WELL_COORDINATES).forEach(key => {
+      const w = WELL_COORDINATES[key];
+      const isSel = (key === selectedWellId);
+      const icon = L.divIcon({
+        className: 'custom-geo-marker',
+        html: `<div class="cursor-pointer select-none -translate-x-1/2 -translate-y-1/2" style="display:inline-flex; align-items:center;">
+          <div class="bg-[#203848]/95 border-2 ${isSel ? 'border-cyan-300 shadow-2xl scale-105' : 'border-white/40 shadow-lg'} text-[#E3EDF5] px-2.5 py-1 rounded-xl flex items-center space-x-2">
+            <span class="w-2.5 h-2.5 rounded-full ${isSel ? 'bg-cyan-400' : 'bg-amber-400'}"></span>
+            <div class="flex flex-col font-mono text-[10px] leading-tight text-left">
+              <span class="font-bold text-white text-[11px]">${w.label}</span>
+              <span class="text-[9px] text-cyan-200">${w.sub}</span>
+            </div>
+          </div>
+        </div>`,
+        iconSize: [160, 36],
+        iconAnchor: [80, 18]
+      });
+      const m = L.marker([w.lat, w.lng], { icon: icon }).addTo(gatewayMap);
+      m.on('click', () => selectWell(key));
+      markersMap[key] = m;
+    });
+  }
+
+  function selectWell(wellId) {
+    selectedWellId = wellId;
+    const coords = WELL_COORDINATES[wellId];
+    if (coords && gatewayMap) {
+      gatewayMap.flyTo([coords.lat, coords.lng], coords.zoom || 12, { duration: 1.5 });
+    }
+  }
+
+  window.selectGatewayWell = selectWell;
+
+  setTimeout(initMap, 200);
+})();
+</script>
+<script src="../nav_bridge.js"></script></body></html>

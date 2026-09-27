@@ -1,0 +1,338 @@
+<div class="flex flex-col w-full pb-16">
+  <!-- Top Command Sub-Bar -->
+  <div class="flex items-center justify-between py-4 border-b border-outline-variant/30 flex-wrap gap-2">
+    <div class="flex items-center gap-space-sm">
+      <a class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary hover:text-primary transition-colors cursor-pointer" onclick="window.location.hash = 'well-explorer'">
+        <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        Back to Well Explorer
+      </a>
+      <span class="text-outline-variant">/</span>
+      <span class="font-headline-sm text-headline-sm text-primary tracking-tight">Well Intelligence Dossier</span>
+    </div>
+    <div class="flex items-center gap-space-md">
+      <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/60 backdrop-blur-md">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">DGH NDR Verified</span>
+      </div>
+      <div class="flex items-center gap-2 pl-3">
+        <div class="text-right">
+          <p class="font-label-md text-label-md text-primary font-semibold leading-tight">Er. R. Sharma</p>
+          <p class="font-label-sm text-label-sm text-secondary">Chief Drilling Supt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Panel: Selected Well Overview -->
+  <section class="mt-6 rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-space-sm flex-wrap">
+          <select id="wi-well-select" onchange="switchWIWell(this.value)" class="bg-surface-container-high text-base sm:text-lg md:text-xl font-bold font-sans text-primary tracking-tight rounded-xl px-3 py-1.5 border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-xs cursor-pointer">
+            <option value="WELL-NHK-01" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Nahorkatiya Well No. 1 (Assam OIL)</option>
+            <option value="WELL-MH-H1-1" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Mumbai High Discovery Well H-1-1 (ONGC)</option>
+            <option value="WELL-DGB-01" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Digboi Well No. 1 (Asia's First, 1889)</option>
+            <option value="WELL-MGL-01" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Mangala-1 (Barmer Basin Cairn/ONGC)</option>
+            <option value="WELL-ANK-01" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Ankleshwar-1 'Vasudhara' (Cambay ONGC)</option>
+            <option value="WELL-KGD6-D1" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">KG-DWN-98/3 Dhirubhai-1 (Deepwater Gas)</option>
+            <option value="WELL-VOLVE-F12" class="text-sm font-medium text-primary bg-surface-container-lowest py-1.5">Volve 15/9-F-12 (Equinor Open Benchmark)</option>
+          </select>
+          <span id="wi-badge-status" class="px-2.5 py-0.5 rounded-full bg-primary-container text-surface font-label-sm text-label-sm uppercase tracking-wider">
+            Historic Discovery
+          </span>
+          <span id="wi-badge-basin" class="px-2.5 py-0.5 rounded-full bg-secondary-container text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+            Assam-Arakan Basin
+          </span>
+        </div>
+        <p id="wi-hero-desc" class="font-body-md text-body-md text-secondary">
+          Upper Assam Brahmaputra alluvial plain wildcat discovery well. Proved deep hydrocarbon traps beneath river alluvium.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-space-sm shrink-0">
+        <button onclick="location.hash='historical-intelligence'" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-secondary-container/60 hover:bg-secondary-container text-primary font-label-md text-label-md transition-all shadow-sm cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-[18px]">history_edu</span>
+          View DDR Records
+        </button>
+        <button onclick="location.hash='risk-monitor'" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md transition-all shadow-sm cursor-pointer" type="button">
+          <span class="material-symbols-outlined text-[18px]">warning</span>
+          Geomechanical Risks
+        </button>
+      </div>
+    </div>
+
+    <!-- Technical Metadata Grid -->
+    <div class="mt-6 pt-5 grid grid-cols-2 md:grid-cols-4 gap-space-md border-t border-outline-variant/30 text-xs font-mono">
+      <div>
+        <span class="block text-secondary uppercase tracking-wider text-[10px]">TOTAL DEPTH</span>
+        <div class="mt-1 flex items-baseline gap-1.5">
+          <span id="wi-depth" class="font-headline-md text-headline-md font-semibold text-primary">3,571 m</span>
+          <span id="wi-depth-ft" class="text-secondary">(11,715 ft)</span>
+        </div>
+        <span id="wi-tvd" class="text-[11px] text-on-surface-variant">TVD: 3,571 m</span>
+      </div>
+      <div>
+        <span class="block text-secondary uppercase tracking-wider text-[10px]">TARGET FORMATION</span>
+        <span id="wi-target-formation" class="mt-1 block font-headline-md text-base font-semibold text-primary truncate">Barail Sandstone</span>
+        <span id="wi-secondary-formation" class="text-[11px] text-on-surface-variant truncate block">Tipam Sandstone Fm</span>
+      </div>
+      <div>
+        <span class="block text-secondary uppercase tracking-wider text-[10px]">COORDINATES &amp; CRS</span>
+        <span id="wi-coords" class="mt-1 block font-headline-md text-base font-semibold text-primary">27.28°N, 95.34°E</span>
+        <span id="wi-crs" class="text-[11px] text-on-surface-variant">UTM 46N (WGS84)</span>
+      </div>
+      <div>
+        <span class="block text-secondary uppercase tracking-wider text-[10px]">OPERATOR &amp; SPUD</span>
+        <span id="wi-operator" class="mt-1 block font-headline-md text-base font-semibold text-primary truncate">OIL / Assam Oil Co</span>
+        <span id="wi-spud" class="text-[11px] text-on-surface-variant">Spud: May 26, 1952</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workstation Workspace: Asymmetric Split Grid -->
+  <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+    <!-- LEFT COLUMN (~42% / 5 cols): Stratigraphy Track & Casing Profile -->
+    <section class="lg:col-span-5 flex flex-col gap-space-lg">
+      <!-- Formation & Depth Stratigraphy View -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col">
+        <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+          <div>
+            <h2 class="font-headline-sm text-headline-sm text-primary tracking-tight">Formation Depth Profile</h2>
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-0.5">Lithology &amp; Reservoir Stratigraphy</p>
+          </div>
+          <span id="wi-strat-range" class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold font-mono">
+            0 – 3,571 m
+          </span>
+        </div>
+
+        <!-- Vertical Stratigraphy Column (Injected dynamically) -->
+        <div id="wi-strat-container" class="mt-5 flex flex-col gap-2">
+          <!-- Strata items will render here dynamically -->
+        </div>
+      </div>
+
+      <!-- Mechanical Well Architecture (Casing Program) -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col">
+        <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+          <h3 class="font-headline-sm text-primary tracking-tight">Casing &amp; Cementing Program</h3>
+          <span class="material-symbols-outlined text-secondary text-[20px]">architecture</span>
+        </div>
+        <div id="wi-casing-desc" class="mt-3 text-xs text-secondary leading-relaxed font-mono">
+          20-inch conductor at 120 m; 13-3/8-inch surface casing at 850 m; 9-5/8-inch intermediate casing at 2,780 m; 7-inch production liner cemented at 3,565 m.
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN (~58% / 7 cols): Discovery Story, Drilling Mechanics, Difficulties & Production -->
+    <section class="lg:col-span-7 flex flex-col gap-space-lg">
+      <!-- 1. How It Was Found (Discovery Genesis & Pre-Drilling Geoscience) -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+            <h3 class="font-headline-sm text-primary tracking-tight">Discovery Genesis &amp; Pre-Drilling Geoscience</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase">Proven Breakthrough</span>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-wider text-secondary mb-1">How The Deposit Was Found:</h4>
+          <p id="wi-how-found" class="text-xs text-primary leading-relaxed">
+            Drilled as a bold wildcat test into the alluvial plain of the Burhi Dihing river valley near Duliajan based purely on reflection seismic surveys. At the time, industry consensus believed oil in Assam was confined solely to exposed foothill anticlines (like Digboi). NHK-1 shattered this paradigm by proving prolific oil reservoirs lay trapped deep beneath the thick Brahmaputra river alluvium.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-wider text-secondary mb-1">Pre-Drilling Geosciences &amp; Surveys:</h4>
+          <p id="wi-pre-drill" class="text-xs text-secondary leading-relaxed">
+            2D reflection seismic surveys executed between 1937 and 1951 through riverine silt deposits. Identified deep faulted rollover anticlinal structure at 10,000+ ft depth. Gravity and magnetic anomalies confirmed regional basement deepening towards the Himalayan foredeep.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs uppercase font-bold tracking-wider text-secondary mb-1">Exploration Paradigm Shift:</h4>
+          <p id="wi-breakthrough" class="text-xs text-secondary leading-relaxed">
+            Proved commercial hydrocarbons in the Barail Group beneath alluvium. Led to the discovery of Moran field (1956), the incorporation of Oil India Limited (OIL) in 1959, and construction of India’s first modern long-distance crude pipeline (Nahorkatiya-Guwahati-Barauni, 1,157 km).
+          </p>
+        </div>
+      </div>
+
+      <!-- 2. Drilling Engineering, Technology & How Drilling Worked -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
+            <h3 class="font-headline-sm text-primary tracking-tight">Drilling Engineering &amp; Mechanics</h3>
+          </div>
+          <span id="wi-rig-name" class="font-mono text-xs font-bold text-primary">National-130 Heavy Rotary</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">Drilling Mechanism:</span>
+            <p id="wi-mech" class="text-secondary leading-relaxed">
+              Heavy steam/diesel rotary rig with 142-ft derrick. First deep rotary test exceeding 10,000 ft in Southeast Asia.
+            </p>
+          </div>
+          <div class="p-3 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">Mud Circulation System:</span>
+            <p id="wi-mud" class="text-secondary leading-relaxed">
+              High-density freshwater bentonite-caustic-quebracho mud, weighted with barite to 1.36-1.42 SG to balance high tectonic pore pressures.
+            </p>
+          </div>
+        </div>
+        <div class="p-3 rounded-lg bg-surface-container-low border border-surface-container-high/60 text-xs">
+          <span class="font-bold text-primary block mb-1">Bit &amp; Hole Assembly Program:</span>
+          <p id="wi-bit-prog" class="text-secondary leading-relaxed">
+            26-inch hole to 350 m (Tricone roller bits); 17-1/2-inch to 1,200 m; 12-1/4-inch to 2,850 m; 8-1/2-inch reservoir drilling to 3,571 m TD.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3. Drilling Conditions, Difficulties & Incidents -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-error text-[22px]">report_problem</span>
+            <h3 class="font-headline-sm text-primary tracking-tight">Drilling Conditions &amp; Difficulties Encountered</h3>
+          </div>
+          <span class="px-2 py-0.5 rounded bg-error-container text-error text-[10px] font-bold uppercase">Operational Hurdles</span>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="font-bold text-primary block">Tectonic Stress &amp; Compressive Faulting:</span>
+            <p id="wi-diff-tectonic" class="text-secondary mt-0.5 leading-relaxed">
+              Extreme horizontal tectonic compression from the Himalayan collision front and Naga thrust caused borehole deformation and high differential horizontal stress.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="font-bold text-primary block">Shale Sloughing &amp; Swelling Clays:</span>
+            <p id="wi-diff-shale" class="text-secondary mt-0.5 leading-relaxed">
+              Severe hydration and mechanical spalling of brittle overpressured Barail shales and Girujan clays caused recurrent drillstring drag and pipe sticking during trips.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="font-bold text-primary block">Circulation Losses &amp; Gas Influxes:</span>
+            <p id="wi-diff-loss" class="text-secondary mt-0.5 leading-relaxed">
+              Encountered 420 bbl fluid loss at 2,862 m MD into natural fractures in Tipam transition, cured with 60 bbl fibrous LCM pill. Pore pressure gas kick at 3,120 m killed with 1.38 SG mud.
+            </p>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="font-bold text-primary block">Surface &amp; Environmental Logistics:</span>
+            <p id="wi-diff-env" class="text-secondary mt-0.5 leading-relaxed">
+              Torrential Brahmaputra monsoon floods, malaria epidemics in jungle camps, soft marshland requiring thousands of sal-wood logs for corduroy access roads.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Post-Drilling & Production Data -->
+      <div class="rounded-xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[22px]">water_drop</span>
+            <h3 class="font-headline-sm text-primary tracking-tight">Post-Drilling Production &amp; Reservoir Data</h3>
+          </div>
+          <span class="font-mono text-xs text-secondary">DST &amp; PVT Analysis</span>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 text-xs font-mono">
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="text-secondary text-[10px] block">API GRAVITY</span>
+            <span id="wi-api" class="text-base font-bold text-primary mt-0.5 block">32.4° API</span>
+            <span class="text-[10px] text-secondary">Light sweet crude</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="text-secondary text-[10px] block">POUR POINT</span>
+            <span id="wi-pour" class="text-base font-bold text-primary mt-0.5 block">31.0° C</span>
+            <span class="text-[10px] text-secondary">Wax: 16.5%</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="text-secondary text-[10px] block">INITIAL DST RATE</span>
+            <span id="wi-flow" class="text-base font-bold text-primary mt-0.5 block">580 bopd</span>
+            <span class="text-[10px] text-secondary">16/64" choke</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-surface-container-low">
+            <span class="text-secondary text-[10px] block">RESERVOIR PRESS.</span>
+            <span id="wi-press" class="text-base font-bold text-primary mt-0.5 block">4,680 psi</span>
+            <span class="text-[10px] text-secondary">Temp: 98° C</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function() {
+  window.switchWIWell = function(wellId) {
+    if (!window.NWISDataStore) return;
+    window.NWISDataStore.setActiveWell(wellId);
+    renderWIDossier(wellId);
+  };
+
+  function renderWIDossier(wellId) {
+    if (!window.NWISDataStore) return;
+    const well = window.NWISDataStore.getWellById(wellId);
+    if (!well) return;
+
+    // Header & metadata
+    const selectEl = document.getElementById('wi-well-select');
+    if (selectEl) selectEl.value = well.id;
+
+    document.getElementById('wi-badge-status').textContent = well.status.split('/')[0];
+    document.getElementById('wi-badge-basin').textContent = well.basin.split('(')[0];
+    document.getElementById('wi-hero-desc').textContent = well.discovery_history.how_found;
+    document.getElementById('wi-depth').textContent = `${well.total_depth_md_m} m`;
+    document.getElementById('wi-depth-ft').textContent = `(${well.total_depth_ft} ft)`;
+    document.getElementById('wi-tvd').textContent = `TVD: ${well.tvd_m} m`;
+    document.getElementById('wi-target-formation').textContent = well.target_formation;
+    document.getElementById('wi-secondary-formation').textContent = well.secondary_formation || well.field;
+    document.getElementById('wi-coords').textContent = `${well.coordinates.lat}°N, ${well.coordinates.lng}°E`;
+    document.getElementById('wi-crs').textContent = `UTM ${well.coordinates.utm_zone} (WGS84)`;
+    document.getElementById('wi-operator').textContent = well.operator.split('/')[0];
+    document.getElementById('wi-spud').textContent = `Spud: ${well.spud_date}`;
+    document.getElementById('wi-strat-range').textContent = `0 – ${well.total_depth_md_m} m`;
+    document.getElementById('wi-casing-desc').textContent = well.drilling_engineering.casing_program;
+
+    // Discovery & Drilling
+    document.getElementById('wi-how-found').textContent = well.discovery_history.how_found;
+    document.getElementById('wi-pre-drill').textContent = well.discovery_history.pre_drilling_geoscience;
+    document.getElementById('wi-breakthrough').textContent = well.discovery_history.exploration_breakthrough;
+    document.getElementById('wi-rig-name').textContent = well.rig_name;
+    document.getElementById('wi-mech').textContent = well.drilling_engineering.mechanism;
+    document.getElementById('wi-mud').textContent = well.drilling_engineering.mud_system;
+    document.getElementById('wi-bit-prog').textContent = well.drilling_engineering.drill_string_and_bit;
+
+    // Difficulties
+    document.getElementById('wi-diff-tectonic').textContent = well.drilling_conditions_and_difficulties.tectonic_stress;
+    document.getElementById('wi-diff-shale').textContent = well.drilling_conditions_and_difficulties.shale_sloughing;
+    document.getElementById('wi-diff-loss').textContent = `${well.drilling_conditions_and_difficulties.fluid_loss_events} • ${well.drilling_conditions_and_difficulties.gas_influx}`;
+    document.getElementById('wi-diff-env').textContent = well.drilling_conditions_and_difficulties.environmental_hurdles;
+
+    // Production
+    document.getElementById('wi-api').textContent = `${well.post_drilling_and_production.api_gravity}° API`;
+    document.getElementById('wi-pour').textContent = `${well.post_drilling_and_production.pour_point_c}° C`;
+    document.getElementById('wi-flow').textContent = well.post_drilling_and_production.initial_dst_flow_rate.split('.')[0];
+    document.getElementById('wi-press').textContent = `${well.post_drilling_and_production.reservoir_pressure_psi} psi`;
+
+    // Render Stratigraphy
+    const stratContainer = document.getElementById('wi-strat-container');
+    if (stratContainer && well.stratigraphy) {
+      stratContainer.innerHTML = well.stratigraphy.map((s, idx) => `
+        <div class="p-3 rounded-lg ${idx === well.stratigraphy.length - 1 ? 'bg-primary-container text-surface' : 'bg-surface-container-low'} border border-surface-container-high/60 transition-all">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="font-label-md text-label-md font-semibold ${idx === well.stratigraphy.length - 1 ? 'text-surface' : 'text-primary'}">${s.formation}</p>
+              <p class="font-body-sm text-[11px] ${idx === well.stratigraphy.length - 1 ? 'text-secondary-fixed' : 'text-secondary'}">${s.depth_start_m} – ${s.depth_end_m} m • ${s.lithology}</p>
+            </div>
+            <span class="font-label-sm text-[10px] px-2 py-0.5 rounded ${idx === well.stratigraphy.length - 1 ? 'bg-secondary text-surface' : 'bg-surface-container-high text-secondary'} font-mono">${s.hazard.split(',')[0]}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  setTimeout(() => {
+    if (window.NWISDataStore) {
+      const active = window.NWISDataStore.getActiveWell();
+      if (active) renderWIDossier(active.id);
+    }
+  }, 100);
+})();
+</script>

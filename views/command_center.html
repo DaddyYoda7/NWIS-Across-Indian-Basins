@@ -1,0 +1,886 @@
+<div class="flex flex-col w-full pb-10 space-y-5">
+  <!-- SECTION 1: ACTIVE INDIAN WELL BANNER -->
+  <div class="w-full rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] shadow-[0_8px_28px_-4px_rgba(32,56,72,0.06)] px-4 py-3 flex items-center justify-between gap-3 lg:gap-5 flex-nowrap overflow-x-auto select-none border border-outline-variant/20">
+    <!-- 1. Active Well & Dropdown -->
+    <div class="flex flex-col shrink-0">
+      <span class="font-label-sm text-[10px] uppercase tracking-[0.16em] text-secondary font-semibold">Active Indian Well</span>
+      <div class="flex items-center gap-1.5 mt-0.5">
+        <select id="cc-well-select" onchange="switchCCWell(this.value)" class="bg-surface-container-high text-xs sm:text-[13px] font-bold font-sans text-primary tracking-tight rounded-lg px-2.5 py-1 border border-outline-variant/30 focus:outline-none focus:ring-1 focus:ring-primary/30 cursor-pointer shadow-xs">
+          <option value="WELL-NHK-01" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Nahorkatiya NHK-01 (Assam)</option>
+          <option value="WELL-MH-H1-1" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Mumbai High H-1-1 (Offshore)</option>
+          <option value="WELL-DGB-01" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Digboi Well No. 1 (1889 Historic)</option>
+          <option value="WELL-MGL-01" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Mangala-1 (Barmer Basin)</option>
+          <option value="WELL-ANK-01" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Ankleshwar-1 'Vasudhara' (Cambay)</option>
+          <option value="WELL-KGD6-D1" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">KG-D6 Dhirubhai-1 (Deepwater Gas)</option>
+          <option value="WELL-VOLVE-F12" class="text-xs font-medium text-primary bg-surface-container-lowest py-1">Volve 15/9-F-12 (Open Benchmark)</option>
+        </select>
+        <span id="cc-well-badge" class="px-2 py-0.5 rounded-full bg-secondary-container/70 text-primary font-label-md text-[10.5px] font-bold uppercase tracking-wider whitespace-nowrap hidden sm:inline-block">Historical Discovery Benchmark</span>
+      </div>
+    </div>
+
+    <!-- Divider 1 -->
+    <div class="h-7 w-px bg-outline-variant/30 shrink-0 hidden sm:block"></div>
+
+    <!-- 2. Current Depth -->
+    <div class="flex flex-col shrink-0">
+      <span class="font-label-sm text-[10px] uppercase tracking-widest text-secondary font-medium">Current Depth</span>
+      <span id="cc-current-depth" class="font-headline-sm text-[15px] text-primary font-bold mt-0.5 whitespace-nowrap">2,810 <span class="text-xs text-secondary font-normal">m MD</span></span>
+    </div>
+
+    <!-- Divider 2 -->
+    <div class="h-7 w-px bg-outline-variant/30 shrink-0 hidden md:block"></div>
+
+    <!-- 3. Target Formation -->
+    <div class="flex flex-col shrink-0">
+      <span class="font-label-sm text-[10px] uppercase tracking-widest text-secondary font-medium">Target Formation</span>
+      <span id="cc-formation" class="font-headline-sm text-[15px] text-primary font-semibold mt-0.5 whitespace-nowrap">Barail Sandstone (Oligocene)</span>
+    </div>
+
+    <!-- Divider 3 -->
+    <div class="h-7 w-px bg-outline-variant/30 shrink-0 hidden lg:block"></div>
+
+    <!-- 4. Drilling Progress -->
+    <div class="flex flex-col shrink-0 min-w-[110px] sm:min-w-[130px]">
+      <div class="flex items-center justify-between font-label-sm text-[10px] mb-1">
+        <span class="text-secondary uppercase tracking-wider">Drilling Progress</span>
+        <span id="cc-progress-pct" class="text-primary font-bold">78%</span>
+      </div>
+      <div class="w-full h-1.5 rounded-full bg-secondary-container/60 overflow-hidden">
+        <div id="cc-progress-bar" class="h-full bg-primary rounded-full transition-all duration-700" style="width: 78%;"></div>
+      </div>
+    </div>
+
+    <!-- 5. Inspect Dossier Action Button -->
+    <button onclick="location.hash='well-intelligence'" class="group px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-sans text-xs font-semibold tracking-wide whitespace-nowrap transition-all duration-150 flex items-center gap-1.5 shadow-xs cursor-pointer hover:bg-secondary active:scale-95 shrink-0 ml-auto sm:ml-0">
+      <span>Inspect Dossier</span>
+      <span class="material-symbols-outlined text-[15px] transition-transform duration-150 group-hover:translate-x-0.5">arrow_forward</span>
+    </button>
+  </div>
+
+  <!-- SECTION 2: LIVE SNAPSHOT (4 METRIC CARDS) -->
+  <div class="w-full flex flex-col space-y-2.5">
+    <div class="flex items-center justify-between px-1">
+      <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-secondary font-semibold">Subsurface Telemetry Channels</span>
+      <span class="font-label-sm text-label-sm text-secondary/80 flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        Calibrated to DGH &amp; Rig Sensors
+      </span>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+      <!-- Card 1: ROP -->
+      <div class="relative group rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] p-4 shadow-[0_4px_20px_-2px_rgba(32,56,72,0.05)] hover:shadow-[0_8px_24px_-2px_rgba(32,56,72,0.1)] transition-all duration-200 flex flex-col justify-between overflow-hidden">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Rate of Penetration</span>
+            <div id="cc-rop" class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mt-0.5">8.4 <span class="font-body-sm text-body-sm font-normal text-secondary">m/hr</span></div>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">ROP</span>
+        </div>
+        <div class="mt-3 flex items-end justify-between gap-2">
+          <svg class="w-full h-8 overflow-visible text-secondary" fill="none" preserveAspectRatio="none" viewBox="0 0 160 32">
+            <path id="cc-rop-path" d="M0,24 Q25,28 45,18 T90,20 T130,8 T160,11" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+            <path id="cc-rop-area" d="M0,24 Q25,28 45,18 T90,20 T130,8 T160,11 L160,32 L0,32 Z" fill="currentColor" fill-opacity="0.08"></path>
+            <circle id="cc-rop-dot" cx="160" cy="11" fill="#203848" r="2.5"></circle>
+          </svg>
+        </div>
+        <div id="cc-rop-note" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute inset-x-2 -bottom-0 py-1 px-2.5 rounded-lg bg-primary-container text-secondary-fixed font-label-sm text-label-sm text-center shadow-lg pointer-events-none transform -translate-y-2">
+          Nominal penetration in target member
+        </div>
+      </div>
+
+      <!-- Card 2: Torque -->
+      <div class="relative group rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] p-4 shadow-[0_4px_20px_-2px_rgba(32,56,72,0.05)] hover:shadow-[0_8px_24px_-2px_rgba(32,56,72,0.1)] transition-all duration-200 flex flex-col justify-between overflow-hidden">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Rotary Torque</span>
+            <div id="cc-trq" class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mt-0.5">34.0 <span class="font-body-sm text-body-sm font-normal text-secondary">kN·m</span></div>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">TRQ</span>
+        </div>
+        <div class="mt-3 flex items-end justify-between gap-2">
+          <svg class="w-full h-8 overflow-visible text-secondary" fill="none" preserveAspectRatio="none" viewBox="0 0 160 32">
+            <path id="cc-trq-path" d="M0,16 Q30,12 60,22 T110,14 T140,19 T160,15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+            <path id="cc-trq-area" d="M0,16 Q30,12 60,22 T110,14 T140,19 T160,15 L160,32 L0,32 Z" fill="currentColor" fill-opacity="0.08"></path>
+            <circle id="cc-trq-dot" cx="160" cy="15" fill="#203848" r="2.5"></circle>
+          </svg>
+        </div>
+        <div id="cc-trq-note" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute inset-x-2 -bottom-0 py-1 px-2.5 rounded-lg bg-primary-container text-secondary-fixed font-label-sm text-label-sm text-center shadow-lg pointer-events-none transform -translate-y-2">
+          Torsional drag nominal • Baseline verified
+        </div>
+      </div>
+
+      <!-- Card 3: WOB -->
+      <div class="relative group rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] p-4 shadow-[0_4px_20px_-2px_rgba(32,56,72,0.05)] hover:shadow-[0_8px_24px_-2px_rgba(32,56,72,0.1)] transition-all duration-200 flex flex-col justify-between overflow-hidden">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Weight on Bit</span>
+            <div id="cc-wob" class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mt-0.5">22.0 <span class="font-body-sm text-body-sm font-normal text-secondary">kN</span></div>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">WOB</span>
+        </div>
+        <div class="mt-3 flex items-end justify-between gap-2">
+          <svg class="w-full h-8 overflow-visible text-secondary" fill="none" preserveAspectRatio="none" viewBox="0 0 160 32">
+            <path id="cc-wob-path" d="M0,20 Q40,24 80,11 T120,17 T160,13" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+            <path id="cc-wob-area" d="M0,20 Q40,24 80,11 T120,17 T160,13 L160,32 L0,32 Z" fill="currentColor" fill-opacity="0.08"></path>
+            <circle id="cc-wob-dot" cx="160" cy="13" fill="#203848" r="2.5"></circle>
+          </svg>
+        </div>
+        <div id="cc-wob-note" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute inset-x-2 -bottom-0 py-1 px-2.5 rounded-lg bg-primary-container text-secondary-fixed font-label-sm text-label-sm text-center shadow-lg pointer-events-none transform -translate-y-2">
+          Bit mechanical load balanced
+        </div>
+      </div>
+
+      <!-- Card 4: ECD vs Mud Weight Margin -->
+      <div class="relative group rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] p-4 shadow-[0_4px_20px_-2px_rgba(32,56,72,0.05)] hover:shadow-[0_8px_24px_-2px_rgba(32,56,72,0.1)] transition-all duration-200 flex flex-col justify-between overflow-hidden">
+        <div class="flex items-start justify-between">
+          <div>
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">ECD / Pore Margin</span>
+            <div id="cc-ecd" class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight mt-0.5">1.34 <span class="font-body-sm text-body-sm font-normal text-secondary">SG</span></div>
+          </div>
+          <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-secondary font-medium">ECD</span>
+        </div>
+        <div class="mt-3 flex flex-col gap-1.5">
+          <div class="flex justify-between font-label-sm text-label-sm text-secondary">
+            <span id="cc-frac-limit">Frac Limit (1.38 SG)</span>
+            <span id="cc-cushion-val" class="font-semibold text-emerald-700">+0.04 Cushion</span>
+          </div>
+          <div class="w-full h-2 rounded-full bg-secondary-container/50 relative overflow-hidden flex items-center">
+            <div class="absolute left-[20%] right-[15%] h-full bg-emerald-500/40"></div>
+            <div id="cc-ecd-marker" class="absolute left-[70%] w-2.5 h-2.5 rounded-full bg-primary shadow-sm -ml-1 transition-all duration-500"></div>
+          </div>
+        </div>
+        <div id="cc-ecd-note" class="opacity-0 group-hover:opacity-100 transition-opacity duration-200 absolute inset-x-2 -bottom-0 py-1 px-2.5 rounded-lg bg-primary-container text-secondary-fixed font-label-sm text-label-sm text-center shadow-lg pointer-events-none transform -translate-y-2">
+          Safe drilling envelope below fracture gradient
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 & 4: REAL GEOLOGICAL BOREHOLE CANVAS (55%) & PPAC NATIONAL PETROLEUM DASHBOARD (45%) -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+    <!-- LEFT: REAL GEOLOGICAL SECTOR & BOREHOLE MAP (lg:col-span-7) -->
+    <div class="lg:col-span-7 rounded-[18px] bg-surface-container/60 backdrop-blur-[20px] shadow-[0_12px_36px_-6px_rgba(32,56,72,0.14)] flex flex-col justify-between select-none border border-outline-variant/30 overflow-hidden" data-purpose="command-center-map-card">
+      
+      <!-- Live Geospatial Satellite Map Viewport (Clean, Full View) -->
+      <div class="relative w-full h-[450px] overflow-hidden bg-[#0a151d]">
+        <!-- Full Live Satellite Tiles Layer -->
+        <div id="cc-satellite-map" class="absolute inset-0 w-full h-full z-0 bg-[#0a151d]"></div>
+
+        <!-- Top Bar: Sector & Full GIS Action Floating on Top -->
+        <div class="absolute top-3 inset-x-3 z-20 flex items-center justify-between gap-2 flex-wrap pointer-events-none">
+          <div class="flex items-center gap-2 pointer-events-auto">
+            <span class="px-2.5 py-1 rounded-lg bg-astral/90 backdrop-blur-md text-white border border-cyan-400/40 font-label-sm text-label-sm tracking-wider uppercase flex items-center gap-1.5 shadow-md">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span id="cc-map-basin">Assam-Arakan Basin (Upper Assam Shelf)</span>
+            </span>
+            <span id="cc-map-operator" class="px-2 py-0.5 rounded bg-astral/85 backdrop-blur-md border border-white/20 text-[11px] font-mono text-cyan-200">OIL Asset</span>
+          </div>
+          <div class="flex items-center gap-2 pointer-events-auto">
+            <button onclick="location.hash='well-explorer'" class="px-3 py-1 rounded-lg bg-astral/90 hover:bg-astral text-white border border-white/20 hover:border-cyan-400 font-label-sm text-xs flex items-center gap-1.5 transition-all shadow-md cursor-pointer active:scale-95" title="Open Full Screen GIS Explorer">
+              <span class="material-symbols-outlined text-[14px]">explore</span>
+              <span>View Full GIS</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- FLOATING SLIM STRATIGRAPHY COLUMN (Positioned at Bottom-Left Corner) -->
+        <div class="absolute bottom-3 left-3 z-20 flex flex-col items-start gap-1.5 pointer-events-none">
+          <!-- Expandable Slim Stratigraphic Panel -->
+          <div id="cc-stratigraphy-panel" class="hidden pointer-events-auto w-80 max-w-[340px] bg-astral/95 backdrop-blur-xl border border-cyan-400/40 rounded-xl p-2.5 shadow-2xl text-diamond transition-all duration-300 origin-bottom-left" data-purpose="stratigraphic-column-card">
+            <div class="flex items-center justify-between pb-1.5 border-b border-white/20 text-[11px]">
+              <div class="flex items-center space-x-1">
+                <span class="font-bold text-white uppercase tracking-wider text-[10px]">STRATIGRAPHIC COLUMN</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <span id="cc-strat-header-depth" class="text-cyan-300 font-mono text-[9px] mr-1">Bit @ 2,810m</span>
+                <button onclick="toggleCCStratigraphyCompact()" id="btn-cc-strat-size" class="w-5 h-5 rounded flex items-center justify-center text-reflection hover:text-white hover:bg-white/10 transition-colors" title="Toggle Compact View">
+                  <span class="material-symbols-outlined text-[12px]">unfold_less</span>
+                </button>
+                <button onclick="toggleCCStratigraphy(false)" class="w-5 h-5 rounded flex items-center justify-center text-reflection hover:text-white hover:bg-white/10 transition-colors" title="Close Panel">
+                  <span class="material-symbols-outlined text-[14px]">close</span>
+                </button>
+              </div>
+            </div>
+            
+            <div id="cc-stratigraphy-content" class="mt-2 space-y-1 text-[11px] font-mono transition-all max-h-56 overflow-y-auto pr-1">
+              <!-- Dynamically populated per active well -->
+            </div>
+          </div>
+
+          <!-- Small Corner Floating Toggle Button -->
+          <button id="btn-toggle-cc-stratigraphy" onclick="toggleCCStratigraphy()" class="pointer-events-auto flex items-center space-x-1.5 px-2.5 py-1 rounded-xl bg-astral/95 hover:bg-astral border border-cyan-400/50 text-white shadow-xl backdrop-blur-md transition-all hover:scale-105 active:scale-95 cursor-pointer group" title="Toggle Stratigraphy Column">
+            <span class="material-symbols-outlined text-[15px] text-amber-400">layers</span>
+            <span class="text-[11px] font-bold tracking-tight">Stratigraphy Column</span>
+            <span id="cc-strat-pill" class="text-[9px] font-mono font-bold px-1 py-0.2 rounded bg-cyan-900/80 text-cyan-200 border border-cyan-400/40">Bit @ 2,810m</span>
+            <span id="cc-strat-chevron" class="material-symbols-outlined text-[15px] text-cyan-300 transition-transform group-hover:translate-y-0.5">expand_less</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIG STATUS BAR OUTSIDE THE MAP AT THE BOTTOM -->
+      <div class="px-4 py-2.5 bg-surface-container/90 border-t border-outline-variant/30 flex items-center justify-between text-xs font-mono text-primary">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="cc-rig-status" class="font-medium text-primary">National-130 Rotary Rig: Rotating @ 115 RPM</span>
+        </div>
+        <span id="cc-standpipe" class="font-semibold text-secondary">Standpipe: 2,850 psi</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: OFFICIAL PPAC PETROLEUM READY RECKONER MODULE (lg:col-span-5) -->
+    <div class="lg:col-span-5 rounded-[18px] bg-surface-container/70 backdrop-blur-[20px] p-5 shadow-[0_8px_24px_-4px_rgba(32,56,72,0.06)] border border-outline-variant/20 flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+        <div>
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">PPAC Petroleum Ready Reckoner</span>
+          <h3 id="cc-ppac-title" class="font-headline-sm text-primary font-bold">India National Oil &amp; Gas Data</h3>
+        </div>
+        <span class="px-2 py-0.5 rounded bg-primary-container text-surface text-[10px] font-mono font-semibold">Aug/Sept 2026</span>
+      </div>
+
+      <!-- PPAC Key Figures Grid (From Table 02 & Table 03) -->
+      <div class="grid grid-cols-2 gap-2.5 text-xs">
+        <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+          <span id="cc-ppac-c1-label" class="text-secondary uppercase text-[10px] font-semibold block">Crude Production</span>
+          <span id="cc-ppac-c1-val" class="text-xl font-bold text-primary mt-0.5 block">28.0 <span class="text-xs font-normal text-secondary">MMT/yr</span></span>
+          <span id="cc-ppac-c1-sub" class="text-[10px] text-secondary">Nomination: 21.2 MMT (ONGC/OIL)</span>
+        </div>
+
+        <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+          <span id="cc-ppac-c2-label" class="text-secondary uppercase text-[10px] font-semibold block">POL Consumption</span>
+          <span id="cc-ppac-c2-val" class="text-xl font-bold text-primary mt-0.5 block">241.6 <span class="text-xs font-normal text-secondary">MMT/yr</span></span>
+          <span id="cc-ppac-c2-sub" class="text-[10px] text-secondary">Aug'26: 18.6 MMT monthly</span>
+        </div>
+
+        <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+          <span id="cc-ppac-c3-label" class="text-secondary uppercase text-[10px] font-semibold block">Natural Gas</span>
+          <span id="cc-ppac-c3-val" class="text-xl font-bold text-primary mt-0.5 block">34,776 <span class="text-xs font-normal text-secondary">MMSCM</span></span>
+          <span id="cc-ppac-c3-sub" class="text-[10px] text-secondary">LNG Imports: 34,427 MMSCM</span>
+        </div>
+
+        <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+          <span id="cc-ppac-c4-label" class="text-secondary uppercase text-[10px] font-semibold block">Import Dependency</span>
+          <span id="cc-ppac-c4-val" class="text-xl font-bold text-primary mt-0.5 block">88.7% <span class="text-xs font-normal text-secondary">Crude</span></span>
+          <span id="cc-ppac-c4-sub" class="text-[10px] text-secondary">Oil &amp; Gas Total: 80.7%</span>
+        </div>
+      </div>
+
+      <!-- Refinery-Level Throughput Highlights (From Table 08) -->
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-between text-xs">
+          <span id="cc-ppac-refinery-title" class="font-bold text-primary uppercase text-[11px]">Regional Refineries Processing</span>
+          <span id="cc-ppac-refinery-capacity" class="text-secondary text-[11px]">Installed: 256.8 MMTPA</span>
+        </div>
+        <div id="cc-ppac-refineries-list" class="space-y-1.5 text-xs max-h-44 overflow-y-auto pr-1">
+          <!-- Dynamically populated per well/region -->
+        </div>
+      </div>
+
+      <!-- PSU Capex Quick Bar (Table 26) -->
+      <div class="p-3 rounded-xl bg-surface-container-low border border-surface-container-high/60 flex items-center justify-between text-xs">
+        <div>
+          <span class="text-secondary uppercase text-[10px] font-semibold block">PSU Upstream Capex Target</span>
+          <span id="cc-ppac-capex-text" class="text-primary font-bold">ONGC: ₹34,222 Cr • OIL: ₹6,880 Cr</span>
+        </div>
+        <button onclick="location.hash='reports'" class="text-primary font-semibold hover:underline flex items-center gap-0.5 cursor-pointer">
+          <span>Full Report</span>
+          <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: HISTORICAL PRECEDENTS & OFFSET DISCOVERY FEED -->
+  <div class="w-full flex flex-col space-y-3">
+    <div class="flex items-center justify-between px-1">
+      <div>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Analog Well Intelligence</span>
+        <h4 class="font-headline-sm text-primary font-bold">Correlated Indian Field Records</h4>
+      </div>
+      <button onclick="location.hash='historical-intelligence'" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1 cursor-pointer">
+        <span>Search All DDR Archives</span>
+        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+      <!-- Precedent 1: Digboi-1 -->
+      <div id="cc-card-dgb" onclick="switchCCWell('WELL-DGB-01')" class="p-4 rounded-[18px] bg-surface-container/60 hover:bg-surface-container transition-all cursor-pointer border border-outline-variant/20 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 uppercase">Asia First (1889)</span>
+            <span class="text-xs text-secondary font-mono">Digboi Field</span>
+          </div>
+          <h5 class="font-headline-sm text-[15px] font-bold text-primary">Digboi Discovery Well No. 1</h5>
+          <p class="text-xs text-secondary mt-1 leading-relaxed">
+            Elephant footprint seepage discovery by W.L. Lake. 662 ft TD drilled with steam cable percussion rig. Tipam sandstone series pay.
+          </p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-outline-variant/20 flex items-center justify-between text-xs font-mono text-secondary">
+          <span>API 30.2° • Wax 18.2%</span>
+          <span class="text-primary font-bold">Select Well →</span>
+        </div>
+      </div>
+
+      <!-- Precedent 2: Mumbai High H-1-1 -->
+      <div id="cc-card-mh" onclick="switchCCWell('WELL-MH-H1-1')" class="p-4 rounded-[18px] bg-surface-container/60 hover:bg-surface-container transition-all cursor-pointer border border-outline-variant/20 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-100 text-cyan-800 uppercase">Offshore Giant (1974)</span>
+            <span class="text-xs text-secondary font-mono">Arabian Sea</span>
+          </div>
+          <h5 class="font-headline-sm text-[15px] font-bold text-primary">Mumbai High Discovery Well H-1-1</h5>
+          <p class="text-xs text-secondary mt-1 leading-relaxed">
+            Sagar Samrat jackup discovery. Drilling break at 962 m into Miocene L-III limestone with cavernous mud loss and gas influx.
+          </p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-outline-variant/20 flex items-center justify-between text-xs font-mono text-secondary">
+          <span>API 39.5° • Karst Zone</span>
+          <span class="text-primary font-bold">Select Well →</span>
+        </div>
+      </div>
+
+      <!-- Precedent 3: Mangala-1 -->
+      <div id="cc-card-mgl" onclick="switchCCWell('WELL-MGL-01')" class="p-4 rounded-[18px] bg-surface-container/60 hover:bg-surface-container transition-all cursor-pointer border border-outline-variant/20 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800 uppercase">Desert Onshore (2004)</span>
+            <span class="text-xs text-secondary font-mono">Barmer Basin</span>
+          </div>
+          <h5 class="font-headline-sm text-[15px] font-bold text-primary">Mangala Discovery Well No. 1</h5>
+          <p class="text-xs text-secondary mt-1 leading-relaxed">
+            Cairn/ONGC discovery in Fatehgarh fluvial sandstone. High-permeability differential sticking cured with surfactant pill.
+          </p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-outline-variant/20 flex items-center justify-between text-xs font-mono text-secondary">
+          <span>API 28.5° • 32°C Pour Pt</span>
+          <span class="text-primary font-bold">Select Well →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  let ccMap = null;
+  let ccMarker = null;
+  let ccCircle = null;
+  let ccCircleOuter = null;
+
+  const CC_WELL_CONFIGS = {
+    'WELL-NHK-01': {
+      lat: 27.2842, lng: 95.3428, zoom: 12,
+      current_depth: 2810, progress: 78,
+      badge: 'Historical Discovery Benchmark',
+      rop: '8.4', rop_path: 'M0,24 Q25,28 45,18 T90,20 T130,8 T160,11', rop_cy: 11, rop_note: 'Nominal penetration in Barail/Tipam sandstone',
+      trq: '34.0', trq_path: 'M0,16 Q30,12 60,22 T110,14 T140,19 T160,15', trq_cy: 15, trq_note: 'Torsional drag nominal • Pre-sloughing baseline',
+      wob: '22.0', wob_path: 'M0,20 Q40,24 80,11 T120,17 T160,13', wob_cy: 13, wob_note: 'Bit mechanical load balanced on tricone',
+      ecd: '1.34', frac_limit: '1.38 SG', cushion: '+0.04 Cushion', ecd_pos: '70%', ecd_note: 'Safe drilling envelope below fracture gradient',
+      standpipe: 'Standpipe: 2,850 psi', rpm: 115,
+      ppac_title: 'Upper Assam Shelf Petroleum Data',
+      ppac_c1: { label: 'Crude Production (Assam)', val: '4.1', unit: 'MMT/yr', sub: 'OIL Duliajan: 3.4 MMT • ONGC: 0.7 MMT' },
+      ppac_c2: { label: 'POL Consumption (NE)', val: '4.8', unit: 'MMT/yr', sub: 'Regional fuel and LPG distribution' },
+      ppac_c3: { label: 'Natural Gas (Assam)', val: '3,050', unit: 'MMSCM', sub: 'OIL Gas Grid & Namrup Fertilizer' },
+      ppac_c4: { label: 'Import Dependency', val: '88.7%', unit: 'Crude', sub: 'National Crude Import: 88.7%' },
+      refinery_title: 'Assam Regional Refineries',
+      refinery_cap: 'Installed: 7.35 MMTPA',
+      refineries: [
+        { name: 'IOCL Digboi (Historic 1901)', loc: 'Upper Assam PSU • 0.65 MMTPA', thru: '0.06 MMT/mo' },
+        { name: 'Numaligarh Refinery (NRL)', loc: 'Golaghat Assam PSU • 3.00 MMTPA', thru: '0.26 MMT/mo' },
+        { name: 'IOCL Guwahati Refinery', loc: 'Noonmati Assam PSU • 1.00 MMTPA', thru: '0.09 MMT/mo' },
+        { name: 'IOCL Bongaigaon (BGR)', loc: 'Chirang Assam PSU • 2.70 MMTPA', thru: '0.23 MMT/mo' }
+      ],
+      capex: 'OIL Duliajan: ₹6,880 Cr • ONGC Assam: ₹2,450 Cr'
+    },
+    'WELL-MH-H1-1': {
+      lat: 19.4167, lng: 71.3333, zoom: 11,
+      current_depth: 1420, progress: 88,
+      badge: 'Offshore Landmark Discovery',
+      rop: '14.2', rop_path: 'M0,18 Q30,10 60,25 T110,8 T140,12 T160,7', rop_cy: 7, rop_note: 'Drilling break entering L-III carbonate pay',
+      trq: '42.5', trq_path: 'M0,14 Q30,22 65,12 T115,26 T145,18 T160,21', trq_cy: 21, trq_note: 'Vuggy limestone resistance • Torque stable',
+      wob: '18.5', wob_path: 'M0,18 Q35,12 75,22 T120,10 T160,16', wob_cy: 16, wob_note: 'Subsea drillstring weight compensated',
+      ecd: '1.22', frac_limit: '1.28 SG', cushion: '+0.06 Cushion', ecd_pos: '58%', ecd_note: 'LSND mud balanced against cavernous loss zone',
+      standpipe: 'Standpipe: 2,240 psi', rpm: 140,
+      ppac_title: 'Western Offshore Sector Data',
+      ppac_c1: { label: 'Crude Production (Offshore)', val: '14.8', unit: 'MMT/yr', sub: 'Mumbai High: 9.8 MMT • Neelam/Heera: 5.0 MMT' },
+      ppac_c2: { label: 'POL Consumption (West)', val: '24.2', unit: 'MMT/yr', sub: 'Maharashtra/Goa/Gujarat industrial belt' },
+      ppac_c3: { label: 'Offshore Associated Gas', val: '17,200', unit: 'MMSCM', sub: 'Uran & Hazira trunk processing' },
+      ppac_c4: { label: 'Domestic Share', val: '52.8%', unit: 'Offshore', sub: 'Produces 52.8% of Indian domestic crude' },
+      refinery_title: 'Western Coastal Refineries',
+      refinery_cap: 'Installed: 110.2 MMTPA',
+      refineries: [
+        { name: 'BPCL Mumbai (Mahul)', loc: 'Maharashtra PSU • 12.00 MMTPA', thru: '1.05 MMT/mo' },
+        { name: 'HPCL Mumbai (Mahul)', loc: 'Maharashtra PSU • 9.50 MMTPA', thru: '0.82 MMT/mo' },
+        { name: 'RIL Jamnagar (DTA + SEZ)', loc: 'Gujarat Private • 68.20 MMTPA', thru: '5.82 MMT/mo' },
+        { name: 'Nayara Energy (Vadinar)', loc: 'Gujarat Private • 20.00 MMTPA', thru: '1.68 MMT/mo' }
+      ],
+      capex: 'ONGC Western Offshore: ₹21,500 Cr • Subsea EOR: ₹4,120 Cr'
+    },
+    'WELL-DGB-01': {
+      lat: 27.3820, lng: 95.6315, zoom: 13,
+      current_depth: 202, progress: 100,
+      badge: 'Heritage Discovery Well (1889)',
+      rop: '0.6', rop_path: 'M0,28 Q40,26 80,24 T120,22 T160,20', rop_cy: 20, rop_note: 'Steam cable-tool percussion stroke rate',
+      trq: '12.0', trq_path: 'M0,20 Q40,20 80,18 T120,19 T160,18', trq_cy: 18, trq_note: 'Walking-beam cable tension nominal',
+      wob: '8.0', wob_path: 'M0,22 Q40,20 80,22 T120,18 T160,19', wob_cy: 19, wob_note: 'Solid iron percussion tool weight',
+      ecd: '1.08', frac_limit: '1.15 SG', cushion: '+0.07 Cushion', ecd_pos: '45%', ecd_note: 'Hydrostatic column in shallow Tipam sands',
+      standpipe: 'Pressure: 450 psi', rpm: 45,
+      ppac_title: 'Digboi Field Heritage Statistics',
+      ppac_c1: { label: 'Field Cumulative Recovery', val: '23.8', unit: 'MMT', sub: '1,000+ historical wells drilled in field' },
+      ppac_c2: { label: 'Digboi Current Prod', val: '0.03', unit: 'MMT/yr', sub: 'Preserved stripper production & heritage' },
+      ppac_c3: { label: 'Tipam Dissolved Gas', val: '120', unit: 'MMSCM', sub: 'Low GOR waxy aromatic sweet crude' },
+      ppac_c4: { label: 'Historical Significance', val: '1889', unit: 'Asia #1', sub: "World's oldest continuously operating refinery" },
+      refinery_title: 'Upper Assam Heritage Refining',
+      refinery_cap: 'Installed: 0.65 MMTPA',
+      refineries: [
+        { name: 'IOCL Digboi Refinery', loc: 'Est. 1901 PSU • 0.65 MMTPA', thru: '0.06 MMT/mo' },
+        { name: 'Numaligarh Refinery (NRL)', loc: 'Assam PSU • 3.00 MMTPA', thru: '0.26 MMT/mo' },
+        { name: 'IOCL Guwahati Refinery', loc: 'Noonmati PSU • 1.00 MMTPA', thru: '0.09 MMT/mo' },
+        { name: 'IOCL Bongaigaon (BGR)', loc: 'Assam PSU • 2.70 MMTPA', thru: '0.23 MMT/mo' }
+      ],
+      capex: 'IOCL Heritage Preservation & Digboi EOR: ₹180 Cr'
+    },
+    'WELL-MGL-01': {
+      lat: 25.8642, lng: 71.2618, zoom: 12,
+      current_depth: 1180, progress: 94,
+      badge: 'Thar Desert Giant Field',
+      rop: '22.4', rop_path: 'M0,26 Q25,14 55,20 T95,8 T135,12 T160,6', rop_cy: 6, rop_note: 'High ROP in highly permeable Fatehgarh sandstone',
+      trq: '28.6', trq_path: 'M0,18 Q35,24 70,14 T115,20 T160,15', trq_cy: 15, trq_note: 'KCl polymer mud suppressing clay swelling',
+      wob: '26.0', wob_path: 'M0,22 Q30,16 65,24 T110,12 T160,10', wob_cy: 10, wob_note: 'Optimal load for desert sandstone drilling',
+      ecd: '1.18', frac_limit: '1.25 SG', cushion: '+0.07 Cushion', ecd_pos: '52%', ecd_note: 'Thin filter cake to prevent differential sticking',
+      standpipe: 'Standpipe: 1,950 psi', rpm: 130,
+      ppac_title: 'Rajasthan Barmer Basin Sector Data',
+      ppac_c1: { label: 'Crude Production (Barmer)', val: '4.8', unit: 'MMT/yr', sub: 'RJ-ON-90/1 Mangala, Bhagyam, Aishwariya' },
+      ppac_c2: { label: 'POL Consumption (Raj)', val: '12.4', unit: 'MMT/yr', sub: 'State agriculture and transport fuel demand' },
+      ppac_c3: { label: 'Raageshwari Deep Gas', val: '680', unit: 'MMSCM', sub: 'Barmer-Salaya heated crude pipeline grid' },
+      ppac_c4: { label: 'Onshore Share', val: '24.5%', unit: 'India', sub: 'Largest onshore discovery in 25 years' },
+      refinery_title: 'Northern & Western Supply Refineries',
+      refinery_cap: 'Installed: 36.7 MMTPA',
+      refineries: [
+        { name: 'HPCL Rajasthan Refinery (HRRL)', loc: 'Pachpadra Barmer • 9.00 MMTPA (Commissioning)', thru: 'Under Hookup' },
+        { name: 'IOCL Koyali (Gujarat)', loc: 'Vadodara PSU • 13.70 MMTPA', thru: '1.18 MMT/mo' },
+        { name: 'IOCL Mathura Refinery', loc: 'UP PSU • 8.00 MMTPA', thru: '0.72 MMT/mo' },
+        { name: 'IOCL Panipat Refinery', loc: 'Haryana PSU • 15.00 MMTPA', thru: '1.32 MMT/mo' }
+      ],
+      capex: 'Vedanta/Cairn RJ-ON: ₹3,600 Cr • HPCL HRRL Barmer: ₹72,937 Cr'
+    },
+    'WELL-ANK-01': {
+      lat: 21.6285, lng: 73.0125, zoom: 12,
+      current_depth: 1200, progress: 100,
+      badge: "Historic Onshore 'Vasudhara'",
+      rop: '11.8', rop_path: 'M0,20 Q30,14 65,22 T110,16 T140,10 T160,14', rop_cy: 14, rop_note: 'Deltaic sandstone multi-layer penetration',
+      trq: '24.5', trq_path: 'M0,15 Q35,18 75,12 T120,24 T160,16', trq_cy: 16, trq_note: 'Tarapur shale stabilized with chrome lignite',
+      wob: '19.0', wob_path: 'M0,19 Q40,15 80,22 T120,14 T160,18', wob_cy: 18, wob_note: 'Russian steel tricone steady rotary weight',
+      ecd: '1.24', frac_limit: '1.30 SG', cushion: '+0.06 Cushion', ecd_pos: '58%', ecd_note: 'Associated gas cap pressure balanced',
+      standpipe: 'Standpipe: 1,820 psi', rpm: 110,
+      ppac_title: 'Cambay Basin Gujarat Sector Data',
+      ppac_c1: { label: 'Crude Production (Cambay)', val: '1.6', unit: 'MMT/yr', sub: 'ONGC Ankleshwar, Gandhar, Mehsana' },
+      ppac_c2: { label: 'POL Consumption (Guj)', val: '22.8', unit: 'MMT/yr', sub: 'Petrochemical corridor & LNG hubs' },
+      ppac_c3: { label: 'Cambay Natural Gas', val: '1,420', unit: 'MMSCM', sub: 'Hazira gas network & industrial CNG/PNG' },
+      ppac_c4: { label: 'Field Cumulative Recovery', val: '62.0', unit: 'MMT', sub: 'Historic fountain of Indian onshore crude' },
+      refinery_title: 'Gujarat Industrial Refineries',
+      refinery_cap: 'Installed: 101.9 MMTPA',
+      refineries: [
+        { name: 'IOCL Koyali (Vadodara)', loc: 'Gujarat PSU • 13.70 MMTPA', thru: '1.18 MMT/mo' },
+        { name: 'RIL Jamnagar (DTA + SEZ)', loc: 'Gujarat Private • 68.20 MMTPA', thru: '5.82 MMT/mo' },
+        { name: 'Nayara Energy (Vadinar)', loc: 'Gujarat Private • 20.00 MMTPA', thru: '1.68 MMT/mo' },
+        { name: 'ONGC Hazira Processing Plant', loc: 'Surat Coastal • 48 MMSCMD', thru: '1.45 MMT/mo Eq.' }
+      ],
+      capex: 'ONGC Western Onshore: ₹4,850 Cr • Ankleshwar CFU: ₹420 Cr'
+    },
+    'WELL-KGD6-D1': {
+      lat: 16.5820, lng: 82.5180, zoom: 11,
+      current_depth: 2940, progress: 95,
+      badge: 'Deepwater Gas Giant (1,024m WD)',
+      rop: '18.5', rop_path: 'M0,22 Q30,12 60,18 T100,6 T135,14 T160,8', rop_cy: 8, rop_note: 'High deliverability turbiditic channel sandstone',
+      trq: '48.0', trq_path: 'M0,12 Q30,26 65,14 T110,28 T140,16 T160,20', trq_cy: 20, trq_note: 'Synthetic oil-based mud with hydrate inhibitors',
+      wob: '15.0', wob_path: 'M0,16 Q40,10 75,20 T120,12 T160,14', wob_cy: 14, wob_note: 'DP-2 subsea heave-compensated bit weight',
+      ecd: '1.42', frac_limit: '1.46 SG', cushion: '+0.04 Cushion', ecd_pos: '78%', ecd_note: 'Narrow pore-frac window in bathyal clays',
+      standpipe: 'Standpipe: 3,400 psi', rpm: 160,
+      ppac_title: 'Krishna-Godavari Deepwater Gas Data',
+      ppac_c1: { label: 'Deepwater Gas Prod', val: '10,800', unit: 'MMSCM', sub: 'KG-D6 R-Cluster + ONGC 98/2 Subsea' },
+      ppac_c2: { label: 'POL Consumption (AP/TS)', val: '14.6', unit: 'MMT/yr', sub: 'East Coast power and fertilizer grid' },
+      ppac_c3: { label: 'Subsea Condensate', val: '0.4', unit: 'MMT/yr', sub: 'Ultra-pure dry gas with zero H2S' },
+      ppac_c4: { label: 'LNG Import Offset', val: '31.2%', unit: 'Share', sub: 'Supplies ~15% of national gas demand' },
+      refinery_title: 'East Coast Refineries & Terminals',
+      refinery_cap: 'Installed: 40.5 MMTPA',
+      refineries: [
+        { name: 'HPCL Visakhapatnam', loc: 'Andhra Pradesh PSU • 15.00 MMTPA', thru: '1.28 MMT/mo' },
+        { name: 'CPCL Manali (Chennai)', loc: 'Tamil Nadu PSU • 10.50 MMTPA', thru: '0.90 MMT/mo' },
+        { name: 'IOCL Paradip Refinery', loc: 'Odisha PSU • 15.00 MMTPA', thru: '1.30 MMT/mo' },
+        { name: 'GAIL Kakinada Gas Terminal', loc: 'Andhra Offshore Hub • 32 MMSCMD', thru: '0.95 MMT/mo Eq.' }
+      ],
+      capex: 'RIL/BP Subsea Cluster: ₹35,000 Cr • ONGC KG-DWN-98/2: ₹34,012 Cr'
+    },
+    'WELL-VOLVE-F12': {
+      lat: 58.4419, lng: 1.8864, zoom: 11,
+      current_depth: 3480, progress: 91,
+      badge: 'Open Industry Benchmark',
+      rop: '16.4', rop_path: 'M0,18 Q30,8 60,16 T105,10 T135,18 T160,9', rop_cy: 9, rop_note: 'Deviated RSS drilling in Hugin sandstone',
+      trq: '38.2', trq_path: 'M0,16 Q35,14 70,24 T115,16 T160,19', trq_cy: 19, trq_note: 'High-angle torque modeling benchmark',
+      wob: '24.5', wob_path: 'M0,20 Q35,14 75,22 T115,10 T160,12', wob_cy: 12, wob_note: 'Real-time MWD/LWD load calibration',
+      ecd: '1.44', frac_limit: '1.50 SG', cushion: '+0.06 Cushion', ecd_pos: '68%', ecd_note: 'Carbo-Sea SOBM suppressing Shetland chalk loss',
+      standpipe: 'Standpipe: 3,150 psi', rpm: 150,
+      ppac_title: 'Equinor Open Benchmark Calibration',
+      ppac_c1: { label: 'Benchmark Cumulative', val: '9.8', unit: 'MMT', sub: 'Equinor Volve open-source ML training dataset' },
+      ppac_c2: { label: 'Peak Flow Rate', val: '25,000', unit: 'bopd', sub: 'Subsea tieback to Mærsk Inspirer platform' },
+      ppac_c3: { label: 'Associated Benchmark Gas', val: '420', unit: 'MMSCM', sub: 'DDR #42 micro-fracture loss benchmark' },
+      ppac_c4: { label: 'Global Standard', val: '100%', unit: 'Open Data', sub: 'Reference standard for subsurface AI models' },
+      refinery_title: 'Benchmark Refining Comparators',
+      refinery_cap: 'North Sea Reference Models',
+      refineries: [
+        { name: 'Equinor Mongstad Refinery', loc: 'Norway Benchmark • 12.00 MMTPA', thru: '1.02 MMT/mo' },
+        { name: 'Shell Pernis (Rotterdam)', loc: 'Netherlands • 20.00 MMTPA', thru: '1.70 MMT/mo' },
+        { name: 'TotalEnergies Antwerp', loc: 'Belgium • 17.00 MMTPA', thru: '1.45 MMT/mo' },
+        { name: 'IOCL Panipat / RIL Reference', loc: 'Indian Benchmark Calibration', thru: 'Ref. Match' }
+      ],
+      capex: 'International Petroleum Benchmark Dataset Standard'
+    }
+  };
+
+  let stratigraphyOpen = false;
+  let stratigraphyCompact = false;
+
+  window.toggleCCStratigraphy = function(forceState) {
+    const panel = document.getElementById('cc-stratigraphy-panel');
+    const chevron = document.getElementById('cc-strat-chevron');
+    if (!panel) return;
+    
+    if (typeof forceState === 'boolean') {
+      stratigraphyOpen = forceState;
+    } else {
+      stratigraphyOpen = !stratigraphyOpen;
+    }
+
+    if (stratigraphyOpen) {
+      panel.classList.remove('hidden', 'scale-95', 'opacity-0', 'pointer-events-none');
+      panel.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+      if (chevron) chevron.textContent = 'expand_more';
+    } else {
+      panel.classList.add('hidden', 'scale-95', 'opacity-0', 'pointer-events-none');
+      panel.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+      if (chevron) chevron.textContent = 'expand_less';
+    }
+  };
+
+  window.toggleCCStratigraphyCompact = function() {
+    const content = document.getElementById('cc-stratigraphy-content');
+    const btn = document.getElementById('btn-cc-strat-size');
+    if (!content) return;
+    stratigraphyCompact = !stratigraphyCompact;
+    if (stratigraphyCompact) {
+      content.classList.add('hidden');
+      if (btn) btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">unfold_more</span>';
+    } else {
+      content.classList.remove('hidden');
+      if (btn) btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">unfold_less</span>';
+    }
+  };
+
+  function initCCMap(wellId) {
+    const mapEl = document.getElementById('cc-satellite-map');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    if (ccMap) {
+      ccMap.remove();
+      ccMap = null;
+    }
+
+    const cfg = CC_WELL_CONFIGS[wellId] || CC_WELL_CONFIGS['WELL-NHK-01'];
+
+    ccMap = L.map('cc-satellite-map', {
+      center: [cfg.lat, cfg.lng],
+      zoom: cfg.zoom || 12,
+      zoomControl: false,
+      attributionControl: false,
+      dragging: true,
+      scrollWheelZoom: true
+    });
+
+    // Free Live Esri World Imagery Satellite Tiles
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Esri Satellite'
+    }).addTo(ccMap);
+
+    // Place Labels
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      opacity: 0.75
+    }).addTo(ccMap);
+
+    // Zoom control at top right of the map
+    L.control.zoom({ position: 'topright' }).addTo(ccMap);
+
+    // Range Radar Circles
+    ccCircle = L.circle([cfg.lat, cfg.lng], {
+      radius: 5000,
+      color: '#38bdf8',
+      weight: 1.5,
+      dashArray: '4, 4',
+      fillColor: '#0284c7',
+      fillOpacity: 0.1
+    }).addTo(ccMap);
+
+    ccCircleOuter = L.circle([cfg.lat, cfg.lng], {
+      radius: 10000,
+      color: '#CBD8E2',
+      weight: 1,
+      dashArray: '3, 4',
+      fill: false
+    }).addTo(ccMap);
+
+    // Center Sentry Marker with beacon
+    const html = `
+      <div class="relative flex items-center justify-center -translate-x-1/2 -translate-y-1/2">
+        <div class="beacon-ring absolute w-12 h-12 rounded-full border-2 border-cyan-400 opacity-75 pointer-events-none"></div>
+        <div class="w-4 h-4 rounded-full bg-cyan-400 border-2 border-white shadow-xl"></div>
+      </div>
+    `;
+    const icon = L.divIcon({ className: 'cc-well-icon', html: html, iconSize: [40, 40], iconAnchor: [20, 20] });
+    ccMarker = L.marker([cfg.lat, cfg.lng], { icon: icon }).addTo(ccMap);
+  }
+
+  window.switchCCWell = function(wellId) {
+    if (window.NWISDataStore) {
+      window.NWISDataStore.setActiveWell(wellId);
+    }
+    renderCCWellData(wellId);
+
+    const cfg = CC_WELL_CONFIGS[wellId] || CC_WELL_CONFIGS['WELL-NHK-01'];
+    if (ccMap && cfg) {
+      ccMap.flyTo([cfg.lat, cfg.lng], cfg.zoom || 12, { duration: 1.2 });
+      if (ccMarker) ccMarker.setLatLng([cfg.lat, cfg.lng]);
+      if (ccCircle) ccCircle.setLatLng([cfg.lat, cfg.lng]);
+      if (ccCircleOuter) ccCircleOuter.setLatLng([cfg.lat, cfg.lng]);
+    } else if (!ccMap) {
+      initCCMap(wellId);
+    }
+  };
+
+  function renderCCWellData(wellId) {
+    const cfg = CC_WELL_CONFIGS[wellId] || CC_WELL_CONFIGS['WELL-NHK-01'];
+    let well = null;
+    if (window.NWISDataStore) {
+      well = window.NWISDataStore.getWellById(wellId);
+    }
+
+    // 1. Dropdown Select & Top Banner
+    const selectEl = document.getElementById('cc-well-select');
+    const badgeEl = document.getElementById('cc-well-badge');
+    const depthEl = document.getElementById('cc-current-depth');
+    const formationEl = document.getElementById('cc-formation');
+    const progressPctEl = document.getElementById('cc-progress-pct');
+    const progressBarEl = document.getElementById('cc-progress-bar');
+
+    if (selectEl) selectEl.value = wellId;
+    if (badgeEl) badgeEl.textContent = cfg.badge || (well ? well.status.split('/')[0] : 'Active Well');
+    if (depthEl) depthEl.innerHTML = `${(cfg.current_depth || (well ? well.total_depth_md_m : 2810)).toLocaleString()} <span class="font-body-sm text-body-sm text-secondary font-normal">m MD</span>`;
+    if (formationEl) formationEl.textContent = well ? well.target_formation : 'Primary Formation';
+    if (progressPctEl) progressPctEl.textContent = `${cfg.progress}%`;
+    if (progressBarEl) progressBarEl.style.width = `${cfg.progress}%`;
+
+    // 2. Subsurface Telemetry Channels (4 Cards)
+    const ropEl = document.getElementById('cc-rop');
+    const ropPath = document.getElementById('cc-rop-path');
+    const ropArea = document.getElementById('cc-rop-area');
+    const ropDot = document.getElementById('cc-rop-dot');
+    const ropNote = document.getElementById('cc-rop-note');
+    if (ropEl) ropEl.innerHTML = `${cfg.rop} <span class="font-body-sm text-body-sm font-normal text-secondary">m/hr</span>`;
+    if (ropPath) ropPath.setAttribute('d', cfg.rop_path);
+    if (ropArea) ropArea.setAttribute('d', `${cfg.rop_path} L160,32 L0,32 Z`);
+    if (ropDot) ropDot.setAttribute('cy', cfg.rop_cy);
+    if (ropNote) ropNote.textContent = cfg.rop_note;
+
+    const trqEl = document.getElementById('cc-trq');
+    const trqPath = document.getElementById('cc-trq-path');
+    const trqArea = document.getElementById('cc-trq-area');
+    const trqDot = document.getElementById('cc-trq-dot');
+    const trqNote = document.getElementById('cc-trq-note');
+    if (trqEl) trqEl.innerHTML = `${cfg.trq} <span class="font-body-sm text-body-sm font-normal text-secondary">kN·m</span>`;
+    if (trqPath) trqPath.setAttribute('d', cfg.trq_path);
+    if (trqArea) trqArea.setAttribute('d', `${cfg.trq_path} L160,32 L0,32 Z`);
+    if (trqDot) trqDot.setAttribute('cy', cfg.trq_cy);
+    if (trqNote) trqNote.textContent = cfg.trq_note;
+
+    const wobEl = document.getElementById('cc-wob');
+    const wobPath = document.getElementById('cc-wob-path');
+    const wobArea = document.getElementById('cc-wob-area');
+    const wobDot = document.getElementById('cc-wob-dot');
+    const wobNote = document.getElementById('cc-wob-note');
+    if (wobEl) wobEl.innerHTML = `${cfg.wob} <span class="font-body-sm text-body-sm font-normal text-secondary">kN</span>`;
+    if (wobPath) wobPath.setAttribute('d', cfg.wob_path);
+    if (wobArea) wobArea.setAttribute('d', `${cfg.wob_path} L160,32 L0,32 Z`);
+    if (wobDot) wobDot.setAttribute('cy', cfg.wob_cy);
+    if (wobNote) wobNote.textContent = cfg.wob_note;
+
+    const ecdEl = document.getElementById('cc-ecd');
+    const fracLimitEl = document.getElementById('cc-frac-limit');
+    const cushionValEl = document.getElementById('cc-cushion-val');
+    const ecdMarker = document.getElementById('cc-ecd-marker');
+    const ecdNote = document.getElementById('cc-ecd-note');
+    if (ecdEl) ecdEl.innerHTML = `${cfg.ecd} <span class="font-body-sm text-body-sm font-normal text-secondary">SG</span>`;
+    if (fracLimitEl) fracLimitEl.textContent = `Frac Limit (${cfg.frac_limit})`;
+    if (cushionValEl) cushionValEl.textContent = cfg.cushion;
+    if (ecdMarker) ecdMarker.style.left = cfg.ecd_pos;
+    if (ecdNote) ecdNote.textContent = cfg.ecd_note;
+
+    // 3. Map Header & Rig Details
+    const basinEl = document.getElementById('cc-map-basin');
+    const operatorEl = document.getElementById('cc-map-operator');
+    const rigStatusEl = document.getElementById('cc-rig-status');
+    const standpipeEl = document.getElementById('cc-standpipe');
+
+    if (well) {
+      if (basinEl) basinEl.textContent = `${well.basin} • ${well.field}`;
+      if (operatorEl) operatorEl.textContent = `${well.operator.split('/')[0]} Asset`;
+      if (rigStatusEl) rigStatusEl.textContent = `${well.rig_name}: Spudded ${well.spud_date} (${well.rig_type || 'Active'})`;
+    }
+    if (standpipeEl) standpipeEl.textContent = cfg.standpipe;
+
+    // 4. Stratigraphy Column Panel & Pills
+    const stratHeaderDepth = document.getElementById('cc-strat-header-depth');
+    const stratPill = document.getElementById('cc-strat-pill');
+    const stratContent = document.getElementById('cc-stratigraphy-content');
+
+    const bitDepthStr = `Bit @ ${(cfg.current_depth || 2810).toLocaleString()}m`;
+    if (stratHeaderDepth) stratHeaderDepth.textContent = bitDepthStr;
+    if (stratPill) stratPill.textContent = bitDepthStr;
+
+    if (stratContent && well && well.stratigraphy && Array.isArray(well.stratigraphy)) {
+      const curD = cfg.current_depth || 2810;
+      stratContent.innerHTML = well.stratigraphy.map(layer => {
+        const isDrilled = curD >= layer.depth_end_m;
+        const isActive = curD >= layer.depth_start_m && curD < layer.depth_end_m;
+        const isNext = curD < layer.depth_start_m;
+
+        if (isActive) {
+          return `
+            <div class="p-1.5 rounded bg-cyan-950/80 border border-cyan-400/50 flex items-center justify-between shadow-xs">
+              <div>
+                <span class="text-cyan-200 font-bold block text-[10px]">${layer.depth_start_m} – ${layer.depth_end_m} m: ${layer.formation}</span>
+                <span class="text-[9px] text-cyan-300">${layer.lithology} • ${layer.hazard}</span>
+              </div>
+              <span class="text-cyan-300 text-[9px] font-bold animate-pulse shrink-0 ml-1">ACTIVE</span>
+            </div>
+          `;
+        } else if (isDrilled) {
+          return `
+            <div class="p-1.5 rounded bg-white/5 border border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-white font-bold block text-[10px]">${layer.depth_start_m} – ${layer.depth_end_m} m: ${layer.formation}</span>
+                <span class="text-[9px] text-reflection">${layer.lithology}</span>
+              </div>
+              <span class="text-emerald-400 text-[9px] font-bold shrink-0 ml-1">DRILLED</span>
+            </div>
+          `;
+        } else {
+          return `
+            <div class="p-1.5 rounded bg-white/5 border border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-white font-bold block text-[10px]">${layer.depth_start_m} – ${layer.depth_end_m} m: ${layer.formation}</span>
+                <span class="text-[9px] text-reflection">${layer.hazard || layer.lithology}</span>
+              </div>
+              <span class="text-amber-300 text-[9px] font-bold shrink-0 ml-1">TARGET</span>
+            </div>
+          `;
+        }
+      }).join('');
+    }
+
+    // 5. PPAC Petroleum Ready Reckoner Panel
+    const ppacTitle = document.getElementById('cc-ppac-title');
+    const ppacC1Label = document.getElementById('cc-ppac-c1-label');
+    const ppacC1Val = document.getElementById('cc-ppac-c1-val');
+    const ppacC1Sub = document.getElementById('cc-ppac-c1-sub');
+
+    const ppacC2Label = document.getElementById('cc-ppac-c2-label');
+    const ppacC2Val = document.getElementById('cc-ppac-c2-val');
+    const ppacC2Sub = document.getElementById('cc-ppac-c2-sub');
+
+    const ppacC3Label = document.getElementById('cc-ppac-c3-label');
+    const ppacC3Val = document.getElementById('cc-ppac-c3-val');
+    const ppacC3Sub = document.getElementById('cc-ppac-c3-sub');
+
+    const ppacC4Label = document.getElementById('cc-ppac-c4-label');
+    const ppacC4Val = document.getElementById('cc-ppac-c4-val');
+    const ppacC4Sub = document.getElementById('cc-ppac-c4-sub');
+
+    const refTitle = document.getElementById('cc-ppac-refinery-title');
+    const refCap = document.getElementById('cc-ppac-refinery-capacity');
+    const refList = document.getElementById('cc-ppac-refineries-list');
+    const capexText = document.getElementById('cc-ppac-capex-text');
+
+    if (ppacTitle) ppacTitle.textContent = cfg.ppac_title;
+
+    if (ppacC1Label) ppacC1Label.textContent = cfg.ppac_c1.label;
+    if (ppacC1Val) ppacC1Val.innerHTML = `${cfg.ppac_c1.val} <span class="text-xs font-normal text-secondary">${cfg.ppac_c1.unit}</span>`;
+    if (ppacC1Sub) ppacC1Sub.textContent = cfg.ppac_c1.sub;
+
+    if (ppacC2Label) ppacC2Label.textContent = cfg.ppac_c2.label;
+    if (ppacC2Val) ppacC2Val.innerHTML = `${cfg.ppac_c2.val} <span class="text-xs font-normal text-secondary">${cfg.ppac_c2.unit}</span>`;
+    if (ppacC2Sub) ppacC2Sub.textContent = cfg.ppac_c2.sub;
+
+    if (ppacC3Label) ppacC3Label.textContent = cfg.ppac_c3.label;
+    if (ppacC3Val) ppacC3Val.innerHTML = `${cfg.ppac_c3.val} <span class="text-xs font-normal text-secondary">${cfg.ppac_c3.unit}</span>`;
+    if (ppacC3Sub) ppacC3Sub.textContent = cfg.ppac_c3.sub;
+
+    if (ppacC4Label) ppacC4Label.textContent = cfg.ppac_c4.label;
+    if (ppacC4Val) ppacC4Val.innerHTML = `${cfg.ppac_c4.val} <span class="text-xs font-normal text-secondary">${cfg.ppac_c4.unit}</span>`;
+    if (ppacC4Sub) ppacC4Sub.textContent = cfg.ppac_c4.sub;
+
+    if (refTitle) refTitle.textContent = cfg.refinery_title;
+    if (refCap) refCap.textContent = cfg.refinery_cap;
+
+    if (refList && cfg.refineries) {
+      refList.innerHTML = cfg.refineries.map(ref => `
+        <div class="p-2 rounded-lg bg-surface-container-low flex items-center justify-between">
+          <div>
+            <span class="font-semibold text-primary block">${ref.name}</span>
+            <span class="text-[10px] text-secondary">${ref.loc}</span>
+          </div>
+          <span class="font-mono font-bold text-primary">${ref.thru}</span>
+        </div>
+      `).join('');
+    }
+
+    if (capexText) capexText.textContent = cfg.capex;
+
+    // 6. Highlight active precedent card
+    const dgbCard = document.getElementById('cc-card-dgb');
+    const mhCard = document.getElementById('cc-card-mh');
+    const mglCard = document.getElementById('cc-card-mgl');
+    if (dgbCard) dgbCard.classList.toggle('ring-2', wellId === 'WELL-DGB-01');
+    if (dgbCard) dgbCard.classList.toggle('ring-primary', wellId === 'WELL-DGB-01');
+    if (mhCard) mhCard.classList.toggle('ring-2', wellId === 'WELL-MH-H1-1');
+    if (mhCard) mhCard.classList.toggle('ring-primary', wellId === 'WELL-MH-H1-1');
+    if (mglCard) mglCard.classList.toggle('ring-2', wellId === 'WELL-MGL-01');
+    if (mglCard) mglCard.classList.toggle('ring-primary', wellId === 'WELL-MGL-01');
+  }
+
+  // Listen for global well changes from other modules
+  window.addEventListener('nwis:activeWellChanged', e => {
+    if (e.detail && e.detail.id) {
+      renderCCWellData(e.detail.id);
+      const cfg = CC_WELL_CONFIGS[e.detail.id];
+      if (ccMap && cfg) {
+        ccMap.flyTo([cfg.lat, cfg.lng], cfg.zoom || 12, { duration: 1.2 });
+        if (ccMarker) ccMarker.setLatLng([cfg.lat, cfg.lng]);
+        if (ccCircle) ccCircle.setLatLng([cfg.lat, cfg.lng]);
+        if (ccCircleOuter) ccCircleOuter.setLatLng([cfg.lat, cfg.lng]);
+      }
+    }
+  });
+
+  // Initial load
+  setTimeout(() => {
+    let activeId = 'WELL-NHK-01';
+    if (window.NWISDataStore) {
+      const active = window.NWISDataStore.getActiveWell();
+      if (active) activeId = active.id;
+    }
+    renderCCWellData(activeId);
+    initCCMap(activeId);
+  }, 100);
+})();
+</script>

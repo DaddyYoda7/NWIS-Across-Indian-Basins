@@ -1,0 +1,841 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#26323a","outline-variant":"#c3c7cc","tertiary":"#11232c","primary-fixed-dim":"#b1cade","surface":"#f5faff","surface-tint":"#4a6173","secondary":"#4a6170","surface-bright":"#f5faff","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-surface":"#111d24","inverse-primary":"#b1cade","on-tertiary":"#ffffff","on-primary-container":"#89a1b4","on-secondary-fixed-variant":"#324a58","on-secondary-fixed":"#031e2b","surface-variant":"#d7e4ee","surface-container-highest":"#d7e4ee","on-error-container":"#93000a","tertiary-fixed-dim":"#b7c9d6","surface-dim":"#cfdce6","on-primary-fixed-variant":"#32495a","error":"#ba1a1a","on-surface-variant":"#43474c","error-container":"#ffdad6","on-primary-fixed":"#031e2d","surface-container-low":"#e9f5ff","secondary-fixed":"#cde6f8","on-secondary-container":"#4e6675","on-primary":"#ffffff","primary-container":"#203848","primary":"#082332","on-tertiary-fixed-variant":"#384953","secondary-fixed-dim":"#b1cadb","surface-container-high":"#ddeaf4","surface-container":"#e3f0fa","on-tertiary-fixed":"#0c1e27","tertiary-fixed":"#d3e5f2","background":"#f5faff","tertiary-container":"#273842","inverse-on-surface":"#e5f3fd","secondary-container":"#cae3f5","outline":"#73787c","primary-fixed":"#cde6fa","on-tertiary-container":"#8fa1ad","on-background":"#111d24","on-error":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-xs":"0.25rem","space-xl":"2rem","space-sm":"0.5rem","margin-mobile":"0.75rem","space-lg":"1.25rem","gutter-sm":"0.5rem",margin:"1.5rem","gutter-lg":"1.5rem","space-md":"0.75rem",gutter:"1rem"},fontFamily:{"label-md":["IBM Plex Sans"],"headline-sm":["IBM Plex Sans"],"headline-lg":["IBM Plex Sans"],"headline-lg-mobile":["IBM Plex Sans"],"headline-md":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],display:["IBM Plex Sans"],"display-mobile":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"label-sm":["IBM Plex Sans"],"label-lg":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"]},fontSize:{"label-md":["11px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg-mobile":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],display:["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"display-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-md":["13px",{lineHeight:"18px",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.08em",fontWeight:"700"}],"label-lg":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"22px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-16 bg-surface-container/60 backdrop-blur-xl z-50 flex flex-col items-center py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center justify-center w-10 h-10 mb-space-md rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm select-none" title="NWIS Telemetry Core">N</div><nav class="flex-1 flex flex-col items-center gap-space-xs w-full px-space-xs" data-active-classes="bg-primary-container text-on-primary rounded-lg"><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="nwis" href="#" title="NWIS Overview"><span class="material-symbols-outlined">hub</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="command-center" href="#" title="Command Center"><span class="material-symbols-outlined">monitoring</span></a><a aria-current="page" class="flex items-center justify-center w-10 h-10 transition-colors bg-primary-container text-on-primary rounded-lg" data-path="well-explorer" href="#" title="Well Explorer"><span class="material-symbols-outlined">explore</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="well-intelligence" href="#" title="Well Intelligence"><span class="material-symbols-outlined">insights</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="historical-intelligence" href="#" title="Historical Intelligence"><span class="material-symbols-outlined">history</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-monitor" href="#" title="Risk Monitor"><span class="material-symbols-outlined">warning</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-copilot" href="#" title="AI Copilot"><span class="material-symbols-outlined">psychology</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="scenario-lab" href="#" title="Scenario Lab"><span class="material-symbols-outlined">science</span></a><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#" title="Reports"><span class="material-symbols-outlined">description</span></a></nav><div class="mt-auto flex flex-col items-center gap-space-xs w-full px-space-xs"><a class="flex items-center justify-center w-10 h-10 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#" title="Settings"><span class="material-symbols-outlined">settings</span></a></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-16 bg-surface/75 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container/60 px-space-sm py-space-xs rounded"><span class="material-symbols-outlined text-secondary text-sm">arrow_drop_down_circle</span><span class="font-label-md text-label-md text-primary font-bold">W-204</span><span class="font-label-sm text-label-sm uppercase bg-primary-container text-on-primary px-space-xs py-0.5 rounded">DRILLING</span><span class="font-body-sm text-body-sm text-on-surface-variant">2,810 m</span><span class="font-label-sm text-label-sm text-secondary uppercase">Kiparissia SS</span></div></div><div class="flex-1 max-w-md mx-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-secondary text-sm">search</span><input class="w-full pl-8 pr-space-sm py-1 bg-surface-container-lowest/80 rounded font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:bg-surface-container-lowest" placeholder="Search telemetry, formations, offset wells (Ctrl+K)..." type="text"></div></div><div class="flex items-center gap-space-md"><div class="relative cursor-pointer"><span class="material-symbols-outlined text-secondary hover:text-on-surface transition-colors">notifications</span><span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface leading-tight">David Chen</span><span class="font-label-sm text-label-sm text-secondary uppercase leading-none">Lead Drilling Eng.</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X3CRwH95kVOFB0yV68NZiC-yg2evzjnnQBgaykmBrKTNdtihhwXbnGRVCLGL2Fapd9CKOX6RTZDpUxXWh_p4iw-ND6hhGOMk7XeUYNoKQLSuSR_joEJd9GY8TksyrXwxW4XlDx0gdxdp9jkULKpG7ut8sdYHLF-P0KOZritNT8psCG0fMbMtWpBhZcw7Cw4wlozX-1eNz6HoPbBk6q198iRZNJOunWYiSG7l3TlMev-fs4_kfO2X9ahxQ"></div></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="relative w-full h-[calc(100vh-4rem)] overflow-hidden select-none bg-primary-container">
+<!-- Interactive GIS Telemetry Canvas -->
+<svg class="absolute inset-0 w-full h-full cursor-crosshair" id="gisCanvas" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1600 900">
+<defs>
+<!-- Structural Coordinate Grid Pattern -->
+<pattern height="80" id="subsurfaceGrid" patternUnits="userSpaceOnUse" width="80">
+<path d="M 80 0 L 0 0 0 80" fill="none" stroke="#546C7B" stroke-opacity="0.25" stroke-width="0.75"></path>
+<circle cx="80" cy="80" fill="#95A7B3" fill-opacity="0.35" r="1"></circle>
+</pattern>
+<pattern height="16" id="microGrid" patternUnits="userSpaceOnUse" width="16">
+<path d="M 16 0 L 0 0 0 16" fill="none" stroke="#546C7B" stroke-opacity="0.12" stroke-width="0.35"></path>
+</pattern>
+<!-- Dynamic Beacon Glow Filters -->
+<filter height="200%" id="activeGlow" width="200%" x="-50%" y="-50%">
+<feGaussianBlur result="blur" stdDeviation="6"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+<filter height="300%" id="radialPulse" width="300%" x="-100%" y="-100%">
+<feGaussianBlur stdDeviation="3"></feGaussianBlur>
+</filter>
+</defs>
+<!-- Background Stratigraphic Tonal Layers -->
+<rect fill="#203848" height="100%" width="100%"></rect>
+<rect fill="url(#microGrid)" height="100%" width="100%"></rect>
+<rect fill="url(#subsurfaceGrid)" height="100%" width="100%"></rect>
+<!-- Subsea Bathymetry & Lithology Structural Contours -->
+<g class="transition-opacity duration-300" id="layer-contours" opacity="0.85">
+<path d="M -100 240 C 280 180, 520 320, 820 280 C 1140 240, 1380 120, 1720 180" fill="none" stroke="#546C7B" stroke-dasharray="4 6" stroke-opacity="0.3" stroke-width="1.2"></path>
+<path d="M -100 380 C 320 310, 640 460, 940 410 C 1220 360, 1460 260, 1720 330" fill="none" stroke="#546C7B" stroke-opacity="0.4" stroke-width="1.5"></path>
+<path d="M -100 540 C 360 490, 710 610, 1020 540 C 1310 480, 1510 410, 1720 490" fill="none" stroke="#546C7B" stroke-opacity="0.3" stroke-width="1.2"></path>
+<path d="M -100 720 C 410 680, 780 780, 1140 690 C 1410 610, 1560 590, 1720 640" fill="none" stroke="#546C7B" stroke-dasharray="2 4" stroke-opacity="0.25" stroke-width="1"></path>
+</g>
+<!-- Seismic 3D Survey Survey Polygon Bounding Lines -->
+<g class="transition-opacity duration-300" id="layer-seismic" opacity="0.75">
+<polygon fill="none" points="340,110 1280,180 1190,820 230,710" stroke="#95A7B3" stroke-dasharray="8 8" stroke-opacity="0.2" stroke-width="1"></polygon>
+<line stroke="#546C7B" stroke-opacity="0.25" stroke-width="0.75" x1="380" x2="1240" y1="180" y2="250"></line>
+<line stroke="#546C7B" stroke-opacity="0.25" stroke-width="0.75" x1="350" x2="1210" y1="320" y2="390"></line>
+<line stroke="#546C7B" stroke-opacity="0.25" stroke-width="0.75" x1="310" x2="1180" y1="470" y2="530"></line>
+<line stroke="#546C7B" stroke-opacity="0.25" stroke-width="0.75" x1="270" x2="1150" y1="610" y2="670"></line>
+</g>
+<!-- Katakolo Strike Fault System (Strike 142°) -->
+<g class="transition-opacity duration-300" id="layer-faults">
+<line stroke="#95A7B3" stroke-dasharray="14 5 2 5" stroke-opacity="0.55" stroke-width="1.8" x1="560" x2="1140" y1="0" y2="900"></line>
+<text class="font-label-sm text-label-sm tracking-widest uppercase" fill="#95A7B3" fill-opacity="0.7" x="1080" y="840">Katakolo Strike Fault (142°)</text>
+<line stroke="#546C7B" stroke-dasharray="10 6" stroke-opacity="0.35" stroke-width="1.2" x1="420" x2="980" y1="0" y2="900"></line>
+<line stroke="#546C7B" stroke-dasharray="6 4" stroke-opacity="0.3" stroke-width="1" x1="780" x2="1320" y1="40" y2="880"></line>
+</g>
+<!-- Concentric Range Rings from Active Well W-204 (Center: 760, 480) -->
+<g id="range-rings">
+<!-- 5 km Ring -->
+<circle cx="760" cy="480" fill="none" r="140" stroke="#546C7B" stroke-dasharray="3 5" stroke-opacity="0.35" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" fill-opacity="0.85" x="765" y="344">5 KM</text>
+<!-- 10 km Active Illuminated Focus Ring -->
+<circle cx="760" cy="480" fill="#546C7B" fill-opacity="0.04" r="280" stroke="#CBD8E2" stroke-opacity="0.85" stroke-width="1.5"></circle>
+<circle cx="760" cy="480" fill="none" r="280" stroke="#CBD8E2" stroke-opacity="0.2" stroke-width="3"></circle>
+<text class="font-label-sm text-label-sm tracking-wider font-semibold" fill="#CBD8E2" x="765" y="204">10 KM (ACTIVE FOCUS)</text>
+<!-- 25 km Survey Limit Ring -->
+<circle cx="760" cy="480" fill="none" r="490" stroke="#546C7B" stroke-dasharray="6 8" stroke-opacity="0.25" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" fill-opacity="0.5" x="765" y="-6">25 KM RANGE BOUNDARY</text>
+<!-- Azimuth Radials -->
+<line stroke="#546C7B" stroke-dasharray="4 4" stroke-opacity="0.2" stroke-width="0.75" x1="760" x2="760" y1="0" y2="900"></line>
+<line stroke="#546C7B" stroke-dasharray="4 4" stroke-opacity="0.2" stroke-width="0.75" x1="0" x2="1600" y1="480" y2="480"></line>
+</g>
+<!-- Trajectory Vector & Tie-line from W-204 to W-117 -->
+<g id="correlation-vectors">
+<line stroke="#CBD8E2" stroke-dasharray="4 3" stroke-opacity="0.75" stroke-width="1.75" x1="760" x2="620" y1="480" y2="340"></line>
+<circle cx="690" cy="410" fill="#CBD8E2" r="2.5"></circle>
+<text class="font-label-sm text-label-sm" fill="#CBD8E2" x="700" y="405">3.4 km • 318° NW</text>
+</g>
+<!-- Historical Offset Wells (#95A7B3) -->
+<g class="cursor-pointer" id="historical-wells">
+<!-- W-181 -->
+<g class="hover:opacity-100 transition-opacity opacity-75" transform="translate(680, 260)">
+<circle cx="0" cy="0" fill="#95A7B3" r="4"></circle>
+<circle cx="0" cy="0" fill="none" r="8" stroke="#95A7B3" stroke-opacity="0.5" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" x="12" y="3">W-181</text>
+</g>
+<!-- W-108 -->
+<g class="hover:opacity-100 transition-opacity opacity-75" transform="translate(940, 360)">
+<circle cx="0" cy="0" fill="#95A7B3" r="4"></circle>
+<circle cx="0" cy="0" fill="none" r="8" stroke="#95A7B3" stroke-opacity="0.5" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" x="12" y="3">W-108</text>
+</g>
+<!-- W-122 -->
+<g class="hover:opacity-100 transition-opacity opacity-75" transform="translate(890, 620)">
+<circle cx="0" cy="0" fill="#95A7B3" r="4"></circle>
+<circle cx="0" cy="0" fill="none" r="8" stroke="#95A7B3" stroke-opacity="0.5" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" x="12" y="3">W-122</text>
+</g>
+<!-- W-209 -->
+<g class="hover:opacity-100 transition-opacity opacity-75" transform="translate(540, 590)">
+<circle cx="0" cy="0" fill="#95A7B3" r="4"></circle>
+<circle cx="0" cy="0" fill="none" r="8" stroke="#95A7B3" stroke-opacity="0.5" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" x="12" y="3">W-209</text>
+</g>
+<!-- W-144 -->
+<g class="hover:opacity-100 transition-opacity opacity-75" transform="translate(460, 420)">
+<circle cx="0" cy="0" fill="#95A7B3" r="4"></circle>
+<circle cx="0" cy="0" fill="none" r="8" stroke="#95A7B3" stroke-opacity="0.5" stroke-width="1"></circle>
+<text class="font-label-sm text-label-sm" fill="#95A7B3" x="12" y="3">W-144</text>
+</g>
+</g>
+<!-- Similar / Relevant Offset Wells (#CBD8E2) -->
+<g class="cursor-pointer" id="similar-wells">
+<!-- W-151: 1.4 km S -->
+<g transform="translate(760, 545)">
+<circle cx="0" cy="0" fill="#CBD8E2" r="6"></circle>
+<circle cx="0" cy="0" fill="none" r="12" stroke="#CBD8E2" stroke-dasharray="2 3" stroke-opacity="0.6" stroke-width="1.2"></circle>
+<rect fill="#203848" fill-opacity="0.9" height="20" rx="3" stroke="#CBD8E2" stroke-width="0.75" width="80" x="14" y="-10"></rect>
+<text class="font-label-sm text-label-sm font-semibold" fill="#CBD8E2" x="20" y="4">W-151 • 88%</text>
+</g>
+<!-- W-103: 2.1 km E -->
+<g transform="translate(855, 480)">
+<circle cx="0" cy="0" fill="#CBD8E2" r="6"></circle>
+<circle cx="0" cy="0" fill="none" r="12" stroke="#CBD8E2" stroke-dasharray="2 3" stroke-opacity="0.6" stroke-width="1.2"></circle>
+<rect fill="#203848" fill-opacity="0.9" height="20" rx="3" stroke="#CBD8E2" stroke-width="0.75" width="80" x="14" y="-10"></rect>
+<text class="font-label-sm text-label-sm font-semibold" fill="#CBD8E2" x="20" y="4">W-103 • 84%</text>
+</g>
+</g>
+<!-- Selected Well Beacon: W-117 (3.4 km NW of W-204) -->
+<g class="cursor-pointer" id="selected-well" transform="translate(620, 340)">
+<!-- Ping Wave Animation -->
+<circle class="animate-ping" cx="0" cy="0" fill="none" opacity="0.6" r="22" stroke="#E3EDF5" stroke-width="1" style="animation-duration: 3s;"></circle>
+<circle cx="0" cy="0" fill="#546C7B" fill-opacity="0.4" r="15" stroke="#CBD8E2" stroke-width="1.5"></circle>
+<circle cx="0" cy="0" fill="#E3EDF5" filter="url(#activeGlow)" r="7"></circle>
+<!-- Selected Well Indicator Pin -->
+<g transform="translate(18, -34)">
+<rect fill="#203848" fill-opacity="0.95" height="42" rx="4" stroke="#CBD8E2" stroke-width="1.2" width="144"></rect>
+<text class="font-label-md text-label-md font-bold tracking-wider" fill="#E3EDF5" x="10" y="18">W-117 • SELECTED</text>
+<text class="font-label-sm text-label-sm" fill="#CBD8E2" x="10" y="32">93% Match • 3.4km NW</text>
+</g>
+</g>
+<!-- Active Well W-204 Epicenter -->
+<g id="active-well" transform="translate(760, 480)">
+<!-- Outer Glowing Field -->
+<circle class="animate-pulse" cx="0" cy="0" fill="#CBD8E2" fill-opacity="0.12" r="32"></circle>
+<circle cx="0" cy="0" fill="none" r="20" stroke="#CBD8E2" stroke-dasharray="4 2" stroke-opacity="0.9" stroke-width="2"></circle>
+<circle cx="0" cy="0" fill="#203848" r="11" stroke="#E3EDF5" stroke-width="2.5"></circle>
+<circle cx="0" cy="0" fill="#E3EDF5" filter="url(#activeGlow)" r="5"></circle>
+<!-- Wellbore Trajectory Vector -->
+<path d="M 0 0 L 18 26 L 38 44" fill="none" stroke="#E3EDF5" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="38" cy="44" fill="#E3EDF5" r="2"></circle>
+<!-- Real-time Active Telemetry Tag -->
+<g transform="translate(-86, 28)">
+<rect fill="#203848" fill-opacity="0.95" height="34" rx="4" stroke="#E3EDF5" stroke-width="1" width="172"></rect>
+<circle class="animate-ping" cx="12" cy="17" fill="#E3EDF5" r="4" style="animation-duration: 1.8s;"></circle>
+<circle cx="12" cy="17" fill="#E3EDF5" r="3"></circle>
+<text class="font-label-sm text-label-sm font-bold tracking-wide" fill="#E3EDF5" x="24" y="16">W-204 • ACTIVE SENTRY</text>
+<text class="font-label-sm text-label-sm" fill="#CBD8E2" x="24" y="27">2,810m MD • Kiparissia SS</text>
+</g>
+</g>
+</svg>
+<!-- Top-Left Floating Instrument: Search & Filter Engine -->
+<div class="absolute top-space-md left-space-md z-30 flex flex-col gap-space-xs w-[360px] max-w-[calc(100vw-6rem)]">
+<!-- Search Panel -->
+<div class="rounded-xl p-space-sm bg-primary-container/85 backdrop-blur-xl shadow-xl">
+<div class="flex items-center gap-space-xs bg-primary/80 rounded px-space-sm py-1.5 shadow-inner">
+<span class="material-symbols-outlined text-[#95A7B3] text-base">search</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-surface placeholder:text-secondary focus:outline-none" placeholder="Search well ID, formation or location..." type="text" value="W-117 Katakolo">
+<button class="flex items-center justify-center text-[#95A7B3] hover:text-surface transition-colors" title="Clear">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Mode Toggle Segment -->
+<div class="flex items-center gap-space-xs mt-space-sm p-0.5 rounded bg-primary/60">
+<button class="flex-1 py-1 text-center font-label-sm text-label-sm rounded text-secondary hover:text-surface transition-all" id="modeNearby" onclick="switchMode('nearby')">
+            NEARBY
+          </button>
+<button class="flex-1 py-1 text-center font-label-sm text-label-sm rounded bg-primary-container text-surface shadow-sm font-bold transition-all" id="modeSimilar" onclick="switchMode('similar')">
+            SIMILAR (AI MATCH)
+          </button>
+</div>
+<p class="mt-1.5 px-1 font-body-sm text-[10px] leading-tight text-[#95A7B3]">
+          Weights 14-parameter stratigraphy, pore pressure logs, and lithological hardness.
+        </p>
+<!-- Search Radius Controller -->
+<div class="flex items-center justify-between mt-space-sm pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-[#95A7B3] tracking-wider">Search Radius</span>
+<div class="inline-flex rounded p-0.5 bg-primary/50 gap-0.5">
+<button class="px-2 py-0.5 font-label-sm text-label-sm rounded text-secondary hover:text-surface transition-colors">5 km</button>
+<button class="px-2 py-0.5 font-label-sm text-label-sm rounded bg-secondary/40 text-surface font-semibold shadow-xs">10 km</button>
+<button class="px-2 py-0.5 font-label-sm text-label-sm rounded text-secondary hover:text-surface transition-colors">25 km</button>
+<button class="px-2 py-0.5 font-label-sm text-label-sm rounded text-secondary hover:text-surface transition-colors">Custom</button>
+</div>
+</div>
+<!-- Filter Pills Strip -->
+<div class="flex flex-wrap items-center gap-1.5 mt-space-sm pt-space-xs">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/60 text-surface font-label-sm text-[10px]">
+<span>Status: Hist.</span>
+<span class="material-symbols-outlined text-[11px] text-[#95A7B3] hover:text-surface cursor-pointer">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/60 text-surface font-label-sm text-[10px]">
+<span>Fm: Kiparissia</span>
+<span class="material-symbols-outlined text-[11px] text-[#95A7B3] hover:text-surface cursor-pointer">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/60 text-surface font-label-sm text-[10px]">
+<span>Mud Loss &gt;200bbl</span>
+<span class="material-symbols-outlined text-[11px] text-[#95A7B3] hover:text-surface cursor-pointer">close</span>
+</span>
+<button class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary/30 text-surface font-label-sm text-[10px] hover:bg-secondary/50 transition-colors ml-auto">
+<span class="material-symbols-outlined text-[12px]">tune</span>
+<span>Filters (3)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Top-Right Floating Instrument: Viewport & Layer Toolset -->
+<div class="absolute top-space-md right-space-md z-30 flex flex-col items-end gap-space-xs">
+<!-- Minimalist Glass Vertical Toolset -->
+<div class="flex flex-col items-center rounded-xl p-1 bg-primary-container/85 backdrop-blur-xl shadow-xl">
+<button class="w-8 h-8 flex items-center justify-center text-[#95A7B3] hover:text-surface hover:bg-primary/50 rounded transition-all" onclick="zoomMap(1.15)" title="Zoom In">
+<span class="material-symbols-outlined text-base">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-[#95A7B3] hover:text-surface hover:bg-primary/50 rounded transition-all" onclick="zoomMap(0.85)" title="Zoom Out">
+<span class="material-symbols-outlined text-base">remove</span>
+</button>
+<div class="w-5 h-px bg-secondary/40 my-0.5"></div>
+<button class="w-8 h-8 flex items-center justify-center text-[#CBD8E2] hover:text-surface hover:bg-primary/50 rounded transition-all" onclick="recenterMap()" title="Recenter on Active W-204">
+<span class="material-symbols-outlined text-base">filter_center_focus</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center text-[#95A7B3] hover:text-surface hover:bg-primary/50 rounded transition-all" title="True North Alignment">
+<span class="font-label-sm text-[10px] font-bold tracking-widest text-[#CBD8E2]">N</span>
+</button>
+</div>
+<!-- Compact Subsurface Layer Toggles -->
+<div class="rounded-xl px-space-sm py-space-xs bg-primary-container/85 backdrop-blur-xl shadow-xl flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[#95A7B3] text-sm">layers</span>
+<button class="px-2 py-0.5 rounded font-label-sm text-[10px] bg-secondary/40 text-surface font-semibold transition-all" id="toggleFaults" onclick="toggleLayer('layer-faults', this)">Faults</button>
+<button class="px-2 py-0.5 rounded font-label-sm text-[10px] bg-secondary/40 text-surface font-semibold transition-all" id="toggleSeismic" onclick="toggleLayer('layer-seismic', this)">Seismic 3D</button>
+<button class="px-2 py-0.5 rounded font-label-sm text-[10px] bg-secondary/40 text-surface font-semibold transition-all" id="toggleContours" onclick="toggleLayer('layer-contours', this)">Lithology</button>
+</div>
+</div>
+<!-- Right-Floating Well Selection Card (Inspecting W-117) -->
+<div class="absolute top-20 right-space-md z-30 w-[328px] max-w-[calc(100vw-6rem)] rounded-xl bg-primary-container/90 backdrop-blur-2xl shadow-2xl p-space-md transition-all duration-300" id="inspectorPanel">
+<!-- Card Top Metadata Header -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-headline-lg text-headline-lg text-surface tracking-tight font-bold">W-117</h2>
+<span class="font-label-sm text-[10px] uppercase px-1.5 py-0.5 rounded bg-secondary/40 text-surface font-bold tracking-wider">
+              HISTORICAL ANALOG
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-[#95A7B3] mt-0.5">3.4 km from W-204 (Azimuth 318° NW)</p>
+</div>
+<button class="text-[#95A7B3] hover:text-surface transition-colors p-1" onclick="dismissInspector()" title="Close Panel">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<!-- Stratigraphic Similarity Score Meter -->
+<div class="mt-space-md p-space-xs rounded bg-primary/70">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#CBD8E2] uppercase font-bold tracking-wide">STRATIGRAPHIC MATCH</span>
+<span class="font-label-md text-label-md text-surface font-bold">93%</span>
+</div>
+<div class="w-full h-1.5 bg-secondary/40 rounded-full mt-1.5 overflow-hidden">
+<div class="h-full bg-surface-variant rounded-full transition-all duration-500" style="width: 93%;"></div>
+</div>
+<div class="flex justify-between items-center mt-1 text-[10px] font-label-sm text-[#95A7B3]">
+<span>Lithology: 96%</span>
+<span>Pore Grad: 91%</span>
+<span>Fault Prox: 92%</span>
+</div>
+</div>
+<!-- Engineering & Depth Parameters -->
+<div class="grid grid-cols-2 gap-space-xs mt-space-sm">
+<div class="p-space-xs rounded bg-primary/50">
+<span class="font-label-sm text-[10px] uppercase text-[#95A7B3] block">Total Depth (TVD)</span>
+<span class="font-headline-sm text-headline-sm text-surface font-bold">3,510 m</span>
+<span class="font-body-sm text-[10px] text-[#95A7B3] block mt-0.5">W-204 Target: 3,420 m</span>
+</div>
+<div class="p-space-xs rounded bg-primary/50">
+<span class="font-label-sm text-[10px] uppercase text-[#95A7B3] block">Target Lithology</span>
+<span class="font-headline-sm text-headline-sm text-surface font-semibold truncate block">Kiparissia SS</span>
+<span class="font-body-sm text-[10px] text-[#CBD8E2] block mt-0.5">Karstic Void Layer</span>
+</div>
+</div>
+<!-- Historical Documented Events Alert Box -->
+<div class="mt-space-sm p-space-xs rounded bg-secondary/20">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#CBD8E2] text-sm">history_toggle_off</span>
+<span class="font-label-sm text-label-sm text-surface uppercase font-semibold">3 Documented Drilling Events</span>
+</div>
+<ul class="mt-1.5 space-y-1 font-body-sm text-body-sm text-[#CBD8E2]">
+<li class="flex items-start gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-surface mt-1.5 shrink-0"></span>
+<span>Severe Mud Loss (420 bbl) @ 2,862m depth</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#95A7B3] mt-1.5 shrink-0"></span>
+<span>Differential pipe sticking inside Karstic fissure</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#95A7B3] mt-1.5 shrink-0"></span>
+<span>Loss circulation material pill successfully cured</span>
+</li>
+</ul>
+</div>
+<!-- Dual Action Primary/Translucent Button Group -->
+<div class="flex items-center gap-space-xs mt-space-md pt-space-xs">
+<button class="flex-1 py-2 px-space-sm rounded font-label-md text-label-md bg-[#CBD8E2] text-primary hover:bg-surface font-bold transition-all shadow-md flex items-center justify-center gap-1 cursor-pointer" id="btn-view-well" onclick="viewWellIntelligence()">
+<span>View Intelligence</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="py-2 px-space-sm rounded font-label-md text-label-md bg-secondary/30 hover:bg-secondary/50 text-surface transition-all flex items-center justify-center gap-1 cursor-pointer" id="btn-compare-well" onclick="openComparisonModal()">
+<span class="material-symbols-outlined text-sm">compare_arrows</span>
+<span>Compare</span>
+</button>
+</div>
+</div>
+<!-- Bottom-Left Floating Legend -->
+<div class="absolute bottom-space-md left-space-md z-30 rounded-xl px-space-md py-space-xs bg-primary-container/85 backdrop-blur-xl shadow-xl flex items-center gap-space-md max-w-fit">
+<div class="flex items-center gap-2">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-surface opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-surface"></span>
+</span>
+<span class="font-label-sm text-[10px] text-surface uppercase tracking-wider font-semibold">Active (W-204)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface"></span>
+<span class="font-label-sm text-[10px] text-[#CBD8E2] uppercase tracking-wider">Selected (W-117)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#CBD8E2]"></span>
+<span class="font-label-sm text-[10px] text-[#95A7B3] uppercase tracking-wider">Similar Analog</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-[#95A7B3]"></span>
+<span class="font-label-sm text-[10px] text-[#95A7B3] uppercase tracking-wider">Historical Well</span>
+</div>
+<div class="flex items-center gap-1.5 pl-2 border-l border-secondary/30">
+<span class="w-4 h-0.5 bg-[#95A7B3] inline-block"></span>
+<span class="font-label-sm text-[10px] text-[#95A7B3] uppercase tracking-wider">Katakolo Fault</span>
+</div>
+</div>
+<!-- Bottom Center Horizontal Status Telemetry Strip -->
+<div class="absolute bottom-space-md left-1/2 -translate-x-1/2 z-20 hidden md:flex items-center gap-space-lg px-space-lg py-2 rounded-full bg-primary-container/90 backdrop-blur-2xl shadow-xl whitespace-nowrap">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#CBD8E2]"></span>
+<span class="font-label-sm text-label-sm text-surface font-semibold">12 Nearby Wells</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-secondary/60"></div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-[#CBD8E2]">3 Highly Relevant Analogs</span>
+</div>
+<div class="w-1 h-1 rounded-full bg-secondary/60"></div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-[#95A7B3]">Active Radius: <strong class="text-surface font-semibold">10 km</strong></span>
+</div>
+<div class="w-1 h-1 rounded-full bg-secondary/60"></div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-[#95A7B3]">Active Reference: <strong class="text-surface font-semibold">W-204 (2,810 m)</strong></span>
+</div>
+<div class="w-1 h-1 rounded-full bg-secondary/60"></div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-[#95A7B3]">Horizon: <span class="text-[#CBD8E2]">Katakolo Sector</span></span>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interactions & Layer Management
+    function toggleLayer(layerId, btn) {
+      const layer = document.getElementById(layerId);
+      if (!layer) return;
+      const isVisible = layer.getAttribute('opacity') !== '0';
+      if (isVisible) {
+        layer.setAttribute('opacity', '0');
+        btn.classList.remove('bg-secondary/40', 'text-surface');
+        btn.classList.add('bg-primary/40', 'text-secondary');
+      } else {
+        layer.setAttribute('opacity', layerId === 'layer-faults' ? '1' : '0.8');
+        btn.classList.add('bg-secondary/40', 'text-surface');
+        btn.classList.remove('bg-primary/40', 'text-secondary');
+      }
+    }
+
+    function switchMode(mode) {
+      const btnNearby = document.getElementById('modeNearby');
+      const btnSimilar = document.getElementById('modeSimilar');
+      if (!btnNearby || !btnSimilar) return;
+      if (mode === 'nearby') {
+        btnNearby.classList.add('bg-primary-container', 'text-surface', 'shadow-sm', 'font-bold');
+        btnNearby.classList.remove('text-secondary');
+        btnSimilar.classList.remove('bg-primary-container', 'text-surface', 'shadow-sm', 'font-bold');
+        btnSimilar.classList.add('text-secondary');
+        if (typeof showExplorerToast === 'function') showExplorerToast('Ordered by Geodesic Proximity to W-204');
+      } else {
+        btnSimilar.classList.add('bg-primary-container', 'text-surface', 'shadow-sm', 'font-bold');
+        btnSimilar.classList.remove('text-secondary');
+        btnNearby.classList.remove('bg-primary-container', 'text-surface', 'shadow-sm', 'font-bold');
+        btnNearby.classList.add('text-secondary');
+        if (typeof showExplorerToast === 'function') showExplorerToast('Sorted by 14-Parameter AI Subsurface Match');
+      }
+    }
+
+    function dismissInspector() {
+      const panel = document.getElementById('inspectorPanel');
+      if (panel) {
+        panel.classList.toggle('opacity-0');
+        panel.classList.toggle('pointer-events-none');
+        panel.classList.toggle('translate-x-4');
+      }
+    }
+
+    let currentScale = 1;
+    function zoomMap(factor) {
+      const svg = document.getElementById('gisCanvas');
+      if (!svg) return;
+      currentScale *= factor;
+      if (currentScale < 0.6) currentScale = 0.6;
+      if (currentScale > 2.2) currentScale = 2.2;
+      svg.style.transform = `scale(${currentScale})`;
+      svg.style.transformOrigin = '50% 50%';
+      svg.style.transition = 'transform 0.25s ease-out';
+    }
+
+    function recenterMap() {
+      const svg = document.getElementById('gisCanvas');
+      if (!svg) return;
+      currentScale = 1;
+      svg.style.transform = 'scale(1)';
+      const inspector = document.getElementById('inspectorPanel');
+      if (inspector) {
+        inspector.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-4');
+      }
+      if (typeof showExplorerToast === 'function') showExplorerToast('Viewport centered on W-204 Epicenter');
+    }
+
+    // Well Database & Selection Logic
+    const WELLS_DATA = {
+      'W-117': {
+        id: 'W-117',
+        type: 'HISTORICAL ANALOG',
+        distance: '3.4 km from W-204 (Azimuth 318° NW)',
+        distShort: '3.4 km • 318° NW',
+        match: 93,
+        lithMatch: '96%',
+        poreGrad: '91%',
+        faultProx: '92%',
+        tvd: '3,510 m',
+        lithology: 'Kiparissia SS',
+        lithSub: 'Karstic Void Layer',
+        events: [
+          'Severe Mud Loss (420 bbl) @ 2,862m depth',
+          'Differential pipe sticking inside Karstic fissure',
+          'Loss circulation material pill successfully cured'
+        ],
+        coords: { x: 620, y: 340 }
+      },
+      'W-151': {
+        id: 'W-151',
+        type: 'SIMILAR ANALOG',
+        distance: '1.4 km from W-204 (Azimuth 180° S)',
+        distShort: '1.4 km • 180° S',
+        match: 88,
+        lithMatch: '92%',
+        poreGrad: '89%',
+        faultProx: '86%',
+        tvd: '3,480 m',
+        lithology: 'Kiparissia SS',
+        lithSub: 'Fractured Sand Member',
+        events: [
+          'Partial circulation loss (160 bbl) @ 2,840m',
+          'Drilling break observed entering porous void',
+          'Mud weight raised to 1.22 SG with no further losses'
+        ],
+        coords: { x: 760, y: 545 }
+      },
+      'W-103': {
+        id: 'W-103',
+        type: 'SIMILAR ANALOG',
+        distance: '2.1 km from W-204 (Azimuth 090° E)',
+        distShort: '2.1 km • 090° E',
+        match: 84,
+        lithMatch: '87%',
+        poreGrad: '85%',
+        faultProx: '81%',
+        tvd: '3,620 m',
+        lithology: 'Base Karst / Limestone',
+        lithSub: 'Vugular Porosity Zone',
+        events: [
+          'Seepage losses (80 bbl) during bit change',
+          'ECD spikes managed with high-viscosity pill sweep',
+          'Continuous gamma logging completed to TD'
+        ],
+        coords: { x: 855, y: 480 }
+      },
+      'W-181': {
+        id: 'W-181',
+        type: 'HISTORICAL WELL',
+        distance: '4.2 km from W-204 (Azimuth 015° NNE)',
+        distShort: '4.2 km • 015° NNE',
+        match: 76,
+        lithMatch: '80%',
+        poreGrad: '78%',
+        faultProx: '72%',
+        tvd: '3,290 m',
+        lithology: 'Upper Kiparissia',
+        lithSub: 'Tight Siltstone Interbeds',
+        events: [
+          'No loss zones detected in target horizon',
+          'ROP averaged 9.2 m/hr through clean interval'
+        ],
+        coords: { x: 680, y: 260 }
+      },
+      'W-108': {
+        id: 'W-108',
+        type: 'HISTORICAL WELL',
+        distance: '3.8 km from W-204 (Azimuth 052° NE)',
+        distShort: '3.8 km • 052° NE',
+        match: 71,
+        lithMatch: '74%',
+        poreGrad: '73%',
+        faultProx: '68%',
+        tvd: '3,180 m',
+        lithology: 'Kiparissia Transition',
+        lithSub: 'Calcareous Shale',
+        events: [
+          'Minor borehole washouts recorded in shale section',
+          'Casing shoe tested to 1.38 SG EMW'
+        ],
+        coords: { x: 940, y: 360 }
+      },
+      'W-122': {
+        id: 'W-122',
+        type: 'HISTORICAL WELL',
+        distance: '5.1 km from W-204 (Azimuth 135° SE)',
+        distShort: '5.1 km • 135° SE',
+        match: 68,
+        lithMatch: '70%',
+        poreGrad: '69%',
+        faultProx: '65%',
+        tvd: '3,750 m',
+        lithology: 'Lower Dolomite',
+        lithSub: 'Basement Contact',
+        events: [
+          'High torque oscillations noted past 3,200m',
+          'Successful mud sweep restored normal rotary torque'
+        ],
+        coords: { x: 890, y: 620 }
+      },
+      'W-209': {
+        id: 'W-209',
+        type: 'HISTORICAL WELL',
+        distance: '4.6 km from W-204 (Azimuth 225° SW)',
+        distShort: '4.6 km • 225° SW',
+        match: 74,
+        lithMatch: '78%',
+        poreGrad: '75%',
+        faultProx: '70%',
+        tvd: '3,390 m',
+        lithology: 'Middle Kiparissia SS',
+        lithSub: 'Interbedded Sand / Marl',
+        events: [
+          'Seepage loss 65 bbl cured by LCM blend',
+          'Stable ECD window maintained at 1.21 SG'
+        ],
+        coords: { x: 540, y: 590 }
+      },
+      'W-144': {
+        id: 'W-144',
+        type: 'HISTORICAL WELL',
+        distance: '5.8 km from W-204 (Azimuth 280° WNW)',
+        distShort: '5.8 km • 280° WNW',
+        match: 79,
+        lithMatch: '82%',
+        poreGrad: '81%',
+        faultProx: '75%',
+        tvd: '3,410 m',
+        lithology: 'Kiparissia SS Core',
+        lithSub: 'Channelized Void',
+        events: [
+          'Moderate mud loss 210 bbl @ 2,820m',
+          'Successfully drilled through with 1.20 SG fluid'
+        ],
+        coords: { x: 460, y: 420 }
+      },
+      'W-204': {
+        id: 'W-204',
+        type: 'ACTIVE WELL (REFERENCE)',
+        distance: '0.0 km • CURRENT DRILLING LOCATION',
+        distShort: 'Reference Datum',
+        match: 100,
+        lithMatch: '100%',
+        poreGrad: '100%',
+        faultProx: '100%',
+        tvd: '2,810 m (Target 3,420 m)',
+        lithology: 'Kiparissia SS',
+        lithSub: 'Approaching Karst Corridor',
+        events: [
+          'Currently drilling ahead at 2,810m MD',
+          'Pore pressure estimated at 1.14 SG EMW',
+          'Mud weight 1.18 SG, telemetry active at 100 Hz'
+        ],
+        coords: { x: 760, y: 480 }
+      }
+    };
+
+    let selectedWellId = 'W-117';
+
+    function selectWell(wellId) {
+      const data = WELLS_DATA[wellId];
+      if (!data) return;
+      selectedWellId = wellId;
+
+      const inspector = document.getElementById('inspectorPanel');
+      if (inspector) {
+        inspector.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-4');
+        
+        const idEl = inspector.querySelector('h2');
+        if (idEl) idEl.textContent = data.id;
+
+        const typeEl = inspector.querySelector('h2 + span');
+        if (typeEl) typeEl.textContent = data.type;
+
+        const distEl = inspector.querySelector('div > p');
+        if (distEl) distEl.textContent = data.distance;
+
+        const matchPctEl = inspector.querySelector('.mt-space-md .text-label-md');
+        if (matchPctEl) matchPctEl.textContent = `${data.match}%`;
+
+        const matchBarEl = inspector.querySelector('.mt-space-md .bg-surface-variant');
+        if (matchBarEl) matchBarEl.style.width = `${data.match}%`;
+
+        const breakDownSpans = inspector.querySelectorAll('.mt-space-md .text-\\[10px\\] span');
+        if (breakDownSpans && breakDownSpans.length >= 3) {
+          breakDownSpans[0].textContent = `Lithology: ${data.lithMatch}`;
+          breakDownSpans[1].textContent = `Pore Grad: ${data.poreGrad}`;
+          breakDownSpans[2].textContent = `Fault Prox: ${data.faultProx}`;
+        }
+
+        const tvdEl = inspector.querySelector('.grid .font-headline-sm');
+        if (tvdEl) tvdEl.textContent = data.tvd;
+
+        const lithEl = inspector.querySelectorAll('.grid .font-headline-sm')[1];
+        if (lithEl) lithEl.textContent = data.lithology;
+
+        const lithSubEl = inspector.querySelectorAll('.grid .text-\\[10px\\]')[1];
+        if (lithSubEl) lithSubEl.textContent = data.lithSub;
+
+        const ulEl = inspector.querySelector('ul');
+        if (ulEl) {
+          ulEl.innerHTML = data.events.map(ev => `
+            <li class="flex items-start gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-surface mt-1.5 shrink-0"></span>
+              <span>${ev}</span>
+            </li>
+          `).join('');
+        }
+      }
+
+      const beacon = document.getElementById('selected-well');
+      if (beacon && data.coords) {
+        beacon.setAttribute('transform', `translate(${data.coords.x}, ${data.coords.y})`);
+        const pinTitle = beacon.querySelector('text.font-label-md');
+        if (pinTitle) pinTitle.textContent = `${data.id} • SELECTED`;
+        const pinSub = beacon.querySelector('text.font-label-sm');
+        if (pinSub) pinSub.textContent = `${data.match}% Match • ${data.distShort}`;
+      }
+
+      const vectorGroup = document.getElementById('correlation-vectors');
+      if (vectorGroup && data.coords) {
+        const line = vectorGroup.querySelector('line');
+        if (line) {
+          line.setAttribute('x2', data.coords.x);
+          line.setAttribute('y2', data.coords.y);
+        }
+        const midPoint = vectorGroup.querySelector('circle');
+        const midX = (760 + data.coords.x) / 2;
+        const midY = (480 + data.coords.y) / 2;
+        if (midPoint) {
+          midPoint.setAttribute('cx', midX);
+          midPoint.setAttribute('cy', midY);
+        }
+        const vectorText = vectorGroup.querySelector('text');
+        if (vectorText) {
+          vectorText.setAttribute('x', midX + 10);
+          vectorText.setAttribute('y', midY - 5);
+          vectorText.textContent = data.distShort;
+        }
+      }
+
+      showExplorerToast(`Focused on offset well: ${data.id} (${data.match}% match)`);
+    }
+
+    function viewWellIntelligence() {
+      showExplorerToast(`Opening deep-dive profile for ${selectedWellId}...`);
+      setTimeout(() => {
+        location.href = '../nwis_well_intelligence_w_204_profile_page_04/code.html';
+      }, 350);
+    }
+
+    function openComparisonModal() {
+      const data = WELLS_DATA[selectedWellId] || WELLS_DATA['W-117'];
+      const modal = document.getElementById('comparisonModal');
+      if (!modal) return;
+
+      const titleEl = document.getElementById('modalCompTitle');
+      if (titleEl) titleEl.textContent = `Stratigraphic Correlation: W-204 vs ${data.id}`;
+
+      const rightHeader = document.getElementById('modalRightWellName');
+      if (rightHeader) rightHeader.textContent = `${data.id} (Offset Analog)`;
+
+      const matchScore = document.getElementById('modalMatchScore');
+      if (matchScore) matchScore.textContent = `${data.match}% AI Subsurface Correlation`;
+
+      const depthDiff = document.getElementById('modalDepthDiff');
+      if (depthDiff) depthDiff.textContent = `TVD: ${data.tvd} (W-204 Bit: 2,810 m)`;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeComparisonModal() {
+      const modal = document.getElementById('comparisonModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function showExplorerToast(message) {
+      let toast = document.getElementById('explorer-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'explorer-toast';
+        toast.className = 'fixed bottom-5 right-5 z-50 bg-[#203848] text-[#E3EDF5] px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 font-label-md text-xs transition-opacity duration-300 pointer-events-none opacity-0 border border-[#546C7B]/40';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span class="material-symbols-outlined text-[16px] text-[#CBD8E2]">satellite_alt</span><span>${message}</span>`;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      clearTimeout(window._expToastTimeout);
+      window._expToastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2500);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initWellClicks();
+    });
+    setTimeout(initWellClicks, 200);
+
+    function initWellClicks() {
+      const wellsMap = [
+        { sel: '#selected-well', id: 'W-117' },
+        { sel: '#active-well', id: 'W-204' }
+      ];
+      wellsMap.forEach(item => {
+        const el = document.querySelector(item.sel);
+        if (el) {
+          el.style.cursor = 'pointer';
+          el.onclick = () => selectWell(item.id);
+        }
+      });
+
+      const histG = document.getElementById('historical-wells');
+      if (histG) {
+        const groups = histG.querySelectorAll('g');
+        const ids = ['W-181', 'W-108', 'W-122', 'W-209', 'W-144'];
+        groups.forEach((g, idx) => {
+          if (ids[idx]) {
+            g.style.cursor = 'pointer';
+            g.onclick = () => selectWell(ids[idx]);
+          }
+        });
+      }
+
+      const simG = document.getElementById('similar-wells');
+      if (simG) {
+        const groups = simG.querySelectorAll('g');
+        const ids = ['W-151', 'W-103'];
+        groups.forEach((g, idx) => {
+          if (ids[idx]) {
+            g.style.cursor = 'pointer';
+            g.onclick = () => selectWell(ids[idx]);
+          }
+        });
+      }
+    }
+  </script>
+
+  <!-- Interactive Comparison Modal -->
+  <div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="comparisonModal">
+    <div class="bg-[#203848] text-[#E3EDF5] w-full max-w-2xl rounded-2xl shadow-2xl border border-[#546C7B]/50 p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-3 border-b border-[#546C7B]/40">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#CBD8E2]">compare_arrows</span>
+          <h3 class="font-headline-sm text-headline-sm font-bold tracking-tight" id="modalCompTitle">Stratigraphic Correlation: W-204 vs W-117</h3>
+        </div>
+        <button class="text-[#95A7B3] hover:text-white p-1 rounded-lg transition-colors cursor-pointer" onclick="closeComparisonModal()">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between bg-[#546C7B]/30 p-3 rounded-xl">
+        <div class="flex flex-col">
+          <span class="font-label-sm text-[10px] text-[#95A7B3] uppercase">AI Confidence Score</span>
+          <span class="font-headline-sm font-bold text-[#E3EDF5]" id="modalMatchScore">93% AI Subsurface Correlation</span>
+        </div>
+        <span class="font-label-sm text-xs bg-[#CBD8E2] text-[#203848] px-2.5 py-1 rounded-md font-bold" id="modalDepthDiff">TVD: 3,510 m (W-204 Bit: 2,810 m)</span>
+      </div>
+
+      <!-- Comparative Grid -->
+      <div class="grid grid-cols-2 gap-3 text-xs">
+        <div class="bg-[#546C7B]/20 p-3.5 rounded-xl border border-white/5 space-y-2">
+          <span class="font-label-sm font-bold uppercase text-[#CBD8E2] block pb-1 border-b border-[#546C7B]/30">Active Well (W-204)</span>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Current Depth:</span><span class="font-bold text-white">2,810 m MD</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Pore Gradient:</span><span class="font-bold text-white">1.14 SG EMW</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Mud Weight:</span><span class="font-bold text-white">1.18 SG</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Fracture Limit:</span><span class="font-bold text-white">1.34 SG</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Imminent Member:</span><span class="font-bold text-[#CBD8E2]">Karstic Void (2,810–2,930m)</span></div>
+        </div>
+
+        <div class="bg-[#546C7B]/20 p-3.5 rounded-xl border border-white/5 space-y-2">
+          <span class="font-label-sm font-bold uppercase text-[#CBD8E2] block pb-1 border-b border-[#546C7B]/30" id="modalRightWellName">W-117 (Offset Analog)</span>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Correlated Depth:</span><span class="font-bold text-white">2,862 m MD</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Pore Gradient:</span><span class="font-bold text-white">1.15 SG EMW</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Mud Weight Used:</span><span class="font-bold text-white">1.22 SG (Post-Loss)</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Fracture Limit:</span><span class="font-bold text-white">1.35 SG</span></div>
+          <div class="flex justify-between"><span class="text-[#95A7B3]">Incident Outcome:</span><span class="font-bold text-white">420 bbl cured via LCM</span></div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-[#546C7B]/30">
+        <button class="px-4 py-2 rounded-xl bg-transparent hover:bg-white/10 text-white font-label-md transition-colors" onclick="closeComparisonModal()">Dismiss</button>
+        <button class="px-4 py-2 rounded-xl bg-[#CBD8E2] hover:bg-white text-[#203848] font-label-md font-bold transition-all shadow-md flex items-center gap-1.5" onclick="viewWellIntelligence()">
+          <span>Open Full Deep-Dive Profile</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div></main></div><script src="../nav_bridge.js"></script></body></html>

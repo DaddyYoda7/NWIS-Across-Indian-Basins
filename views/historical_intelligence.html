@@ -1,0 +1,329 @@
+<div class="flex flex-col w-full text-on-surface font-body-md pb-space-xl">
+  <!-- Top Command & Header Strip -->
+  <section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md py-space-md mb-space-lg">
+    <div class="flex flex-col">
+      <div class="flex items-center gap-space-xs mb-1">
+        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Indian Petroleum Memory Vault</span>
+        <span class="text-secondary font-body-sm">•</span>
+        <span class="font-label-sm text-label-sm text-secondary">DGH NDR &amp; Operator Archives</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Historical Intelligence</h1>
+      <p class="font-body-md text-body-md text-secondary">Daily Drilling Reports (DDR), Tour Logs, Well Completion Reports (WCR), and real blowout/loss precedent retrieval.</p>
+    </div>
+    <!-- Active Telemetry & Contextual Personnel Bar -->
+    <div class="flex items-center flex-wrap gap-space-md">
+      <div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container shadow-sm">
+        <span class="material-symbols-outlined text-[18px] text-secondary">my_location</span>
+        <div class="flex flex-col">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Active Target</span>
+          <span id="hist-active-target-text" class="font-label-md text-label-md font-semibold text-primary">Nahorkatiya NHK-01 (2,810 m MD)</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-sm pl-space-md bg-surface-container-high rounded-xl p-space-xs">
+        <div class="w-8 h-8 rounded-lg bg-primary-container text-diamond flex items-center justify-center font-bold text-xs shadow-sm ring-1 ring-secondary/30">
+          RS
+        </div>
+        <div class="flex flex-col pr-space-sm">
+          <span class="font-label-md text-label-md font-medium text-primary">Er. R. Sharma</span>
+          <span class="font-label-sm text-label-sm text-secondary">Chief Drilling Supt.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. Central Hero Search Experience -->
+  <section class="w-full bg-surface-container/60 rounded-xl p-space-lg shadow-sm mb-space-xl backdrop-blur-md">
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+      <div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-secondary-container text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+        <span class="material-symbols-outlined text-[14px]">psychology</span>
+        Semantic Offset &amp; Incident Retrieval
+      </div>
+      <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-space-xs font-bold">SEARCH DRILLING INCIDENTS &amp; DDR ARCHIVES</h2>
+
+      <!-- Search Input Container -->
+      <div class="w-full relative flex flex-col md:flex-row items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-xl shadow-md mt-2">
+        <div class="flex items-center pl-space-md flex-1 w-full gap-space-sm">
+          <span class="material-symbols-outlined text-secondary text-[22px]">search</span>
+          <input id="hist-search-input" oninput="toggleHistClearBtn(this.value)" onkeydown="if(event.key==='Enter') filterIncidents();" aria-label="Search drilling knowledge" class="w-full bg-transparent font-body-lg text-body-lg text-primary placeholder-secondary focus:outline-none py-space-sm" type="text" value="" placeholder="Type formation, incident, well name, or mud loss keyword...">
+          <button id="hist-clear-btn" onclick="clearHistSearch()" type="button" class="hidden p-1.5 text-secondary hover:text-primary rounded-lg transition-colors cursor-pointer" title="Clear query">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+        <div class="flex items-center gap-space-xs w-full md:w-auto justify-end pr-space-xs">
+          <button onclick="filterIncidents()" class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container hover:bg-secondary text-surface font-label-md text-label-md font-semibold transition-all shadow-sm cursor-pointer" type="button">
+            <span>Query Vault</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Filter Chips -->
+      <div class="flex items-center flex-wrap justify-center gap-space-xs mt-space-md text-xs">
+        <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mr-space-xs">Filter By Field:</span>
+        <button onclick="filterByField('ALL')" class="px-3 py-1 rounded-full bg-primary-container text-surface font-medium shadow-xs cursor-pointer">All Indian Wells</button>
+        <button onclick="filterByField('Nahorkatiya')" class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary transition-colors cursor-pointer">Upper Assam (Nahorkatiya/Digboi)</button>
+        <button onclick="filterByField('Mumbai High')" class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary transition-colors cursor-pointer">Western Offshore (Mumbai High)</button>
+        <button onclick="filterByField('Mangala')" class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary transition-colors cursor-pointer">Barmer Basin (Mangala)</button>
+        <button onclick="filterByField('KG-D6')" class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary transition-colors cursor-pointer">KG Deepwater Basin</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 & 3. Main Workspace: Incident Records Feed (60%) + Live Evidence Audit Panel (40%) -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+    <!-- Left: Incident Records Feed -->
+    <div class="lg:col-span-7 flex flex-col gap-space-lg">
+      <div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high/50">
+        <div class="flex items-center gap-space-sm">
+          <span class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">Historical Incident Logs</span>
+          <span id="hist-count-badge" class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-primary font-semibold">5 Records</span>
+        </div>
+        <span class="font-body-sm text-body-sm text-secondary">Verified Operator Daily Tour Sheets</span>
+      </div>
+
+      <!-- Incident Cards Container -->
+      <div id="hist-cards-container" class="flex flex-col gap-3.5">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- Right: Evidence Audit & Primary DDR Document Viewer -->
+    <div class="lg:col-span-5 flex flex-col gap-space-lg sticky top-20">
+      <!-- AI Synthesis Card -->
+      <div class="bg-surface-container/70 rounded-xl p-space-lg shadow-sm backdrop-blur-md">
+        <div class="flex items-center justify-between mb-space-sm">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span>
+            <h4 class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">Geomechanical Precedent Synthesis</h4>
+          </div>
+          <span class="font-label-sm text-label-sm text-secondary">DGH Validated</span>
+        </div>
+        <div class="p-space-md rounded-lg bg-surface-container-lowest/90 shadow-xs text-primary font-body-md leading-relaxed mb-space-md border border-surface-container-high/40 text-xs">
+          <p id="hist-ai-synthesis" class="text-on-surface-variant leading-relaxed">
+            Correlated offset <span class="font-semibold text-primary">Nahorkatiya NHK-01</span> experienced total fluid circulation loss (420 bbl) within the <span class="font-semibold text-primary">2,810–2,870 m window</span> now approaching in current drilling, caused by tectonic fracture networks intersecting the Burhi Dihing fault. <span class="font-semibold text-primary">Mumbai High H-1-1</span> records show similar severe loss (520 bbl) upon penetrating fractured vuggy horizons.
+          </p>
+        </div>
+      </div>
+
+      <!-- Selected Tour Log Card -->
+      <div class="bg-surface-container/70 rounded-xl p-space-lg shadow-sm backdrop-blur-md">
+        <div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container-high/40">
+          <div class="flex flex-col">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Selected Tour Log Excerpt</span>
+            <span id="hist-record-title" class="font-headline-sm text-primary font-bold text-base">Nahorkatiya NHK-01 Daily Drilling Report</span>
+          </div>
+          <span id="hist-record-date" class="font-label-sm text-label-sm text-secondary font-mono">1953-02-14</span>
+        </div>
+
+        <div class="p-space-md rounded-lg bg-surface-container-lowest/90 font-body-sm text-on-surface-variant leading-relaxed mb-space-md shadow-xs border border-surface-container-high/40">
+          <div id="hist-tour-header" class="font-mono text-[11px] text-secondary mb-1.5 uppercase tracking-wide">[DDR #42 // TOUR 1 // 02:45 UTC]</div>
+          <p id="hist-tour-body" class="text-xs leading-relaxed font-mono">
+            Rotating at 115 RPM through lower Tipam transition (2,862 m). Standpipe pressure dropped precipitously by 460 psi. Mud pit totalizer alarm triggered: loss of 420 bbl in 18 minutes into natural fracture zone. Pumping stopped, well checked static for influx. Mixed and spotted 60 bbl fibrous LCM pill. Regained full returns after 6.5 hours.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-1.5 mb-space-lg text-secondary text-xs font-mono">
+          <div class="flex justify-between py-1 px-space-xs">
+            <span>Rig / Contractor</span>
+            <span id="hist-meta-rig" class="font-medium text-primary">National-130 Rotary (Assam Oil Co)</span>
+          </div>
+          <div class="flex justify-between py-1 px-space-xs bg-surface-container-low/40 rounded">
+            <span>Drill Bit Assembly</span>
+            <span id="hist-meta-bit" class="font-medium text-primary">Hughes Tricone 12-1/4" W7R</span>
+          </div>
+          <div class="flex justify-between py-1 px-space-xs">
+            <span>Mud Density Transition</span>
+            <span id="hist-meta-mud" class="font-medium text-primary">1.34 SG → 1.30 SG Treated</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-space-xs">
+          <button onclick="openFullDDRModal()" class="w-full flex items-center justify-center gap-2 py-2.5 px-space-md rounded-lg bg-primary-container hover:bg-secondary text-surface font-label-md text-xs font-semibold transition-colors shadow-xs cursor-pointer" type="button">
+            <span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+            <span>Open Complete DDR Log Excerpt</span>
+          </button>
+          <button onclick="location.hash='risk-monitor'" class="w-full flex items-center justify-center gap-2 py-2 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-xs font-medium transition-colors cursor-pointer" type="button">
+            <span class="material-symbols-outlined text-[18px] text-secondary">transfer_within_a_station</span>
+            <span>Correlate in Risk Monitor</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full DDR Modal Viewer -->
+  <div id="hist-modal" class="fixed inset-0 z-50 bg-primary/50 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="w-full max-w-2xl rounded-2xl bg-surface-container-lowest/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col space-y-4 border border-outline-variant/30 max-h-[85vh] overflow-y-auto">
+      <div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[22px]">description</span>
+          <h3 id="modal-doc-title" class="font-headline-sm text-primary font-bold text-lg">Official Daily Drilling Report Excerpt</h3>
+        </div>
+        <button onclick="closeFullDDRModal()" class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container transition-colors cursor-pointer">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div id="modal-doc-body" class="space-y-3 font-mono text-xs text-on-surface leading-relaxed">
+        <!-- Injected dynamically -->
+      </div>
+      <div class="flex justify-end gap-2 pt-3 border-t border-surface-container-high">
+        <button onclick="closeFullDDRModal()" class="px-4 py-2 rounded-xl bg-surface-container text-primary font-label-md text-xs font-semibold hover:bg-surface-container-high transition-colors cursor-pointer">Close Document</button>
+        <button onclick="closeFullDDRModal(); location.hash='risk-monitor';" class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-xs font-semibold hover:bg-secondary transition-colors cursor-pointer">Correlate in Risk Monitor</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  let allIncidents = [];
+  let selectedIncident = null;
+
+  async function loadIncidents() {
+    try {
+      const res = await fetch('/data/historical_incidents.json');
+      allIncidents = await res.json();
+      renderIncidentCards(allIncidents);
+      if (allIncidents.length > 0) {
+        selectIncident(allIncidents[0]);
+      }
+    } catch (e) {
+      console.error('Failed to load historical incidents:', e);
+    }
+  }
+
+  function renderIncidentCards(incidents) {
+    const container = document.getElementById('hist-cards-container');
+    const badge = document.getElementById('hist-count-badge');
+    if (badge) badge.textContent = `${incidents.length} Records`;
+    if (!container) return;
+
+    container.innerHTML = incidents.map(inc => `
+      <div onclick='selectIncidentById("${inc.event_id}")' class="p-4 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all cursor-pointer border border-surface-container-high/60 shadow-xs flex flex-col gap-2">
+        <div class="flex items-start justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-error-container text-error">${inc.event_type}</span>
+              <span class="text-xs text-secondary font-mono">${inc.date} • ${inc.depth_md_m} m MD</span>
+            </div>
+            <h4 class="font-headline-sm text-base font-bold text-primary">${inc.well_name}</h4>
+          </div>
+          <span class="text-xs font-mono font-bold text-secondary bg-surface-container px-2 py-1 rounded">${inc.loss_volume_bbl} bbl Loss</span>
+        </div>
+        <p class="text-xs text-secondary leading-relaxed line-clamp-2 font-mono">
+          ${inc.tour_note}
+        </p>
+        <div class="flex items-center justify-between text-[11px] text-secondary pt-1 border-t border-surface-container-high/40">
+          <span>Formation: <strong>${inc.formation}</strong></span>
+          <span class="text-primary font-semibold hover:underline">View Excerpt →</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.selectIncidentById = function(eventId) {
+    const found = allIncidents.find(i => i.event_id === eventId);
+    if (found) selectIncident(found);
+  };
+
+  function selectIncident(inc) {
+    selectedIncident = inc;
+    document.getElementById('hist-record-title').textContent = `${inc.well_name} DDR`;
+    document.getElementById('hist-record-date').textContent = inc.date;
+    document.getElementById('hist-tour-header').textContent = `[${inc.event_id} // ${inc.formation}]`;
+    document.getElementById('hist-tour-body').textContent = inc.tour_note;
+    document.getElementById('hist-meta-rig').textContent = inc.rig;
+    document.getElementById('hist-meta-bit').textContent = inc.bit;
+    document.getElementById('hist-meta-mud').textContent = `${inc.mud_weight_in_sg} SG → ${inc.mud_weight_out_sg} SG (${inc.loss_volume_bbl} bbl loss)`;
+  }
+
+  window.openFullDDRModal = function() {
+    if (!selectedIncident) return;
+    const modal = document.getElementById('hist-modal');
+    document.getElementById('modal-doc-title').textContent = `${selectedIncident.well_name} - ${selectedIncident.event_type}`;
+    document.getElementById('modal-doc-body').innerHTML = `
+      <div class="p-3 rounded-lg bg-surface-container-low border border-surface-container-high/60 space-y-1 mb-3">
+        <div class="text-[11px] font-bold text-primary uppercase">OPERATOR DAILY DRILLING REPORT (TOUR TRANSCRIPT)</div>
+        <div class="text-[10px] text-secondary">EVENT ID: ${selectedIncident.event_id} | DATE: ${selectedIncident.date} | RIG: ${selectedIncident.rig}</div>
+      </div>
+      <p class="p-3 bg-surface-container-lowest rounded-lg border border-surface-container-high leading-relaxed">${selectedIncident.tour_note}</p>
+      <div class="grid grid-cols-2 gap-2 text-[11px] mt-2">
+        <div class="p-2 bg-surface-container-low rounded"><strong>Depth:</strong> ${selectedIncident.depth_md_m} m MD</div>
+        <div class="p-2 bg-surface-container-low rounded"><strong>Formation:</strong> ${selectedIncident.formation}</div>
+        <div class="p-2 bg-surface-container-low rounded"><strong>Fluid Loss:</strong> ${selectedIncident.loss_volume_bbl} bbl</div>
+        <div class="p-2 bg-surface-container-low rounded"><strong>Resolution Time:</strong> ${selectedIncident.resolution_time_hrs} hours</div>
+      </div>
+      <div class="p-3 rounded-lg bg-diamond/40 border border-outline-variant/30 text-[11px]">
+        <span class="font-bold text-primary block mb-0.5">Engineering Mitigation Executed:</span>
+        <span class="text-secondary">${selectedIncident.mitigation}</span>
+      </div>
+    `;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  };
+
+  window.closeFullDDRModal = function() {
+    const modal = document.getElementById('hist-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  };
+
+  window.toggleHistClearBtn = function(val) {
+    const btn = document.getElementById('hist-clear-btn');
+    if (btn) {
+      if (val && val.trim().length > 0) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    }
+  };
+
+  window.clearHistSearch = function() {
+    const input = document.getElementById('hist-search-input');
+    const btn = document.getElementById('hist-clear-btn');
+    if (input) {
+      input.value = '';
+      input.focus();
+    }
+    if (btn) btn.classList.add('hidden');
+    filterIncidents();
+  };
+
+  window.filterByField = function(term) {
+    if (term === 'ALL') {
+      renderIncidentCards(allIncidents);
+    } else {
+      const filtered = allIncidents.filter(i => i.well_name.toLowerCase().includes(term.toLowerCase()) || i.formation.toLowerCase().includes(term.toLowerCase()));
+      renderIncidentCards(filtered);
+    }
+  };
+
+  window.filterIncidents = function() {
+    const q = document.getElementById('hist-search-input').value.toLowerCase();
+    const filtered = allIncidents.filter(i => 
+      i.well_name.toLowerCase().includes(q) ||
+      i.formation.toLowerCase().includes(q) ||
+      i.tour_note.toLowerCase().includes(q) ||
+      i.event_type.toLowerCase().includes(q)
+    );
+    renderIncidentCards(filtered);
+  };
+
+  function updateHistActiveTarget(well) {
+    if (!well) return;
+    const el = document.getElementById('hist-active-target-text');
+    if (el) el.textContent = `${well.name} (${well.total_depth_md_m} m MD)`;
+  }
+
+  window.addEventListener('nwis:activeWellChanged', e => {
+    if (e.detail) {
+      updateHistActiveTarget(e.detail);
+    }
+  });
+
+  if (window.NWISDataStore) {
+    const active = window.NWISDataStore.getActiveWell();
+    if (active) updateHistActiveTarget(active);
+  }
+
+  loadIncidents();
+})();
+</script>

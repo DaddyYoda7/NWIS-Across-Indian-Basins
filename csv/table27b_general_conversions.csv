@@ -1,0 +1,19 @@
+from_unit,to_unit,factor
+1 US Barrel (bbl),litres,159
+1 US Barrel (bbl),US Gallons,42
+1 Kilocalorie (kcal),kJ,4.187
+1 US Gallon,litres,3.78
+1 Kilo litre (KL),bbl,6.29
+1 Million barrels per day,MMTPA,49.8
+1 Kilocalorie (kcal),Btu,3.968
+1 Kilowatt-hour (kWh),kcal,860
+1 Standard Cubic Metre (SCM),Cubic Feet,35.31
+1 MMBTU,SCM (@10000 kcal/SCM),25.2
+1 Billion Cubic Metres (BCM)/year of Gas,MMSCMD,2.74
+1 Trillion Cubic Feet (TCF) of Gas Reserve,MMSCMD,3.88
+1 Million Metric Tonne Per Annum (MMTPA) of LNG,MMSCMD,3.6
+1 MT of LNG,SCM,1325
+1 Kilowatt-hour (kWh),Btu,3412
+Power generation from 1 MMSCMD of gas,MW,220
+Gas required for 1 MW power generation,SCM/day,4541
+200 Nautical Miles,Kilometers,370.4

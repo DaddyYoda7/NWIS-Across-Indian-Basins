@@ -1,0 +1,732 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }
+@media print {
+  aside, header, #evidenceModal, #aiModal, #risk-toast, #btnRefreshCorrelation, #btnExportSnapshot {
+    display: none !important;
+  }
+  .pl-24 { padding-left: 0 !important; }
+  main { padding-top: 0 !important; }
+}
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#cde6fa", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#324a58", "surface-dim": "#cfdce6", "inverse-on-surface": "#e5f3fd", "on-secondary": "#ffffff", "primary": "#082332", "secondary-fixed": "#cde6f8", "on-error-container": "#93000a", "background": "#f5faff", "inverse-primary": "#b1cade", "on-primary-fixed-variant": "#32495a", "secondary": "#4a6170", "surface-container-highest": "#d7e4ee", "secondary-container": "#cae3f5", "on-tertiary-fixed": "#0c1e27", "surface-variant": "#d7e4ee", "on-primary-container": "#89a1b4", "tertiary-fixed": "#d3e5f2", "on-secondary-fixed": "#031e2b", "on-primary-fixed": "#031e2d", "tertiary-container": "#273842", "on-primary": "#ffffff", "on-tertiary-container": "#8fa1ad", "surface-bright": "#f5faff", "tertiary-fixed-dim": "#b7c9d6", "primary-container": "#203848", "inverse-surface": "#26323a", "secondary-fixed-dim": "#b1cadb", "surface-container-lowest": "#ffffff", "surface-tint": "#4a6173", "surface": "#f5faff", "on-background": "#111d24", "primary-fixed-dim": "#b1cade", "on-tertiary-fixed-variant": "#384953", "error": "#ba1a1a", "outline": "#73787c", "surface-container-low": "#e9f5ff", "on-tertiary": "#ffffff", "surface-container": "#e3f0fa", "outline-variant": "#c3c7cc", "surface-container-high": "#ddeaf4", "on-error": "#ffffff", "on-secondary-container": "#4e6675", "on-surface-variant": "#43474c", "on-surface": "#111d24", "tertiary": "#11232c" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1.5rem", "space-md": "0.75rem", "space-xs": "0.25rem", "gutter": "1rem", "space-lg": "1.25rem", "space-xl": "2rem", "space-sm": "0.5rem", "gutter-lg": "1.5rem", "gutter-sm": "0.5rem", "margin-mobile": "0.75rem" }, "fontFamily": { "label-sm": [ "IBM Plex Sans" ], "headline-sm": [ "IBM Plex Sans" ], "body-sm": [ "IBM Plex Sans" ], "display-mobile": [ "IBM Plex Sans" ], "headline-lg": [ "IBM Plex Sans" ], "body-md": [ "IBM Plex Sans" ], "body-lg": [ "IBM Plex Sans" ], "headline-lg-mobile": [ "IBM Plex Sans" ], "headline-md": [ "IBM Plex Sans" ], "display": [ "IBM Plex Sans" ], "label-md": [ "IBM Plex Sans" ], "label-lg": [ "IBM Plex Sans" ] }, "fontSize": { "label-sm": [ "10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" } ], "headline-sm": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "display-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-md": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "body-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-lg-mobile": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "20px", { "lineHeight": "28px", "fontWeight": "500" } ], "display": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-md": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" } ], "label-lg": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-screen selection:bg-secondary-container selection:text-on-secondary-container"><aside class="group/rail fixed left-4 top-4 bottom-4 w-16 hover:w-64 z-50 bg-surface-container/70 backdrop-blur-2xl rounded-xl shadow-[0_8px_32px_rgba(32,56,72,0.08)] flex flex-col justify-between py-space-md transition-all duration-300 ease-in-out overflow-hidden"><div class="flex flex-col w-full"><div class="flex items-center h-12 px-space-md mb-space-sm cursor-pointer" onclick="location.href='../nwis_entry_gateway_glacial_light_edition/code.html'"><div class="w-9 h-9 rounded-lg bg-primary-container text-surface-container-lowest flex items-center justify-center font-headline-sm text-headline-sm font-bold tracking-wider shrink-0 shadow-sm">NW</div><div class="ml-3 opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden flex flex-col"><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-primary leading-tight">NWIS</span><span class="font-label-sm text-label-sm uppercase text-secondary tracking-widest">Subsea Intel</span></div></div><nav class="flex flex-col gap-1 px-2" data-active-classes="bg-primary-container text-on-primary font-semibold"><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="nwis-home" href="../nwis_entry_gateway_glacial_light_edition/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">layers</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">NWIS (Home)</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="command-center" href="../nwis_command_center_glacial_light_edition/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">grid_view</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Command Center</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="well-explorer" href="../nwis_well_explorer_glacial_light_edition/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">travel_explore</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Well Explorer</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="well-intelligence" href="../nwis_well_intelligence_deep_dive_glacial_light_edition/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">insights</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Well Intelligence</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="historical-intelligence" href="../nwis_historical_intelligence_glacial_light_edition_page_05/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">manage_history</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Historical Intel</span></a><a aria-current="page" class="flex items-center h-10 px-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold" data-path="risk-monitor" href="code.html"><span class="material-symbols-outlined text-[20px] shrink-0">warning</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Risk Monitor</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-copilot" href="../nwis_well_intelligence_deep_dive_glacial_light_edition/code.html#copilot"><span class="material-symbols-outlined text-[20px] shrink-0">psychology</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">AI Copilot</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="scenario-lab" href="../nwis_scenario_lab_predictive_risk_modeling_page_07/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">science</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Scenario Lab</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="../nwis_reports_decision_support_minimalist_editorial_dossier/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">summarize</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Reports</span></a></nav></div><div class="px-2 w-full"><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="../nwis_entry_gateway_glacial_light_edition/code.html"><span class="material-symbols-outlined text-[20px] shrink-0">settings</span><span class="ml-3.5 font-label-lg text-label-lg whitespace-nowrap opacity-0 group-hover/rail:opacity-100 transition-opacity duration-200">Settings</span></a></div></aside><div class="pl-24"><header class="fixed top-4 left-24 right-6 h-14 bg-surface-container/70 backdrop-blur-2xl rounded-xl z-40 px-space-md flex items-center justify-between shadow-[0_8px_32px_rgba(32,56,72,0.06)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-highest/60 px-3 py-1.5 rounded-lg"><span class="font-label-sm text-label-sm text-primary font-bold tracking-wider">W-204</span><span class="text-secondary text-body-sm">|</span><span class="font-label-sm text-label-sm text-secondary uppercase">STATUS:</span><span class="font-label-sm text-label-sm text-primary font-bold">DRILLING</span><span class="text-secondary text-body-sm">|</span><span class="font-label-sm text-label-sm text-secondary uppercase">DEPTH:</span><span class="font-label-sm text-label-sm text-primary font-bold">2,810 m</span><span class="text-secondary text-body-sm">|</span><span class="font-label-sm text-label-sm text-secondary uppercase">FORMATION:</span><span class="font-label-sm text-label-sm text-primary font-bold">Kiparissia SS</span></div><div class="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-low"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-secondary">100 Hz / Telemetry Active</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Notifications" class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface flex items-center justify-center transition-colors relative cursor-pointer"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-secondary"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md font-semibold text-primary leading-tight">David Chen</span><span class="font-label-sm text-label-sm text-secondary">Lead Drilling Eng.</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-sm ring-1 ring-surface-container-highest" src="https://lh3.googleusercontent.com/aida/AEtjO1UcNvgeb3r9Bu0kAAFXsXe9iGAGJ2RvJS9-Zu5n0V34p0M0DJpH3nFS01X4t2LJ8ighLX1HeZxp9SfDLcHr-iJORAp5Qs2OnofZJEEBcdOc8y8A0bc0kRnwqgqJIDKooiCv45xzfr7FZDx5W4lmn7Zou7ett8secHBa7P1zQV15piBPB0MP5yDuUja_fVwSExYUQYRyE77zohwWHAvAt11jxjSfM7BS0npAt3gYU4i0HhHR7aMbdNjPHLY"></div></div></header><main class="w-full pt-14 min-h-screen pr-6 pb-space-xl"><div class="flex flex-col w-full">
+<!-- Backdrop Atmospheric Elements (Contained to Module) -->
+<div class="relative w-full overflow-hidden">
+<!-- Subtle top ambient light refractions (Alpine / Glacial theme) -->
+<div class="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-secondary-container/30 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 right-10 w-80 h-80 rounded-full bg-surface-container-high/40 blur-3xl pointer-events-none"></div>
+<!-- Header & Live Telemetry Context -->
+<section class="relative z-10 pt-2 pb-6 px-1 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Risk Monitor • Real-Time Correlation Node</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Proactive Drilling Risk Intelligence</h1>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-3 mt-1.5 text-secondary font-body-sm text-body-sm">
+<span class="font-semibold text-primary">Active Well: W-204</span>
+<span class="text-outline-variant">•</span>
+<span>Depth: <strong class="text-primary font-semibold">2,810 m MD</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Horizon: <strong class="text-primary font-semibold">Kiparissia SS (XYZ Horizon)</strong></span>
+<span class="text-outline-variant">•</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold tracking-wider">
+            DRILLING AHEAD
+          </span>
+</div>
+</div>
+<!-- Action pill toolbar -->
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-lg bg-surface-container/70 hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all duration-200 backdrop-blur-md cursor-pointer" id="btnRefreshCorrelation">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync</span>
+<span>Re-correlate Offsets</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-all duration-200 cursor-pointer" id="btnExportSnapshot">
+<span class="material-symbols-outlined text-[16px]">sim_card_download</span>
+<span>Snapshot Report</span>
+</button>
+</div>
+</section>
+<!-- Main Grid: Section 1 & Section 2 -->
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 mb-5">
+<!-- SECTION 1: CURRENT RISK STATE (4 Cols) -->
+<div class="lg:col-span-4 rounded-xl p-5 bg-surface-container-low/75 backdrop-blur-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container-highest/60">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Section 01 // State Matrix</span>
+<span class="px-2 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-label-sm font-bold tracking-wider">
+              ATTENTION REQUIRED
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-primary mb-2">Current Risk State</h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed mb-6">
+            Current drilling conditions are approaching a historically challenging depth interval characterized by sudden fracture networks and paleokarst voids.
+          </p>
+<!-- Core Metrology Blocks -->
+<div class="grid grid-cols-2 gap-2.5">
+<div class="p-3 rounded-lg bg-surface-container/80 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Current Bit Depth</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">2,810<span class="text-secondary font-body-sm ml-1">m</span></span>
+<span class="block mt-1 font-label-sm text-label-sm text-secondary">Sensor: MWD-Gamma</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/80 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Risk Interval</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">2,810<span class="text-secondary font-body-sm font-normal"> - 2,930 m</span></span>
+<span class="block mt-1 font-label-sm text-label-sm text-secondary">Δ 120 m hazard window</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/80 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Correlated Offsets</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">3 Wells</span>
+<span class="font-label-sm text-label-sm text-secondary">(93% peak)</span>
+</div>
+<span class="block mt-1 font-label-sm text-label-sm text-secondary">Radius ≤ 3.4 km</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/80 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase block mb-1">Target Horizon</span>
+<span class="font-label-lg text-label-lg font-bold text-primary truncate block" title="Kiparissia SS / Karstic Void Transition">Kiparissia SS</span>
+<span class="block mt-1 font-label-sm text-label-sm text-secondary">Karstic Void Boundary</span>
+</div>
+</div>
+</div>
+<!-- Telemetry Integrity Micro Strip -->
+<div class="mt-6 pt-3 border-t border-surface-container-highest/60 flex items-center justify-between text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span class="font-label-sm text-label-sm">Offset Confidence Score: 88.3%</span>
+</div>
+<span id="risk-sync-time" class="font-label-sm text-label-sm uppercase tracking-wider">Sync: 12s ago</span>
+</div>
+</div>
+<!-- SECTION 2: PRIMARY ALERT CARD (8 Cols Visual Focal Point) -->
+<div class="lg:col-span-8 rounded-xl p-6 bg-surface-container-low/90 backdrop-blur-xl shadow-md relative overflow-hidden flex flex-col justify-between">
+<!-- Subtle gradient rim -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-surface-container-highest"></div>
+<div>
+<!-- Upper Alert Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-surface-container-highest/70">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-widest text-primary">Historical Risk Zone Approaching</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px] text-secondary">crisis_alert</span>
+<span>Priority 1 Alert</span>
+</div>
+</div>
+<!-- Main Vulnerability Narrative -->
+<div class="mb-5">
+<div class="flex flex-wrap items-baseline gap-2 mb-1.5">
+<h3 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">Mud Loss &amp; Total Circulation Vulnerability</h3>
+</div>
+<p class="font-body-lg text-body-lg text-secondary leading-relaxed max-w-3xl">
+              Three relevant offset wells recorded severe, unmitigated mud-loss events within comparable depth and stratigraphic lithologies. High propensity for fluid thieves entering macro-fractures at top of Karstic Void target.
+            </p>
+</div>
+<!-- Correlated Offset Wells Sub-cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 my-4">
+<!-- Offset 1 -->
+<div id="card-offset-w117" class="p-3.5 rounded-lg bg-surface-container/70 hover:bg-surface-container transition-all duration-150 cursor-pointer border border-transparent hover:border-surface-container-highest" onclick="openEvidenceWithWell('W-117')">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-bold text-primary">Well W-117</span>
+<span class="px-2 py-0.5 rounded bg-primary text-surface-container-lowest font-label-sm text-label-sm font-bold">93% Match</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-primary mb-0.5">2,810 m</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Mud Loss: 420 bbl total</p>
+<div class="mt-2 text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+<span>Distance: 620 m SW</span>
+</div>
+</div>
+<!-- Offset 2 -->
+<div id="card-offset-w103" class="p-3.5 rounded-lg bg-surface-container/70 hover:bg-surface-container transition-all duration-150 cursor-pointer border border-transparent hover:border-surface-container-highest" onclick="openEvidenceWithWell('W-103')">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-bold text-primary">Well W-103</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">84% Match</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-primary mb-0.5">2,870 m</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Karst Void Seepage (LCM drop)</p>
+<div class="mt-2 text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+<span>Distance: 1.8 km NW</span>
+</div>
+</div>
+<!-- Offset 3 -->
+<div id="card-offset-w151" class="p-3.5 rounded-lg bg-surface-container/70 hover:bg-surface-container transition-all duration-150 cursor-pointer border border-transparent hover:border-surface-container-highest" onclick="openEvidenceWithWell('W-151')">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md font-bold text-primary">Well W-151</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold">88% Match</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-semibold text-primary mb-0.5">2,920 m</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium">Loss &amp; Differential Sticking</p>
+<div class="mt-2 text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+<span>Distance: 3.4 km NE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons Footer -->
+<div class="pt-4 border-t border-surface-container-highest/60 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-primary-container hover:bg-secondary text-on-primary font-label-lg text-label-lg font-semibold flex items-center gap-2 transition-colors shadow-sm cursor-pointer" id="btnViewEvidence">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span>View Evidence</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-semibold flex items-center gap-2 transition-colors cursor-pointer" id="btnAskAI">
+<span class="material-symbols-outlined text-[18px] text-secondary">psychology</span>
+<span>Ask AI Copilot</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-semibold flex items-center gap-2 transition-colors cursor-pointer" id="btnCompareWells">
+<span class="material-symbols-outlined text-[18px] text-secondary">compare_arrows</span>
+<span>Compare Wells</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Estimated mitigation window: 45 mins</span>
+</div>
+</div>
+</div>
+<!-- SECTION 4: DEPTH RISK TIMELINE (Horizontal Depth Axis & Lithology) -->
+<div class="relative z-10 rounded-xl p-5 bg-surface-container-low/75 backdrop-blur-xl shadow-sm mb-5">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Section 04 // Dynamic Stratigraphic Mapping</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Depth Risk Timeline (2,600 m — 3,000 m MD)</h3>
+</div>
+<div class="flex items-center gap-4 text-secondary font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-surface-container-highest"></span> Vigla Shale</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-secondary-container"></span> Kiparissia SS</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-primary-container"></span> Karstic Void Target</span>
+</div>
+</div>
+<!-- Interactive Timeline Canvas / SVG Construct -->
+<div class="relative w-full overflow-x-auto pb-2">
+<div class="min-w-[720px] relative pt-10 pb-4">
+<!-- Stratigraphy Background Bands -->
+<div class="w-full h-14 rounded-lg flex overflow-hidden shadow-inner bg-surface-container-highest/40">
+<!-- Vigla Shale: 2600 - 2720 (30%) -->
+<div class="w-[30%] h-full bg-surface-container-highest/60 flex items-center px-3 relative border-r border-surface-container-lowest/40">
+<span class="font-label-sm text-label-sm font-bold text-secondary uppercase tracking-wider">Vigla Shale Unit (Consolidated)</span>
+</div>
+<!-- Kiparissia SS: 2720 - 2810 (22.5%) -->
+<div class="w-[22.5%] h-full bg-secondary-container/50 flex items-center px-3 relative border-r border-surface-container-lowest/40">
+<span class="font-label-sm text-label-sm font-bold text-primary uppercase tracking-wider">Kiparissia SS</span>
+</div>
+<!-- Karstic Carbonate Void Hazard Zone: 2810 - 3000 (47.5%) -->
+<div class="w-[47.5%] h-full bg-surface-container-high/90 flex items-center px-3 justify-between relative overflow-hidden">
+<!-- Risk Overlay Strip (2810 - 2930) -->
+<div class="absolute left-0 top-0 bottom-0 w-[63%] bg-primary-container/20 flex items-center px-3">
+<span class="font-label-sm text-label-sm font-bold text-primary uppercase tracking-wider">Hazard Interval (2,810 - 2,930 m)</span>
+</div>
+<span class="relative z-10 ml-auto font-label-sm text-label-sm text-secondary uppercase font-semibold">Karstic Carbonate Void Target</span>
+</div>
+</div>
+<!-- Current Bit Pin (at 2,810 m -> 52.5% of 400m range) -->
+<div class="absolute top-0 left-[52.5%] -translate-x-1/2 flex flex-col items-center z-20 group cursor-pointer" onclick="openEvidenceWithWell('W-204')">
+<div class="px-2.5 py-1 rounded bg-primary text-surface-container-lowest font-label-sm text-label-sm font-bold shadow-md whitespace-nowrap flex items-center gap-1 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[13px]">arrow_downward</span>
+              CURRENT BIT: 2,810 m
+            </div>
+<div class="w-0.5 h-16 bg-primary"></div>
+<div class="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20 -mt-1.5 animate-ping"></div>
+</div>
+<!-- Historical Offset Event Markers -->
+<!-- Event 1: W-117 @ 2,810m (52.5%) -->
+<div class="absolute top-16 left-[52.5%] -translate-x-1/2 mt-12 flex flex-col items-center group cursor-pointer" onclick="openEvidenceWithWell('W-117')">
+<div class="w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></div>
+<div class="w-0.5 h-3 bg-secondary"></div>
+<div class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold whitespace-nowrap shadow-sm group-hover:bg-primary transition-colors">
+              W-117: Mud Loss 420 bbl @ 2,810 m
+            </div>
+</div>
+<!-- Event 2: W-103 @ 2,870m (67.5%) -->
+<div class="absolute top-16 left-[67.5%] -translate-x-1/2 mt-12 flex flex-col items-center group cursor-pointer" onclick="openEvidenceWithWell('W-103')">
+<div class="w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></div>
+<div class="w-0.5 h-3 bg-secondary"></div>
+<div class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold whitespace-nowrap shadow-sm group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+              W-103: Seepage @ 2,870 m
+            </div>
+</div>
+<!-- Event 3: W-151 @ 2,920m (80%) -->
+<div class="absolute top-16 left-[80%] -translate-x-1/2 mt-12 flex flex-col items-center group cursor-pointer" onclick="openEvidenceWithWell('W-151')">
+<div class="w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></div>
+<div class="w-0.5 h-3 bg-secondary"></div>
+<div class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold whitespace-nowrap shadow-sm group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+              W-151: Sticking @ 2,920 m
+            </div>
+</div>
+<!-- Depth Axis Calibration Rulers -->
+<div class="w-full flex justify-between pt-2 border-t border-surface-container-highest/80 font-label-sm text-label-sm text-secondary font-mono mt-1">
+<span>2,600 m</span>
+<span>2,700 m</span>
+<span class="font-bold text-primary">2,800 m</span>
+<span class="font-bold text-primary">2,900 m</span>
+<span>3,000 m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 2-Column Split: Section 3 (Risk Snapshot) & Section 6/7 (Analytical Diagnostics) -->
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 mb-4">
+<!-- SECTION 3 — RISK SNAPSHOT (Model-based decision-support indicators) (5 Cols) -->
+<div class="lg:col-span-5 rounded-xl p-5 bg-surface-container-low/75 backdrop-blur-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container-highest/60">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Section 03 // Predictive Load</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Risk Snapshot</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono">N=48,290 Rec</span>
+</div>
+<!-- 4 Refined Indicator Bars (Strict monochrome #203848, #546C7B, #CBD8E2 palette) -->
+<div class="space-y-4">
+<!-- Indicator 1: Mud Loss -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md font-bold text-primary">Mud Loss Probability</span>
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-wider uppercase">Elevated (78%)</span>
+</div>
+<div class="w-full h-2.5 rounded bg-surface-container-highest overflow-hidden relative">
+<div class="h-full bg-primary rounded transition-all duration-500" style="width: 78%"></div>
+<div class="absolute top-0 bottom-0 left-[75%] w-0.5 bg-surface-container-lowest"></div>
+</div>
+<div class="flex justify-between text-secondary font-label-sm text-label-sm mt-1">
+<span>Threshold: Normal &lt; 40%</span>
+<span>Critical at 85%</span>
+</div>
+</div>
+<!-- Indicator 2: Torque Spike -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md font-bold text-primary">Torque Spike Risk</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-wider uppercase">Moderate (52%)</span>
+</div>
+<div class="w-full h-2.5 rounded bg-surface-container-highest overflow-hidden relative">
+<div class="h-full bg-secondary rounded transition-all duration-500" style="width: 52%"></div>
+<div class="absolute top-0 bottom-0 left-[60%] w-0.5 bg-surface-container-lowest"></div>
+</div>
+<div class="flex justify-between text-secondary font-label-sm text-label-sm mt-1">
+<span>Mean Bit Drag: 18.4 kNm</span>
+<span>Limit: 26 kNm</span>
+</div>
+</div>
+<!-- Indicator 3: Stuck Pipe -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md font-bold text-primary">Stuck Pipe Index</span>
+<span class="font-label-sm text-label-sm font-medium text-secondary tracking-wider uppercase">Low (24%)</span>
+</div>
+<div class="w-full h-2.5 rounded bg-surface-container-highest overflow-hidden relative">
+<div class="h-full bg-secondary/60 rounded transition-all duration-500" style="width: 24%"></div>
+<div class="absolute top-0 bottom-0 left-[50%] w-0.5 bg-surface-container-lowest"></div>
+</div>
+<div class="flex justify-between text-secondary font-label-sm text-label-sm mt-1">
+<span>Annular Clearance: Stable</span>
+<span>Clean Hole Assured</span>
+</div>
+</div>
+<!-- Indicator 4: Overpressure -->
+<div>
+<div class="flex justify-between items-baseline mb-1">
+<span class="font-label-md text-label-md font-bold text-primary">Overpressure Delta</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary tracking-wider uppercase">Moderate (46%)</span>
+</div>
+<div class="w-full h-2.5 rounded bg-surface-container-highest overflow-hidden relative">
+<div class="h-full bg-secondary rounded transition-all duration-500" style="width: 46%"></div>
+<div class="absolute top-0 bottom-0 left-[65%] w-0.5 bg-surface-container-lowest"></div>
+</div>
+<div class="flex justify-between text-secondary font-label-sm text-label-sm mt-1">
+<span>Pore Press. Grad: 1.18 SG</span>
+<span>Mud Weight: 1.22 SG</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro Footer Text -->
+<p class="font-label-sm text-label-sm text-secondary mt-6 pt-3 border-t border-surface-container-highest/60 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+          Model-based decision-support indicators • Calibrated against 48,290 historical records
+        </p>
+</div>
+<!-- SECTION 6 & 7: WHY THIS RISK? + RECENT ALERTS (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-5">
+<!-- SECTION 6: WHY THIS RISK? Expandable Diagnostic Panel -->
+<div class="rounded-xl p-5 bg-surface-container-low/75 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between cursor-pointer select-none" id="toggleWhyRisk">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">help_outline</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary">Why This Risk?</h3>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-bold">4 Factors Detected</span>
+</div>
+<button aria-label="Toggle diagnostics" class="w-7 h-7 rounded flex items-center justify-center text-secondary hover:bg-surface-container transition-colors cursor-pointer" id="chevronWhy">
+<span class="material-symbols-outlined text-[20px] transition-transform duration-200" id="chevronIcon">expand_less</span>
+</button>
+</div>
+<div class="mt-4 space-y-2.5 transition-all duration-300" id="diagnosticBody">
+<div class="p-3 rounded-lg bg-surface-container/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">grain</span>
+<p class="font-body-md text-body-md text-secondary leading-normal">
+<strong class="text-primary font-semibold">Lithological Interface Transition:</strong> Well W-204 is entering the brittle Kiparissia Quartzite / Karstic limestone unroofing sequence.
+              </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">share_location</span>
+<p class="font-body-md text-body-md text-secondary leading-normal">
+<strong class="text-primary font-semibold">Spatial Offset Correlation:</strong> 3 correlated offset wells encountered sudden macro-porosity mud losses within an immediate radius of 620 m to 3.4 km.
+              </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">straighten</span>
+<p class="font-body-md text-body-md text-secondary leading-normal">
+<strong class="text-primary font-semibold">Direct Boundary Overlap:</strong> Active drill bit at 2,810 m is directly intersecting the historical upper loss horizon documented in offset W-117.
+              </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container/60 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">compress</span>
+<p class="font-body-md text-body-md text-secondary leading-normal">
+<strong class="text-primary font-semibold">Hydraulic Window Compression:</strong> Real-time Equivalent Circulating Density (ECD) margin has narrowed to 0.04 SG above pore pressure.
+              </p>
+</div>
+<div class="pt-2 flex justify-end">
+<button class="font-label-md text-label-md font-bold text-primary hover:text-secondary flex items-center gap-1 transition-colors cursor-pointer" id="btnHistoricalDeepDive">
+<span>View Historical Evidence Archive</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SECTION 7: RECENT ALERTS (Chronological Timeline Strip) -->
+<div class="rounded-xl p-5 bg-surface-container-low/75 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-surface-container-highest/60">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Recent Well Events</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary">Logged in Last 12h</span>
+</div>
+<button class="font-label-sm text-label-sm font-bold text-primary hover:underline uppercase tracking-wider cursor-pointer" id="btnViewAllAlerts">
+              View All Alerts (14)
+            </button>
+</div>
+<!-- Alert Items Strip -->
+<div id="alertsList" class="divide-y divide-surface-container-highest/50">
+<!-- Alert 1 -->
+<div class="py-2.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-primary text-surface-container-lowest font-mono font-bold text-label-sm">2,810 m</span>
+<div>
+<span class="font-label-lg text-label-lg font-bold text-primary block">Historical Mud-Loss Zone Reached</span>
+<span class="font-body-sm text-body-sm text-secondary">Active stratigraphic entry point into XYZ Karst Horizon</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">12 min ago</span>
+</div>
+<!-- Alert 2 -->
+<div class="py-2.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono font-bold text-label-sm">2,650 m</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-primary block">Torque Trend Variance Detected</span>
+<span class="font-body-sm text-body-sm text-secondary">Resolved via 15% surface RPM reduction and reaming run</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">3h 40m ago</span>
+</div>
+<!-- Alert 3 -->
+<div class="py-2.5 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono font-bold text-label-sm">2,420 m</span>
+<div>
+<span class="font-label-lg text-label-lg font-semibold text-primary block">Formation Transition Complete</span>
+<span class="font-body-sm text-body-sm text-secondary">Graded out of Vigla Shale; confirmed by LWD resistivity</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">8h 15m ago</span>
+</div>
+</div>
+
+<!-- Expanded Alerts -->
+<div id="expandedAlerts" class="hidden divide-y divide-surface-container-highest/50 pt-1">
+  <div class="py-2.5 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono font-bold text-label-sm">2,280 m</span>
+      <div>
+        <span class="font-label-lg text-label-lg font-semibold text-primary block">Gamma Ray Count Baseline Calibrated</span>
+        <span class="font-body-sm text-body-sm text-secondary">Sensor normalization complete; 68 API baseline verified</span>
+      </div>
+    </div>
+    <span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">10h 30m ago</span>
+  </div>
+  <div class="py-2.5 flex items-center justify-between gap-3">
+    <div class="flex items-center gap-3">
+      <span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-mono font-bold text-label-sm">2,150 m</span>
+      <div>
+        <span class="font-label-lg text-label-lg font-semibold text-primary block">Flow Rate Stabilized</span>
+        <span class="font-body-sm text-body-sm text-secondary">Circulation pump #2 brought online at 2,400 lpm</span>
+      </div>
+    </div>
+    <span class="font-label-sm text-label-sm text-secondary whitespace-nowrap">11h 50m ago</span>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- Evidence Drawer Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-md hidden items-center justify-center p-4" id="evidenceModal">
+<div class="bg-surface-container-lowest/95 backdrop-blur-2xl rounded-2xl max-w-2xl w-full p-6 shadow-2xl">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container-highest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">history_edu</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Historical Audit Trail &amp; Offset Logs</h4>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container transition-colors cursor-pointer" id="btnCloseEvidence">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="my-4 space-y-3 max-h-[614px] overflow-y-auto pr-1">
+<div id="ev-modal-w117" class="p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="flex justify-between font-label-md text-label-md font-bold text-primary mb-1">
+<span>Well W-117 DDR Entry #42 (18-Oct-2021)</span>
+<span>2,810 m MD</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              "Encountered high rate of fluid loss (approx 60 bbl/hr). Initiated LCM pill pumping (medium nut plug + calcium carbonate). Total mud deficit: 420 bbl. Standpipe pressure dropped 220 psi."
+            </p>
+</div>
+<div id="ev-modal-w103" class="p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="flex justify-between font-label-md text-label-md font-bold text-primary mb-1">
+<span>Well W-103 Daily Geologist Report</span>
+<span>2,870 m MD</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              "Karst cavity void identified in cuttings. Bit drop of 0.4 m with instantaneous ROP acceleration. Partial returns regained after reducing mud weight by 0.03 SG."
+            </p>
+</div>
+<div id="ev-modal-w151" class="p-3 rounded-lg bg-surface-container-low transition-all">
+<div class="flex justify-between font-label-md text-label-md font-bold text-primary mb-1">
+<span>Well W-151 Incident Analysis</span>
+<span>2,920 m MD</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+              "Severe losses resulted in fluid level drop and subsequent differential sticking. Jarring required 14 hours to liberate BHA."
+            </p>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container-highest flex justify-end gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold cursor-pointer" id="btnCloseEvidence2">Close</button>
+<button class="px-4 py-2 rounded-lg bg-primary text-surface-container-lowest font-label-md text-label-md font-semibold flex items-center gap-1.5 cursor-pointer" id="btnPrintReport">
+<span class="material-symbols-outlined text-[16px]">download</span> Export Audit Dossier
+          </button>
+</div>
+</div>
+</div>
+<!-- AI Copilot Quick Modal -->
+<div class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-md hidden items-center justify-center p-4" id="aiModal">
+<div class="bg-surface-container-lowest/95 backdrop-blur-2xl rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-highest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-primary">Copilot Mitigation Context</h4>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-surface-container transition-colors cursor-pointer" id="btnCloseAI">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="my-4 space-y-3">
+<p class="font-body-md text-body-md text-secondary">
+            Context injected: <span class="text-primary font-semibold">Active Well W-204 at 2,810m MD</span> matching Mud-Loss profile from <span class="text-primary font-semibold">W-117</span>.
+          </p>
+<div class="p-3.5 rounded-lg bg-surface-container-low text-primary font-body-sm text-body-sm leading-relaxed">
+            "Recommended Engineer Actions: <br>
+            1. Pre-mix 150 bbl engineered fibrous LCM pill in reserve pit.<br>
+            2. Lower flow rate from 2,400 lpm to 1,900 lpm prior to drilling ahead into 2,820m.<br>
+            3. Continuously observe active pit volume with delta threshold set to 3 bbl."
+          </div>
+</div>
+<div class="pt-3 border-t border-surface-container-highest flex justify-end">
+<button class="px-4 py-2 rounded-lg bg-primary text-surface-container-lowest font-label-md text-label-md font-semibold cursor-pointer" id="btnAcknowledgeAI">Acknowledge &amp; Transfer to Console</button>
+</div>
+</div>
+</div>
+
+<!-- Floating Toast Container -->
+<div id="risk-toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-primary text-surface-container-lowest text-xs font-medium shadow-2xl flex items-center gap-2 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300">
+  <span id="risk-toast-icon" class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span>
+  <span id="risk-toast-msg">Operation completed</span>
+</div>
+
+</div>
+</div>
+<script>
+  // Micro-interaction behaviors for Risk Monitor page
+  (function() {
+    function showRiskToast(message, isAlert = false) {
+      const toast = document.getElementById('risk-toast');
+      const msg = document.getElementById('risk-toast-msg');
+      const icon = document.getElementById('risk-toast-icon');
+      if (!toast || !msg || !icon) return;
+
+      msg.textContent = message;
+      if (isAlert) {
+        icon.textContent = 'warning';
+        icon.className = 'material-symbols-outlined text-[18px] text-amber-400';
+      } else {
+        icon.textContent = 'check_circle';
+        icon.className = 'material-symbols-outlined text-[18px] text-emerald-400';
+      }
+
+      toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // Expand/collapse diagnostic section
+    const toggleWhyRisk = document.getElementById('toggleWhyRisk');
+    const diagnosticBody = document.getElementById('diagnosticBody');
+    const chevronIcon = document.getElementById('chevronIcon');
+
+    if (toggleWhyRisk && diagnosticBody && chevronIcon) {
+      let expanded = true;
+      toggleWhyRisk.addEventListener('click', () => {
+        expanded = !expanded;
+        if (expanded) {
+          diagnosticBody.style.display = 'block';
+          chevronIcon.textContent = 'expand_less';
+        } else {
+          diagnosticBody.style.display = 'none';
+          chevronIcon.textContent = 'expand_more';
+        }
+      });
+    }
+
+    // Modal Handlers
+    const evidenceModal = document.getElementById('evidenceModal');
+    const btnViewEvidence = document.getElementById('btnViewEvidence');
+    const btnCloseEvidence = document.getElementById('btnCloseEvidence');
+    const btnCloseEvidence2 = document.getElementById('btnCloseEvidence2');
+    const btnHistoricalDeepDive = document.getElementById('btnHistoricalDeepDive');
+    const btnPrintReport = document.getElementById('btnPrintReport');
+
+    const openEvidence = (wellHighlight) => {
+      if (evidenceModal) {
+        evidenceModal.classList.remove('hidden');
+        evidenceModal.classList.add('flex');
+
+        if (wellHighlight) {
+          const targetCard = document.getElementById(`ev-modal-${wellHighlight.toLowerCase().replace('-', '')}`);
+          if (targetCard) {
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            targetCard.classList.add('ring-2', 'ring-primary', 'bg-surface-container-highest/60');
+            setTimeout(() => {
+              targetCard.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-highest/60');
+            }, 2000);
+          }
+        }
+      }
+    };
+
+    window.openEvidenceWithWell = openEvidence;
+
+    const closeEvidence = () => {
+      if (evidenceModal) {
+        evidenceModal.classList.add('hidden');
+        evidenceModal.classList.remove('flex');
+      }
+    };
+
+    if (btnViewEvidence) btnViewEvidence.addEventListener('click', () => openEvidence());
+    if (btnHistoricalDeepDive) btnHistoricalDeepDive.addEventListener('click', () => openEvidence());
+    if (btnCloseEvidence) btnCloseEvidence.addEventListener('click', closeEvidence);
+    if (btnCloseEvidence2) btnCloseEvidence2.addEventListener('click', closeEvidence);
+
+    if (btnPrintReport) {
+      btnPrintReport.addEventListener('click', () => {
+        showRiskToast('Exporting historical audit dossier for W-204...');
+        setTimeout(() => window.print(), 350);
+      });
+    }
+
+    // AI Copilot Modal
+    const aiModal = document.getElementById('aiModal');
+    const btnAskAI = document.getElementById('btnAskAI');
+    const btnCloseAI = document.getElementById('btnCloseAI');
+    const btnAcknowledgeAI = document.getElementById('btnAcknowledgeAI');
+
+    const openAI = () => {
+      if (aiModal) {
+        aiModal.classList.remove('hidden');
+        aiModal.classList.add('flex');
+      }
+    };
+    const closeAI = () => {
+      if (aiModal) {
+        aiModal.classList.add('hidden');
+        aiModal.classList.remove('flex');
+      }
+    };
+
+    if (btnAskAI) btnAskAI.addEventListener('click', openAI);
+    if (btnCloseAI) btnCloseAI.addEventListener('click', closeAI);
+    if (btnAcknowledgeAI) {
+      btnAcknowledgeAI.addEventListener('click', () => {
+        closeAI();
+        showRiskToast('Mitigation instructions transferred to Drilling Console');
+      });
+    }
+
+    // Compare Wells button
+    const btnCompareWells = document.getElementById('btnCompareWells');
+    if (btnCompareWells) {
+      btnCompareWells.addEventListener('click', () => {
+        showRiskToast('Navigating to Offset Well Comparison...');
+        setTimeout(() => {
+          location.href = '../nwis_well_explorer_glacial_light_edition/code.html';
+        }, 400);
+      });
+    }
+
+    // View All Alerts toggle
+    const btnViewAllAlerts = document.getElementById('btnViewAllAlerts');
+    const expandedAlerts = document.getElementById('expandedAlerts');
+    if (btnViewAllAlerts && expandedAlerts) {
+      btnViewAllAlerts.addEventListener('click', () => {
+        const isHidden = expandedAlerts.classList.contains('hidden');
+        if (isHidden) {
+          expandedAlerts.classList.remove('hidden');
+          btnViewAllAlerts.textContent = 'Collapse Alerts';
+        } else {
+          expandedAlerts.classList.add('hidden');
+          btnViewAllAlerts.textContent = 'View All Alerts (14)';
+        }
+      });
+    }
+
+    // Snapshot Report button
+    const btnExportSnapshot = document.getElementById('btnExportSnapshot');
+    if (btnExportSnapshot) {
+      btnExportSnapshot.addEventListener('click', () => {
+        showRiskToast('Subsurface Risk Snapshot generated (W-204 @ 2,810 m MD)');
+        setTimeout(() => window.print(), 400);
+      });
+    }
+
+    // Re-correlate subtle button animation
+    const btnRefresh = document.getElementById('btnRefreshCorrelation');
+    const riskSyncTime = document.getElementById('risk-sync-time');
+    if (btnRefresh) {
+      btnRefresh.addEventListener('click', () => {
+        const icon = btnRefresh.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.add('animate-spin');
+          setTimeout(() => {
+            icon.classList.remove('animate-spin');
+            if (riskSyncTime) riskSyncTime.textContent = 'Sync: Just now';
+            showRiskToast('Offset correlations refreshed (W-117: 93%, W-151: 88%, W-103: 84%)');
+          }, 900);
+        }
+      });
+    }
+  })();
+</script><script src="../nav_bridge.js"></script></main></div></body></html>

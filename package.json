@@ -1,0 +1,26 @@
+{
+  "name": "nwis-glacial-precision",
+  "version": "1.0.0",
+  "description": "Nearby Wells Intelligence System — Glacial Precision Framework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "python -m unittest discover -s tests",
+    "audit": "python -m execution.agent_supervisor audit --path execution"
+  },
+  "keywords": [
+    "nwis",
+    "subsea",
+    "well-intelligence",
+    "glacial-precision"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^18.0.4",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.0"
+  }
+}

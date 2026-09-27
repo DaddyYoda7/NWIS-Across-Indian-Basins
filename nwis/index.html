@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NWIS — Nearby Wells Intelligence System | Glacial Precision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            diamond: '#E3EDF5',
+            reflection: '#CBD8E2',
+            astral: '#203848',
+            meditative: '#95A7B3',
+            turbulent: '#546C7B',
+            glacialCanvas: '#F3F8FC',
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #E3EDF5;
+      font-family: 'IBM Plex Sans', sans-serif;
+      overflow: hidden;
+    }
+    
+    .glass-bar {
+      background: rgba(203, 216, 226, 0.75);
+      backdrop-filter: blur(20px) saturate(140%);
+      border: 1px solid rgba(149, 167, 179, 0.35);
+      box-shadow: 0 4px 20px -2px rgba(32, 56, 72, 0.06);
+    }
+
+    .active-pill {
+      background: #203848 !important;
+      color: #E3EDF5 !important;
+      box-shadow: 0 2px 8px rgba(32, 56, 72, 0.2);
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col antialiased text-astral selection:bg-reflection selection:text-astral">
+
+  <header class="h-14 w-full px-4 flex items-center justify-between glass-bar z-50 shrink-0">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg bg-astral flex items-center justify-center text-diamond font-bold text-xs shadow-sm">
+        NW
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="font-bold text-sm tracking-tight text-astral">NWIS</span>
+        <span class="text-meditative text-xs">/</span>
+        <span class="text-xs uppercase tracking-wider text-turbulent font-semibold hidden md:inline">Nearby Wells Intelligence Framework</span>
+      </div>
+    </div>
+
+    <nav class="flex items-center space-x-1 overflow-x-auto max-w-3xl py-1" id="module-nav">
+      <button onclick="switchView('gateway')" data-route="gateway" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">hub</span>
+        <span class="hidden lg:inline">Gateway</span>
+      </button>
+      <button onclick="switchView('command-center')" data-route="command-center" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">monitoring</span>
+        <span class="hidden lg:inline">Command Center</span>
+      </button>
+      <button onclick="switchView('well-explorer')" data-route="well-explorer" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">explore</span>
+        <span class="hidden lg:inline">Well Explorer</span>
+      </button>
+      <button onclick="switchView('well-intelligence')" data-route="well-intelligence" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">insights</span>
+        <span class="hidden lg:inline">Well Intelligence</span>
+      </button>
+      <button onclick="switchView('historical-intelligence')" data-route="historical-intelligence" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">history</span>
+        <span class="hidden lg:inline">Historical Intel</span>
+      </button>
+      <button onclick="switchView('risk-monitor')" data-route="risk-monitor" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">warning</span>
+        <span class="hidden lg:inline">Risk Monitor</span>
+      </button>
+      <button onclick="switchView('scenario-lab')" data-route="scenario-lab" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">science</span>
+        <span class="hidden lg:inline">Scenario Lab</span>
+      </button>
+      <button onclick="switchView('reports')" data-route="reports" class="nav-btn px-2.5 py-1 rounded-md text-xs font-medium text-turbulent hover:bg-white/60 hover:text-astral transition-all flex items-center gap-1.5 whitespace-nowrap">
+        <span class="material-symbols-outlined text-[16px]">description</span>
+        <span class="hidden lg:inline">Technical Dossier</span>
+      </button>
+    </nav>
+
+    <div class="flex items-center space-x-2">
+      <div class="hidden sm:flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-white/50 text-[11px] font-mono text-turbulent">
+        <span class="w-1.5 h-1.5 rounded-full bg-astral animate-pulse"></span>
+        <span class="font-bold text-astral">Nahorkatiya-1</span>
+        <span>•</span>
+        <span>3,571m</span>
+      </div>
+      <button onclick="openStandalone()" title="Open Current View in Fullscreen Tab" class="p-1.5 rounded-lg text-turbulent hover:text-astral hover:bg-white/60 transition-colors">
+        <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full h-[calc(100vh-3.5rem)] relative bg-[#E3EDF5] overflow-hidden">
+    <iframe id="app-viewport" class="w-full h-full border-0 select-auto" src="nwis_command_center_glacial_minimal_edition_page_02/code.html"></iframe>
+  </main>
+
+  <script>
+    const ROUTES = {
+      'gateway': 'nwis_entry_gateway_glacial_light_edition/code.html',
+      'nwis': 'nwis_entry_gateway_glacial_light_edition/code.html',
+      'nwis-home': 'nwis_entry_gateway_glacial_light_edition/code.html',
+      'search': 'nwis_entry_gateway_glacial_light_edition/code.html',
+      'command-center': 'nwis_command_center_glacial_minimal_edition_page_02/code.html',
+      'well-explorer': 'nwis_well_explorer_glacial_minimal_edition_page_03/code.html',
+      'well-intelligence': 'nwis_well_intelligence_w_204_profile_page_04/code.html',
+      'historical-intelligence': 'nwis_historical_intelligence_institutional_memory_page_05/code.html',
+      'risk-monitor': 'nwis_risk_monitor_proactive_subsurface_intelligence_page_06/code.html',
+      'scenario-lab': 'nwis_scenario_lab_interactive_decision_support_page_08/code.html',
+      'reports': 'nwis_reports_decision_support_minimalist_editorial_dossier/code.html'
+    };
+
+    let currentRoute = 'command-center';
+
+    function switchView(routeKey) {
+      if (!ROUTES[routeKey]) return;
+      currentRoute = routeKey;
+      const iframe = document.getElementById('app-viewport');
+      iframe.src = ROUTES[routeKey];
+      window.location.hash = routeKey;
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-route') === routeKey) {
+          btn.classList.add('active-pill');
+        } else {
+          btn.classList.remove('active-pill');
+        }
+      });
+    }
+
+    function openStandalone() {
+      if (ROUTES[currentRoute]) {
+        window.open(ROUTES[currentRoute], '_blank');
+      }
+    }
+
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'NWIS_NAVIGATE') {
+        const target = event.data.path;
+        if (ROUTES[target]) {
+          switchView(target);
+        }
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ROUTES[hash]) {
+        switchView(hash);
+      } else {
+        switchView('command-center');
+      }
+    });
+  </script>
+</body>
+</html>

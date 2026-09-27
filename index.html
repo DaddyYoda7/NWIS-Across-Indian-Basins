@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_dashboard" name="shell-type">
+  <title>NWIS — Nearby Wells Intelligence System</title>
+  <link rel="icon" type="image/svg+xml" href="app/assets/nwis_icon.svg">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet GIS Live Satellite Map Engine (Free Open Live Geospatial Satellite Tiles) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  
+  <!-- Tailwind CSS & Custom Config -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f5faff",
+            "surface-dim": "#cfdce6",
+            "surface-bright": "#f5faff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#e9f5ff",
+            "surface-container": "#e3f0fa",
+            "surface-container-high": "#ddeaf4",
+            "surface-container-highest": "#d7e4ee",
+            "on-surface": "#111d24",
+            "on-surface-variant": "#43474c",
+            "inverse-surface": "#26323a",
+            "inverse-on-surface": "#e5f3fd",
+            "outline": "#73787c",
+            "outline-variant": "#c3c7cc",
+            "surface-tint": "#4a6173",
+            "primary": "#082332",
+            "on-primary": "#ffffff",
+            "primary-container": "#203848",
+            "on-primary-container": "#89a1b4",
+            "inverse-primary": "#b1cade",
+            "secondary": "#4a6170",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#cae3f5",
+            "on-secondary-container": "#4e6675",
+            "tertiary": "#11232c",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#273842",
+            "on-tertiary-container": "#8fa1ad",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "primary-fixed": "#cde6fa",
+            "primary-fixed-dim": "#b1cade",
+            "on-primary-fixed": "#031e2d",
+            "on-primary-fixed-variant": "#32495a",
+            "secondary-fixed": "#cde6f8",
+            "secondary-fixed-dim": "#b1cadb",
+            "on-secondary-fixed": "#031e2b",
+            "on-secondary-fixed-variant": "#324a58",
+            "tertiary-fixed": "#d3e5f2",
+            "tertiary-fixed-dim": "#b7c9d6",
+            "on-tertiary-fixed": "#0c1e27",
+            "on-tertiary-fixed-variant": "#384953",
+            "background": "#f5faff",
+            "on-background": "#111d24",
+            "surface-variant": "#d7e4ee",
+            "diamond": "#E3EDF5",
+            "reflection": "#CBD8E2",
+            "astral": "#203848",
+            "meditative": "#95A7B3",
+            "turbulent": "#546C7B",
+            "glacialCanvas": "#F3F8FC"
+          },
+          spacing: {
+            "gutter": "1rem",
+            "gutter-sm": "0.5rem",
+            "gutter-lg": "1.5rem",
+            "margin": "1.5rem",
+            "margin-mobile": "0.75rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1.25rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            sans: ['"IBM Plex Sans"', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+            display: ['"IBM Plex Sans"', 'sans-serif'],
+            "display-mobile": ['"IBM Plex Sans"', 'sans-serif'],
+            "headline-lg": ['"IBM Plex Sans"', 'sans-serif'],
+            "headline-lg-mobile": ['"IBM Plex Sans"', 'sans-serif'],
+            "headline-md": ['"IBM Plex Sans"', 'sans-serif'],
+            "headline-sm": ['"IBM Plex Sans"', 'sans-serif'],
+            "body-lg": ['"IBM Plex Sans"', 'sans-serif'],
+            "body-md": ['"IBM Plex Sans"', 'sans-serif'],
+            "body-sm": ['"IBM Plex Sans"', 'sans-serif'],
+            "label-lg": ['"IBM Plex Sans"', 'sans-serif'],
+            "label-md": ['"IBM Plex Sans"', 'sans-serif'],
+            "label-sm": ['"IBM Plex Sans"', 'sans-serif']
+          },
+          fontSize: {
+            "display": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "display-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", fontWeight: "500" }],
+            "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-lg": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+            "body-md": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+            "label-lg": ["13px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "label-md": ["11px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+            "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "700" }]
+          },
+          borderRadius: {
+            "sm": "0.125rem",
+            "DEFAULT": "0.25rem",
+            "md": "0.375rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          boxShadow: {
+            "glacial": "0 8px 32px -4px rgba(32, 56, 72, 0.08)",
+            "panel": "0 4px 20px -2px rgba(32, 56, 72, 0.06)",
+            "elevated": "0 12px 32px -4px rgba(32, 56, 72, 0.12), 0 2px 6px 0 rgba(32, 56, 72, 0.04)"
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="app/css/glacial_modules.css?v=5">
+</head>
+<body class="is-gateway bg-surface font-sans text-on-surface antialiased min-h-screen selection:bg-secondary-container selection:text-on-secondary-container overflow-x-hidden">
+
+  <!-- Mobile Backdrop Overlay for Drawer -->
+  <!-- Modern Precision Icon Rail Sidebar (Always Accessible & Instantaneous) -->
+  <aside id="main-sidebar" style="display: none;" class="group fixed left-0 top-0 h-full w-16 hover:w-60 z-50 bg-surface-container/90 backdrop-blur-xl shadow-[0_4px_24px_rgba(32,56,72,0.1)] border-r border-outline-variant/30 flex flex-col justify-between overflow-hidden transition-[width] duration-200 ease-out will-change-[width]">
+    <div class="flex flex-col w-full">
+      <!-- Top Brand Mark -->
+      <a href="#gateway" data-path="gateway" class="h-16 flex items-center px-3.5 shrink-0 overflow-hidden cursor-pointer group/brand" title="NWIS Entry Gateway">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover/brand:scale-105">
+          <img src="app/assets/nwis_icon.svg" alt="NWIS Logo" class="w-8 h-8 object-contain drop-shadow-xs" />
+        </div>
+        <div class="ml-3 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden">
+          <span class="font-extrabold text-sm text-primary tracking-wide leading-none">NWIS</span>
+          <span class="text-[9.5px] font-mono text-secondary font-medium tracking-tight mt-0.5">Nearby Wells Intel</span>
+        </div>
+      </a>
+
+      <!-- Navigation Icons -->
+      <nav class="flex flex-col gap-1 px-2 mt-2">
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="command-center" href="#command-center" title="Command Center">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">terminal</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Command Center</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="well-explorer" href="#well-explorer" title="Well Explorer">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">explore</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Well Explorer</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="well-intelligence" href="#well-intelligence" title="Well Intelligence">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">insights</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">W-204 Profile</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="historical-intelligence" href="#historical-intelligence" title="Historical Intelligence">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">history</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Historical Intel</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="nwis-ai" href="#nwis-ai" title="NWIS AI Subsurface Copilot">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">auto_awesome</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">NWIS AI</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="risk-monitor" href="#risk-monitor" title="Risk Monitor">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">warning</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Risk Monitor</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="scenario-lab" href="#scenario-lab" title="Scenario Lab">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">science</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Scenario Lab</span>
+        </a>
+
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="reports" href="#reports" title="Decision Support & Reports">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">description</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Decision Support</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Settings Icon -->
+    <div class="p-2 shrink-0">
+      <nav class="flex flex-col gap-1">
+        <a class="flex items-center h-10 px-2.5 rounded-lg text-[#203848] hover:bg-[#CBD8E2] hover:text-black transition-colors cursor-pointer group/navitem" data-path="settings" href="#settings" title="Settings">
+          <span class="material-symbols-outlined text-[20px] shrink-0 text-[#203848] group-hover/navitem:text-black">settings</span>
+          <span class="ml-3 text-xs font-bold text-[#203848] group-hover/navitem:text-black opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap overflow-hidden text-ellipsis">Settings</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Main Layout Wrapper matching Pic 4 -->
+  <div id="main-layout-wrapper" style="padding-left: 0px;" class="min-h-screen flex flex-col w-full transition-[padding-left] duration-300 ease-in-out">
+    
+    <!-- Master Dynamic Content Viewport -->
+    <main id="app-main" class="flex-1 w-full max-w-[1720px] mx-auto p-4 sm:p-6 lg:p-8 min-h-screen flex flex-col">
+      <!-- Active view dynamically loads here seamlessly -->
+    </main>
+  </div>
+
+  <script src="app/js/nwis_data_store.js"></script>
+  <script src="app/js/mascot.js?v=4"></script>
+  <script src="app/js/router.js?v=6"></script>
+  <script>
+    // Global keyboard shortcut Ctrl+K
+    window.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) searchInput.focus();
+      }
+    });
+
+    // Reactive Header Well Telemetry Synchronization
+    window.addEventListener('nwis:activeWellChanged', e => {
+      const well = e.detail;
+      if (!well) return;
+      const nameEl = document.getElementById('header-active-well-name');
+      const statusEl = document.getElementById('header-active-well-status');
+      const depthEl = document.getElementById('header-active-well-depth');
+      if (nameEl) nameEl.textContent = well.short_code;
+      if (statusEl) statusEl.textContent = well.field || well.basin;
+      if (depthEl) depthEl.textContent = `${well.total_depth_md_m} m (${well.target_formation.split(' ')[0]})`;
+    });
+  </script>
+</body>
+</html>

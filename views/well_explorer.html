@@ -1,0 +1,327 @@
+<!-- Well Explorer: Full Window Split Layout with Side-by-Side Map & External Well Profile -->
+<div class="flex flex-col lg:flex-row gap-4 w-full h-[calc(100vh-5.5rem)] min-h-[620px]">
+  
+  <!-- LEFT: Full GIS Satellite Map Canvas -->
+  <div class="flex-1 relative rounded-2xl overflow-hidden border border-outline-variant/30 shadow-xl min-h-[460px] bg-primary-container">
+    <!-- FREE LIVE GEOSPATIAL SATELLITE MAP ENGINE (Esri World Imagery Live Geo-Sat Layer) -->
+    <div id="explorer-leaflet-map" class="absolute inset-0 w-full h-full bg-[#0a151d]"></div>
+
+    <!-- Top Left Floating Header Strip & Basin Switcher (Brought in Front with z-[1000]) -->
+    <div class="absolute top-4 left-4 z-[1000] flex flex-col gap-2 pointer-events-auto">
+      <div class="px-3.5 py-2 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-outline-variant/40 flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-wider text-secondary block">Sedimentary Basin Explorer</span>
+          <span id="exp-header-basin" class="text-xs font-bold text-primary">Upper Assam Shelf • OIL Asset</span>
+        </div>
+      </div>
+
+      <!-- Basin Switcher Pill Bar (Brought in Front with z-[1000]) -->
+      <div class="flex flex-wrap items-center gap-1 bg-surface-container-lowest/95 backdrop-blur-xl p-1.5 rounded-xl shadow-xl border border-outline-variant/40 text-xs">
+        <button onclick="inspectExplorerWell('WELL-NHK-01')" class="exp-basin-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold text-[11px] cursor-pointer shadow-xs transition-all" data-well="WELL-NHK-01">Assam-Arakan</button>
+        <button onclick="inspectExplorerWell('WELL-MH-H1-1')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-medium text-[11px] cursor-pointer transition-all" data-well="WELL-MH-H1-1">Western Offshore</button>
+        <button onclick="inspectExplorerWell('WELL-MGL-01')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-medium text-[11px] cursor-pointer transition-all" data-well="WELL-MGL-01">Barmer Basin</button>
+        <button onclick="inspectExplorerWell('WELL-KGD6-D1')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-medium text-[11px] cursor-pointer transition-all" data-well="WELL-KGD6-D1">KG Deepwater</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Dedicated Well Profile Details Panel (Completely OUTSIDE the map) -->
+  <div class="w-full lg:w-[440px] xl:w-[480px] shrink-0 h-full bg-surface-container-lowest/95 backdrop-blur-2xl rounded-2xl border border-outline-variant/30 p-5 shadow-2xl flex flex-col justify-between overflow-y-auto">
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center justify-between pb-2.5 border-b border-surface-container-high">
+        <span class="text-[10px] font-mono uppercase font-bold tracking-wider text-secondary">WELL PROFILE DETAILS</span>
+        <span id="exp-well-badge" class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-100 text-emerald-800">DISCOVERY WELL</span>
+      </div>
+
+      <div>
+        <h2 id="exp-well-name" class="font-headline-md text-xl font-bold text-primary leading-tight">Nahorkatiya Discovery Well No. 1</h2>
+        <p id="exp-well-region" class="text-xs text-secondary mt-0.5">Upper Assam Valley • Brahmaputra Shelf Asset</p>
+      </div>
+
+      <!-- Technical Specs Grid -->
+      <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+        <div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+          <span class="text-[10px] text-secondary uppercase block font-semibold">TOTAL DEPTH</span>
+          <span id="exp-well-depth" class="font-bold text-primary mt-0.5 block">3,571 m (11,715 ft)</span>
+        </div>
+        <div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+          <span class="text-[10px] text-secondary uppercase block font-semibold">OPERATOR / RIG</span>
+          <span id="exp-well-operator" class="font-bold text-primary mt-0.5 block truncate">OIL / National-130</span>
+        </div>
+        <div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+          <span class="text-[10px] text-secondary uppercase block font-semibold">SPUD DATE</span>
+          <span id="exp-well-spud" class="font-bold text-primary mt-0.5 block">May 26, 1952</span>
+        </div>
+        <div class="p-2.5 rounded-lg bg-surface-container-low border border-surface-container-high/60">
+          <span class="text-[10px] text-secondary uppercase block font-semibold">TARGET FORMATION</span>
+          <span id="exp-well-formation" class="font-bold text-primary mt-0.5 block truncate">Barail Sandstone</span>
+        </div>
+      </div>
+
+      <!-- Discovery & Drilling Story -->
+      <div class="p-3 rounded-xl bg-diamond/40 border border-outline-variant/30 flex flex-col gap-1.5 text-xs">
+        <span class="font-bold text-primary flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px] text-primary">psychology</span>
+          <span>How It Was Found &amp; Pre-Drilling Data:</span>
+        </span>
+        <p id="exp-well-found" class="text-secondary leading-relaxed">
+          Drilled as a bold wildcat test into the alluvial plain based purely on reflection seismic surveys. Proved for the first time that oil lay trapped deep beneath river alluvium outside the exposed hill anticlines.
+        </p>
+      </div>
+
+      <!-- Drilling Difficulties & Operational Incidents -->
+      <div class="p-3 rounded-xl bg-surface-container-low border border-surface-container-high flex flex-col gap-1.5 text-xs">
+        <span class="font-bold text-primary flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px] text-error">warning</span>
+          <span>Drilling Difficulties Encountered:</span>
+        </span>
+        <p id="exp-well-difficulties" class="text-secondary leading-relaxed">
+          Encountered 420 bbl fluid loss at 2,862m MD in lower Tipam transition. Overpressured Barail shales required 1.38 SG mud to prevent sloughing and drillstring drag.
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="mt-4 pt-3 border-t border-surface-container-high flex flex-col gap-2">
+      <button onclick="openWellIntelligenceFromExplorer()" class="w-full py-2.5 px-4 bg-primary text-on-primary rounded-xl font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-secondary transition-all shadow cursor-pointer">
+        <span>Open Technical Dossier</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </button>
+      <button onclick="location.hash='historical-intelligence'" class="w-full py-2 px-3 bg-surface-container hover:bg-surface-container-high text-primary rounded-xl text-xs font-medium transition-colors cursor-pointer">
+        View Daily Drilling Reports (DDR)
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  let activeExpWellId = 'WELL-NHK-01';
+  let explorerMap = null;
+  let expRangeCircles = [];
+  let expMarkers = {};
+
+  const EXPLORER_WELLS = {
+    'WELL-NHK-01': { lat: 27.2882, lng: 95.3411, label: 'NHK-01', sub: 'Active Selection • 3,571m', zoom: 12 },
+    'WELL-DGB-01': { lat: 27.3820, lng: 95.6320, label: 'Digboi-01', sub: 'Asia First 1889', zoom: 13 },
+    'WELL-MH-H1-1': { lat: 19.4180, lng: 71.3320, label: 'Mumbai High H-1-1', sub: 'Sagar Samrat 1974', zoom: 11 },
+    'WELL-MGL-01': { lat: 25.8540, lng: 71.2510, label: 'Mangala-1', sub: 'Barmer Basin 2004', zoom: 12 },
+    'WELL-KGD6-D1': { lat: 16.5500, lng: 82.3500, label: 'KG-D6 Dhirubhai-1', sub: 'Deepwater Gas', zoom: 11 },
+    'WELL-ANK-01': { lat: 21.6300, lng: 73.0000, label: 'Ankleshwar-1', sub: 'Vasudhara 1958', zoom: 12 }
+  };
+
+  function initExplorerMap() {
+    const mapEl = document.getElementById('explorer-leaflet-map');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    if (explorerMap) {
+      explorerMap.remove();
+      explorerMap = null;
+    }
+
+    const defaultCoords = EXPLORER_WELLS[activeExpWellId] || EXPLORER_WELLS['WELL-NHK-01'];
+
+    explorerMap = L.map('explorer-leaflet-map', {
+      center: [defaultCoords.lat, defaultCoords.lng],
+      zoom: defaultCoords.zoom || 12,
+      zoomControl: false,
+      attributionControl: false
+    });
+
+    // Free Live Esri World Imagery Satellite Tiles
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Esri Satellite'
+    }).addTo(explorerMap);
+
+    // Place labels overlay
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      opacity: 0.75
+    }).addTo(explorerMap);
+
+    L.control.zoom({ position: 'bottomleft' }).addTo(explorerMap);
+
+    // Naga Thrust Fault Line
+    const nagaFaultCoords = [
+      [27.05, 94.90],
+      [27.20, 95.20],
+      [27.35, 95.50],
+      [27.50, 95.80],
+      [27.65, 96.10]
+    ];
+    L.polyline(nagaFaultCoords, {
+      color: '#38bdf8',
+      weight: 2.5,
+      dashArray: '8, 6',
+      opacity: 0.75
+    }).addTo(explorerMap);
+
+    // Create markers for all wells
+    Object.keys(EXPLORER_WELLS).forEach(key => {
+      const w = EXPLORER_WELLS[key];
+      const isSelected = (key === activeExpWellId);
+
+      const html = `
+        <div class="cursor-pointer select-none -translate-x-1/2 -translate-y-1/2" style="display:inline-flex; align-items:center;">
+          ${isSelected ? `
+            <div class="beacon-ring absolute -inset-3 rounded-full border-2 border-cyan-400 opacity-75 pointer-events-none"></div>
+          ` : ''}
+          <div class="bg-[#203848]/95 hover:bg-[#203848] border-2 ${isSelected ? 'border-cyan-300 shadow-2xl scale-105' : 'border-white/40 shadow-lg'} text-[#E3EDF5] px-2.5 py-1 rounded-xl flex items-center space-x-2 transition-transform">
+            <span class="w-2.5 h-2.5 rounded-full ${isSelected ? 'bg-cyan-400' : 'bg-amber-400'}"></span>
+            <div class="flex flex-col font-mono text-[10px] leading-tight text-left">
+              <span class="font-bold text-white text-[11px]">${w.label}</span>
+              <span class="text-[9px] text-cyan-200">${w.sub}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const icon = L.divIcon({
+        className: 'custom-geo-marker',
+        html: html,
+        iconSize: [160, 36],
+        iconAnchor: [80, 18]
+      });
+
+      const marker = L.marker([w.lat, w.lng], { icon: icon }).addTo(explorerMap);
+      marker.on('click', () => {
+        window.inspectExplorerWell(key);
+      });
+      expMarkers[key] = marker;
+    });
+
+    drawExplorerRangeCircles(defaultCoords.lat, defaultCoords.lng);
+  }
+
+  function drawExplorerRangeCircles(lat, lng) {
+    if (!explorerMap) return;
+    expRangeCircles.forEach(c => explorerMap.removeLayer(c));
+    expRangeCircles = [];
+
+    // 10km circle
+    const c10 = L.circle([lat, lng], {
+      radius: 10000,
+      color: '#38bdf8',
+      weight: 1.8,
+      dashArray: '6, 4',
+      fillColor: '#38bdf8',
+      fillOpacity: 0.08
+    }).addTo(explorerMap);
+    expRangeCircles.push(c10);
+
+    // 5km circle
+    const c5 = L.circle([lat, lng], {
+      radius: 5000,
+      color: '#cbd8e2',
+      weight: 1.2,
+      dashArray: '4, 4',
+      fillColor: '#203848',
+      fillOpacity: 0.04
+    }).addTo(explorerMap);
+    expRangeCircles.push(c5);
+  }
+
+  window.inspectExplorerWell = function(wellId) {
+    activeExpWellId = wellId;
+    if (window.NWISDataStore) {
+      window.NWISDataStore.setActiveWell(wellId);
+    }
+    renderExplorerWell(wellId);
+
+    // Update switcher pills active state
+    document.querySelectorAll('.exp-basin-btn').forEach(btn => {
+      const match = btn.getAttribute('data-well') === wellId;
+      btn.className = match
+        ? 'exp-basin-btn px-2.5 py-1 rounded-lg bg-primary text-on-primary font-semibold text-[11px] cursor-pointer'
+        : 'exp-basin-btn px-2.5 py-1 rounded-lg hover:bg-surface-container text-primary font-medium text-[11px] cursor-pointer';
+    });
+
+    const coords = EXPLORER_WELLS[wellId];
+    if (explorerMap && coords) {
+      explorerMap.flyTo([coords.lat, coords.lng], coords.zoom || 12, { duration: 1.2 });
+      drawExplorerRangeCircles(coords.lat, coords.lng);
+
+      // Refresh markers
+      Object.keys(expMarkers).forEach(key => {
+        const marker = expMarkers[key];
+        const w = EXPLORER_WELLS[key];
+        const isSelected = (key === wellId);
+        const html = `
+          <div class="cursor-pointer select-none -translate-x-1/2 -translate-y-1/2" style="display:inline-flex; align-items:center;">
+            ${isSelected ? `
+              <div class="beacon-ring absolute -inset-3 rounded-full border-2 border-cyan-400 opacity-75 pointer-events-none"></div>
+            ` : ''}
+            <div class="bg-[#203848]/95 hover:bg-[#203848] border-2 ${isSelected ? 'border-cyan-300 shadow-2xl scale-105' : 'border-white/40 shadow-lg'} text-[#E3EDF5] px-2.5 py-1 rounded-xl flex items-center space-x-2 transition-transform">
+              <span class="w-2.5 h-2.5 rounded-full ${isSelected ? 'bg-cyan-400' : 'bg-amber-400'}"></span>
+              <div class="flex flex-col font-mono text-[10px] leading-tight text-left">
+                <span class="font-bold text-white text-[11px]">${w.label}</span>
+                <span class="text-[9px] text-cyan-200">${w.sub}</span>
+              </div>
+            </div>
+          </div>
+        `;
+        const icon = L.divIcon({
+          className: 'custom-geo-marker',
+          html: html,
+          iconSize: [160, 36],
+          iconAnchor: [80, 18]
+        });
+        marker.setIcon(icon);
+      });
+    }
+  };
+
+  window.openWellIntelligenceFromExplorer = function() {
+    if (window.NWISDataStore) {
+      window.NWISDataStore.setActiveWell(activeExpWellId);
+    }
+    window.location.hash = 'well-intelligence';
+  };
+
+  function renderExplorerWell(wellId) {
+    if (!window.NWISDataStore) return;
+    const well = window.NWISDataStore.getWellById(wellId);
+    if (!well) return;
+
+    const elName = document.getElementById('exp-well-name');
+    const elRegion = document.getElementById('exp-well-region');
+    const elDepth = document.getElementById('exp-well-depth');
+    const elOperator = document.getElementById('exp-well-operator');
+    const elSpud = document.getElementById('exp-well-spud');
+    const elFormation = document.getElementById('exp-well-formation');
+    const elFound = document.getElementById('exp-well-found');
+    const elDiff = document.getElementById('exp-well-difficulties');
+    const elBadge = document.getElementById('exp-well-badge');
+    const elHeaderBasin = document.getElementById('exp-header-basin');
+
+    if (elName) elName.textContent = well.name;
+    if (elRegion) elRegion.textContent = `${well.region} • ${well.basin}`;
+    if (elDepth) elDepth.textContent = `${well.total_depth_md_m} m (${well.total_depth_ft} ft)`;
+    if (elOperator) elOperator.textContent = `${well.operator.split('/')[0]} / ${well.rig_name.split(' ')[0]}`;
+    if (elSpud) elSpud.textContent = well.spud_date;
+    if (elFormation) elFormation.textContent = well.target_formation;
+    if (elFound) elFound.textContent = well.discovery_history?.how_found || 'Primary discovery appraisal wildcat.';
+    if (elDiff) elDiff.textContent = well.drilling_conditions_and_difficulties?.shale_sloughing || well.drilling_conditions_and_difficulties?.fluid_loss_events || 'Normal operational trajectory.';
+    if (elBadge) elBadge.textContent = well.status ? well.status.split('/')[0] : 'ACTIVE';
+    if (elHeaderBasin) elHeaderBasin.textContent = `${well.basin} • ${well.operator ? well.operator.split('/')[0] : 'Asset'}`;
+  }
+
+  setTimeout(() => {
+    if (window.NWISDataStore) {
+      const active = window.NWISDataStore.getActiveWell();
+      if (active) activeExpWellId = active.id;
+    }
+    renderExplorerWell(activeExpWellId);
+    initExplorerMap();
+    if (explorerMap) {
+      setTimeout(() => explorerMap.invalidateSize(), 200);
+    }
+  }, 100);
+
+  window.addEventListener('resize', () => {
+    if (explorerMap) explorerMap.invalidateSize();
+  });
+})();
+</script>

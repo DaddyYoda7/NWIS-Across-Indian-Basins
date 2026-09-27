@@ -1,0 +1,13 @@
+.tmp/
+.env
+credentials.json
+token.json
+node_modules/
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+data/ngdr/
+*.parquet
+*.7z
+*.zip

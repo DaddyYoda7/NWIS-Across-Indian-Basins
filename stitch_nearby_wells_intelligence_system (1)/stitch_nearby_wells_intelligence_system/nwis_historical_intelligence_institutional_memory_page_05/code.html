@@ -1,0 +1,500 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-tertiary-fixed": "#0c1e27",
+        "primary-container": "#203848",
+        "secondary": "#4a6170",
+        "outline": "#73787c",
+        "on-secondary-container": "#4e6675",
+        "tertiary-container": "#273842",
+        "background": "#f5faff",
+        "surface-container": "#e3f0fa",
+        "secondary-fixed": "#cde6f8",
+        "error": "#ba1a1a",
+        "on-primary-container": "#89a1b4",
+        "surface-container-low": "#e9f5ff",
+        "on-background": "#111d24",
+        "primary-fixed": "#cde6fa",
+        "inverse-on-surface": "#e5f3fd",
+        "surface": "#f5faff",
+        "surface-container-high": "#ddeaf4",
+        "surface-container-highest": "#d7e4ee",
+        "inverse-primary": "#b1cade",
+        "outline-variant": "#c3c7cc",
+        "on-error-container": "#93000a",
+        "secondary-container": "#cae3f5",
+        "on-primary": "#ffffff",
+        "primary-fixed-dim": "#b1cade",
+        "tertiary": "#11232c",
+        "surface-dim": "#cfdce6",
+        "surface-bright": "#f5faff",
+        "error-container": "#ffdad6",
+        "on-surface": "#111d24",
+        "secondary-fixed-dim": "#b1cadb",
+        "on-tertiary-container": "#8fa1ad",
+        "surface-tint": "#4a6173",
+        "on-error": "#ffffff",
+        "on-tertiary-fixed-variant": "#384953",
+        "on-primary-fixed-variant": "#32495a",
+        "inverse-surface": "#26323a",
+        "surface-variant": "#d7e4ee",
+        "tertiary-fixed-dim": "#b7c9d6",
+        "on-surface-variant": "#43474c",
+        "on-tertiary": "#ffffff",
+        "tertiary-fixed": "#d3e5f2",
+        "on-secondary-fixed-variant": "#324a58",
+        "on-secondary-fixed": "#031e2b",
+        "surface-container-lowest": "#ffffff",
+        "on-primary-fixed": "#031e2d",
+        "on-secondary": "#ffffff",
+        "primary": "#082332"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "space-xl": "2rem",
+        "gutter-lg": "1.5rem",
+        "space-lg": "1.25rem",
+        "space-sm": "0.5rem",
+        "gutter": "1rem",
+        "margin-mobile": "0.75rem",
+        "margin": "1.5rem",
+        "space-md": "0.75rem",
+        "gutter-sm": "0.5rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-md": [
+          "IBM Plex Sans"
+        ],
+        "headline-lg": [
+          "IBM Plex Sans"
+        ],
+        "display": [
+          "IBM Plex Sans"
+        ],
+        "body-lg": [
+          "IBM Plex Sans"
+        ],
+        "body-sm": [
+          "IBM Plex Sans"
+        ],
+        "label-lg": [
+          "IBM Plex Sans"
+        ],
+        "display-mobile": [
+          "IBM Plex Sans"
+        ],
+        "body-md": [
+          "IBM Plex Sans"
+        ],
+        "label-sm": [
+          "IBM Plex Sans"
+        ],
+        "headline-lg-mobile": [
+          "IBM Plex Sans"
+        ],
+        "label-md": [
+          "IBM Plex Sans"
+        ],
+        "headline-sm": [
+          "IBM Plex Sans"
+        ]
+      },
+      "fontSize": {
+        "headline-md": [
+          "20px",
+          {
+            "lineHeight": "28px",
+            "fontWeight": "500"
+          }
+        ],
+        "headline-lg": [
+          "28px",
+          {
+            "lineHeight": "36px",
+            "letterSpacing": "-0.015em",
+            "fontWeight": "600"
+          }
+        ],
+        "display": [
+          "40px",
+          {
+            "lineHeight": "48px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-lg": [
+          "15px",
+          {
+            "lineHeight": "22px",
+            "fontWeight": "400"
+          }
+        ],
+        "body-sm": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "fontWeight": "400"
+          }
+        ],
+        "label-lg": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "letterSpacing": "0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "display-mobile": [
+          "30px",
+          {
+            "lineHeight": "38px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "13px",
+          {
+            "lineHeight": "18px",
+            "fontWeight": "400"
+          }
+        ],
+        "label-sm": [
+          "10px",
+          {
+            "lineHeight": "14px",
+            "letterSpacing": "0.08em",
+            "fontWeight": "700"
+          }
+        ],
+        "headline-lg-mobile": [
+          "22px",
+          {
+            "lineHeight": "30px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-md": [
+          "11px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.05em",
+            "fontWeight": "600"
+          }
+        ],
+        "headline-sm": [
+          "16px",
+          {
+            "lineHeight": "24px",
+            "fontWeight": "600"
+          }
+        ]
+      }
+    }
+  }
+};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="group fixed left-0 top-0 h-full w-16 hover:w-60 z-50 transition-all duration-300 ease-in-out bg-surface-container/70 backdrop-blur-xl shadow-[0_4px_24px_rgba(32,56,72,0.08)] flex flex-col justify-between overflow-hidden"><div class="flex flex-col w-full"><div class="h-16 flex items-center px-4 shrink-0 overflow-hidden"><div class="w-8 h-8 rounded-xl bg-primary-container flex items-center justify-center text-secondary-fixed shrink-0"><span class="material-symbols-outlined text-[18px]">grid_view</span></div><span class="ml-3.5 font-headline-sm text-headline-sm text-primary tracking-tight opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">NWIS Core</span></div><nav class="flex flex-col gap-space-xs px-2 mt-2" data-active-classes="bg-primary-container text-on-primary shadow-sm font-label-md"><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="command-center" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">terminal</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Command Center</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="well-explorer" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">explore</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Well Explorer</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="well-intelligence" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">insights</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Well Intelligence</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="historical-intelligence" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">history</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Historical Intelligence</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="risk-monitor" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">warning</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Risk Monitor</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-copilot" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">psychology</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">AI Copilot</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="scenario-lab" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">science</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Scenario Lab</span></a><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">description</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Reports</span></a></nav></div><div class="p-2 shrink-0"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary shadow-sm font-label-md"><a class="flex items-center h-10 px-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px] shrink-0">settings</span><span class="ml-3 font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap overflow-hidden text-ellipsis">Settings</span></a></nav></div></aside><div class="pl-16"><header class="fixed top-0 left-16 right-0 h-16 bg-surface-container-low/75 backdrop-blur-xl shadow-[0_1px_12px_rgba(32,56,72,0.05)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary px-2.5 py-1 rounded bg-secondary-container/50">Telemetry Online</span></div><div class="hidden md:flex items-center gap-gutter-lg px-4 py-1.5 rounded-xl bg-surface-container/60 backdrop-blur-md shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)]"><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase">Active Well:</span><span class="font-label-md text-label-md text-primary font-bold">W-204</span></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase">Status:</span><span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-primary-container text-secondary-fixed">Drilling</span></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase">Depth:</span><span class="font-label-md text-label-md text-on-surface font-semibold">2,810 m</span></div></div><div class="flex items-center gap-space-md"><button class="relative w-9 h-9 rounded-lg flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-secondary"></span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1X3CRwH95kVOFB0yV68NZiC-yg2evzjnnQBgaykmBrKTNdtihhwXbnGRVCLGL2Fapd9CKOX6RTZDpUxXWh_p4iw-ND6hhGOMk7XeUYNoKQLSuSR_joEJd9GY8TksyrXwxW4XlDx0gdxdp9jkULKpG7ut8sdYHLF-P0KOZritNT8psCG0fMbMtWpBhZcw7Cw4wlozX-1eNz6HoPbBk6q198iRZNJOunWYiSG7l3TlMev-fs4_kfO2X9ahxQ"></div></header><main class="relative pt-16 w-full px-margin"><div class="flex flex-col w-full text-on-surface font-body-md pb-space-xl">
+<!-- Top Command & Header Strip -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md py-space-md mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">Operational Memory Vault</span>
+<span class="text-secondary font-body-sm">•</span>
+<span class="font-label-sm text-label-sm text-secondary">Indexed Records: 48,290</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Historical Intelligence</h1>
+<p class="font-body-md text-body-md text-secondary">Institutional drilling memory, real-time semantic correlation, and offset precedent retrieval.</p>
+</div>
+<!-- Active Telemetry & Contextual Personnel Bar -->
+<div class="flex items-center flex-wrap gap-space-md">
+<div class="flex items-center gap-space-sm px-space-md py-space-xs rounded-xl bg-surface-container shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">my_location</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Active Target</span>
+<span class="font-label-md text-label-md font-semibold text-primary">WELL W-204 (2,810 m MD)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pl-space-md bg-surface-container-high rounded-xl p-space-xs">
+<img alt="Lead Drilling Eng. David Chen" class="w-8 h-8 rounded-lg object-cover shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1UcNvgeb3r9Bu0kAAFXsXe9iGAGJ2RvJS9-Zu5n0V34p0M0DJpH3nFS01X4t2LJ8ighLX1HeZxp9SfDLcHr-iJORAp5Qs2OnofZJEEBcdOc8y8A0bc0kRnwqgqJIDKooiCv45xzfr7FZDx5W4lmn7Zou7ett8secHBa7P1zQV15piBPB0MP5yDuUja_fVwSExYUQYRyE77zohwWHAvAt11jxjSfM7BS0npAt3gYU4i0HhHR7aMbdNjPHLY">
+<div class="flex flex-col pr-space-sm">
+<span class="font-label-md text-label-md font-medium text-primary">David Chen</span>
+<span class="font-label-sm text-label-sm text-secondary">Lead Drilling Eng.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 1. Central Hero Search Experience -->
+<section class="w-full bg-surface-container/60 rounded-xl p-space-lg shadow-sm mb-space-xl backdrop-blur-md">
+<div class="max-w-4xl mx-auto flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-secondary-container text-primary font-label-sm text-label-sm uppercase tracking-wider mb-space-sm">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+        Semantic Offset Discovery
+      </div>
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight mb-space-xs">SEARCH DRILLING KNOWLEDGE</h2>
+
+<!-- Search Input Container -->
+<div class="w-full flex items-center justify-between mb-space-xs px-1"><div class="relative group inline-block text-left"><button type="button" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-lowest/90 hover:bg-surface-container text-primary font-label-md text-label-md transition-all shadow-xs border border-surface-container-high/60"><span class="material-symbols-outlined text-[17px] text-secondary">history</span><span class="font-medium">Search History</span><span class="material-symbols-outlined text-[16px] text-secondary transition-transform duration-200 group-hover:rotate-180">expand_more</span></button><div class="absolute left-0 top-full mt-1.5 w-72 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-md border border-surface-container-high/60 py-1.5 z-50 hidden group-hover:block transition-all"><div class="px-3 py-1 text-[10px] font-label-sm uppercase tracking-wider text-secondary border-b border-surface-container-high/40 flex items-center justify-between"><span class="">Recent Queries &amp; Offsets</span><span class="material-symbols-outlined text-[13px]">schedule</span></div><div class="flex flex-col py-1"><button type="button" class="w-full text-left px-3 py-2 hover:bg-surface-container transition-colors flex items-center justify-between group/item"><div class="flex flex-col truncate pr-2"><span class="font-label-md text-primary font-semibold truncate">W-117 (Total Mud Loss)</span><span class="font-body-sm text-[11px] text-secondary truncate">2,862 m • 420 bbl lost</span></div><span class="font-label-sm text-[10px] text-secondary shrink-0">12m ago</span></button><button type="button" class="w-full text-left px-3 py-2 hover:bg-surface-container transition-colors flex items-center justify-between group/item"><div class="flex flex-col truncate pr-2"><span class="font-label-md text-primary font-semibold truncate">W-151 (Diff. Sticking &amp; LCM Pill)</span><span class="font-body-sm text-[11px] text-secondary truncate">2,840 m • 38 kN·m</span></div><span class="font-label-sm text-[10px] text-secondary shrink-0">1h ago</span></button><button type="button" class="w-full text-left px-3 py-2 hover:bg-surface-container transition-colors flex items-center justify-between group/item"><div class="flex flex-col truncate pr-2"><span class="font-label-md text-primary font-semibold truncate">W-103 (Karst Void Encounter)</span><span class="font-body-sm text-[11px] text-secondary truncate">2,910 m • 1.2 m Bit Drop</span></div><span class="font-label-sm text-[10px] text-secondary shrink-0">3h ago</span></button><button type="button" class="w-full text-left px-3 py-2 hover:bg-surface-container transition-colors flex items-center justify-between group/item"><div class="flex flex-col truncate pr-2"><span class="font-label-md text-primary font-semibold truncate">W-181 (Pore Pressure Kick)</span><span class="font-body-sm text-[11px] text-secondary truncate">3,120 m • 1.42 SG Kill Mud</span></div><span class="font-label-sm text-[10px] text-secondary shrink-0">Yesterday</span></button></div></div></div></div><div class="w-full relative flex flex-col md:flex-row items-center gap-space-xs bg-surface-container-lowest p-space-xs rounded-xl shadow-md">
+<div class="flex items-center pl-space-md flex-1 w-full gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">search</span>
+<input aria-label="Search drilling knowledge" class="w-full bg-transparent font-body-lg text-body-lg text-primary placeholder-secondary focus:outline-none py-space-sm" type="text" value="What happened in similar wells around 2,800–3,000 m?">
+</div>
+<div class="flex items-center gap-space-xs w-full md:w-auto justify-end pr-space-xs">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span class="">Filters (3)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container hover:bg-secondary text-surface font-label-md text-label-md font-semibold transition-all shadow-sm" type="button">
+<span class="">Search Intelligence</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Knowledge Sources / Filter Tags -->
+<div class="flex items-center flex-wrap justify-center gap-space-xs mt-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary mr-space-xs">Sources:</span>
+<button class="px-3 py-1 rounded-full bg-primary-container text-surface font-label-md text-label-md font-medium shadow-xs" type="button">
+          All Sources
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary font-label-md text-label-md transition-colors" type="button">
+          Daily Drilling Reports (DDR)
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary font-label-md text-label-md transition-colors" type="button">
+          Well Completion (WCR)
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary font-label-md text-label-md transition-colors" type="button">
+          Mud Loss &amp; Influx Events
+        </button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary font-label-md text-label-md transition-colors" type="button">
+          Geomechanical Logs
+        </button>
+</div>
+<!-- Suggested Historical Prompts -->
+<div class="relative flex items-center justify-center gap-space-sm mt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Suggested:</span><div class="relative inline-block"><button class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-secondary-container text-primary font-label-md text-label-md transition-all shadow-xs" type="button"><span class="material-symbols-outlined text-[16px] text-secondary">lightbulb</span><span class="">Quick Investigation Templates</span><span class="material-symbols-outlined text-[16px] text-secondary">expand_more</span></button></div></div>
+</div>
+</section>
+<!-- 2 & 3. Main Workspace: Search Results Feed (60%) + Live Evidence Audit Panel (40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start"><div class="lg:col-span-7 flex flex-col gap-space-lg"><div class="flex items-center justify-between pb-space-xs border-b border-surface-container-high/50"><div class="flex items-center gap-space-sm"><span class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">Relevant Precedents</span><span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-secondary-container text-primary font-semibold">4 Correlated</span></div><span class="font-body-sm text-body-sm text-secondary">Filtered from 84 offset records</span></div><div class="relative bg-surface-container-lowest/90 rounded-xl p-space-lg shadow-sm backdrop-blur-md transition-all border border-surface-container-high/60"><div class="absolute left-0 top-4 bottom-4 w-1 bg-primary rounded-r"></div><div class="flex items-start justify-between gap-space-sm mb-space-sm pl-space-xs"><div class="flex flex-col gap-1"><div class="flex items-center gap-space-xs"><span class="px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-primary-container text-surface">Primary Match</span><span class="font-label-sm text-label-sm text-secondary">1.8 km NE • May 2021</span></div><h3 class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">Total Fluid Circulation Loss (Well W-117)</h3></div><div class="px-2.5 py-1 rounded-lg bg-secondary-container text-primary font-label-md text-label-md font-bold shrink-0">93% Similarity</div></div><div class="pl-space-xs text-secondary font-body-sm text-body-sm mb-space-md flex items-center gap-space-sm flex-wrap"><span class="font-semibold text-primary">Depth: 2,862 m MD</span><span class="">•</span><span class="">Kiparissia SS Formation</span><span class="">•</span><span class="">DDR #42</span></div><div class="ml-space-xs p-space-md rounded-lg bg-surface-container-low/50 text-on-surface font-body-md text-body-md mb-space-md leading-relaxed border-l-2 border-primary/20"><p class="text-on-surface-variant">“Partial mud loss of <span class="font-semibold text-primary bg-secondary-container/60 px-1 py-0.5 rounded">420 bbl observed</span> entering karstic cavern boundary. Standpipe pressure dropped by 480 psi prior to spotting LCM pill.”</p></div><div class="flex items-center justify-between pl-space-xs"><div class="flex items-center gap-space-sm text-secondary font-label-sm text-label-sm"><span class="">Resolved: 18 hrs</span><span class="">•</span><span class="">Net Loss: 420 bbl</span></div><button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-surface font-label-md text-label-md font-medium hover:bg-secondary transition-colors" type="button"><span class="">Active Precedent</span><span class="material-symbols-outlined text-[16px]">check_circle</span></button></div></div><div class="flex flex-col gap-space-sm"><div class="text-secondary font-label-sm text-label-sm uppercase tracking-wider px-space-xs mb-space-xs">Additional Offset Signals</div><div class="bg-surface-container-low/60 hover:bg-surface-container transition-colors rounded-xl p-space-md flex items-center justify-between gap-space-md cursor-pointer"><div class="flex flex-col gap-0.5"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-[15px] font-bold text-primary">Torque Spike &amp; Stick-Slip (W-151)</span><span class="font-label-sm text-label-sm text-secondary font-normal">• 1.4 km S (2,840 m)</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Elevated torque (&gt;38 kN·m) cured with brine sweep and RPM moderation.</p></div><div class="flex items-center gap-space-md shrink-0"><span class="font-label-md text-label-md text-secondary font-semibold">88% Match</span><span class="material-symbols-outlined text-secondary text-[18px]">chevron_right</span></div></div><div class="bg-surface-container-low/60 hover:bg-surface-container transition-colors rounded-xl p-space-md flex items-center justify-between gap-space-md cursor-pointer"><div class="flex flex-col gap-0.5"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-[15px] font-bold text-primary">Karstic Cavern Void Encounter (W-103)</span><span class="font-label-sm text-label-sm text-secondary font-normal">• 2.1 km E (2,910 m)</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">1.2 m bit drop with 18 bbl/hr seepage; 60 bbl LCM staged prior to tripping.</p></div><div class="flex items-center gap-space-md shrink-0"><span class="font-label-md text-label-md text-secondary font-semibold">84% Match</span><span class="material-symbols-outlined text-secondary text-[18px]">chevron_right</span></div></div><div class="bg-surface-container-low/60 hover:bg-surface-container transition-colors rounded-xl p-space-md flex items-center justify-between gap-space-md cursor-pointer"><div class="flex flex-col gap-0.5"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-[15px] font-bold text-primary">Casing Integrity &amp; Squeeze (W-144)</span><span class="font-label-sm text-label-sm text-secondary font-normal">• 3.4 km NW (2,780 m)</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Micro-annular channeling during ultrasonic log; remedial squeeze executed.</p></div><div class="flex items-center gap-space-md shrink-0"><span class="font-label-md text-label-md text-secondary font-semibold">79% Match</span><span class="material-symbols-outlined text-secondary text-[18px]">chevron_right</span></div></div></div></div><div class="lg:col-span-5 flex flex-col gap-space-lg sticky top-20"><div class="bg-surface-container/70 rounded-xl p-space-lg shadow-sm backdrop-blur-md"><div class="flex items-center justify-between mb-space-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[20px]">auto_awesome</span><h4 class="font-label-lg text-label-lg uppercase tracking-wider text-primary font-bold">AI Synthesis &amp; Correlation</h4></div><span class="font-label-sm text-label-sm text-secondary">Verified Logs</span></div><div class="p-space-md rounded-lg bg-surface-container-lowest/90 shadow-xs text-primary font-body-md text-body-md leading-relaxed mb-space-md border border-surface-container-high/40"><p class="text-on-surface-variant leading-relaxed">Correlated offsets <span class="font-semibold text-primary">W-117</span> and <span class="font-semibold text-primary">W-151</span> experienced mud losses and stick-slip within the <span class="font-semibold text-primary">2,810–2,870 m window</span> now approaching in W-204, attributable to Katakolo Fault micro-fracturing.</p></div><div class="flex items-center gap-space-xs"><span class="font-label-sm text-label-sm uppercase text-secondary mr-1">Citations:</span><button class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-secondary-container text-primary font-label-sm text-label-sm transition-colors" type="button"><span class="material-symbols-outlined text-[13px]">description</span><span class="">W-117 DDR #42</span></button><button class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high hover:bg-secondary-container text-primary font-label-sm text-label-sm transition-colors" type="button"><span class="material-symbols-outlined text-[13px]">description</span><span class="">W-151 Log</span></button></div></div><div class="bg-surface-container/70 rounded-xl p-space-lg shadow-sm backdrop-blur-md"><div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container-high/40"><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Selected Record</span><span class="font-headline-sm text-headline-sm text-primary font-bold">W-117 Daily Drilling Report</span></div><span class="font-label-sm text-label-sm text-secondary">14 May 2021</span></div><div class="p-space-md rounded-lg bg-surface-container-lowest/90 font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-space-md shadow-xs border border-surface-container-high/40"><div class="font-mono text-[11px] text-secondary mb-1.5 uppercase tracking-wide">[TOUR NOTE // 02:45 UTC]</div><p class="">“Rotating at 120 RPM through <span class="font-semibold text-primary bg-secondary-container/50 px-1 py-0.5 rounded">Kiparissia SS (2,862 m)</span>, ROP increased to 32 m/hr. Pit volume indicated <span class="font-semibold text-primary bg-secondary-container/50 px-1 py-0.5 rounded">loss of 420 bbl in 18 min</span>. Spacing 60 bbl LCM pill immediately initiated.”</p></div><div class="flex flex-col gap-1.5 mb-space-lg text-secondary font-body-sm text-body-sm"><div class="flex justify-between py-1 px-space-xs"><span class="text-secondary">Rig / Contractor</span><span class="font-medium text-primary">Oceanic Vanguard 01</span></div><div class="flex justify-between py-1 px-space-xs bg-surface-container-low/40 rounded"><span class="text-secondary">Drill Bit Spec</span><span class="font-medium text-primary">PDC 8-1/2" M519 (5-blade)</span></div><div class="flex justify-between py-1 px-space-xs"><span class="text-secondary">Mud Weight &amp; System</span><span class="font-medium text-primary">Synthetic OBM (1.34 SG)</span></div></div><div class="flex flex-col gap-space-xs"><button id="btn-open-ddr" class="w-full flex items-center justify-center gap-2 py-2.5 px-space-md rounded-lg bg-primary-container hover:bg-secondary text-surface font-label-md text-label-md font-semibold transition-colors shadow-xs cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px]">picture_as_pdf</span><span class="">Open Primary DDR Excerpt</span></button><button id="btn-export-risk" onclick="location.href='../nwis_risk_monitor_proactive_subsurface_intelligence_page_06/code.html'" class="w-full flex items-center justify-center gap-2 py-2 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md text-label-md font-medium transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px] text-secondary">transfer_within_a_station</span><span class="">Export to W-204 Risk Monitor</span></button></div></div></div></div>
+<!-- 4. Bottom Horizontal Strip: Recently Searched Institutional Precedents -->
+
+<!-- DDR Excerpt Modal Viewer -->
+<div id="hist-modal" class="fixed inset-0 z-50 bg-primary/40 backdrop-blur-sm hidden items-center justify-center p-4">
+  <div class="w-full max-w-2xl rounded-2xl bg-surface-container-lowest/95 backdrop-blur-2xl shadow-2xl p-6 flex flex-col space-y-4 border border-outline-variant/30">
+    <div class="flex items-center justify-between pb-3 border-b border-surface-container-high">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[22px]">description</span>
+        <h3 id="modal-doc-title" class="font-headline-sm text-primary font-bold">DDR Log Excerpt: Well W-117</h3>
+      </div>
+      <button id="hist-modal-close" class="w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:text-primary hover:bg-surface-container transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div id="modal-doc-body" class="space-y-3 font-body-md text-on-surface max-h-[60vh] overflow-y-auto pr-2">
+    </div>
+    <div class="flex justify-end gap-2 pt-3 border-t border-surface-container-high">
+      <button id="hist-modal-dismiss" class="px-4 py-2 rounded-xl bg-surface-container text-primary font-label-md font-semibold hover:bg-surface-container-high transition-colors cursor-pointer">Close Document</button>
+      <button onclick="location.href='../nwis_risk_monitor_proactive_subsurface_intelligence_page_06/code.html'" class="px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-md font-semibold hover:bg-secondary transition-colors cursor-pointer">Correlate in Risk Monitor</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const RECORDS = {
+    'W-117': {
+      title: 'W-117 Daily Drilling Report',
+      date: '14 May 2021',
+      tourHeader: '[TOUR NOTE // 02:45 UTC]',
+      tourBody: '“Rotating at 120 RPM through <span class="font-semibold text-primary bg-secondary-container/50 px-1 py-0.5 rounded">Kiparissia SS (2,862 m)</span>, ROP increased to 32 m/hr. Pit volume indicated <span class="font-semibold text-primary bg-secondary-container/50 px-1 py-0.5 rounded">loss of 420 bbl in 18 min</span>. Spacing 60 bbl LCM pill immediately initiated.”',
+      rig: 'Oceanic Vanguard 01',
+      bit: 'PDC 8-1/2" M519 (5-blade)',
+      mud: 'Synthetic OBM (1.34 SG)',
+      modalContent: `
+        <div class="space-y-3 font-body-sm text-on-surface-variant">
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">OPERATIONAL EVENT TIMELINE (May 14, 2021)</span>
+            <ul class="list-disc pl-5 space-y-1">
+              <li><strong>02:40 UTC:</strong> Bit entered upper contact of fractured limestone at 2,860.8m MD.</li>
+              <li><strong>02:45 UTC:</strong> Abrupt ROP drilling break from 9.4 m/hr to 32.0 m/hr. SPP dropped from 3,240 psi to 2,760 psi.</li>
+              <li><strong>02:50 UTC:</strong> Total pit gain alarm silent; pit volume drop of 210 bbl detected. Losses peaked at 840 bbl/hr rate.</li>
+              <li><strong>03:15 UTC:</strong> Pumping stopped. Well took 420 bbl synthetic base fluid before equilibrium reached.</li>
+              <li><strong>04:30 UTC:</strong> Mixed and pumped 150 bbl heavy-coarse calcium carbonate LCM pill. Returns regained after 18 hours.</li>
+            </ul>
+          </div>
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">RECOMMENDED ADVISORY FOR W-204</span>
+            <p>Maintain continuous ECD below 1.22 SG when penetrating 2,840–2,870m MD. Pre-load LCM pills in auxiliary mud tank prior to formation contact.</p>
+          </div>
+        </div>
+      `
+    },
+    'W-151': {
+      title: 'W-151 Stick-Slip Diagnostic',
+      date: '28 Oct 2021',
+      tourHeader: '[TOUR NOTE // 11:20 UTC]',
+      tourBody: '“Elevated rotary torque (>38 kN·m) and cyclic rotational stall detected at 2,840 m MD. Torsional oscillation damped following 40 bbl low-viscosity lubricant sweep.”',
+      rig: 'Transocean Arctic Star',
+      bit: 'Roller Cone Tricone 8-1/2"',
+      mud: 'Water-based Glycol (1.28 SG)',
+      modalContent: `
+        <div class="space-y-3 font-body-sm text-on-surface-variant">
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">DIAGNOSTIC LOG (Oct 28, 2021)</span>
+            <p>Severe stick-slip frequency (0.42 Hz) caused multiple MWD shock telemetry dropouts. Torque spiked beyond mechanical safety thresholds at 2,840m depth.</p>
+          </div>
+        </div>
+      `
+    },
+    'W-103': {
+      title: 'W-103 Void Encounter Log',
+      date: '04 Mar 2020',
+      tourHeader: '[TOUR NOTE // 19:10 UTC]',
+      tourBody: '“Sudden 1.2 m free-fall bit drop at 2,910 m MD into karstic vugular formation. Minor gas seepage (18 bbl/hr) stabilized with 60 bbl LCM staging.”',
+      rig: 'Deepwater Poseidon',
+      bit: 'Hybrid PDC/Roller 8-1/2"',
+      mud: 'Synthetic OBM (1.31 SG)',
+      modalContent: `
+        <div class="space-y-3 font-body-sm text-on-surface-variant">
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">KARSTIC VOID ANALYSIS</span>
+            <p>Subsurface cavern of estimated 1.2m vertical aperture encountered. Calibrated geomechanical models confirm presence of active karst corridor crossing Sector 4.</p>
+          </div>
+        </div>
+      `
+    },
+    'W-144': {
+      title: 'W-144 Integrity Evaluation',
+      date: '19 Aug 2019',
+      tourHeader: '[TOUR NOTE // 08:30 UTC]',
+      tourBody: '“Ultrasonic acoustic radial cement evaluation indicated micro-annular channeling at 2,780 m. Remedial squeeze job executed successfully at 4,200 psi test.”',
+      rig: 'Ensco 104 Jackup',
+      bit: 'PDC 8-1/2" Coring Assembly',
+      mud: 'Brine System (1.18 SG)',
+      modalContent: `
+        <div class="space-y-3 font-body-sm text-on-surface-variant">
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">CEMENT CASING ASSESSMENT</span>
+            <p>Remedial squeeze isolated porous carbonate transition zone. Zero surface casing pressure registered after 24h pressure hold test.</p>
+          </div>
+        </div>
+      `
+    },
+    'W-181': {
+      title: 'W-181 Pore Pressure Influx Report',
+      date: '02 Feb 2022',
+      tourHeader: '[TOUR NOTE // 14:00 UTC]',
+      tourBody: '“Pore pressure kick encountered at 3,120 m MD. Well shut in on annular preventer. Mud weight raised to 1.42 SG kill weight before circulation resumed.”',
+      rig: 'Stena Drillmax',
+      bit: 'PDC 8-1/2" M419',
+      mud: 'High-Density OBM (1.42 SG)',
+      modalContent: `
+        <div class="space-y-3 font-body-sm text-on-surface-variant">
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high/60">
+            <span class="font-bold text-primary block mb-1">INFLUX KILL OPERATION</span>
+            <p>Pore pressure gradient elevated abruptly by 0.14 SG. Driller Method kill completed cleanly in 12 hours.</p>
+          </div>
+        </div>
+      `
+    }
+  };
+
+  let currentRecord = 'W-117';
+
+  window.selectRecord = function(key) {
+    const data = RECORDS[key];
+    if (!data) return;
+    currentRecord = key;
+
+    const elTitle = document.getElementById('hist-record-title');
+    const elDate = document.getElementById('hist-record-date');
+    const elHeader = document.getElementById('hist-tour-header');
+    const elBody = document.getElementById('hist-tour-body');
+    const elRig = document.getElementById('hist-meta-rig');
+    const elBit = document.getElementById('hist-meta-bit');
+    const elMud = document.getElementById('hist-meta-mud');
+
+    if (elTitle) elTitle.textContent = data.title;
+    if (elDate) elDate.textContent = data.date;
+    if (elHeader) elHeader.textContent = data.tourHeader;
+    if (elBody) elBody.innerHTML = data.tourBody;
+    if (elRig) elRig.textContent = data.rig;
+    if (elBit) elBit.textContent = data.bit;
+    if (elMud) elMud.textContent = data.mud;
+  };
+
+  const searchInput = document.querySelector('input[aria-label="Search drilling knowledge"]');
+  const cards = document.querySelectorAll('.lg\\:col-span-7 .bg-surface-container-low\\/60, .lg\\:col-span-7 .bg-surface-container-lowest\\/90');
+  const cardKeys = ['W-117', 'W-151', 'W-103', 'W-144'];
+  cards.forEach((card, idx) => {
+    const key = cardKeys[idx];
+    if (key) {
+      card.addEventListener('click', () => {
+        selectRecord(key);
+        cards.forEach(c => c.classList.remove('ring-2', 'ring-primary'));
+        card.classList.add('ring-2', 'ring-primary');
+      });
+    }
+  });
+
+  document.querySelectorAll('button:has(.truncate)').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.querySelector('.font-label-md')?.textContent || '';
+      if (text.includes('117')) { selectRecord('W-117'); if (searchInput) searchInput.value = 'W-117 Total Mud Loss (420 bbl @ 2,862m)'; }
+      else if (text.includes('151')) { selectRecord('W-151'); if (searchInput) searchInput.value = 'W-151 Differential Sticking & Torque Spike'; }
+      else if (text.includes('103')) { selectRecord('W-103'); if (searchInput) searchInput.value = 'W-103 Karst Cavern Void Encounter (2,910m)'; }
+      else if (text.includes('181')) { selectRecord('W-181'); if (searchInput) searchInput.value = 'W-181 Pore Pressure Kick & Kill Mud'; }
+    });
+  });
+
+  const btnOpenDdr = document.getElementById('btn-open-ddr');
+  const modal = document.getElementById('hist-modal');
+  const modalClose = document.getElementById('hist-modal-close');
+  const modalDismiss = document.getElementById('hist-modal-dismiss');
+  const modalDocTitle = document.getElementById('modal-doc-title');
+  const modalDocBody = document.getElementById('modal-doc-body');
+
+  if (btnOpenDdr && modal) {
+    btnOpenDdr.addEventListener('click', () => {
+      const data = RECORDS[currentRecord] || RECORDS['W-117'];
+      if (modalDocTitle) modalDocTitle.textContent = `DDR Log Excerpt: ${data.title}`;
+      if (modalDocBody) modalDocBody.innerHTML = data.modalContent;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  }
+
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalDismiss) modalDismiss.addEventListener('click', closeModal);
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  document.querySelectorAll('button.rounded-full').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.parentElement.querySelectorAll('button').forEach(p => {
+        p.className = 'px-3 py-1 rounded-full bg-surface-container-high hover:bg-secondary-container text-secondary hover:text-primary font-label-md text-label-md transition-colors';
+      });
+      pill.className = 'px-3 py-1 rounded-full bg-primary-container text-surface font-label-md text-label-md font-medium shadow-xs';
+    });
+  });
+})();
+</script>
+</div></main></div>
+
+<script src="../nav_bridge.js"></script></body></html>

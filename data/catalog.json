@@ -1,0 +1,3233 @@
+{
+  "title": "NWIS Indian Geoscience & Well Intelligence Catalog",
+  "updated_at": "2026-09-24",
+  "sources": [
+    {
+      "name": "indian_land_features",
+      "url": "https://github.com/ramSeraph/indian_land_features.git",
+      "category": "geospatial_features",
+      "files": []
+    },
+    {
+      "name": "ht_shapefiles",
+      "url": "https://github.com/HindustanTimesLabs/shapefiles.git",
+      "category": "administrative_boundaries",
+      "files": []
+    },
+    {
+      "name": "imd_shapefiles",
+      "url": "https://github.com/India-Meteorological-Department/India-shapefiles.git",
+      "category": "meteorological_geospatial",
+      "files": []
+    },
+    {
+      "name": "india_shapefiles_bundle",
+      "url": "https://github.com/data014/India-Shapefiles-Bundle.git",
+      "category": "comprehensive_shapefiles",
+      "files": []
+    },
+    {
+      "name": "mivaa_las_dlis_converter",
+      "url": "https://github.com/MIVAA-ai/mivaa-las-dlis-to-json-convertor.git",
+      "category": "well_log_parsers",
+      "files": []
+    },
+    {
+      "name": "las_py",
+      "url": "https://github.com/laslibs/las-py.git",
+      "category": "well_log_parsers",
+      "files": []
+    }
+  ],
+  "spatial_layers": [
+    {
+      "repo": "indian_land_features",
+      "file": "metadata.json",
+      "path": "data\\spatial\\indian_land_features\\cartodem\\metadata.json",
+      "size_bytes": 348
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_district.geojson",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\district\\jammukashmir_district.geojson",
+      "size_bytes": 235245
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\assembly\\westbengal_AC.json",
+      "size_bytes": 953465
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\district\\westbengal_district.json",
+      "size_bytes": 1833365
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\parliament\\westbengal_PC.json",
+      "size_bytes": 259163
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\assembly\\uttarpradesh_AC.json",
+      "size_bytes": 1775221
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.json",
+      "size_bytes": 847935
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district_2011.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.json",
+      "size_bytes": 1665941
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district_bahraich_error.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_bahraich_error.json",
+      "size_bytes": 847749
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\parliament\\uttarpradesh_PC.json",
+      "size_bytes": 454823
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\assembly\\uttarakhand_AC.json",
+      "size_bytes": 260174
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\district\\uttarakhand_district.json",
+      "size_bytes": 186931
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\parliament\\uttarakhand_PC.json",
+      "size_bytes": 36406
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\assembly\\tripura_AC.json",
+      "size_bytes": 126186
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\district\\tripura_district.json",
+      "size_bytes": 36580
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\parliament\\tripura_PC.json",
+      "size_bytes": 13808
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "telangana_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\telangana\\assembly\\telangana_AC.json",
+      "size_bytes": 417961
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\assembly\\tamilnadu_AC.json",
+      "size_bytes": 981837
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\district\\tamilnadu_district.json",
+      "size_bytes": 475017
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\parliament\\tamilnadu_PC.json",
+      "size_bytes": 374608
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\assembly\\sikkim_AC.json",
+      "size_bytes": 70706
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\district\\sikkim_district.json",
+      "size_bytes": 27945
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\parliament\\sikkim_PC.json",
+      "size_bytes": 8978
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\assembly\\rajasthan_AC.json",
+      "size_bytes": 1035414
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\district\\rajasthan_district.json",
+      "size_bytes": 685344
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\parliament\\rajasthan_PC.json",
+      "size_bytes": 239094
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\assembly\\punjab_AC.json",
+      "size_bytes": 528938
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\district\\punjab_district.json",
+      "size_bytes": 227391
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\parliament\\punjab_PC.json",
+      "size_bytes": 107874
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\assembly\\puducherry_AC.json",
+      "size_bytes": 42325
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\district\\puducherry_district.json",
+      "size_bytes": 17065
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\parliament\\puducherry_PC.json",
+      "size_bytes": 47821
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\assembly\\odisha_AC.json",
+      "size_bytes": 833788
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\district\\odisha_district.json",
+      "size_bytes": 417584
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\parliament\\odisha_PC.json",
+      "size_bytes": 159646
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\assembly\\nagaland_AC.json",
+      "size_bytes": 105138
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\district\\nagaland_district.json",
+      "size_bytes": 75096
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\parliament\\nagaland_PC.json",
+      "size_bytes": 15209
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\assembly\\mizoram_AC.json",
+      "size_bytes": 109175
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\district\\mizoram_district.json",
+      "size_bytes": 84514
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\parliament\\mizoram_PC.json",
+      "size_bytes": 13855
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\assembly\\meghalaya_AC.json",
+      "size_bytes": 127889
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\district\\meghalaya_district.json",
+      "size_bytes": 57142
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\parliament\\meghalaya_PC.json",
+      "size_bytes": 18715
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\assembly\\manipur_AC.json",
+      "size_bytes": 148583
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_pre2016_districts.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\district\\manipur_pre2016_districts.json",
+      "size_bytes": 83350
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\parliament\\manipur_PC.json",
+      "size_bytes": 37759
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharashtra_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\assembly\\maharashtra_AC.json",
+      "size_bytes": 1358060
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharashtra_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\district\\maharashtra_district.json",
+      "size_bytes": 694033
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharashtra_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\parliament\\maharashtra_PC.json",
+      "size_bytes": 331068
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\assembly\\madhyapradesh_AC.json",
+      "size_bytes": 1317995
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\district\\madhyapradesh_district.json",
+      "size_bytes": 1002142
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\parliament\\madhyapradesh_PC.json",
+      "size_bytes": 314398
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "lakshadweep_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\lakshadweep\\district\\lakshadweep_district.json",
+      "size_bytes": 63328
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "lakshadweep_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\lakshadweep\\parliament\\lakshadweep_PC.json",
+      "size_bytes": 5667
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\assembly\\kerala_AC.json",
+      "size_bytes": 427067
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\district\\kerala_district.json",
+      "size_bytes": 143217
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\parliament\\kerala_PC.json",
+      "size_bytes": 129638
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\assembly\\karnataka_AC.json",
+      "size_bytes": 986700
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\district\\karnataka_district.json",
+      "size_bytes": 436882
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\parliament\\karnataka_PC.json",
+      "size_bytes": 173931
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\assembly\\jharkhand_AC.json",
+      "size_bytes": 341372
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\district\\jharkhand_district.json",
+      "size_bytes": 258800
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\parliament\\jharkhand_PC.json",
+      "size_bytes": 119972
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\assembly\\jammukashmir_AC.json",
+      "size_bytes": 367486
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\parliament\\jammukashmir_PC.json",
+      "size_bytes": 86989
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.json",
+      "size_bytes": 252500
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\district\\himachalpradesh_district.json",
+      "size_bytes": 123626
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\parliament\\himachalpradesh_PC.json",
+      "size_bytes": 50350
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\assembly\\haryana_AC.json",
+      "size_bytes": 302569
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\district\\haryana_district.json",
+      "size_bytes": 142348
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\parliament\\haryana_PC.json",
+      "size_bytes": 103209
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.json",
+      "size_bytes": 888017
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC_1980-2007.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.json",
+      "size_bytes": 1738630
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_district_2011.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.json",
+      "size_bytes": 2750998
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\parliament\\gujarat_PC.json",
+      "size_bytes": 380921
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\assembly\\goa_AC.json",
+      "size_bytes": 65112
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\district\\goa_district.json",
+      "size_bytes": 22886
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\parliament\\goa_PC.json",
+      "size_bytes": 3753
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\assembly\\delhi_AC.json",
+      "size_bytes": 74752
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_1997-2012_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\district\\delhi_1997-2012_district.json",
+      "size_bytes": 25769
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\parliament\\delhi_PC.json",
+      "size_bytes": 111623
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "damandiu_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\damandiu\\district\\damandiu_district.json",
+      "size_bytes": 25080
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "damandiu_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\damandiu\\parliament\\damandiu_PC.json",
+      "size_bytes": 2183
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\district\\dadranagarhaveli_district.json",
+      "size_bytes": 5391
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.json",
+      "size_bytes": 3631
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\assembly\\chhattisgarh_AC.json",
+      "size_bytes": 482314
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\district\\chhattisgarh_district.json",
+      "size_bytes": 271416
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\parliament\\chhattisgarh_PC.json",
+      "size_bytes": 115603
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\assembly\\chandigarh_AC.json",
+      "size_bytes": 1783
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\district\\chandigarh_district.json",
+      "size_bytes": 1829
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\parliament\\chandigarh_PC.json",
+      "size_bytes": 20501
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\assembly\\bihar_AC.json",
+      "size_bytes": 1034173
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_block.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\block\\bihar_block.json",
+      "size_bytes": 2814171
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\district\\bihar_district.json",
+      "size_bytes": 471083
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\parliament\\bihar_PC.json",
+      "size_bytes": 189839
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\assembly\\assam_AC.json",
+      "size_bytes": 427440
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\district\\assam_district.json",
+      "size_bytes": 331681
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\parliament\\assam_PC.json",
+      "size_bytes": 97768
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\assembly\\arunachalpradesh_AC.json",
+      "size_bytes": 183918
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\district\\arunachalpradesh_district.json",
+      "size_bytes": 125091
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\parliament\\arunachalpradesh_PC.json",
+      "size_bytes": 24703
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh-pre2014_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh-pre2014_AC.json",
+      "size_bytes": 1039301
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh_AC.json",
+      "size_bytes": 669038
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_pre2014_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\district\\andhrapradesh_pre2014_district.json",
+      "size_bytes": 386590
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_PC_pre2014.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\parliament\\andhrapradesh_PC_pre2014.json",
+      "size_bytes": 243939
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andamannicobarislands_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andamannicobarislands\\district\\andamannicobarislands_district.json",
+      "size_bytes": 1352230
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andamannicobarislands_PC.json",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andamannicobarislands\\parliament\\andamannicobarislands_PC.json",
+      "size_bytes": 17991
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bangladesh_country.json",
+      "path": "data\\spatial\\ht_shapefiles\\other_countries\\bangladesh\\bangladesh_country.json",
+      "size_bytes": 6258911
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "myanmar_country.json",
+      "path": "data\\spatial\\ht_shapefiles\\other_countries\\myanmar\\myanmar_country.json",
+      "size_bytes": 11383389
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "myanmar_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\other_countries\\myanmar\\myanmar_district.json",
+      "size_bytes": 12470971
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "myanmar_state.json",
+      "path": "data\\spatial\\ht_shapefiles\\other_countries\\myanmar\\myanmar_state.json",
+      "size_bytes": 11968128
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2012-17_AC.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\assembly\\india_2012-17_AC.json",
+      "size_bytes": 6475318
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_cities.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\city\\india_cities.json",
+      "size_bytes": 15471
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\country\\india.json",
+      "size_bytes": 129122
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2001_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_2001_district.json",
+      "size_bytes": 15320546
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2011_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_2011_district.json",
+      "size_bytes": 13949963
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_district.json",
+      "size_bytes": 752205
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2014_parliament.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\parliament\\india_2014_parliament.json",
+      "size_bytes": 4171514
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_1975-2000_state.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_1975-2000_state.json",
+      "size_bytes": 3212519
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2000-2014_state.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_2000-2014_state.json",
+      "size_bytes": 3348178
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_state.json",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_state.json",
+      "size_bytes": 1487161
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mumbai_ward.json",
+      "path": "data\\spatial\\ht_shapefiles\\city\\mumbai\\ward\\mumbai_ward.json",
+      "size_bytes": 303617
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_1997-2012_district.json",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\district\\delhi_1997-2012_district.json",
+      "size_bytes": 25769
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_ward.json",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\ward\\delhi_ward.json",
+      "size_bytes": 466726
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_ward_outline.json",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\ward\\delhi_ward_outline.json",
+      "size_bytes": 52435
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bengaluru_ward.json",
+      "path": "data\\spatial\\ht_shapefiles\\city\\bengaluru\\ward\\bengaluru_ward.json",
+      "size_bytes": 1651514
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_PC.shp",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.shp",
+      "size_bytes": 2460
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_PC.dbf",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.dbf",
+      "size_bytes": 563
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_PC.shx",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.shx",
+      "size_bytes": 108
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\assembly\\westbengal_AC.kml",
+      "size_bytes": 1185382
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\district\\westbengal_district.kml",
+      "size_bytes": 3221218
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "westbengal_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\westbengal\\parliament\\westbengal_PC.kml",
+      "size_bytes": 255199
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\assembly\\uttarpradesh_AC.kml",
+      "size_bytes": 2004394
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.kml",
+      "size_bytes": 790624
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district_2011.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.kml",
+      "size_bytes": 1596891
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district_bahraich_error.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_bahraich_error.kml",
+      "size_bytes": 783491
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\parliament\\uttarpradesh_PC.kml",
+      "size_bytes": 9569998
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\assembly\\uttarakhand_AC.kml",
+      "size_bytes": 303326
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\district\\uttarakhand_district.kml",
+      "size_bytes": 328988
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarakhand_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarakhand\\parliament\\uttarakhand_PC.kml",
+      "size_bytes": 35315
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\assembly\\tripura_AC.kml",
+      "size_bytes": 168256
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\district\\tripura_district.kml",
+      "size_bytes": 65284
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tripura_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tripura\\parliament\\tripura_PC.kml",
+      "size_bytes": 13572
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "telangana_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\telangana\\assembly\\telangana_AC.kml",
+      "size_bytes": 491622
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\assembly\\tamilnadu_AC.kml",
+      "size_bytes": 1129462
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\district\\tamilnadu_district.kml",
+      "size_bytes": 843387
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "tamilnadu_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\tamilnadu\\parliament\\tamilnadu_PC.kml",
+      "size_bytes": 359145
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\assembly\\sikkim_AC.kml",
+      "size_bytes": 98333
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\district\\sikkim_district.kml",
+      "size_bytes": 50286
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "sikkim_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\sikkim\\parliament\\sikkim_PC.kml",
+      "size_bytes": 8667
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\assembly\\rajasthan_AC.kml",
+      "size_bytes": 1145024
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\district\\rajasthan_district.kml",
+      "size_bytes": 1201377
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "rajasthan_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\rajasthan\\parliament\\rajasthan_PC.kml",
+      "size_bytes": 228155
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\assembly\\punjab_AC.kml",
+      "size_bytes": 366469
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\district\\punjab_district.kml",
+      "size_bytes": 401758
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "punjab_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\punjab\\parliament\\punjab_PC.kml",
+      "size_bytes": 103689
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\assembly\\puducherry_AC.kml",
+      "size_bytes": 68218
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\district\\puducherry_district.kml",
+      "size_bytes": 32530
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "puducherry_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\puducherry\\parliament\\puducherry_PC.kml",
+      "size_bytes": 45288
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\assembly\\odisha_AC.kml",
+      "size_bytes": 909112
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\district\\odisha_district.kml",
+      "size_bytes": 736419
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "odisha_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\odisha\\parliament\\odisha_PC.kml",
+      "size_bytes": 154269
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\assembly\\nagaland_AC.kml",
+      "size_bytes": 129394
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\district\\nagaland_district.kml",
+      "size_bytes": 134386
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "nagaland_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\nagaland\\parliament\\nagaland_PC.kml",
+      "size_bytes": 14326
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\assembly\\mizoram_AC.kml",
+      "size_bytes": 136316
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\district\\mizoram_district.kml",
+      "size_bytes": 149797
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "mizoram_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\mizoram\\parliament\\mizoram_PC.kml",
+      "size_bytes": 13098
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\assembly\\meghalaya_AC.kml",
+      "size_bytes": 169767
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\district\\meghalaya_district.kml",
+      "size_bytes": 101869
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "meghalaya_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\meghalaya\\parliament\\meghalaya_PC.kml",
+      "size_bytes": 17945
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\assembly\\manipur_AC.kml",
+      "size_bytes": 198199
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_pre2016_districts.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\district\\manipur_pre2016_districts.kml",
+      "size_bytes": 148184
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "manipur_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\manipur\\parliament\\manipur_PC.kml",
+      "size_bytes": 35325
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharasthra_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\assembly\\maharasthra_AC.kml",
+      "size_bytes": 1530086
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharashtra_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\district\\maharashtra_district.kml",
+      "size_bytes": 1216169
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "maharashtra_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\maharashtra\\parliament\\maharashtra_PC.kml",
+      "size_bytes": 321834
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\assembly\\madhyapradesh_AC.kml",
+      "size_bytes": 1431263
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\district\\madhyapradesh_district.kml",
+      "size_bytes": 1757051
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "madhyapradesh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\madhyapradesh\\parliament\\madhyapradesh_PC.kml",
+      "size_bytes": 298609
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "lakshadweep_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\lakshadweep\\district\\lakshadweep_district.kml",
+      "size_bytes": 112779
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "lakshadweep_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\lakshadweep\\parliament\\lakshadweep_PC.kml",
+      "size_bytes": 6752
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\assembly\\kerala_AC.kml",
+      "size_bytes": 517813
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\district\\kerala_district.kml",
+      "size_bytes": 255724
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "kerala_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\kerala\\parliament\\kerala_PC.kml",
+      "size_bytes": 126474
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\assembly\\karnataka_AC.kml",
+      "size_bytes": 1161420
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\district\\karnataka_district.kml",
+      "size_bytes": 771261
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "karnataka_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\karnataka\\parliament\\karnataka_PC.kml",
+      "size_bytes": 170199
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\assembly\\jharkhand_AC.kml",
+      "size_bytes": 403382
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\district\\jharkhand_district.kml",
+      "size_bytes": 458268
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jharkhand_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jharkhand\\parliament\\jharkhand_PC.kml",
+      "size_bytes": 115446
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\assembly\\jammukashmir_AC.kml",
+      "size_bytes": 401583
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\district\\jammukashmir_district.kml",
+      "size_bytes": 416317
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "jammukashmir_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\jammukashmir\\parliament\\jammukashmir_PC.kml",
+      "size_bytes": 83311
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.kml",
+      "size_bytes": 263534
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\district\\himachalpradesh_district.kml",
+      "size_bytes": 218939
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\parliament\\himachalpradesh_PC.kml",
+      "size_bytes": 47540
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\assembly\\haryana_AC.kml",
+      "size_bytes": 359505
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\district\\haryana_district.kml",
+      "size_bytes": 254525
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "haryana_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\haryana\\parliament\\haryana_PC.kml",
+      "size_bytes": 98153
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.kml",
+      "size_bytes": 910316
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC_1980-2007.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.kml",
+      "size_bytes": 1751632
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_district_2011.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.kml",
+      "size_bytes": 4820165
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\parliament\\gujarat_PC.kml",
+      "size_bytes": 358229
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\assembly\\goa_AC.kml",
+      "size_bytes": 95414
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\district\\goa_district.kml",
+      "size_bytes": 40908
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "goa_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\goa\\parliament\\goa_PC.kml",
+      "size_bytes": 4357
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\assembly\\delhi_AC.kml",
+      "size_bytes": 122221
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_1997-2012_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\district\\delhi_1997-2012_district.kml",
+      "size_bytes": 28787
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\delhi\\parliament\\delhi_PC.kml",
+      "size_bytes": 104918
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "damandiu_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\damandiu\\district\\damandiu_district.kml",
+      "size_bytes": 45101
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "damandiu_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\damandiu\\parliament\\damandiu_PC.kml",
+      "size_bytes": 2586
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\district\\dadranagarhaveli_district.kml",
+      "size_bytes": 10213
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "dadranagarhaveli_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.kml",
+      "size_bytes": 3822
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\assembly\\chhattisgarh_AC.kml",
+      "size_bytes": 531012
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\district\\chhattisgarh_district.kml",
+      "size_bytes": 477514
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chhattisgarh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chhattisgarh\\parliament\\chhattisgarh_PC.kml",
+      "size_bytes": 109918
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\assembly\\chandigarh_AC.kml",
+      "size_bytes": 3940
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\district\\chandigarh_district.kml",
+      "size_bytes": 4040
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "chandigarh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\chandigarh\\parliament\\chandigarh_PC.kml",
+      "size_bytes": 19132
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\assembly\\bihar_AC.kml",
+      "size_bytes": 1174848
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_block.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\block\\bihar_block.kml",
+      "size_bytes": 2814099
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\district\\bihar_district.kml",
+      "size_bytes": 371252
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\parliament\\bihar_PC.kml",
+      "size_bytes": 190017
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\assembly\\assam_AC.kml",
+      "size_bytes": 516129
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\district\\assam_district.kml",
+      "size_bytes": 584977
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "assam_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\assam\\parliament\\assam_PC.kml",
+      "size_bytes": 95034
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\assembly\\arunachalpradesh_AC.kml",
+      "size_bytes": 226018
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\district\\arunachalpradesh_district.kml",
+      "size_bytes": 222862
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "arunachalpradesh_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\arunachalpradesh\\parliament\\arunachalpradesh_PC.kml",
+      "size_bytes": 23383
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh-pre2014_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh-pre2014_AC.kml",
+      "size_bytes": 1268993
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh_AC.kml",
+      "size_bytes": 778414
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_pre2014_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\district\\andhrapradesh_pre2014_district.kml",
+      "size_bytes": 679455
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andhrapradesh_PC_pre2014.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andhrapradesh\\parliament\\andhrapradesh_PC_pre2014.kml",
+      "size_bytes": 240699
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andamannicobarislands_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andamannicobarislands\\district\\andamannicobarislands_district.kml",
+      "size_bytes": 2371707
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "andamannicobarislands_PC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\andamannicobarislands\\parliament\\andamannicobarislands_PC.kml",
+      "size_bytes": 19026
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2012-17_AC.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\assembly\\india_2012-17_AC.kml",
+      "size_bytes": 7501675
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_cities.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\city\\india_cities.kml",
+      "size_bytes": 36864
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\country\\india.kml",
+      "size_bytes": 120266
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2001_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_2001_district.kml",
+      "size_bytes": 14709671
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2011_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_2011_district.kml",
+      "size_bytes": 24533139
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_district.kml",
+      "size_bytes": 864996
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2014_parliament.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\parliament\\india_2014_parliament.kml",
+      "size_bytes": 1680660
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_1975-2000_state.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_1975-2000_state.kml",
+      "size_bytes": 2988716
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2000-2014_state.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_2000-2014_state.kml",
+      "size_bytes": 3111778
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_state.kml",
+      "path": "data\\spatial\\ht_shapefiles\\india\\state_ut\\india_state.kml",
+      "size_bytes": 866802
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_1997-2012_district.kml",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\district\\delhi_1997-2012_district.kml",
+      "size_bytes": 28787
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_ward.kml",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\ward\\delhi_ward.kml",
+      "size_bytes": 489457
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "delhi_ward_outline.kml",
+      "path": "data\\spatial\\ht_shapefiles\\city\\delhi\\ward\\delhi_ward_outline.kml",
+      "size_bytes": 50104
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bengaluru_ward.kml",
+      "path": "data\\spatial\\ht_shapefiles\\city\\bengaluru\\ward\\bengaluru_ward.kml",
+      "size_bytes": 1129348
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.csv",
+      "size_bytes": 2780
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "uttarpradesh_district_2011.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.csv",
+      "size_bytes": 2445
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "himachalpradesh_AC.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.csv",
+      "size_bytes": 4036
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.csv",
+      "size_bytes": 10333
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_AC_1980-2007.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.csv",
+      "size_bytes": 18674
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "gujarat_district_2011.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.csv",
+      "size_bytes": 1207
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_block.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\block\\bihar_block.csv",
+      "size_bytes": 20047
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "bihar_district.csv",
+      "path": "data\\spatial\\ht_shapefiles\\state_ut\\bihar\\district\\bihar_district.csv",
+      "size_bytes": 975
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2012-17_AC.csv",
+      "path": "data\\spatial\\ht_shapefiles\\india\\assembly\\india_2012-17_AC.csv",
+      "size_bytes": 221232
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_cities.csv",
+      "path": "data\\spatial\\ht_shapefiles\\india\\city\\india_cities.csv",
+      "size_bytes": 3310
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2011_district.csv",
+      "path": "data\\spatial\\ht_shapefiles\\india\\district\\india_2011_district.csv",
+      "size_bytes": 21180
+    },
+    {
+      "repo": "ht_shapefiles",
+      "file": "india_2014_parliament.csv",
+      "path": "data\\spatial\\ht_shapefiles\\india\\parliament\\india_2014_parliament.csv",
+      "size_bytes": 12649
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_district.geojson",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\district\\jammukashmir_district.geojson",
+      "size_bytes": 235245
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\assembly\\westbengal_AC.json",
+      "size_bytes": 953465
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\district\\westbengal_district.json",
+      "size_bytes": 1833365
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\parliament\\westbengal_PC.json",
+      "size_bytes": 259163
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\assembly\\uttarpradesh_AC.json",
+      "size_bytes": 1775221
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.json",
+      "size_bytes": 847935
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district_2011.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.json",
+      "size_bytes": 1665941
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district_bahraich_error.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_bahraich_error.json",
+      "size_bytes": 847749
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\parliament\\uttarpradesh_PC.json",
+      "size_bytes": 454823
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\assembly\\uttarakhand_AC.json",
+      "size_bytes": 260174
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\district\\uttarakhand_district.json",
+      "size_bytes": 186931
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\parliament\\uttarakhand_PC.json",
+      "size_bytes": 36406
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\assembly\\tripura_AC.json",
+      "size_bytes": 126186
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\district\\tripura_district.json",
+      "size_bytes": 36580
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\parliament\\tripura_PC.json",
+      "size_bytes": 13808
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "telangana_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\telangana\\assembly\\telangana_AC.json",
+      "size_bytes": 417961
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\assembly\\tamilnadu_AC.json",
+      "size_bytes": 981837
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\district\\tamilnadu_district.json",
+      "size_bytes": 475017
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\parliament\\tamilnadu_PC.json",
+      "size_bytes": 374608
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\assembly\\sikkim_AC.json",
+      "size_bytes": 70706
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\district\\sikkim_district.json",
+      "size_bytes": 27945
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\parliament\\sikkim_PC.json",
+      "size_bytes": 8978
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\assembly\\rajasthan_AC.json",
+      "size_bytes": 1035414
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\district\\rajasthan_district.json",
+      "size_bytes": 685344
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\parliament\\rajasthan_PC.json",
+      "size_bytes": 239094
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\assembly\\punjab_AC.json",
+      "size_bytes": 528938
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\district\\punjab_district.json",
+      "size_bytes": 227391
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\parliament\\punjab_PC.json",
+      "size_bytes": 107874
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\assembly\\puducherry_AC.json",
+      "size_bytes": 42325
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\district\\puducherry_district.json",
+      "size_bytes": 17065
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\parliament\\puducherry_PC.json",
+      "size_bytes": 47821
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\assembly\\odisha_AC.json",
+      "size_bytes": 833788
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\district\\odisha_district.json",
+      "size_bytes": 417584
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\parliament\\odisha_PC.json",
+      "size_bytes": 159646
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\assembly\\nagaland_AC.json",
+      "size_bytes": 105138
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\district\\nagaland_district.json",
+      "size_bytes": 75096
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\parliament\\nagaland_PC.json",
+      "size_bytes": 15209
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\assembly\\mizoram_AC.json",
+      "size_bytes": 109175
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\district\\mizoram_district.json",
+      "size_bytes": 84514
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\parliament\\mizoram_PC.json",
+      "size_bytes": 13855
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\assembly\\meghalaya_AC.json",
+      "size_bytes": 127889
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\district\\meghalaya_district.json",
+      "size_bytes": 57142
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\parliament\\meghalaya_PC.json",
+      "size_bytes": 18715
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\assembly\\manipur_AC.json",
+      "size_bytes": 148583
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_pre2016_districts.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\district\\manipur_pre2016_districts.json",
+      "size_bytes": 83350
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\parliament\\manipur_PC.json",
+      "size_bytes": 37759
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharashtra_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\assembly\\maharashtra_AC.json",
+      "size_bytes": 1358060
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharashtra_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\district\\maharashtra_district.json",
+      "size_bytes": 694033
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharashtra_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\parliament\\maharashtra_PC.json",
+      "size_bytes": 331068
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\assembly\\madhyapradesh_AC.json",
+      "size_bytes": 1317995
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\district\\madhyapradesh_district.json",
+      "size_bytes": 1002142
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\parliament\\madhyapradesh_PC.json",
+      "size_bytes": 314398
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "lakshadweep_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\lakshadweep\\district\\lakshadweep_district.json",
+      "size_bytes": 63328
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "lakshadweep_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\lakshadweep\\parliament\\lakshadweep_PC.json",
+      "size_bytes": 5667
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\assembly\\kerala_AC.json",
+      "size_bytes": 427067
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\district\\kerala_district.json",
+      "size_bytes": 143217
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\parliament\\kerala_PC.json",
+      "size_bytes": 129638
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\assembly\\karnataka_AC.json",
+      "size_bytes": 986700
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\district\\karnataka_district.json",
+      "size_bytes": 436882
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\parliament\\karnataka_PC.json",
+      "size_bytes": 173931
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\assembly\\jharkhand_AC.json",
+      "size_bytes": 341372
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\district\\jharkhand_district.json",
+      "size_bytes": 258800
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\parliament\\jharkhand_PC.json",
+      "size_bytes": 119972
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\assembly\\jammukashmir_AC.json",
+      "size_bytes": 367486
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\parliament\\jammukashmir_PC.json",
+      "size_bytes": 86989
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.json",
+      "size_bytes": 252500
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\district\\himachalpradesh_district.json",
+      "size_bytes": 123626
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\parliament\\himachalpradesh_PC.json",
+      "size_bytes": 50350
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\assembly\\haryana_AC.json",
+      "size_bytes": 302569
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\district\\haryana_district.json",
+      "size_bytes": 142348
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\parliament\\haryana_PC.json",
+      "size_bytes": 103209
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.json",
+      "size_bytes": 888017
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC_1980-2007.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.json",
+      "size_bytes": 1738630
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_district_2011.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.json",
+      "size_bytes": 2750998
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\parliament\\gujarat_PC.json",
+      "size_bytes": 380921
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\assembly\\goa_AC.json",
+      "size_bytes": 65112
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\district\\goa_district.json",
+      "size_bytes": 22886
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\parliament\\goa_PC.json",
+      "size_bytes": 3753
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\assembly\\delhi_AC.json",
+      "size_bytes": 74752
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_1997-2012_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\district\\delhi_1997-2012_district.json",
+      "size_bytes": 25769
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\parliament\\delhi_PC.json",
+      "size_bytes": 111623
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "damandiu_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\damandiu\\district\\damandiu_district.json",
+      "size_bytes": 25080
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "damandiu_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\damandiu\\parliament\\damandiu_PC.json",
+      "size_bytes": 2183
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\district\\dadranagarhaveli_district.json",
+      "size_bytes": 5391
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.json",
+      "size_bytes": 3631
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\assembly\\chhattisgarh_AC.json",
+      "size_bytes": 482314
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\district\\chhattisgarh_district.json",
+      "size_bytes": 271416
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\parliament\\chhattisgarh_PC.json",
+      "size_bytes": 115603
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\assembly\\chandigarh_AC.json",
+      "size_bytes": 1783
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\district\\chandigarh_district.json",
+      "size_bytes": 1829
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\parliament\\chandigarh_PC.json",
+      "size_bytes": 20501
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\assembly\\bihar_AC.json",
+      "size_bytes": 1034173
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_block.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\block\\bihar_block.json",
+      "size_bytes": 2814171
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\district\\bihar_district.json",
+      "size_bytes": 471083
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\parliament\\bihar_PC.json",
+      "size_bytes": 189839
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\assembly\\assam_AC.json",
+      "size_bytes": 427440
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\district\\assam_district.json",
+      "size_bytes": 331681
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\parliament\\assam_PC.json",
+      "size_bytes": 97768
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\assembly\\arunachalpradesh_AC.json",
+      "size_bytes": 183918
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\district\\arunachalpradesh_district.json",
+      "size_bytes": 125091
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\parliament\\arunachalpradesh_PC.json",
+      "size_bytes": 24703
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh-pre2014_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh-pre2014_AC.json",
+      "size_bytes": 1039301
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh_AC.json",
+      "size_bytes": 669038
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_pre2014_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\district\\andhrapradesh_pre2014_district.json",
+      "size_bytes": 386590
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_PC_pre2014.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\parliament\\andhrapradesh_PC_pre2014.json",
+      "size_bytes": 243939
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andamannicobarislands_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andamannicobarislands\\district\\andamannicobarislands_district.json",
+      "size_bytes": 1352230
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andamannicobarislands_PC.json",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andamannicobarislands\\parliament\\andamannicobarislands_PC.json",
+      "size_bytes": 17991
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bangladesh_country.json",
+      "path": "data\\spatial\\imd_shapefiles\\other_countries\\bangladesh\\bangladesh_country.json",
+      "size_bytes": 6258911
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "myanmar_country.json",
+      "path": "data\\spatial\\imd_shapefiles\\other_countries\\myanmar\\myanmar_country.json",
+      "size_bytes": 11383389
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "myanmar_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\other_countries\\myanmar\\myanmar_district.json",
+      "size_bytes": 12470971
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "myanmar_state.json",
+      "path": "data\\spatial\\imd_shapefiles\\other_countries\\myanmar\\myanmar_state.json",
+      "size_bytes": 11968128
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2012-17_AC.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\assembly\\india_2012-17_AC.json",
+      "size_bytes": 6475318
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_cities.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\city\\india_cities.json",
+      "size_bytes": 15471
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\country\\india.json",
+      "size_bytes": 129122
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2001_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_2001_district.json",
+      "size_bytes": 15320546
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2011_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_2011_district.json",
+      "size_bytes": 13949963
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_district.json",
+      "size_bytes": 752205
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2014_parliament.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\parliament\\india_2014_parliament.json",
+      "size_bytes": 4171514
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_1975-2000_state.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_1975-2000_state.json",
+      "size_bytes": 3212519
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2000-2014_state.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_2000-2014_state.json",
+      "size_bytes": 3348178
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_state.json",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_state.json",
+      "size_bytes": 1487161
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mumbai_ward.json",
+      "path": "data\\spatial\\imd_shapefiles\\city\\mumbai\\ward\\mumbai_ward.json",
+      "size_bytes": 303617
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_1997-2012_district.json",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\district\\delhi_1997-2012_district.json",
+      "size_bytes": 25769
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_ward.json",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\ward\\delhi_ward.json",
+      "size_bytes": 466726
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_ward_outline.json",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\ward\\delhi_ward_outline.json",
+      "size_bytes": 52435
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bengaluru_ward.json",
+      "path": "data\\spatial\\imd_shapefiles\\city\\bengaluru\\ward\\bengaluru_ward.json",
+      "size_bytes": 1651514
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_PC.shp",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.shp",
+      "size_bytes": 2460
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_PC.dbf",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.dbf",
+      "size_bytes": 563
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_PC.shx",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.shx",
+      "size_bytes": 108
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\assembly\\westbengal_AC.kml",
+      "size_bytes": 1185382
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\district\\westbengal_district.kml",
+      "size_bytes": 3221218
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "westbengal_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\westbengal\\parliament\\westbengal_PC.kml",
+      "size_bytes": 255199
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\assembly\\uttarpradesh_AC.kml",
+      "size_bytes": 2004394
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.kml",
+      "size_bytes": 790624
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district_2011.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.kml",
+      "size_bytes": 1596891
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district_bahraich_error.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_bahraich_error.kml",
+      "size_bytes": 783491
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\parliament\\uttarpradesh_PC.kml",
+      "size_bytes": 9569998
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\assembly\\uttarakhand_AC.kml",
+      "size_bytes": 303326
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\district\\uttarakhand_district.kml",
+      "size_bytes": 328988
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarakhand_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarakhand\\parliament\\uttarakhand_PC.kml",
+      "size_bytes": 35315
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\assembly\\tripura_AC.kml",
+      "size_bytes": 168256
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\district\\tripura_district.kml",
+      "size_bytes": 65284
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tripura_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tripura\\parliament\\tripura_PC.kml",
+      "size_bytes": 13572
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "telangana_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\telangana\\assembly\\telangana_AC.kml",
+      "size_bytes": 491622
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\assembly\\tamilnadu_AC.kml",
+      "size_bytes": 1129462
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\district\\tamilnadu_district.kml",
+      "size_bytes": 843387
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "tamilnadu_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\tamilnadu\\parliament\\tamilnadu_PC.kml",
+      "size_bytes": 359145
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\assembly\\sikkim_AC.kml",
+      "size_bytes": 98333
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\district\\sikkim_district.kml",
+      "size_bytes": 50286
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "sikkim_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\sikkim\\parliament\\sikkim_PC.kml",
+      "size_bytes": 8667
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\assembly\\rajasthan_AC.kml",
+      "size_bytes": 1145024
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\district\\rajasthan_district.kml",
+      "size_bytes": 1201377
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "rajasthan_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\rajasthan\\parliament\\rajasthan_PC.kml",
+      "size_bytes": 228155
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\assembly\\punjab_AC.kml",
+      "size_bytes": 366469
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\district\\punjab_district.kml",
+      "size_bytes": 401758
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "punjab_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\punjab\\parliament\\punjab_PC.kml",
+      "size_bytes": 103689
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\assembly\\puducherry_AC.kml",
+      "size_bytes": 68218
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\district\\puducherry_district.kml",
+      "size_bytes": 32530
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "puducherry_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\puducherry\\parliament\\puducherry_PC.kml",
+      "size_bytes": 45288
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\assembly\\odisha_AC.kml",
+      "size_bytes": 909112
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\district\\odisha_district.kml",
+      "size_bytes": 736419
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "odisha_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\odisha\\parliament\\odisha_PC.kml",
+      "size_bytes": 154269
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\assembly\\nagaland_AC.kml",
+      "size_bytes": 129394
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\district\\nagaland_district.kml",
+      "size_bytes": 134386
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "nagaland_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\nagaland\\parliament\\nagaland_PC.kml",
+      "size_bytes": 14326
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\assembly\\mizoram_AC.kml",
+      "size_bytes": 136316
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\district\\mizoram_district.kml",
+      "size_bytes": 149797
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "mizoram_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\mizoram\\parliament\\mizoram_PC.kml",
+      "size_bytes": 13098
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\assembly\\meghalaya_AC.kml",
+      "size_bytes": 169767
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\district\\meghalaya_district.kml",
+      "size_bytes": 101869
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "meghalaya_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\meghalaya\\parliament\\meghalaya_PC.kml",
+      "size_bytes": 17945
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\assembly\\manipur_AC.kml",
+      "size_bytes": 198199
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_pre2016_districts.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\district\\manipur_pre2016_districts.kml",
+      "size_bytes": 148184
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "manipur_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\manipur\\parliament\\manipur_PC.kml",
+      "size_bytes": 35325
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharasthra_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\assembly\\maharasthra_AC.kml",
+      "size_bytes": 1530086
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharashtra_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\district\\maharashtra_district.kml",
+      "size_bytes": 1216169
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "maharashtra_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\maharashtra\\parliament\\maharashtra_PC.kml",
+      "size_bytes": 321834
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\assembly\\madhyapradesh_AC.kml",
+      "size_bytes": 1431263
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\district\\madhyapradesh_district.kml",
+      "size_bytes": 1757051
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "madhyapradesh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\madhyapradesh\\parliament\\madhyapradesh_PC.kml",
+      "size_bytes": 298609
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "lakshadweep_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\lakshadweep\\district\\lakshadweep_district.kml",
+      "size_bytes": 112779
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "lakshadweep_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\lakshadweep\\parliament\\lakshadweep_PC.kml",
+      "size_bytes": 6752
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\assembly\\kerala_AC.kml",
+      "size_bytes": 517813
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\district\\kerala_district.kml",
+      "size_bytes": 255724
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "kerala_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\kerala\\parliament\\kerala_PC.kml",
+      "size_bytes": 126474
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\assembly\\karnataka_AC.kml",
+      "size_bytes": 1161420
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\district\\karnataka_district.kml",
+      "size_bytes": 771261
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "karnataka_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\karnataka\\parliament\\karnataka_PC.kml",
+      "size_bytes": 170199
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\assembly\\jharkhand_AC.kml",
+      "size_bytes": 403382
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\district\\jharkhand_district.kml",
+      "size_bytes": 458268
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jharkhand_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jharkhand\\parliament\\jharkhand_PC.kml",
+      "size_bytes": 115446
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\assembly\\jammukashmir_AC.kml",
+      "size_bytes": 401583
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\district\\jammukashmir_district.kml",
+      "size_bytes": 416317
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "jammukashmir_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\jammukashmir\\parliament\\jammukashmir_PC.kml",
+      "size_bytes": 83311
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.kml",
+      "size_bytes": 263534
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\district\\himachalpradesh_district.kml",
+      "size_bytes": 218939
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\parliament\\himachalpradesh_PC.kml",
+      "size_bytes": 47540
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\assembly\\haryana_AC.kml",
+      "size_bytes": 359505
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\district\\haryana_district.kml",
+      "size_bytes": 254525
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "haryana_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\haryana\\parliament\\haryana_PC.kml",
+      "size_bytes": 98153
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.kml",
+      "size_bytes": 910316
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC_1980-2007.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.kml",
+      "size_bytes": 1751632
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_district_2011.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.kml",
+      "size_bytes": 4820165
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\parliament\\gujarat_PC.kml",
+      "size_bytes": 358229
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\assembly\\goa_AC.kml",
+      "size_bytes": 95414
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\district\\goa_district.kml",
+      "size_bytes": 40908
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "goa_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\goa\\parliament\\goa_PC.kml",
+      "size_bytes": 4357
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\assembly\\delhi_AC.kml",
+      "size_bytes": 122221
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_1997-2012_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\district\\delhi_1997-2012_district.kml",
+      "size_bytes": 28787
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\delhi\\parliament\\delhi_PC.kml",
+      "size_bytes": 104918
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "damandiu_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\damandiu\\district\\damandiu_district.kml",
+      "size_bytes": 45101
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "damandiu_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\damandiu\\parliament\\damandiu_PC.kml",
+      "size_bytes": 2586
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\district\\dadranagarhaveli_district.kml",
+      "size_bytes": 10213
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "dadranagarhaveli_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\dadranagarhaveli\\parliament\\dadranagarhaveli_PC.kml",
+      "size_bytes": 3822
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\assembly\\chhattisgarh_AC.kml",
+      "size_bytes": 531012
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\district\\chhattisgarh_district.kml",
+      "size_bytes": 477514
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chhattisgarh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chhattisgarh\\parliament\\chhattisgarh_PC.kml",
+      "size_bytes": 109918
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\assembly\\chandigarh_AC.kml",
+      "size_bytes": 3940
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\district\\chandigarh_district.kml",
+      "size_bytes": 4040
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "chandigarh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\chandigarh\\parliament\\chandigarh_PC.kml",
+      "size_bytes": 19132
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\assembly\\bihar_AC.kml",
+      "size_bytes": 1174848
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_block.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\block\\bihar_block.kml",
+      "size_bytes": 2814099
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\district\\bihar_district.kml",
+      "size_bytes": 371252
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\parliament\\bihar_PC.kml",
+      "size_bytes": 190017
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\assembly\\assam_AC.kml",
+      "size_bytes": 516129
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\district\\assam_district.kml",
+      "size_bytes": 584977
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "assam_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\assam\\parliament\\assam_PC.kml",
+      "size_bytes": 95034
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\assembly\\arunachalpradesh_AC.kml",
+      "size_bytes": 226018
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\district\\arunachalpradesh_district.kml",
+      "size_bytes": 222862
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "arunachalpradesh_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\arunachalpradesh\\parliament\\arunachalpradesh_PC.kml",
+      "size_bytes": 23383
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh-pre2014_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh-pre2014_AC.kml",
+      "size_bytes": 1268993
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\assembly\\andhrapradesh_AC.kml",
+      "size_bytes": 778414
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_pre2014_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\district\\andhrapradesh_pre2014_district.kml",
+      "size_bytes": 679455
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andhrapradesh_PC_pre2014.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andhrapradesh\\parliament\\andhrapradesh_PC_pre2014.kml",
+      "size_bytes": 240699
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andamannicobarislands_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andamannicobarislands\\district\\andamannicobarislands_district.kml",
+      "size_bytes": 2371707
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "andamannicobarislands_PC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\andamannicobarislands\\parliament\\andamannicobarislands_PC.kml",
+      "size_bytes": 19026
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2012-17_AC.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\assembly\\india_2012-17_AC.kml",
+      "size_bytes": 7501675
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_cities.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\city\\india_cities.kml",
+      "size_bytes": 36864
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\country\\india.kml",
+      "size_bytes": 120266
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2001_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_2001_district.kml",
+      "size_bytes": 14709671
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2011_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_2011_district.kml",
+      "size_bytes": 24533139
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_district.kml",
+      "size_bytes": 864996
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2014_parliament.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\parliament\\india_2014_parliament.kml",
+      "size_bytes": 1680660
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_1975-2000_state.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_1975-2000_state.kml",
+      "size_bytes": 2988716
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2000-2014_state.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_2000-2014_state.kml",
+      "size_bytes": 3111778
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_state.kml",
+      "path": "data\\spatial\\imd_shapefiles\\india\\state_ut\\india_state.kml",
+      "size_bytes": 866802
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_1997-2012_district.kml",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\district\\delhi_1997-2012_district.kml",
+      "size_bytes": 28787
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_ward.kml",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\ward\\delhi_ward.kml",
+      "size_bytes": 489457
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "delhi_ward_outline.kml",
+      "path": "data\\spatial\\imd_shapefiles\\city\\delhi\\ward\\delhi_ward_outline.kml",
+      "size_bytes": 50104
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bengaluru_ward.kml",
+      "path": "data\\spatial\\imd_shapefiles\\city\\bengaluru\\ward\\bengaluru_ward.kml",
+      "size_bytes": 1129348
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district.csv",
+      "size_bytes": 2780
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "uttarpradesh_district_2011.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\uttarpradesh\\district\\uttarpradesh_district_2011.csv",
+      "size_bytes": 2445
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "himachalpradesh_AC.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\himachalpradesh\\assembly\\himachalpradesh_AC.csv",
+      "size_bytes": 4036
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC.csv",
+      "size_bytes": 10333
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_AC_1980-2007.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\assembly\\gujarat_AC_1980-2007.csv",
+      "size_bytes": 18674
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "gujarat_district_2011.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\gujarat\\district\\gujarat_district_2011.csv",
+      "size_bytes": 1207
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_block.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\block\\bihar_block.csv",
+      "size_bytes": 20047
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "bihar_district.csv",
+      "path": "data\\spatial\\imd_shapefiles\\state_ut\\bihar\\district\\bihar_district.csv",
+      "size_bytes": 975
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2012-17_AC.csv",
+      "path": "data\\spatial\\imd_shapefiles\\india\\assembly\\india_2012-17_AC.csv",
+      "size_bytes": 221232
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_cities.csv",
+      "path": "data\\spatial\\imd_shapefiles\\india\\city\\india_cities.csv",
+      "size_bytes": 3310
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2011_district.csv",
+      "path": "data\\spatial\\imd_shapefiles\\india\\district\\india_2011_district.csv",
+      "size_bytes": 21180
+    },
+    {
+      "repo": "imd_shapefiles",
+      "file": "india_2014_parliament.csv",
+      "path": "data\\spatial\\imd_shapefiles\\india\\parliament\\india_2014_parliament.csv",
+      "size_bytes": 12649
+    }
+  ],
+  "parsers": [
+    {
+      "name": "mivaa_las_dlis_converter",
+      "path": "data\\parsers\\mivaa_las_dlis_converter",
+      "purpose": "LAS / DLIS wellbore log parsing to JSON for PostgreSQL/TimescaleDB ingestion"
+    },
+    {
+      "name": "las_py",
+      "path": "data\\parsers\\las_py",
+      "purpose": "LAS / DLIS wellbore log parsing to JSON for PostgreSQL/TimescaleDB ingestion"
+    }
+  ],
+  "external_repositories": {
+    "NGDR": {
+      "name": "National Geoscience Data Repository (GSI/Mines)",
+      "portal_url": "https://ngdr.gsi.gov.in/",
+      "key_layers": [
+        "Geology 1:2M (Pan-India)",
+        "Lithology 1:50k (Baseline Geoscientific Quadrangle)",
+        "Structural Trends & Faults",
+        "Geochemical Baseline / Aeromagnetic Anomalies"
+      ],
+      "api_endpoint": "https://ngdr.gsi.gov.in/geoserver/wms",
+      "notes": "Public layers accessible via WMS/WFS; NGDR_Geology_2M provides core lithostratigraphic classification."
+    },
+    "DGH_NDR": {
+      "name": "Directorate General of Hydrocarbons - National Data Repository",
+      "portal_url": "https://ndr.dghindia.gov.in/",
+      "data_types": [
+        "2D/3D Seismic Navigation & SEG-Y",
+        "Well Logs (LAS, DLIS, ASCII)",
+        "Well Completion Reports (WCR)",
+        "Drilling Mud & Core Analysis",
+        "Sedimentary Basins (Category I, II, III)"
+      ],
+      "access_model": "Entitled user access / Data Ordering System",
+      "notes": "Target Indian petroleum basins: Assam-Arakan (Duliajan/Digboi), Krishna-Godavari (KG-DWN), Cambay, Barmer, Mumbai Offshore."
+    }
+  }
+}

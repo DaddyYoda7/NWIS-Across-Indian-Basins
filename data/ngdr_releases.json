@@ -1,0 +1,374 @@
+[
+  {
+    "tag": "mining",
+    "name": "NCOG_NGDR_Mineral_Map.geojsonl.7z",
+    "size_mb": 0.2,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NCOG_NGDR_Mineral_Map.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NCOG_NGDR_Mineral_Map.parquet",
+    "size_mb": 0.33,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NCOG_NGDR_Mineral_Map.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NCOG_NGDR_Mineral_Map.pmtiles",
+    "size_mb": 0.5,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NCOG_NGDR_Mineral_Map.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Auction_Handed_Over_Blocks.geojsonl.7z",
+    "size_mb": 0.04,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Auction_Handed_Over_Blocks.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Auction_Handed_Over_Blocks.parquet",
+    "size_mb": 0.07,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Auction_Handed_Over_Blocks.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Auction_Handed_Over_Blocks.pmtiles",
+    "size_mb": 0.17,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Auction_Handed_Over_Blocks.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Blocks_Future_Projects.geojsonl.7z",
+    "size_mb": 0.1,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Blocks_Future_Projects.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Blocks_Future_Projects.parquet",
+    "size_mb": 0.19,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Blocks_Future_Projects.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Blocks_Future_Projects.pmtiles",
+    "size_mb": 0.34,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Blocks_Future_Projects.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coalfields_Basinal_Area.geojsonl.7z",
+    "size_mb": 0.54,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coalfields_Basinal_Area.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coalfields_Basinal_Area.parquet",
+    "size_mb": 0.99,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coalfields_Basinal_Area.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coalfields_Basinal_Area.pmtiles",
+    "size_mb": 0.33,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coalfields_Basinal_Area.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coal_Blocks.geojsonl.7z",
+    "size_mb": 1.52,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coal_Blocks.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coal_Blocks.parquet",
+    "size_mb": 2.61,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coal_Blocks.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Coal_Blocks.pmtiles",
+    "size_mb": 1.54,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Coal_Blocks.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Critical_Minerals.geojsonl.7z",
+    "size_mb": 0.03,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Critical_Minerals.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Critical_Minerals.parquet",
+    "size_mb": 0.05,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Critical_Minerals.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Critical_Minerals.pmtiles",
+    "size_mb": 0.09,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Critical_Minerals.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Hydrocarbon_Blocks.geojsonl.7z",
+    "size_mb": 0.18,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Hydrocarbon_Blocks.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Hydrocarbon_Blocks.parquet",
+    "size_mb": 0.29,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Hydrocarbon_Blocks.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Hydrocarbon_Blocks.pmtiles",
+    "size_mb": 0.38,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Hydrocarbon_Blocks.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Major_Mining_Leases_2022.geojsonl.7z",
+    "size_mb": 2.73,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Major_Mining_Leases_2022.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Major_Mining_Leases_2022.parquet",
+    "size_mb": 2.99,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Major_Mining_Leases_2022.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Major_Mining_Leases_2022.pmtiles",
+    "size_mb": 3.97,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Major_Mining_Leases_2022.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mineral_Deposits.geojsonl.7z",
+    "size_mb": 0.02,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mineral_Deposits.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mineral_Deposits.parquet",
+    "size_mb": 0.03,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mineral_Deposits.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mineral_Deposits.pmtiles",
+    "size_mb": 0.06,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mineral_Deposits.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Blocks.geojsonl.7z",
+    "size_mb": 4.2,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Blocks.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Blocks.parquet",
+    "size_mb": 3.03,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Blocks.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Blocks.pmtiles",
+    "size_mb": 11.43,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Blocks.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Drilling_Boreholes.geojsonl.7z",
+    "size_mb": 0.41,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Drilling_Boreholes.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Drilling_Boreholes.parquet",
+    "size_mb": 0.55,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Drilling_Boreholes.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Exploration_Drilling_Boreholes.pmtiles",
+    "size_mb": 1.58,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Exploration_Drilling_Boreholes.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Leases_Other.geojsonl.7z",
+    "size_mb": 0.25,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Leases_Other.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Leases_Other.parquet",
+    "size_mb": 0.43,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Leases_Other.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Leases_Other.pmtiles",
+    "size_mb": 0.72,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Leases_Other.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries.geojsonl.7z",
+    "size_mb": 0.02,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries.parquet",
+    "size_mb": 0.05,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries.pmtiles",
+    "size_mb": 0.07,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries_with_commodity.geojsonl.7z",
+    "size_mb": 0.0,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries_with_commodity.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries_with_commodity.parquet",
+    "size_mb": 0.01,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries_with_commodity.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Mining_Quarries_with_commodity.pmtiles",
+    "size_mb": 0.01,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Mining_Quarries_with_commodity.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Minor_Mining_Leases.geojsonl.7z",
+    "size_mb": 2.67,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Minor_Mining_Leases.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Minor_Mining_Leases.parquet",
+    "size_mb": 4.93,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Minor_Mining_Leases.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Minor_Mining_Leases.pmtiles",
+    "size_mb": 5.9,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Minor_Mining_Leases.pmtiles"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Obvious_Geological_Potential.geojsonl.7z",
+    "size_mb": 1.45,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Obvious_Geological_Potential.geojsonl.7z"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Obvious_Geological_Potential.parquet",
+    "size_mb": 2.39,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Obvious_Geological_Potential.parquet"
+  },
+  {
+    "tag": "mining",
+    "name": "NGDR_Obvious_Geological_Potential.pmtiles",
+    "size_mb": 0.94,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/mining/NGDR_Obvious_Geological_Potential.pmtiles"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Geology_2M.geojsonl.7z",
+    "size_mb": 18.85,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Geology_2M.geojsonl.7z"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Geology_2M.parquet",
+    "size_mb": 30.4,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Geology_2M.parquet"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Geology_2M.pmtiles",
+    "size_mb": 13.8,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Geology_2M.pmtiles"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Lithology_50k.geojsonl.7z.001",
+    "size_mb": 2000.0,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Lithology_50k.geojsonl.7z.001"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Lithology_50k.geojsonl.7z.002",
+    "size_mb": 2000.0,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Lithology_50k.geojsonl.7z.002"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Lithology_50k.geojsonl.7z.003",
+    "size_mb": 419.28,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Lithology_50k.geojsonl.7z.003"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Lithology_50k.parquet",
+    "size_mb": 587.05,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Lithology_50k.parquet"
+  },
+  {
+    "tag": "geology",
+    "name": "NGDR_Lithology_50k.pmtiles",
+    "size_mb": 447.35,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geology/NGDR_Lithology_50k.pmtiles"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Geomorphology_250k.geojsonl.7z",
+    "size_mb": 796.47,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Geomorphology_250k.geojsonl.7z"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Geomorphology_250k.parquet",
+    "size_mb": 1438.27,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Geomorphology_250k.parquet"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Geomorphology_250k.pmtiles",
+    "size_mb": 510.06,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Geomorphology_250k.pmtiles"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Lineament_250k.geojsonl.7z",
+    "size_mb": 4.3,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Lineament_250k.geojsonl.7z"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Lineament_250k.parquet",
+    "size_mb": 7.78,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Lineament_250k.parquet"
+  },
+  {
+    "tag": "geomorphology",
+    "name": "NGDR_Lineament_250k.pmtiles",
+    "size_mb": 5.88,
+    "url": "https://github.com/ramSeraph/indian_land_features/releases/download/geomorphology/NGDR_Lineament_250k.pmtiles"
+  }
+]

@@ -1,0 +1,14 @@
+pipeline_type,operator,length_km,capacity_mmtpa
+crude_oil,ONGC,1284,60.6
+crude_oil,OIL,1196,9.0
+crude_oil,Cairn/Others,688,10.7
+crude_oil,HMEL,1017,11.3
+crude_oil,IOCL,5322,63.8
+crude_oil,BPCL,937,7.8
+crude_oil,TOTAL,10443,163.1
+products,ONGC,654,1.7
+products,IOCL,13347,80.6
+products,BPCL,3025,25.2
+products,HPCL,5439,42.6
+products,Others,2399,10.2
+products,TOTAL,24864,160.3

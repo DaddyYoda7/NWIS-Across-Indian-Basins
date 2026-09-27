@@ -1,0 +1,248 @@
+<div class="flex flex-col w-full pb-16 space-y-6">
+  <!-- Header Strip -->
+  <section class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-2 border-b border-outline-variant/30">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Predictive Decision Support Engine</span>
+      </div>
+      <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Scenario Lab &amp; Hydraulics Simulation</h1>
+      <p class="text-xs text-secondary mt-0.5">Test real-time mud weight, flow rate, and lost circulation material (LCM) formulations against calibrated Barail and Tipam formations.</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="resetSimulation()" class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+        <span>Reset Baseline</span>
+      </button>
+      <button onclick="location.hash='reports'" class="px-3.5 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-semibold flex items-center gap-1 shadow-sm hover:bg-secondary transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-[16px]">summarize</span>
+        <span>Commit to Dossier</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Grid: Interactive Controls (5 cols) & Live Simulation Output (7 cols) -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    <!-- LEFT: CONTROLS PANEL (5 cols) -->
+    <div class="lg:col-span-5 rounded-2xl bg-surface-container/70 backdrop-blur-xl p-5 border border-outline-variant/20 shadow-sm flex flex-col gap-5">
+      <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">Drilling Variable Controls</span>
+        <span class="text-[10px] font-mono bg-primary-container text-surface px-2 py-0.5 rounded font-bold">API RP 13D Standard</span>
+      </div>
+
+      <!-- Control 1: Mud Weight -->
+      <div class="flex flex-col gap-1.5">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-bold text-primary">Active Mud Weight (SG):</span>
+          <span id="sl-mw-val" class="font-mono font-bold text-primary bg-surface-container px-2 py-0.5 rounded">1.30 SG</span>
+        </div>
+        <input id="sl-mw-slider" oninput="runSimulation()" type="range" min="1.15" max="1.45" step="0.01" value="1.30" class="w-full accent-primary cursor-pointer">
+        <div class="flex justify-between text-[10px] font-mono text-secondary">
+          <span>Pore Pressure (1.28 SG)</span>
+          <span>Frac Gradient (1.38 SG)</span>
+        </div>
+      </div>
+
+      <!-- Control 2: Flow Rate -->
+      <div class="flex flex-col gap-1.5">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-bold text-primary">Pump Circulation Rate (LPM):</span>
+          <span id="sl-flow-val" class="font-mono font-bold text-primary bg-surface-container px-2 py-0.5 rounded">2,200 LPM</span>
+        </div>
+        <input id="sl-flow-slider" oninput="runSimulation()" type="range" min="1600" max="3000" step="50" value="2200" class="w-full accent-primary cursor-pointer">
+        <div class="flex justify-between text-[10px] font-mono text-secondary">
+          <span>Min Annular Velocity (1,600)</span>
+          <span>Max Pump Delivery (3,000)</span>
+        </div>
+      </div>
+
+      <!-- Control 3: Rotary RPM -->
+      <div class="flex flex-col gap-1.5">
+        <div class="flex justify-between items-center text-xs">
+          <span class="font-bold text-primary">Rotary Speed (RPM):</span>
+          <span id="sl-rpm-val" class="font-mono font-bold text-primary bg-surface-container px-2 py-0.5 rounded">100 RPM</span>
+        </div>
+        <input id="sl-rpm-slider" oninput="runSimulation()" type="range" min="60" max="160" step="5" value="100" class="w-full accent-primary cursor-pointer">
+        <div class="flex justify-between text-[10px] font-mono text-secondary">
+          <span>60 RPM (Tough Chert)</span>
+          <span>160 RPM (Soft Sand)</span>
+        </div>
+      </div>
+
+      <!-- Control 4: LCM Pill Formulation -->
+      <div class="flex flex-col gap-2 pt-2 border-t border-outline-variant/20">
+        <span class="text-xs font-bold text-primary">Pre-Staged LCM Pill Blend:</span>
+        <div class="grid grid-cols-3 gap-2 text-xs">
+          <button id="lcm-btn-1" onclick="setLCM('light')" class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-center cursor-pointer transition-all">
+            <span class="font-bold block text-[11px] text-primary">Fine Blend</span>
+            <span class="text-[10px] text-secondary">25 ppb Mica</span>
+          </button>
+          <button id="lcm-btn-2" onclick="setLCM('medium')" class="p-2 rounded-lg bg-primary text-on-primary font-bold border border-primary text-center cursor-pointer transition-all shadow-xs">
+            <span class="font-bold block text-[11px]">Nut Plug + CaCO3</span>
+            <span class="text-[10px] opacity-80">50 ppb Coarse</span>
+          </button>
+          <button id="lcm-btn-3" onclick="setLCM('heavy')" class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-center cursor-pointer transition-all">
+            <span class="font-bold block text-[11px] text-primary">High Seal</span>
+            <span class="text-[10px] text-secondary">80 ppb Crosslinked</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: LIVE SIMULATION OUTPUT & RISK PREDICTOR (7 cols) -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+      <!-- Calculated Hydraulic Status -->
+      <div class="rounded-2xl bg-surface-container/70 backdrop-blur-xl p-5 border border-outline-variant/20 shadow-sm flex flex-col gap-4">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Hydraulic &amp; Fracture Margin Status</span>
+          <span id="sl-status-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800">SAFE OPERATING WINDOW</span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs font-mono">
+          <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+            <span class="text-[10px] text-secondary uppercase block">DYNAMIC ECD</span>
+            <span id="sl-out-ecd" class="text-lg font-bold text-primary mt-0.5 block">1.34 SG</span>
+            <span id="sl-ecd-comment" class="text-[10px] text-emerald-700 font-semibold">+0.04 under frac</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+            <span class="text-[10px] text-secondary uppercase block">STANDPIPE PRESS.</span>
+            <span id="sl-out-spp" class="text-lg font-bold text-primary mt-0.5 block">2,420 psi</span>
+            <span class="text-[10px] text-secondary">Loss margin safe</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+            <span class="text-[10px] text-secondary uppercase block">ESTIMATED ROP</span>
+            <span id="sl-out-rop" class="text-lg font-bold text-primary mt-0.5 block">8.6 m/hr</span>
+            <span class="text-[10px] text-secondary">Controlled drilling</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-surface-container-lowest shadow-xs border border-surface-container-high/60">
+            <span class="text-[10px] text-secondary uppercase block">SEAL PROBABILITY</span>
+            <span id="sl-out-seal" class="text-lg font-bold text-primary mt-0.5 block">94.2%</span>
+            <span class="text-[10px] text-secondary">Pre-staged 60 bbl</span>
+          </div>
+        </div>
+
+        <!-- Prognosis Diagnostic Box -->
+        <div id="sl-diagnostic-box" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-relaxed">
+          <strong>Optimal Parameter Set:</strong> Mud weight 1.30 SG provides adequate hydrostatic overbalance (+0.02 SG above Barail gas pore pressure of 1.28 SG) while maintaining 0.04 SG buffer below the formation fracture breakdown gradient of 1.38 SG. Circulation rate of 2,200 LPM avoids surge pressure spikes when traversing fault zones.
+        </div>
+      </div>
+
+      <!-- Offset Historical Comparison Chart -->
+      <div class="rounded-2xl bg-surface-container/70 backdrop-blur-xl p-5 border border-outline-variant/20 shadow-sm flex flex-col gap-3">
+        <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+          <span class="text-xs font-bold uppercase tracking-wider text-primary">Offset Precedent Benchmark</span>
+          <span class="text-xs text-secondary font-mono">Nahorkatiya-1 vs Mumbai High-1 vs Current Run</span>
+        </div>
+
+        <div class="space-y-2 text-xs font-mono">
+          <div class="p-2.5 rounded-lg bg-surface-container-lowest border border-surface-container-high flex items-center justify-between">
+            <div>
+              <span class="font-bold text-primary block">Nahorkatiya NHK-01 (1953)</span>
+              <span class="text-[10px] text-secondary">1.34 SG Mud • 2,800 LPM • Result: 420 bbl loss into Tipam fault</span>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] bg-amber-100 text-amber-800 font-bold">CIRCULATION LOSS</span>
+          </div>
+
+          <div class="p-2.5 rounded-lg bg-surface-container-lowest border border-surface-container-high flex items-center justify-between">
+            <div>
+              <span class="font-bold text-primary block">Mumbai High H-1-1 (1974)</span>
+              <span class="text-[10px] text-secondary">1.15 SG Mud • High ROP • Result: 520 bbl lost in L-III karst void</span>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] bg-error-container text-error font-bold">BLOWOUT RISK</span>
+          </div>
+
+          <div class="p-2.5 rounded-lg bg-primary-container text-surface flex items-center justify-between">
+            <div>
+              <span class="font-bold text-surface block">Simulated Optimal Profile (Current)</span>
+              <span class="text-[10px] opacity-80">1.30 SG Mud • 2,200 LPM + 50 ppb Nut Plug • Zero net loss projected</span>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500 text-surface font-bold">RECOMMENDED</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  let lcmType = 'medium';
+
+  window.setLCM = function(type) {
+    lcmType = type;
+    document.querySelectorAll('[id^="lcm-btn-"]').forEach(b => {
+      b.className = 'p-2 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/30 text-center cursor-pointer transition-all';
+    });
+    const target = type === 'light' ? 'lcm-btn-1' : (type === 'medium' ? 'lcm-btn-2' : 'lcm-btn-3');
+    const el = document.getElementById(target);
+    if (el) {
+      el.className = 'p-2 rounded-lg bg-primary text-on-primary font-bold border border-primary text-center cursor-pointer transition-all shadow-xs';
+    }
+    runSimulation();
+  };
+
+  window.resetSimulation = function() {
+    document.getElementById('sl-mw-slider').value = 1.30;
+    document.getElementById('sl-flow-slider').value = 2200;
+    document.getElementById('sl-rpm-slider').value = 100;
+    setLCM('medium');
+    runSimulation();
+  };
+
+  window.runSimulation = function() {
+    const mw = parseFloat(document.getElementById('sl-mw-slider').value);
+    const flow = parseFloat(document.getElementById('sl-flow-slider').value);
+    const rpm = parseFloat(document.getElementById('sl-rpm-slider').value);
+
+    document.getElementById('sl-mw-val').textContent = `${mw.toFixed(2)} SG`;
+    document.getElementById('sl-flow-val').textContent = `${Math.round(flow)} LPM`;
+    document.getElementById('sl-rpm-val').textContent = `${Math.round(rpm)} RPM`;
+
+    // Dynamic ECD calculation: base MW + annular friction proportional to flow^1.8
+    const annularFriction = (flow / 2200) * 0.04;
+    const ecd = mw + annularFriction;
+    const spp = Math.round(1800 + Math.pow(flow / 2000, 1.8) * 600 + (mw - 1.20) * 800);
+    const rop = ((rpm / 100) * (flow / 2200) * 8.6 * (1.35 / mw)).toFixed(1);
+
+    const sealBase = lcmType === 'light' ? 65 : (lcmType === 'medium' ? 94 : 98);
+    const sealProb = (sealBase - (flow > 2400 ? (flow - 2400) / 40 : 0)).toFixed(1);
+
+    document.getElementById('sl-out-ecd').textContent = `${ecd.toFixed(2)} SG`;
+    document.getElementById('sl-out-spp').textContent = `${spp} psi`;
+    document.getElementById('sl-out-rop').textContent = `${rop} m/hr`;
+    document.getElementById('sl-out-seal').textContent = `${sealProb}%`;
+
+    const badge = document.getElementById('sl-status-badge');
+    const comment = document.getElementById('sl-ecd-comment');
+    const diag = document.getElementById('sl-diagnostic-box');
+
+    if (ecd > 1.38) {
+      badge.textContent = 'FRACTURE BREAKDOWN RISK';
+      badge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-error-container text-error';
+      comment.textContent = `CRITICAL: +${(ecd - 1.38).toFixed(2)} SG ABOVE FRAC`;
+      comment.className = 'text-[10px] text-error font-bold';
+      diag.className = 'p-3.5 rounded-xl bg-error-container/40 border border-error text-xs text-on-error-container leading-relaxed';
+      diag.innerHTML = `<strong>WARNING:</strong> Dynamic ECD exceeds the formation fracture breakdown gradient (1.38 SG). High probability of hydraulic fracture propagation and severe mud loss identical to Nahorkatiya DDR #42. Throttling flow rate or reducing mud weight is urgently required.`;
+    } else if (mw < 1.28) {
+      badge.textContent = 'WELL CONTROL / KICK HAZARD';
+      badge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-100 text-amber-800';
+      comment.textContent = `UNDERBALANCED: ${(1.28 - mw).toFixed(2)} SG UNDER PORE`;
+      comment.className = 'text-[10px] text-amber-700 font-bold';
+      diag.className = 'p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 leading-relaxed';
+      diag.innerHTML = `<strong>CAUTION:</strong> Hydrostatic mud column is lower than Barail reservoir formation pore pressure (1.28 SG). High risk of gas influx and well kick. Increase mud weight above 1.28 SG immediately.`;
+    } else {
+      badge.textContent = 'SAFE OPERATING WINDOW';
+      badge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800';
+      comment.textContent = `+${(1.38 - ecd).toFixed(2)} SG safe cushion`;
+      comment.className = 'text-[10px] text-emerald-700 font-semibold';
+      diag.className = 'p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-relaxed';
+      diag.innerHTML = `<strong>Optimal Parameter Set:</strong> Mud weight ${mw.toFixed(2)} SG maintains safe overbalance against Barail formation pore pressure (1.28 SG) while remaining safely below the fracture limit (1.38 SG). Flow rate of ${Math.round(flow)} LPM preserves wellbore stability.`;
+    }
+  };
+
+  runSimulation();
+})();
+</script>

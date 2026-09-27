@@ -1,0 +1,627 @@
+<div class="flex flex-col w-full pb-16 text-[#203848]">
+  <!-- Header & Breadcrumb -->
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 py-4 border-b border-outline-variant/30">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-[#203848] text-[24px]">settings</span>
+      <div>
+        <h1 class="font-headline-md text-headline-md text-primary font-bold tracking-tight">System Settings & Operational Preferences</h1>
+        <p class="font-body-sm text-secondary">Configure platform theme, telemetry rates, calculation units, and user session credentials.</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="resetSettingsDefaults()" class="px-3.5 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-[#203848] font-label-md transition-colors cursor-pointer flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+        <span>Reset Defaults</span>
+      </button>
+      <button onclick="saveAllSettings()" class="px-4 py-1.5 rounded-lg bg-primary-container hover:bg-primary text-white font-label-md font-bold transition-all shadow-md cursor-pointer flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px]">save</span>
+        <span>Save Preferences</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Settings Grid Layout -->
+  <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    
+    <!-- Left Navigation Column (4 cols) with Expanded Category Tabs and Compact Profile at Bottom Left -->
+    <div class="lg:col-span-4 flex flex-col justify-between gap-4 min-h-[640px]">
+      
+      <!-- Top: Setting Category Navigation Tabs (Taller & Bigger in Length) -->
+      <div class="rounded-2xl p-3.5 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex flex-col gap-2 text-sm font-label-md flex-1">
+        <div class="px-3 pt-2 pb-1 text-[11px] font-bold text-secondary uppercase tracking-wider flex items-center justify-between">
+          <span>Configuration Categories</span>
+          <span class="text-[10px] font-mono text-outline">5 Sections</span>
+        </div>
+
+        <button onclick="switchSettingsTab('theme', this)" id="tab-btn-theme" class="settings-tab-btn flex items-center gap-3.5 px-4 py-3.5 rounded-xl bg-[#203848] text-[#E3EDF5] font-bold transition-all shadow-sm text-left cursor-pointer border border-[#203848]">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px] text-[#CBD8E2]">palette</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm font-bold leading-snug">Appearance & Themes</span>
+            <span class="text-xs opacity-75 font-normal">Light, dark & contrast color modes</span>
+          </div>
+        </button>
+
+        <button onclick="switchSettingsTab('units', this)" id="tab-btn-units" class="settings-tab-btn flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-primary hover:bg-[#CBD8E2]/60 hover:text-black font-semibold transition-all text-left cursor-pointer border border-transparent hover:border-outline-variant/30">
+          <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px] text-secondary">straighten</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm leading-snug">Engineering Units</span>
+            <span class="text-xs text-secondary font-normal">Depth, pressure, torque & flow</span>
+          </div>
+        </button>
+
+        <button onclick="switchSettingsTab('telemetry', this)" id="tab-btn-telemetry" class="settings-tab-btn flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-primary hover:bg-[#CBD8E2]/60 hover:text-black font-semibold transition-all text-left cursor-pointer border border-transparent hover:border-outline-variant/30">
+          <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px] text-secondary">sensors</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm leading-snug">Telemetry & Frequency</span>
+            <span class="text-xs text-secondary font-normal">Sampling rate & audible kick alarms</span>
+          </div>
+        </button>
+
+        <button onclick="switchSettingsTab('ai', this)" id="tab-btn-ai" class="settings-tab-btn flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-primary hover:bg-[#CBD8E2]/60 hover:text-black font-semibold transition-all text-left cursor-pointer border border-transparent hover:border-outline-variant/30">
+          <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px] text-secondary">psychology</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm leading-snug">AI Copilot & Guardrails</span>
+            <span class="text-xs text-secondary font-normal">Analog similarity & strict reasoning</span>
+          </div>
+        </button>
+
+        <button onclick="switchSettingsTab('cache', this)" id="tab-btn-cache" class="settings-tab-btn flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-primary hover:bg-[#CBD8E2]/60 hover:text-black font-semibold transition-all text-left cursor-pointer border border-transparent hover:border-outline-variant/30">
+          <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[22px] text-secondary">database</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-sm leading-snug">Data Storage & Cache</span>
+            <span class="text-xs text-secondary font-normal">Purge cache & export snapshot</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Bottom Left: Compact User Profile & Logout -->
+      <div class="rounded-xl p-3 bg-surface-container-lowest/80 backdrop-blur-xl shadow-xs border border-outline-variant/30 flex flex-col gap-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <div class="flex items-center gap-2.5 overflow-hidden">
+            <div class="w-9 h-9 rounded-lg bg-primary-container text-diamond flex items-center justify-center font-bold text-xs shadow-xs ring-1 ring-secondary/30 shrink-0">
+              RS
+            </div>
+            <div class="flex flex-col overflow-hidden">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xs font-bold text-primary truncate leading-tight">Er. Rajesh Sharma</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0" title="Active Rig Connection"></span>
+              </div>
+              <span class="text-[10px] text-secondary truncate">Chief Drilling Supt. • Assam &amp; Offshore Assets</span>
+            </div>
+          </div>
+
+          <!-- Small Logout Button -->
+          <button onclick="confirmLogoutModal()" class="py-1 px-2.5 rounded-lg bg-error/10 hover:bg-error/20 text-error text-[11px] font-bold transition-all flex items-center gap-1 border border-error/20 cursor-pointer shrink-0" title="Log Out">
+            <span class="material-symbols-outlined text-[15px]">logout</span>
+            <span>Logout</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Settings Workspace Panel (8 cols, Static Non-scrolling Tab Container) -->
+    <div class="lg:col-span-8 flex flex-col w-full">
+
+      <!-- Panel 1: Appearance & Theme Selector -->
+      <section id="panel-theme" class="settings-panel rounded-2xl p-7 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex flex-col gap-6 min-h-[560px]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">palette</span>
+            </div>
+            <div>
+              <h2 class="font-headline-sm font-bold text-primary text-lg">Theme & Interface Display</h2>
+              <p class="font-body-sm text-secondary text-xs">Select an interface theme optimized for your lighting environment.</p>
+            </div>
+          </div>
+          <span class="font-label-sm text-xs uppercase px-3 py-1 rounded-full bg-surface-container text-secondary font-bold tracking-wide" id="activeThemeBadge">Active: Glacial Light</span>
+        </div>
+
+        <!-- Theme Cards Selection -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          
+          <!-- Theme 1: Glacial Light -->
+          <div id="theme-card-glacial" onclick="setAppTheme('glacial')" class="cursor-pointer p-4 rounded-2xl border-2 border-primary bg-[#F5FAFF] hover:shadow-md transition-all flex flex-col gap-3 relative">
+            <div class="w-full h-16 rounded-xl bg-[#E3EDF5] border border-[#CBD8E2] flex items-center px-4 gap-2.5 shadow-xs">
+              <div class="w-4 h-4 rounded-full bg-[#203848]"></div>
+              <div class="w-16 h-2.5 rounded bg-[#95A7B3]"></div>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="font-label-md font-bold text-primary text-sm">Glacial Light</span>
+              <span class="material-symbols-outlined text-primary text-[20px]" id="icon-check-glacial">check_circle</span>
+            </div>
+            <span class="text-xs text-secondary leading-relaxed">Default arctic-precision palette for bright day-shift monitoring.</span>
+          </div>
+
+          <!-- Theme 2: Subsea Dark -->
+          <div id="theme-card-dark" onclick="setAppTheme('dark')" class="cursor-pointer p-4 rounded-2xl border border-outline-variant/40 bg-[#0B1720] text-white hover:shadow-md transition-all flex flex-col gap-3 relative">
+            <div class="w-full h-16 rounded-xl bg-[#162836] border border-[#203848] flex items-center px-4 gap-2.5 shadow-xs">
+              <div class="w-4 h-4 rounded-full bg-[#CBD8E2]"></div>
+              <div class="w-16 h-2.5 rounded bg-[#546C7B]"></div>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="font-label-md font-bold text-[#E3EDF5] text-sm">Subsea Dark</span>
+              <span class="material-symbols-outlined text-transparent text-[20px]" id="icon-check-dark">check_circle</span>
+            </div>
+            <span class="text-xs text-[#95A7B3] leading-relaxed">Deep offshore night mode with reduced eye fatigue downhole.</span>
+          </div>
+
+          <!-- Theme 3: High Contrast -->
+          <div id="theme-card-contrast" onclick="setAppTheme('contrast')" class="cursor-pointer p-4 rounded-2xl border border-outline-variant/40 bg-[#ffffff] hover:shadow-md transition-all flex flex-col gap-3 relative">
+            <div class="w-full h-16 rounded-xl bg-[#111d24] border border-black flex items-center px-4 gap-2.5 shadow-xs">
+              <div class="w-4 h-4 rounded-full bg-white"></div>
+              <div class="w-16 h-2.5 rounded bg-white"></div>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <span class="font-label-md font-bold text-black text-sm">High Contrast</span>
+              <span class="material-symbols-outlined text-transparent text-[20px]" id="icon-check-contrast">check_circle</span>
+            </div>
+            <span class="text-xs text-secondary leading-relaxed">Maximum monochrome clarity for outdoor drill floor conditions.</span>
+          </div>
+
+        </div>
+
+        <!-- UI Density Control -->
+        <div class="mt-4 pt-4 border-t border-outline-variant/30 flex items-center justify-between bg-surface-container-low p-4 rounded-2xl">
+          <div>
+            <span class="font-label-md font-bold text-primary block text-sm">Information Density</span>
+            <span class="text-xs text-secondary">Control whitespace and compact table row heights across all modules.</span>
+          </div>
+          <div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl border border-outline-variant/30">
+            <button onclick="setDensity('compact', this)" class="px-3 py-1.5 text-xs font-label-sm font-semibold rounded-lg text-secondary hover:text-black transition-colors cursor-pointer">Compact</button>
+            <button onclick="setDensity('normal', this)" class="px-3 py-1.5 text-xs font-label-sm font-bold rounded-lg bg-primary-container text-white shadow-sm cursor-pointer">Standard</button>
+            <button onclick="setDensity('spacious', this)" class="px-3 py-1.5 text-xs font-label-sm font-semibold rounded-lg text-secondary hover:text-black transition-colors cursor-pointer">Spacious</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Engineering Units -->
+      <section id="panel-units" class="settings-panel hidden rounded-2xl p-7 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex-col gap-6 min-h-[560px]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">straighten</span>
+            </div>
+            <div>
+              <h2 class="font-headline-sm font-bold text-primary text-lg">Downhole Measurement Units</h2>
+              <p class="font-body-sm text-secondary text-xs">Standardize physical units across lithological logs and hydraulic calculations.</p>
+            </div>
+          </div>
+          <span class="font-label-sm text-xs uppercase px-3 py-1 rounded-full bg-secondary-container text-primary font-bold">Standard Metric SI</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Depth Units -->
+          <div class="flex flex-col gap-2 p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <label class="font-label-md font-bold text-primary text-sm">Depth & Elevation</label>
+            <select id="pref-depth-unit" class="p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 font-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-xs">
+              <option value="m" selected>Meters (m) — Metric SI [Default]</option>
+              <option value="ft">Feet (ft) — Oilfield Imperial</option>
+            </select>
+            <span class="text-[11px] text-secondary">Controls TVD, MD, casing depths, and ROP metrics.</span>
+          </div>
+
+          <!-- Pressure Units -->
+          <div class="flex flex-col gap-2 p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <label class="font-label-md font-bold text-primary text-sm">Mud Weight & Pore Gradient</label>
+            <select id="pref-pressure-unit" class="p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 font-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-xs">
+              <option value="sg" selected>Specific Gravity (SG / EMW) [Default]</option>
+              <option value="ppg">Pounds per Gallon (ppg)</option>
+              <option value="bar">Bar (metric)</option>
+              <option value="psi">Pounds per Square Inch (psi)</option>
+            </select>
+            <span class="text-[11px] text-secondary">Controls ECD, fracture gradient, and formation pore pressure.</span>
+          </div>
+
+          <!-- Rotary Torque -->
+          <div class="flex flex-col gap-2 p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <label class="font-label-md font-bold text-primary text-sm">Rotary Torque Units</label>
+            <select id="pref-torque-unit" class="p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 font-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-xs">
+              <option value="knm" selected>Kilonewton-meters (kN·m) [Default]</option>
+              <option value="ftlb">Foot-pounds (ft·lbf)</option>
+            </select>
+            <span class="text-[11px] text-secondary">Applied to top drive, rotary table, and stick-slip diagnostics.</span>
+          </div>
+
+          <!-- Flow Rate -->
+          <div class="flex flex-col gap-2 p-4 rounded-xl bg-surface-container-low border border-outline-variant/30">
+            <label class="font-label-md font-bold text-primary text-sm">Mud Circulation Flow Rate</label>
+            <select id="pref-flow-unit" class="p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/40 font-body-sm text-primary focus:outline-none focus:ring-2 focus:ring-primary shadow-xs">
+              <option value="gpm" selected>Gallons Per Minute (GPM) [Default]</option>
+              <option value="lpm">Liters Per Minute (L/min)</option>
+              <option value="m3h">Cubic Meters per Hour (m³/h)</option>
+            </select>
+            <span class="text-[11px] text-secondary">Standpipe pressure, annulus velocity, and hole cleaning sweeps.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 3: Telemetry Stream & Alerts -->
+      <section id="panel-telemetry" class="settings-panel hidden rounded-2xl p-7 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex-col gap-6 min-h-[560px]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">sensors</span>
+            </div>
+            <div>
+              <h2 class="font-headline-sm font-bold text-primary text-lg">Telemetry Frequency & Thresholds</h2>
+              <p class="font-body-sm text-secondary text-xs">Configure downhole sensor polling rate and automated audio warnings.</p>
+            </div>
+          </div>
+          <span class="font-label-sm text-xs uppercase px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-bold flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Uplink Active
+          </span>
+        </div>
+
+        <!-- Frequency Radio Group -->
+        <div class="flex flex-col gap-3">
+          <label class="font-label-md font-bold text-primary text-sm">Real-Time MWD Data Sampling Rate</label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 cursor-pointer hover:bg-surface-container transition-colors">
+              <input type="radio" name="telemetry-hz" value="100" checked class="text-primary focus:ring-0">
+              <div class="flex flex-col">
+                <span class="font-label-md font-bold text-primary text-sm">100 Hz (Full Sync)</span>
+                <span class="text-xs text-secondary">Live offshore uplink with instant peak anomaly detection</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 cursor-pointer hover:bg-surface-container transition-colors">
+              <input type="radio" name="telemetry-hz" value="50" class="text-primary focus:ring-0">
+              <div class="flex flex-col">
+                <span class="font-label-md font-bold text-primary text-sm">50 Hz (Optimized)</span>
+                <span class="text-xs text-secondary">Balanced bandwidth for stable satellite transmission</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-4 rounded-xl bg-surface-container-low border border-outline-variant/40 cursor-pointer hover:bg-surface-container transition-colors">
+              <input type="radio" name="telemetry-hz" value="10" class="text-primary focus:ring-0">
+              <div class="flex flex-col">
+                <span class="font-label-md font-bold text-primary text-sm">10 Hz (Low Bandwidth)</span>
+                <span class="text-xs text-secondary">Satellite storm failover mode with minimal packet overhead</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Audio Alert Switch -->
+        <div class="mt-2 pt-4 border-t border-outline-variant/30 flex items-center justify-between bg-surface-container-low p-4 rounded-2xl">
+          <div>
+            <span class="font-label-md font-bold text-primary block text-sm">Audible High-Risk Warning Chimes</span>
+            <span class="text-xs text-secondary">Sound an urgent auditory chime if kick risk or severe loss exceeds 85% probability.</span>
+          </div>
+          <input type="checkbox" id="pref-audio-alerts" checked class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer accent-[#203848]">
+        </div>
+      </section>
+
+      <!-- Panel 4: AI Copilot & Regressor Sensitivity -->
+      <section id="panel-ai" class="settings-panel hidden rounded-2xl p-7 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex-col gap-6 min-h-[560px]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">psychology</span>
+            </div>
+            <div>
+              <h2 class="font-headline-sm font-bold text-primary text-lg">AI Copilot & Stratigraphic Reasoning</h2>
+              <p class="font-body-sm text-secondary text-xs">Tune analog similarity thresholds and deterministic geological verification constraints.</p>
+            </div>
+          </div>
+          <span class="font-label-sm text-xs uppercase px-3 py-1 rounded-full bg-secondary-container text-primary font-bold">Rig-Grounded AI</span>
+        </div>
+
+        <!-- Slider: Similarity cutoff -->
+        <div class="flex flex-col gap-3 p-5 rounded-2xl bg-surface-container-low border border-outline-variant/30">
+          <div class="flex justify-between items-baseline">
+            <div>
+              <label class="font-label-md font-bold text-primary text-sm block">Analog Offset Inclusion Threshold</label>
+              <span class="text-xs text-secondary">Exclude offset wells whose geophysical correlation falls below this benchmark.</span>
+            </div>
+            <span class="font-label-md font-bold text-primary text-base px-3 py-1 rounded-lg bg-white shadow-xs" id="val-cutoff-display">80% Similarity</span>
+          </div>
+          <input type="range" id="pref-cutoff-slider" min="60" max="95" step="1" value="80" oninput="document.getElementById('val-cutoff-display').textContent = this.value + '% Similarity'" class="w-full h-2 bg-[#CBD8E2] rounded-lg appearance-none cursor-pointer accent-[#203848] mt-2">
+          <div class="flex justify-between text-xs text-secondary font-mono">
+            <span>60% (Broad Analog Pool)</span>
+            <span class="font-bold text-primary">80% (Recommended Baseline)</span>
+            <span>95% (Near-Identical Offsets Only)</span>
+          </div>
+        </div>
+
+        <!-- Guardrail strictness -->
+        <div class="pt-2 flex items-center justify-between bg-surface-container-low p-4 rounded-2xl border border-outline-variant/30">
+          <div>
+            <span class="font-label-md font-bold text-primary block text-sm">Verified Indian Basins Guardrail</span>
+            <span class="text-xs text-secondary">Strictly anchor all generative suggestions to the verified Indian discovery wells (Nahorkatiya, Digboi, Mumbai High, Mangala, Ankleshwar) with zero synthetic extrapolation.</span>
+          </div>
+          <input type="checkbox" id="pref-strict-ai" checked class="w-5 h-5 rounded text-primary focus:ring-0 cursor-pointer accent-[#203848]">
+        </div>
+      </section>
+
+      <!-- Panel 5: Data Storage & Memory Cache -->
+      <section id="panel-cache" class="settings-panel hidden rounded-2xl p-7 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm border border-outline-variant/30 flex-col gap-6 min-h-[560px]">
+        <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-primary-container text-white flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">database</span>
+            </div>
+            <div>
+              <h2 class="font-headline-sm font-bold text-primary text-lg">Storage & Institutional Memory</h2>
+              <p class="font-body-sm text-secondary text-xs">Manage local browser telemetry caches and create deployable backup bundles.</p>
+            </div>
+          </div>
+          <span class="font-label-sm text-xs uppercase px-3 py-1 rounded-full bg-surface-container text-secondary font-bold">Local Terminal Cache</span>
+        </div>
+
+        <div class="flex items-center justify-between bg-surface-container-low p-4 rounded-2xl border border-outline-variant/30">
+          <div class="flex flex-col">
+            <span class="font-label-md font-bold text-primary text-sm">PPAC 33 Tables & Stratigraphic Buffer</span>
+            <span class="text-xs text-secondary">7 Indian Well profiles, 33 PPAC CSV Tables, Daily Drilling Reports (5.2 MB)</span>
+          </div>
+          <button onclick="clearSystemCache()" class="px-4 py-2 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-md font-bold transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs">
+            <span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+            <span>Purge Memory Cache</span>
+          </button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 rounded-2xl bg-surface-container-low border border-outline-variant/30 gap-3">
+          <div>
+            <span class="font-label-md font-bold text-primary text-sm block">Export Offline Diagnostic Snapshot</span>
+            <span class="text-xs text-secondary">Download entire well telemetry state and user configuration as standalone JSON.</span>
+          </div>
+          <button onclick="exportSystemDiagnostics()" class="px-4 py-2 rounded-xl bg-primary-container hover:bg-primary text-white font-label-md font-bold transition-all shadow-md cursor-pointer flex items-center gap-2 shrink-0">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span>Export Config (.json)</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4" id="logoutConfirmModal">
+    <div class="bg-[#203848] text-white w-full max-w-md rounded-2xl shadow-2xl border border-[#546C7B]/50 p-6 flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-error/20 flex items-center justify-center text-error shrink-0">
+          <span class="material-symbols-outlined text-[22px]">logout</span>
+        </div>
+        <div>
+          <h3 class="font-headline-sm font-bold text-base">End Operational Session?</h3>
+          <p class="font-body-sm text-[#CBD8E2] text-xs mt-0.5">You will be logged out of active telemetry node Nahorkatiya NHK-01.</p>
+        </div>
+      </div>
+      
+      <p class="text-xs text-[#95A7B3] leading-relaxed">
+        Active 100 Hz MWD streaming and temporary scenario drafts will be securely saved to institutional storage before sign-out.
+      </p>
+
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-[#546C7B]/30">
+        <button onclick="closeLogoutModal()" class="px-4 py-2 rounded-xl bg-transparent hover:bg-white/10 text-white font-label-md transition-colors cursor-pointer">
+          Cancel
+        </button>
+        <button onclick="executeLogout()" class="px-4 py-2 rounded-xl bg-error hover:bg-red-600 text-white font-label-md font-bold transition-all shadow-md cursor-pointer flex items-center gap-1.5">
+          <span>Log Out</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Inline Settings Scripts -->
+<script>
+  (function initSettingsModule() {
+    // 1. Load persisted theme from localStorage
+    const savedTheme = localStorage.getItem('nwis_theme') || 'glacial';
+    window.setAppTheme(savedTheme, false);
+
+    // 2. Load other persisted settings if available
+    const savedDepth = localStorage.getItem('nwis_depth_unit');
+    if (savedDepth && document.getElementById('pref-depth-unit')) {
+      document.getElementById('pref-depth-unit').value = savedDepth;
+    }
+
+    const savedPress = localStorage.getItem('nwis_pressure_unit');
+    if (savedPress && document.getElementById('pref-pressure-unit')) {
+      document.getElementById('pref-pressure-unit').value = savedPress;
+    }
+  })();
+
+  function switchSettingsTab(tabKey, btnElement) {
+    // Update active tab buttons
+    document.querySelectorAll('.settings-tab-btn').forEach(btn => {
+      btn.classList.remove('bg-[#203848]', 'text-[#E3EDF5]', 'font-bold', 'shadow-sm', 'border-[#203848]');
+      btn.classList.add('text-primary', 'hover:bg-[#CBD8E2]/60', 'hover:text-black', 'font-semibold', 'border-transparent');
+      const iconWrapper = btn.querySelector('.w-10');
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (iconWrapper) {
+        iconWrapper.classList.remove('bg-white/10');
+        iconWrapper.classList.add('bg-surface-container');
+      }
+      if (icon) {
+        icon.classList.remove('text-[#CBD8E2]');
+        icon.classList.add('text-secondary');
+      }
+    });
+
+    if (btnElement) {
+      btnElement.classList.add('bg-[#203848]', 'text-[#E3EDF5]', 'font-bold', 'shadow-sm', 'border-[#203848]');
+      btnElement.classList.remove('text-primary', 'hover:bg-[#CBD8E2]/60', 'hover:text-black', 'font-semibold', 'border-transparent');
+      const iconWrapper = btnElement.querySelector('.w-10');
+      const icon = btnElement.querySelector('.material-symbols-outlined');
+      if (iconWrapper) {
+        iconWrapper.classList.add('bg-white/10');
+        iconWrapper.classList.remove('bg-surface-container');
+      }
+      if (icon) {
+        icon.classList.add('text-[#CBD8E2]');
+        icon.classList.remove('text-secondary');
+      }
+    }
+
+    // Toggle panels: show only the target panel
+    document.querySelectorAll('.settings-panel').forEach(panel => {
+      panel.classList.add('hidden');
+      panel.classList.remove('flex');
+    });
+
+    const targetPanel = document.getElementById(`panel-${tabKey}`);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+      targetPanel.classList.add('flex');
+    }
+  }
+
+  function setAppTheme(theme, showToast = true) {
+    localStorage.setItem('nwis_theme', theme);
+
+    // Reset card borders
+    const cards = ['glacial', 'dark', 'contrast'];
+    cards.forEach(c => {
+      const el = document.getElementById(`theme-card-${c}`);
+      const icon = document.getElementById(`icon-check-${c}`);
+      if (el) el.classList.remove('border-primary', 'border-2', 'ring-2', 'ring-primary');
+      if (icon) icon.classList.add('text-transparent');
+    });
+
+    const activeCard = document.getElementById(`theme-card-${theme}`);
+    const activeIcon = document.getElementById(`icon-check-${theme}`);
+    if (activeCard) {
+      activeCard.classList.add('border-primary', 'border-2');
+    }
+    if (activeIcon) {
+      activeIcon.classList.remove('text-transparent');
+      activeIcon.classList.add('text-primary');
+    }
+
+    const badge = document.getElementById('activeThemeBadge');
+    if (badge) {
+      const names = { glacial: 'Glacial Light', dark: 'Subsea Dark', contrast: 'High Contrast' };
+      badge.textContent = `Active: ${names[theme] || 'Glacial Light'}`;
+    }
+
+    // Toggle body / html styling
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+      document.body.style.backgroundColor = '#0B1720';
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.style.backgroundColor = '#f5faff';
+    }
+
+    if (showToast) {
+      showSettingsToast(`Theme set to ${theme.toUpperCase()} mode`);
+    }
+  }
+
+  function setDensity(mode, btn) {
+    btn.parentElement.querySelectorAll('button').forEach(b => {
+      b.classList.remove('bg-primary-container', 'text-white', 'shadow-sm', 'font-bold');
+      b.classList.add('text-secondary', 'font-semibold');
+    });
+    btn.classList.add('bg-primary-container', 'text-white', 'shadow-sm', 'font-bold');
+    btn.classList.remove('text-secondary', 'font-semibold');
+    showSettingsToast(`UI Density: ${mode.toUpperCase()}`);
+  }
+
+  function saveAllSettings() {
+    const depthUnit = document.getElementById('pref-depth-unit').value;
+    const pressUnit = document.getElementById('pref-pressure-unit').value;
+    localStorage.setItem('nwis_depth_unit', depthUnit);
+    localStorage.setItem('nwis_pressure_unit', pressUnit);
+    showSettingsToast('Operational preferences successfully saved to local terminal');
+  }
+
+  function resetSettingsDefaults() {
+    localStorage.removeItem('nwis_theme');
+    localStorage.removeItem('nwis_depth_unit');
+    localStorage.removeItem('nwis_pressure_unit');
+    window.setAppTheme('glacial');
+    if (document.getElementById('pref-depth-unit')) document.getElementById('pref-depth-unit').value = 'm';
+    if (document.getElementById('pref-pressure-unit')) document.getElementById('pref-pressure-unit').value = 'sg';
+    showSettingsToast('Settings restored to factory Glacial defaults', 'restart_alt');
+  }
+
+  function confirmLogoutModal() {
+    const modal = document.getElementById('logoutConfirmModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeLogoutModal() {
+    const modal = document.getElementById('logoutConfirmModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function executeLogout() {
+    closeLogoutModal();
+    showSettingsToast('Logged out. Re-authenticating session...', 'logout');
+    setTimeout(() => {
+      window.location.hash = 'gateway';
+    }, 800);
+  }
+
+  function clearSystemCache() {
+    showSettingsToast('Purged 4.8 MB local memory cache');
+  }
+
+  function exportSystemDiagnostics() {
+    const activeWell = (window.NWISDataStore && window.NWISDataStore.getActiveWell && window.NWISDataStore.getActiveWell()) || {
+      name: "Nahorkatiya Well No. 1",
+      currentDepth: "3,571 m (11,715 ft)",
+      basin: "Upper Assam Shelf"
+    };
+    const data = {
+      user: "Er. Rajesh Sharma",
+      role: "Chief Drilling Superintendent (DGH / MoPNG)",
+      activeWell: activeWell.name,
+      depth: activeWell.currentDepth || "3,571 m",
+      basin: activeWell.basin || "Upper Assam Shelf",
+      timestamp: new Date().toISOString(),
+      theme: localStorage.getItem('nwis_theme') || 'glacial',
+      telemetry: "100 Hz Real-Time RT-DDR",
+      integratedBasins: ["Upper Assam Shelf", "Mumbai Offshore", "Barmer Basin", "Krishna-Godavari Deepwater", "Cambay Basin"]
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `nwis_diagnostics_${(activeWell.id || 'system')}_${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showSettingsToast('Official NWIS diagnostics package exported');
+  }
+
+  function showSettingsToast(msg, icon = 'check_circle') {
+    let toast = document.getElementById('settings-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'settings-toast';
+      toast.className = 'fixed bottom-5 right-5 z-50 bg-[#203848] text-[#E3EDF5] px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 font-label-md text-xs transition-opacity duration-300 pointer-events-none opacity-0 border border-[#546C7B]/40';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<span class="material-symbols-outlined text-[16px] text-[#CBD8E2]">${icon}</span><span>${msg}</span>`;
+    toast.classList.remove('opacity-0');
+    toast.classList.add('opacity-100');
+    clearTimeout(window._setToastTimeout);
+    window._setToastTimeout = setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0');
+    }, 2500);
+  }
+</script>

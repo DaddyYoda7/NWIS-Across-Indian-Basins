@@ -1,0 +1,472 @@
+<!-- NWIS AI Subsurface Copilot View (Full Window Sized & Glacial Precision Palette) -->
+<div id="nwis-ai-viewport" class="relative w-full h-[calc(100vh-2rem)] min-h-[640px] rounded-2xl overflow-hidden flex flex-col justify-between p-4 sm:p-6 md:p-8 select-none transition-all bg-gradient-to-br from-[#f0f6fa] via-[#e4eef6] to-[#d8e7f2] border border-reflection/70 shadow-sm">
+  
+  <!-- Ambient Glacial Lighting Overlays -->
+  <div class="pointer-events-none absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/60 via-transparent to-transparent"></div>
+  <div class="pointer-events-none absolute -bottom-20 -left-20 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl"></div>
+
+  <!-- Central Dynamic Area -->
+  <main class="relative z-20 flex-1 flex flex-col justify-center items-center w-full max-w-4xl mx-auto py-4 sm:py-6">
+    
+    <!-- Hero Headline -->
+    <div id="ai-hero-header" class="text-center mb-5 sm:mb-7 transition-all duration-300">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-astral drop-shadow-xs font-sans">
+        Ask NWIS AI.
+      </h1>
+      <p id="ai-hero-subtitle" class="text-xs sm:text-sm text-turbulent mt-2 font-normal max-w-lg mx-auto">
+        Your intelligent assistant for general chat, site interactions, Indian oil wells, and PPAC analytics.
+      </p>
+    </div>
+
+    <!-- Active Chat Conversation Stream -->
+    <div id="ai-chat-stream-container" class="w-full hidden flex-1 flex-col space-y-3.5 overflow-y-auto max-h-[52vh] sm:max-h-[58vh] px-2 sm:px-4 mb-4 custom-scrollbar">
+      <!-- Chat messages will be rendered dynamically here -->
+    </div>
+
+    <!-- Floating Interactive Chat Pill Bar -->
+    <div class="w-full max-w-2xl mx-auto">
+      <form onsubmit="handleChatSubmit(event)" class="relative w-full flex items-center bg-white/95 backdrop-blur-xl border border-reflection rounded-full p-1.5 sm:p-2 shadow-[0_10px_28px_rgba(32,56,72,0.08)] transition-all focus-within:ring-2 focus-within:ring-astral/20 focus-within:border-turbulent">
+        
+        <!-- Left Interactive Mascot in Input (Transparent Background, Chubby Cat, Small Eyes, Fast Tracking) -->
+        <div id="input-mascot-wrapper" onclick="document.getElementById('nwis-ai-query-input').focus()" class="w-9 h-9 sm:w-10 sm:h-10 bg-transparent flex items-center justify-center shrink-0 cursor-pointer ml-1 group select-none" title="NWIS AI Mascot">
+          <svg id="input-mascot-svg" class="mascot-interactive-svg select-none transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="in-mascot-body-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#0a0812" />
+                <stop offset="60%" stop-color="#100d1c" />
+                <stop offset="85%" stop-color="#2d1c52" />
+                <stop offset="100%" stop-color="#583794" />
+              </linearGradient>
+              <filter id="in-mascot-glow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="1.0" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Prominent Cute Chubby Cat Mascot Body (Transparent Background) -->
+            <path d="M 22,6 
+                     C 26,6 31,12 36,18 
+                     C 42,24 46,26 50,26 
+                     C 54,26 58,24 64,18 
+                     C 69,12 74,6 78,6 
+                     C 82,6 87,14 90,26 
+                     C 96,48 96,74 92,86 
+                     C 86,97 70,98 50,98 
+                     C 30,98 14,97 8,86 
+                     C 4,74 4,48 10,26 
+                     C 13,14 18,6 22,6 Z" 
+                  fill="url(#in-mascot-body-grad)" 
+                  stroke="#43316d" 
+                  stroke-width="1.0" 
+            />
+
+            <!-- Subtle ambient bottom highlight curve -->
+            <path d="M 20,86 C 32,94 68,94 80,86" stroke="#714bbd" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.45"/>
+
+            <!-- Eye Group with Cute Small White Eyes -->
+            <g id="input-mascot-eyes-container" class="mascot-eyes-group" style="transform-origin: 50px 58px; transition: transform 0.08s cubic-bezier(0.4, 0, 0.2, 1);">
+              <!-- Left Small Eye -->
+              <g id="input-mascot-left-eye-track" class="mascot-eye-track" style="will-change: transform;">
+                <ellipse cx="34" cy="57" rx="6.5" ry="11" fill="#ffffff" filter="url(#in-mascot-glow)" transform="rotate(-8 34 57)"/>
+              </g>
+              <!-- Right Small Eye -->
+              <g id="input-mascot-right-eye-track" class="mascot-eye-track" style="will-change: transform;">
+                <ellipse cx="66" cy="57" rx="6.5" ry="11" fill="#ffffff" filter="url(#in-mascot-glow)" transform="rotate(8 66 57)"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Center Query Text Input -->
+        <input 
+          id="nwis-ai-query-input" 
+          type="text" 
+          autocomplete="off"
+          placeholder="Ask NWIS AI anything..." 
+          class="flex-1 bg-transparent border-0 text-astral placeholder-meditative text-xs sm:text-[13.5px] font-medium focus:ring-0 focus:outline-none px-3 py-1"
+        />
+
+        <!-- Mic Voice Input Button (Before Enter Arrow) -->
+        <button 
+          type="button" 
+          id="btn-voice-input" 
+          onclick="toggleVoiceRecognition()" 
+          class="w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full bg-transparent hover:bg-reflection/70 text-astral flex items-center justify-center shrink-0 transition-all active:scale-95 cursor-pointer mr-1 relative group" 
+          title="Speak to NWIS AI (Voice Input)"
+        >
+          <span id="voice-mic-icon" class="material-symbols-outlined text-[19px] text-meditative group-hover:text-astral transition-colors">mic</span>
+          <span id="voice-pulse-ring" class="hidden absolute inset-0 rounded-full bg-rose-500/30 animate-ping pointer-events-none"></span>
+        </button>
+
+        <!-- Right Slim Up Arrow Submit Button -->
+        <button 
+          type="submit" 
+          id="btn-ai-submit" 
+          class="w-7.5 h-7.5 sm:w-8 sm:h-8 rounded-full bg-diamond hover:bg-reflection text-astral flex items-center justify-center shrink-0 shadow-xs border border-reflection/60 transition-all active:scale-95 cursor-pointer font-medium mr-0.5" 
+          title="Send Query"
+        >
+          <svg class="w-3 h-3 text-astral" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m0 0l-6 6m6-6l6 6" />
+          </svg>
+        </button>
+      </form>
+
+      <!-- Suggested Query Chips -->
+      <div id="ai-suggestion-chips" class="mt-3.5 flex flex-wrap items-center justify-center gap-2">
+        <button type="button" onclick="populateAndAskAI('Hello! How can you assist me today?')" class="px-3 py-1 rounded-full bg-white/85 hover:bg-white border border-reflection text-astral hover:text-black text-xs font-medium transition-all hover:shadow-xs active:scale-98 cursor-pointer">
+          💬 General Assistant Help
+        </button>
+        <button type="button" onclick="populateAndAskAI('Why is Barail mud loss occurring at 2,862m in Nahorkatiya NHK-01?')" class="px-3 py-1 rounded-full bg-white/85 hover:bg-white border border-reflection text-astral hover:text-black text-xs font-medium transition-all hover:shadow-xs active:scale-98 cursor-pointer">
+          Why is Barail mud loss occurring?
+        </button>
+        <button type="button" onclick="populateAndAskAI('What geomechanical alerts and hazard risks are active in Assam wells?')" class="px-3 py-1 rounded-full bg-white/85 hover:bg-white border border-reflection text-astral hover:text-black text-xs font-medium transition-all hover:shadow-xs active:scale-98 cursor-pointer">
+          What alerts are active?
+        </button>
+        <button type="button" onclick="populateAndAskAI('Summarize latest MoPNG PPAC crude oil and natural gas production statistics.')" class="px-3.5 py-1 rounded-full bg-white/85 hover:bg-white border border-reflection text-astral hover:text-black text-xs font-medium transition-all hover:shadow-xs active:scale-98 cursor-pointer">
+          Summarize PPAC national data
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- CLIENT JAVASCRIPT LOGIC -->
+<script>
+  (function() {
+    let chatHistory = [];
+    let recognition = null;
+    let isRecording = false;
+
+    // Auto-focus input
+    const queryInput = document.getElementById('nwis-ai-query-input');
+    if (queryInput) {
+      setTimeout(() => queryInput.focus(), 150);
+    }
+
+    // Real-Time Live Streaming Speech Recognition Engine
+    let baseInputText = '';
+
+    window.toggleVoiceRecognition = function() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert('Speech recognition is not supported in this browser. Please use Google Chrome or Microsoft Edge.');
+        return;
+      }
+
+      const micIcon = document.getElementById('voice-mic-icon');
+      const pulseRing = document.getElementById('voice-pulse-ring');
+      const input = document.getElementById('nwis-ai-query-input');
+
+      // If already listening, stop
+      if (isRecording && recognition) {
+        stopVoiceUI();
+        return;
+      }
+
+      try {
+        recognition = new SpeechRecognition();
+        recognition.lang = navigator.language || 'en-US';
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.maxAlternatives = 1;
+
+        baseInputText = input ? input.value.trim() : '';
+
+        recognition.onstart = function() {
+          isRecording = true;
+          if (micIcon) {
+            micIcon.classList.remove('text-meditative');
+            micIcon.classList.add('text-rose-500');
+          }
+          if (pulseRing) pulseRing.classList.remove('hidden');
+          if (input) {
+            input.placeholder = '🎙️ Listening... speak now';
+            input.focus();
+          }
+        };
+
+        recognition.onresult = function(event) {
+          let sessionFinal = '';
+          let sessionInterim = '';
+
+          for (let i = 0; i < event.results.length; ++i) {
+            const res = event.results[i];
+            if (res.isFinal) {
+              sessionFinal += res[0].transcript + ' ';
+            } else {
+              sessionInterim += res[0].transcript;
+            }
+          }
+
+          if (input) {
+            const spoken = (sessionFinal + sessionInterim).trim();
+            if (baseInputText && spoken) {
+              input.value = baseInputText + ' ' + spoken;
+            } else if (spoken) {
+              input.value = spoken;
+            }
+          }
+        };
+
+        recognition.onerror = function(event) {
+          console.warn('Speech recognition notice:', event.error);
+          if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+            alert('Microphone access was denied. Please allow microphone permissions in your browser URL bar.');
+          }
+          stopVoiceUI();
+        };
+
+        recognition.onend = function() {
+          if (isRecording) {
+            stopVoiceUI();
+          }
+        };
+
+        recognition.start();
+
+      } catch (err) {
+        console.error('Failed to start speech recognition:', err);
+        stopVoiceUI();
+      }
+    };
+
+    function stopVoiceUI() {
+      isRecording = false;
+      if (recognition) {
+        try { recognition.stop(); } catch (e) {}
+      }
+      const micIcon = document.getElementById('voice-mic-icon');
+      const pulseRing = document.getElementById('voice-pulse-ring');
+      const input = document.getElementById('nwis-ai-query-input');
+
+      if (micIcon) {
+        micIcon.classList.remove('text-rose-500');
+        micIcon.classList.add('text-meditative');
+      }
+      if (pulseRing) pulseRing.classList.add('hidden');
+      if (input) {
+        input.placeholder = 'Ask NWIS AI anything...';
+        input.focus();
+      }
+    }
+
+    // Attach Enter keydown listener to input
+    if (queryInput) {
+      queryInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          window.handleChatSubmit(e);
+        }
+      });
+    }
+
+    // Expose helpers globally
+    window.populateAndAskAI = function(text) {
+      if (queryInput) {
+        queryInput.value = text;
+        submitQuery(text);
+      }
+    };
+
+    window.clearChatHistory = function() {
+      chatHistory = [];
+      const stream = document.getElementById('ai-chat-stream-container');
+      const heroHeader = document.getElementById('ai-hero-header');
+      const heroSubtitle = document.getElementById('ai-hero-subtitle');
+      const chips = document.getElementById('ai-suggestion-chips');
+
+      if (stream) {
+        stream.innerHTML = '';
+        stream.classList.add('hidden');
+      }
+      if (heroHeader) heroHeader.classList.remove('scale-90', 'mb-2');
+      if (heroSubtitle) heroSubtitle.classList.remove('hidden');
+      if (chips) chips.classList.remove('hidden');
+      if (queryInput) {
+        queryInput.value = '';
+        queryInput.focus();
+      }
+    };
+
+    window.handleChatSubmit = function(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      stopVoiceUI();
+      const text = queryInput ? queryInput.value.trim() : '';
+      if (!text) return;
+      submitQuery(text);
+    };
+
+    async function submitQuery(userText) {
+      const stream = document.getElementById('ai-chat-stream-container');
+      const heroHeader = document.getElementById('ai-hero-header');
+      const heroSubtitle = document.getElementById('ai-hero-subtitle');
+      const chips = document.getElementById('ai-suggestion-chips');
+      const submitBtn = document.getElementById('btn-ai-submit');
+
+      // Expand chat area
+      if (stream) stream.classList.remove('hidden');
+      if (heroSubtitle) heroSubtitle.classList.add('hidden');
+      if (chips) chips.classList.add('hidden');
+      if (heroHeader) heroHeader.classList.add('scale-90', 'mb-2');
+
+      // Clear input
+      queryInput.value = '';
+
+      // Append User message
+      appendMessage('user', userText);
+      chatHistory.push({ role: 'user', content: userText });
+
+      // Create Assistant Loading Placeholder
+      const assistantMsgId = 'ai-msg-' + Date.now();
+      appendLoadingMessage(assistantMsgId);
+
+      // Disable button
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50');
+      }
+
+      try {
+        const activeWell = window.NWISDataStore ? window.NWISDataStore.getActiveWell() : null;
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: userText,
+            history: chatHistory.slice(-6),
+            activeWellId: activeWell ? activeWell.id : 'WELL-NHK-01'
+          })
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || 'Failed to reach NWIS AI.');
+        }
+
+        const replyText = data.reply;
+        updateAssistantMessage(assistantMsgId, replyText);
+        chatHistory.push({ role: 'assistant', content: replyText });
+
+      } catch (err) {
+        updateAssistantMessage(assistantMsgId, `**Error:** ${err.message}. Please check your connection or retry.`);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-50');
+        }
+        if (queryInput) queryInput.focus();
+        scrollChatToBottom();
+      }
+    }
+
+    function appendMessage(role, text) {
+      const stream = document.getElementById('ai-chat-stream-container');
+      if (!stream) return;
+
+      const div = document.createElement('div');
+      div.className = 'flex w-full justify-end animate-in fade-in slide-in-from-bottom-2 duration-200';
+      div.innerHTML = `
+        <div class="max-w-[85%] sm:max-w-[75%] rounded-2xl px-4 py-2.5 bg-astral text-diamond font-medium text-xs sm:text-sm shadow-sm border border-astral/60">
+          <p class="whitespace-pre-wrap">${escapeHtml(text)}</p>
+        </div>
+      `;
+      stream.appendChild(div);
+      scrollChatToBottom();
+    }
+
+    function appendLoadingMessage(msgId) {
+      const stream = document.getElementById('ai-chat-stream-container');
+      if (!stream) return;
+
+      const div = document.createElement('div');
+      div.id = msgId;
+      div.className = 'flex w-full justify-start animate-in fade-in slide-in-from-bottom-2 duration-200';
+      div.innerHTML = `
+        <div class="max-w-[90%] sm:max-w-[85%] rounded-2xl p-4 bg-white/90 backdrop-blur-xl border border-reflection text-astral shadow-sm">
+          <div class="flex items-center space-x-2 text-astral text-xs font-mono mb-2">
+            <span class="w-2 h-2 rounded-full bg-astral"></span>
+            <span class="font-bold">NWIS AI Thinking...</span>
+          </div>
+          <div class="space-y-2 animate-pulse">
+            <div class="h-3 bg-reflection/70 rounded w-3/4"></div>
+            <div class="h-3 bg-reflection/50 rounded w-full"></div>
+            <div class="h-3 bg-reflection/40 rounded w-5/6"></div>
+          </div>
+        </div>
+      `;
+      stream.appendChild(div);
+      scrollChatToBottom();
+    }
+
+    function updateAssistantMessage(msgId, markdownText) {
+      const el = document.getElementById(msgId);
+      if (!el) return;
+
+      const formattedHtml = formatMarkdown(markdownText);
+      el.innerHTML = `
+        <div class="max-w-[92%] sm:max-w-[88%] rounded-2xl p-4 sm:p-5 bg-white/95 backdrop-blur-xl border border-reflection text-astral shadow-sm leading-relaxed text-xs sm:text-sm">
+          <div class="flex items-center justify-between pb-2 mb-2.5 border-b border-reflection/50">
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 rounded-full bg-astral"></span>
+              <span class="font-bold text-xs tracking-wide uppercase text-astral font-mono">NWIS AI Assistant</span>
+            </div>
+            <button onclick="copyToClipboard(this, \`${escapeJsString(markdownText)}\`)" class="text-meditative hover:text-astral transition-colors p-1 rounded hover:bg-reflection/30 cursor-pointer" title="Copy response">
+              <span class="material-symbols-outlined text-[15px]">content_copy</span>
+            </button>
+          </div>
+          <div class="ai-rendered-content space-y-2 text-astral">
+            ${formattedHtml}
+          </div>
+        </div>
+      `;
+      scrollChatToBottom();
+    }
+
+    function scrollChatToBottom() {
+      const stream = document.getElementById('ai-chat-stream-container');
+      if (stream) {
+        stream.scrollTop = stream.scrollHeight;
+      }
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function escapeJsString(str) {
+      return str.replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$');
+    }
+
+    window.copyToClipboard = function(btn, text) {
+      navigator.clipboard.writeText(text);
+      const original = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined text-[15px] text-emerald-600">check</span>';
+      setTimeout(() => btn.innerHTML = original, 1500);
+    };
+
+    // Lightweight Markdown Formatter
+    function formatMarkdown(md) {
+      if (!md) return '';
+      let html = md;
+      // Headers
+      html = html.replace(/^### (.*$)/gim, '<h4 class="font-bold text-astral text-sm mt-3 mb-1">$1</h4>');
+      html = html.replace(/^## (.*$)/gim, '<h3 class="font-bold text-astral text-base mt-3 mb-1.5 border-b border-reflection/40 pb-0.5">$1</h3>');
+      html = html.replace(/^# (.*$)/gim, '<h2 class="font-bold text-astral text-lg mt-3 mb-2">$1</h2>');
+      // Bold
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="text-astral font-semibold">$1</strong>');
+      // Italic
+      html = html.replace(/\*(.*?)\*/g, '<em class="text-turbulent">$1</em>');
+      // Markdown Links: [text](#hash)
+      html = html.replace(/\[([^\]]+)\]\((#[^\)]+)\)/g, '<a href="$2" class="inline-flex items-center text-[#1b5e82] hover:text-[#0c3c56] underline font-semibold transition-colors">$1 <span class="material-symbols-outlined text-[12px] ml-0.5">arrow_forward</span></a>');
+      // Lists
+      html = html.replace(/^\s*[-•*]\s+(.*$)/gim, '<li class="ml-4 list-disc text-astral">$1</li>');
+      // Paragraph line breaks
+      html = html.replace(/\n\n/g, '<div class="h-2"></div>');
+      return html;
+    }
+
+  })();
+</script>

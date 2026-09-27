@@ -1,0 +1,9 @@
+metric,fy2024_25,fy2025_26_p,aug_2025_26_p,aug_2026_27_target,aug_2026_27_p,apr_aug_2025_26_p,apr_aug_2026_27_target,apr_aug_2026_27_p
+gross_production,36113,34776,2971,3029,2830,11754,14817,14075
+nomination_field,21971,21580,1837,1959,1804,7200,9553,8890
+private_jv,14143,13195,1133,1070,1026,4555,5264,5185
+net_production_excl_flare,35594,34326,2935,,2792,11600,,13884
+lng_import,35720,34427,2912,,2915,11269,,14782
+total_consumption_incl_internal,71314,68753,5847,,5708,22869,,28666
+total_consumption_bcm,71.3,68.8,5.8,,5.7,22.9,,28.7
+import_dependency_pct,50.1,50.1,49.8,,51.1,49.3,,51.6

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+  <!-- Ultra-Minimalist NWIS Geometric "N" Mark -->
+  <!-- Left Pillar -->
+  <rect x="20" y="16" width="14" height="68" rx="7" fill="#203848" />
+  
+  <!-- Diagonal Dynamic Flow -->
+  <path d="M 27 23 L 73 77" stroke="#0284c7" stroke-width="14" stroke-linecap="round" />
+  
+  <!-- Right Pillar -->
+  <rect x="66" y="16" width="14" height="68" rx="7" fill="#203848" />
+</svg>

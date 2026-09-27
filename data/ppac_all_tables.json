@@ -1,0 +1,2993 @@
+{
+  "table02_crude_oil_lng_pol_glance": [
+    {
+      "metric": "oil_oil_equiv_gas_production",
+      "unit": "MTOE",
+      "fy2024_25": "64.8",
+      "fy2025_26_p": "62.7",
+      "aug_2025": "5.4",
+      "aug_2026": "5.1",
+      "apr_aug_2025_26": "23.7",
+      "apr_aug_2026_27": "25.5"
+    },
+    {
+      "metric": "crude_oil_production_india",
+      "unit": "MMT",
+      "fy2024_25": "28.7",
+      "fy2025_26_p": "28.0",
+      "aug_2025": "2.4",
+      "aug_2026": "2.3",
+      "apr_aug_2025_26": "11.9",
+      "apr_aug_2026_27": "11.4"
+    },
+    {
+      "metric": "consumption_petroleum_products",
+      "unit": "MMT",
+      "fy2024_25": "239.2",
+      "fy2025_26_p": "241.6",
+      "aug_2025": "19.1",
+      "aug_2026": "18.6",
+      "apr_aug_2025_26": "100.1",
+      "apr_aug_2026_27": "96.2"
+    },
+    {
+      "metric": "production_petroleum_products",
+      "unit": "MMT",
+      "fy2024_25": "283.8",
+      "fy2025_26_p": "284.9",
+      "aug_2025": "23.5",
+      "aug_2026": "24.3",
+      "apr_aug_2025_26": "117.7",
+      "apr_aug_2026_27": "116.1"
+    },
+    {
+      "metric": "gross_natural_gas_production",
+      "unit": "MMSCM",
+      "fy2024_25": "36113",
+      "fy2025_26_p": "34776",
+      "aug_2025": "2971",
+      "aug_2026": "2830",
+      "apr_aug_2025_26": "11754",
+      "apr_aug_2026_27": "14075"
+    },
+    {
+      "metric": "natural_gas_consumption",
+      "unit": "MMSCM",
+      "fy2024_25": "71314",
+      "fy2025_26_p": "68753",
+      "aug_2025": "5847",
+      "aug_2026": "5708",
+      "apr_aug_2025_26": "22869",
+      "apr_aug_2026_27": "28666"
+    },
+    {
+      "metric": "gross_petroleum_imports_mmt",
+      "unit": "MMT",
+      "fy2024_25": "243.2",
+      "fy2025_26_p": "245.8",
+      "aug_2025": "19.6",
+      "aug_2026": "19.0",
+      "apr_aug_2025_26": "101.1",
+      "apr_aug_2026_27": "100.7"
+    },
+    {
+      "metric": "gross_petroleum_imports_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "137.2",
+      "fy2025_26_p": "123.4",
+      "aug_2025": "9.9",
+      "aug_2026": "11.7",
+      "apr_aug_2025_26": "50.4",
+      "apr_aug_2026_27": "74.8"
+    },
+    {
+      "metric": "crude_oil_imports_mmt",
+      "unit": "MMT",
+      "fy2024_25": "294.1",
+      "fy2025_26_p": "292.0",
+      "aug_2025": "24.1",
+      "aug_2026": "21.7",
+      "apr_aug_2025_26": "122.1",
+      "apr_aug_2026_27": "111.9"
+    },
+    {
+      "metric": "crude_oil_imports_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "160.8",
+      "fy2025_26_p": "144.2",
+      "aug_2025": "11.7",
+      "aug_2026": "13.0",
+      "apr_aug_2025_26": "59.8",
+      "apr_aug_2026_27": "81.8"
+    },
+    {
+      "metric": "pol_export_mmt",
+      "unit": "MMT",
+      "fy2024_25": "50.9",
+      "fy2025_26_p": "46.2",
+      "aug_2025": "4.5",
+      "aug_2026": "2.7",
+      "apr_aug_2025_26": "21.0",
+      "apr_aug_2026_27": "11.2"
+    },
+    {
+      "metric": "pol_export_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "23.7",
+      "fy2025_26_p": "20.8",
+      "aug_2025": "1.8",
+      "aug_2026": "1.4",
+      "apr_aug_2025_26": "9.4",
+      "apr_aug_2026_27": "6.9"
+    },
+    {
+      "metric": "pol_imports_mmt",
+      "unit": "MMT",
+      "fy2024_25": "65.1",
+      "fy2025_26_p": "61.4",
+      "aug_2025": "5.7",
+      "aug_2026": "4.9",
+      "apr_aug_2025_26": "25.7",
+      "apr_aug_2026_27": "21.5"
+    },
+    {
+      "metric": "pol_imports_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "44.4",
+      "fy2025_26_p": "41.1",
+      "aug_2025": "3.5",
+      "aug_2026": "5.0",
+      "apr_aug_2025_26": "15.9",
+      "apr_aug_2026_27": "21.7"
+    },
+    {
+      "metric": "lng_imports_mmscm",
+      "unit": "MMSCM",
+      "fy2024_25": "35720",
+      "fy2025_26_p": "34427",
+      "aug_2025": "2912",
+      "aug_2026": "2915",
+      "apr_aug_2025_26": "11269",
+      "apr_aug_2026_27": "14782"
+    },
+    {
+      "metric": "lng_imports_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "14.9",
+      "fy2025_26_p": "13.4",
+      "aug_2025": "1.2",
+      "aug_2026": "1.2",
+      "apr_aug_2025_26": "5.6",
+      "apr_aug_2026_27": "6.8"
+    },
+    {
+      "metric": "net_oil_gas_imports_usd_bn",
+      "unit": "USD Billion",
+      "fy2024_25": "131.3",
+      "fy2025_26_p": "116.4",
+      "aug_2025": "9.3",
+      "aug_2026": "9.3",
+      "apr_aug_2025_26": "49.6",
+      "apr_aug_2026_27": "66.8"
+    },
+    {
+      "metric": "petroleum_imports_pct_gross_imports",
+      "unit": "%",
+      "fy2024_25": "22.3",
+      "fy2025_26_p": "18.6",
+      "aug_2025": "18.8",
+      "aug_2026": "18.4",
+      "apr_aug_2025_26": "19.5",
+      "apr_aug_2026_27": "22.5"
+    },
+    {
+      "metric": "petroleum_exports_pct_gross_exports",
+      "unit": "%",
+      "fy2024_25": "10.2",
+      "fy2025_26_p": "9.3",
+      "aug_2025": "10.1",
+      "aug_2026": "11.3",
+      "apr_aug_2025_26": "8.7",
+      "apr_aug_2026_27": "10.1"
+    },
+    {
+      "metric": "import_dependency_crude_oil",
+      "unit": "%",
+      "fy2024_25": "88.3",
+      "fy2025_26_p": "88.7",
+      "aug_2025": "87.6",
+      "aug_2026": "87.5",
+      "apr_aug_2025_26": "88.3",
+      "apr_aug_2026_27": "88.1"
+    },
+    {
+      "metric": "import_dependency_oil_gas",
+      "unit": "%",
+      "fy2024_25": "80.0",
+      "fy2025_26_p": "80.7",
+      "aug_2025": "79.2",
+      "aug_2026": "79.4",
+      "apr_aug_2025_26": "81.5",
+      "apr_aug_2026_27": "80.2"
+    }
+  ],
+  "table03_indigenous_crude_production_by_regime": [
+    {
+      "regime": "nomination",
+      "fy2024_25": "21.9",
+      "fy2025_26_p": "21.2",
+      "aug_2025": "1.8",
+      "aug_2026": "1.8",
+      "apr_aug_2025_26": "9.0",
+      "apr_aug_2026_27": "8.9"
+    },
+    {
+      "regime": "dsf",
+      "fy2024_25": "0.04",
+      "fy2025_26_p": "0.03",
+      "aug_2025": "0.002",
+      "aug_2026": "0.002",
+      "apr_aug_2025_26": "0.01",
+      "apr_aug_2026_27": "0.01"
+    },
+    {
+      "regime": "pre_nelp",
+      "fy2024_25": "4.2",
+      "fy2025_26_p": "3.7",
+      "aug_2025": "0.3",
+      "aug_2026": "0.2",
+      "apr_aug_2025_26": "1.6",
+      "apr_aug_2026_27": "1.3"
+    },
+    {
+      "regime": "nelp",
+      "fy2024_25": "2.54",
+      "fy2025_26_p": "2.94",
+      "aug_2025": "0.258",
+      "aug_2026": "0.27",
+      "apr_aug_2025_26": "1.31",
+      "apr_aug_2026_27": "1.17"
+    },
+    {
+      "regime": "oalp",
+      "fy2024_25": "0.03",
+      "fy2025_26_p": "0.02",
+      "aug_2025": "0.002",
+      "aug_2026": "0.001",
+      "apr_aug_2025_26": "0.01",
+      "apr_aug_2026_27": "0.01"
+    },
+    {
+      "regime": "total_crude_oil_condensate",
+      "fy2024_25": "28.7",
+      "fy2025_26_p": "28.0",
+      "aug_2025": "2.4",
+      "aug_2026": "2.3",
+      "apr_aug_2025_26": "11.9",
+      "apr_aug_2026_27": "11.4"
+    },
+    {
+      "regime": "out_of_which_crude_oil",
+      "fy2024_25": "26.5",
+      "fy2025_26_p": "26.0",
+      "aug_2025": "2.2",
+      "aug_2026": "2.2",
+      "apr_aug_2025_26": "11.1",
+      "apr_aug_2026_27": "10.7"
+    },
+    {
+      "regime": "out_of_which_condensate",
+      "fy2024_25": "2.2",
+      "fy2025_26_p": "2.0",
+      "aug_2025": "0.2",
+      "aug_2026": "0.2",
+      "apr_aug_2025_26": "0.9",
+      "apr_aug_2026_27": "0.8"
+    }
+  ],
+  "table04_domestic_overseas_production": [
+    {
+      "metric": "total_domestic_production",
+      "unit": "MMTOE",
+      "fy2024_25": "64.8",
+      "fy2025_26_p": "62.7",
+      "aug_2025": "5.4",
+      "aug_2026": "5.1",
+      "apr_aug_2025_26": "23.7",
+      "apr_aug_2026_27": "25.5"
+    },
+    {
+      "metric": "overseas_production",
+      "unit": "MMTOE",
+      "fy2024_25": "20.2",
+      "fy2025_26_p": "19.2",
+      "aug_2025": "1.5",
+      "aug_2026": "1.6",
+      "apr_aug_2025_26": "8.1",
+      "apr_aug_2026_27": "7.9"
+    }
+  ],
+  "table05_hs_ls_crude_processing": [
+    {
+      "crude_type": "high_sulphur_crude",
+      "fy2024_25": "213.8",
+      "fy2025_26_p": "214.2",
+      "aug_2025": "17.3",
+      "aug_2026": "17.9",
+      "apr_aug_2025_26": "87.8",
+      "apr_aug_2026_27": "85.3"
+    },
+    {
+      "crude_type": "low_sulphur_crude",
+      "fy2024_25": "54.8",
+      "fy2025_26_p": "57.9",
+      "aug_2025": "5.0",
+      "aug_2026": "5.3",
+      "apr_aug_2025_26": "25.2",
+      "apr_aug_2026_27": "27.7"
+    },
+    {
+      "crude_type": "total_crude_processed_mmt",
+      "fy2024_25": "268.6",
+      "fy2025_26_p": "272.1",
+      "aug_2025": "22.3",
+      "aug_2026": "23.1",
+      "apr_aug_2025_26": "113.0",
+      "apr_aug_2026_27": "113.0"
+    },
+    {
+      "crude_type": "total_crude_processed_mn_bbl_day",
+      "fy2024_25": "5.39",
+      "fy2025_26_p": "5.46",
+      "aug_2025": "5.28",
+      "aug_2026": "5.47",
+      "apr_aug_2025_26": "5.42",
+      "apr_aug_2026_27": "5.41"
+    },
+    {
+      "crude_type": "total_crude_processed_mn_bbl",
+      "fy2024_25": "1968.9",
+      "fy2025_26_p": "1994.6",
+      "aug_2025": "163.6",
+      "aug_2026": "169.7",
+      "apr_aug_2025_26": "828.7",
+      "apr_aug_2026_27": "828.4"
+    }
+  ],
+  "table05b_hs_share_pct": [
+    {
+      "metric": "hs_crude_pct_of_total",
+      "fy2024_25": "79.6",
+      "fy2025_26_p": "78.7",
+      "aug_2025": "77.7",
+      "aug_2026": "77.2",
+      "apr_aug_2025_26": "77.7",
+      "apr_aug_2026_27": "75.5"
+    }
+  ],
+  "table06_crude_oil_imports_by_year": [
+    {
+      "fiscal_year": "2022-23",
+      "rs_crore": "1260372",
+      "quantity_mmt": "232.7",
+      "usd_million": "133366"
+    },
+    {
+      "fiscal_year": "2023-24",
+      "rs_crore": "1160618",
+      "quantity_mmt": "243.2",
+      "usd_million": "137174"
+    },
+    {
+      "fiscal_year": "2024-25",
+      "rs_crore": "1105176",
+      "quantity_mmt": "245.8",
+      "usd_million": "157531"
+    },
+    {
+      "fiscal_year": "2025-26",
+      "rs_crore": "1092248",
+      "quantity_mmt": "",
+      "usd_million": "123379"
+    }
+  ],
+  "table07_self_sufficiency_petroleum_products": [
+    {
+      "metric": "indigenous_crude_oil_processing",
+      "fy2024_25": "26.5",
+      "fy2025_26_p": "25.7",
+      "aug_2025": "2.2",
+      "aug_2026": "2.2",
+      "apr_aug_2025_26": "11.0",
+      "apr_aug_2026_27": "10.8"
+    },
+    {
+      "metric": "products_from_indigenous_crude",
+      "fy2024_25": "24.7",
+      "fy2025_26_p": "24.0",
+      "aug_2025": "2.1",
+      "aug_2026": "2.0",
+      "apr_aug_2025_26": "10.3",
+      "apr_aug_2026_27": "10.1"
+    },
+    {
+      "metric": "products_from_fractionators_incl_lpg_gas",
+      "fy2024_25": "3.3",
+      "fy2025_26_p": "3.4",
+      "aug_2025": "0.3",
+      "aug_2026": "0.3",
+      "apr_aug_2025_26": "1.4",
+      "apr_aug_2026_27": "1.3"
+    },
+    {
+      "metric": "total_production_from_indig_crude_condensate",
+      "fy2024_25": "28.0",
+      "fy2025_26_p": "27.4",
+      "aug_2025": "2.4",
+      "aug_2026": "2.3",
+      "apr_aug_2025_26": "11.7",
+      "apr_aug_2026_27": "11.4"
+    },
+    {
+      "metric": "total_domestic_consumption",
+      "fy2024_25": "239.2",
+      "fy2025_26_p": "243.2",
+      "aug_2025": "19.1",
+      "aug_2026": "18.6",
+      "apr_aug_2025_26": "100.1",
+      "apr_aug_2026_27": "96.2"
+    },
+    {
+      "metric": "pct_self_sufficiency",
+      "fy2024_25": "11.7",
+      "fy2025_26_p": "11.3",
+      "aug_2025": "12.4",
+      "aug_2026": "12.5",
+      "apr_aug_2025_26": "11.7",
+      "apr_aug_2026_27": "11.9"
+    }
+  ],
+  "table08_refineries_capacity_processing": [
+    {
+      "sl_no": "1",
+      "refinery": "Barauni",
+      "commissioned_year": "1964",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "6.0",
+      "crude_processed_fy2024_25": "6.5",
+      "crude_processed_fy2025_26_p": "6.4",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.5",
+      "crude_processed_aug_2026_27_target": "0.6",
+      "crude_processed_aug_2026_27_p": "0.5",
+      "crude_processed_apr_aug_2025_26_p": "2.7",
+      "crude_processed_apr_aug_2026_27_target": "3.0",
+      "crude_processed_apr_aug_2026_27_p": "2.6"
+    },
+    {
+      "sl_no": "2",
+      "refinery": "Koyali",
+      "commissioned_year": "1965",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "13.7",
+      "crude_processed_fy2024_25": "15.3",
+      "crude_processed_fy2025_26_p": "13.2",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.7",
+      "crude_processed_aug_2026_27_target": "1.2",
+      "crude_processed_aug_2026_27_p": "1.4",
+      "crude_processed_apr_aug_2025_26_p": "4.5",
+      "crude_processed_apr_aug_2026_27_target": "5.1",
+      "crude_processed_apr_aug_2026_27_p": "7.3"
+    },
+    {
+      "sl_no": "3",
+      "refinery": "Haldia",
+      "commissioned_year": "1975",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "8.0",
+      "crude_processed_fy2024_25": "6.9",
+      "crude_processed_fy2025_26_p": "8.5",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.7",
+      "crude_processed_aug_2026_27_target": "0.6",
+      "crude_processed_aug_2026_27_p": "0.8",
+      "crude_processed_apr_aug_2025_26_p": "3.7",
+      "crude_processed_apr_aug_2026_27_target": "3.5",
+      "crude_processed_apr_aug_2026_27_p": "3.7"
+    },
+    {
+      "sl_no": "4",
+      "refinery": "Mathura",
+      "commissioned_year": "1982",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "8.0",
+      "crude_processed_fy2024_25": "8.1",
+      "crude_processed_fy2025_26_p": "10.0",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.7",
+      "crude_processed_aug_2026_27_target": "0.7",
+      "crude_processed_aug_2026_27_p": "0.8",
+      "crude_processed_apr_aug_2025_26_p": "4.1",
+      "crude_processed_apr_aug_2026_27_target": "4.0",
+      "crude_processed_apr_aug_2026_27_p": "3.7"
+    },
+    {
+      "sl_no": "5",
+      "refinery": "Panipat",
+      "commissioned_year": "1998",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "15.0",
+      "crude_processed_fy2024_25": "15.4",
+      "crude_processed_fy2025_26_p": "15.9",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.3",
+      "crude_processed_aug_2026_27_target": "1.3",
+      "crude_processed_aug_2026_27_p": "0.6",
+      "crude_processed_apr_aug_2025_26_p": "6.6",
+      "crude_processed_apr_aug_2026_27_target": "6.3",
+      "crude_processed_apr_aug_2026_27_p": "5.5"
+    },
+    {
+      "sl_no": "6",
+      "refinery": "Guwahati",
+      "commissioned_year": "1962",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "1.2",
+      "crude_processed_fy2024_25": "1.2",
+      "crude_processed_fy2025_26_p": "1.3",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.1",
+      "crude_processed_aug_2026_27_target": "0.1",
+      "crude_processed_aug_2026_27_p": "0.1",
+      "crude_processed_apr_aug_2025_26_p": "0.5",
+      "crude_processed_apr_aug_2026_27_target": "0.5",
+      "crude_processed_apr_aug_2026_27_p": "0.6"
+    },
+    {
+      "sl_no": "7",
+      "refinery": "Digboi",
+      "commissioned_year": "1901",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "0.65",
+      "crude_processed_fy2024_25": "0.8",
+      "crude_processed_fy2025_26_p": "0.7",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.1",
+      "crude_processed_aug_2026_27_target": "0.1",
+      "crude_processed_aug_2026_27_p": "0.1",
+      "crude_processed_apr_aug_2025_26_p": "0.3",
+      "crude_processed_apr_aug_2026_27_target": "0.3",
+      "crude_processed_apr_aug_2026_27_p": "0.3"
+    },
+    {
+      "sl_no": "8",
+      "refinery": "Bongaigaon",
+      "commissioned_year": "1979",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "2.7",
+      "crude_processed_fy2024_25": "2.8",
+      "crude_processed_fy2025_26_p": "3.0",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.3",
+      "crude_processed_aug_2026_27_target": "0.3",
+      "crude_processed_aug_2026_27_p": "0.2",
+      "crude_processed_apr_aug_2025_26_p": "1.3",
+      "crude_processed_apr_aug_2026_27_target": "1.3",
+      "crude_processed_apr_aug_2026_27_p": "1.3"
+    },
+    {
+      "sl_no": "9",
+      "refinery": "Paradip",
+      "commissioned_year": "2016",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "15.0",
+      "crude_processed_fy2024_25": "14.7",
+      "crude_processed_fy2025_26_p": "16.3",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.4",
+      "crude_processed_aug_2026_27_target": "1.4",
+      "crude_processed_aug_2026_27_p": "1.3",
+      "crude_processed_apr_aug_2025_26_p": "7.0",
+      "crude_processed_apr_aug_2026_27_target": "6.9",
+      "crude_processed_apr_aug_2026_27_p": "6.2"
+    },
+    {
+      "sl_no": "",
+      "refinery": "IOCL_TOTAL",
+      "commissioned_year": "",
+      "group": "IOCL",
+      "installed_capacity_mmtpa_2026_04_01": "70.3",
+      "crude_processed_fy2024_25": "71.6",
+      "crude_processed_fy2025_26_p": "75.5",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "5.8",
+      "crude_processed_aug_2026_27_target": "6.1",
+      "crude_processed_aug_2026_27_p": "5.7",
+      "crude_processed_apr_aug_2025_26_p": "30.6",
+      "crude_processed_apr_aug_2026_27_target": "30.8",
+      "crude_processed_apr_aug_2026_27_p": "31.0"
+    },
+    {
+      "sl_no": "10",
+      "refinery": "Manali",
+      "commissioned_year": "1969",
+      "group": "CPCL",
+      "installed_capacity_mmtpa_2026_04_01": "10.5",
+      "crude_processed_fy2024_25": "10.5",
+      "crude_processed_fy2025_26_p": "11.7",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.1",
+      "crude_processed_aug_2026_27_target": "0.0",
+      "crude_processed_aug_2026_27_p": "1.0",
+      "crude_processed_apr_aug_2025_26_p": "5.1",
+      "crude_processed_apr_aug_2026_27_target": "2.0",
+      "crude_processed_apr_aug_2026_27_p": "4.9"
+    },
+    {
+      "sl_no": "11",
+      "refinery": "CBR",
+      "commissioned_year": "1993",
+      "group": "CPCL",
+      "installed_capacity_mmtpa_2026_04_01": "0.0",
+      "crude_processed_fy2024_25": "0.0",
+      "crude_processed_fy2025_26_p": "0.0",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.0",
+      "crude_processed_aug_2026_27_target": "0.0",
+      "crude_processed_aug_2026_27_p": "0.0",
+      "crude_processed_apr_aug_2025_26_p": "0.0",
+      "crude_processed_apr_aug_2026_27_target": "0.0",
+      "crude_processed_apr_aug_2026_27_p": "0.0"
+    },
+    {
+      "sl_no": "",
+      "refinery": "CPCL_TOTAL",
+      "commissioned_year": "",
+      "group": "CPCL",
+      "installed_capacity_mmtpa_2026_04_01": "10.5",
+      "crude_processed_fy2024_25": "10.5",
+      "crude_processed_fy2025_26_p": "11.7",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.1",
+      "crude_processed_aug_2026_27_target": "0.0",
+      "crude_processed_aug_2026_27_p": "1.0",
+      "crude_processed_apr_aug_2025_26_p": "5.1",
+      "crude_processed_apr_aug_2026_27_target": "2.0",
+      "crude_processed_apr_aug_2026_27_p": "4.9"
+    },
+    {
+      "sl_no": "12",
+      "refinery": "Mumbai",
+      "commissioned_year": "1955",
+      "group": "BPCL",
+      "installed_capacity_mmtpa_2026_04_01": "12.0",
+      "crude_processed_fy2024_25": "15.5",
+      "crude_processed_fy2025_26_p": "16.0",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.4",
+      "crude_processed_aug_2026_27_target": "1.3",
+      "crude_processed_aug_2026_27_p": "1.3",
+      "crude_processed_apr_aug_2025_26_p": "6.7",
+      "crude_processed_apr_aug_2026_27_target": "6.5",
+      "crude_processed_apr_aug_2026_27_p": "6.5"
+    },
+    {
+      "sl_no": "13",
+      "refinery": "Kochi",
+      "commissioned_year": "1966",
+      "group": "BPCL",
+      "installed_capacity_mmtpa_2026_04_01": "15.5",
+      "crude_processed_fy2024_25": "17.2",
+      "crude_processed_fy2025_26_p": "17.6",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.6",
+      "crude_processed_aug_2026_27_target": "1.5",
+      "crude_processed_aug_2026_27_p": "1.5",
+      "crude_processed_apr_aug_2025_26_p": "7.6",
+      "crude_processed_apr_aug_2026_27_target": "7.4",
+      "crude_processed_apr_aug_2026_27_p": "7.4"
+    },
+    {
+      "sl_no": "14",
+      "refinery": "Bina",
+      "commissioned_year": "2011",
+      "group": "BPCL",
+      "installed_capacity_mmtpa_2026_04_01": "7.8",
+      "crude_processed_fy2024_25": "7.7",
+      "crude_processed_fy2025_26_p": "7.4",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.2",
+      "crude_processed_aug_2026_27_target": "0.4",
+      "crude_processed_aug_2026_27_p": "0.7",
+      "crude_processed_apr_aug_2025_26_p": "2.9",
+      "crude_processed_apr_aug_2026_27_target": "3.0",
+      "crude_processed_apr_aug_2026_27_p": "3.5"
+    },
+    {
+      "sl_no": "",
+      "refinery": "BPCL_TOTAL",
+      "commissioned_year": "",
+      "group": "BPCL",
+      "installed_capacity_mmtpa_2026_04_01": "35.3",
+      "crude_processed_fy2024_25": "40.4",
+      "crude_processed_fy2025_26_p": "41.0",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "3.2",
+      "crude_processed_aug_2026_27_target": "3.2",
+      "crude_processed_aug_2026_27_p": "3.6",
+      "crude_processed_apr_aug_2025_26_p": "17.2",
+      "crude_processed_apr_aug_2026_27_target": "16.9",
+      "crude_processed_apr_aug_2026_27_p": "17.4"
+    },
+    {
+      "sl_no": "15",
+      "refinery": "Numaligarh",
+      "commissioned_year": "1999",
+      "group": "OIL/BPCL",
+      "installed_capacity_mmtpa_2026_04_01": "3.0",
+      "crude_processed_fy2024_25": "3.1",
+      "crude_processed_fy2025_26_p": "3.1",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.2",
+      "crude_processed_aug_2026_27_target": "0.3",
+      "crude_processed_aug_2026_27_p": "0.3",
+      "crude_processed_apr_aug_2025_26_p": "1.3",
+      "crude_processed_apr_aug_2026_27_target": "1.3",
+      "crude_processed_apr_aug_2026_27_p": "1.3"
+    },
+    {
+      "sl_no": "16",
+      "refinery": "Tatipaka",
+      "commissioned_year": "2001",
+      "group": "ONGC",
+      "installed_capacity_mmtpa_2026_04_01": "0.07",
+      "crude_processed_fy2024_25": "0.07",
+      "crude_processed_fy2025_26_p": "0.007",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.0",
+      "crude_processed_aug_2026_27_target": "",
+      "crude_processed_aug_2026_27_p": "0.006",
+      "crude_processed_apr_aug_2025_26_p": "0.03",
+      "crude_processed_apr_aug_2026_27_target": "",
+      "crude_processed_apr_aug_2026_27_p": "0.03"
+    },
+    {
+      "sl_no": "17",
+      "refinery": "MRPL-Mangalore",
+      "commissioned_year": "1996",
+      "group": "ONGC",
+      "installed_capacity_mmtpa_2026_04_01": "18.0",
+      "crude_processed_fy2024_25": "16.8",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.5",
+      "crude_processed_aug_2026_27_target": "1.5",
+      "crude_processed_aug_2026_27_p": "1.2",
+      "crude_processed_apr_aug_2025_26_p": "6.4",
+      "crude_processed_apr_aug_2026_27_target": "6.6",
+      "crude_processed_apr_aug_2026_27_p": "7.0"
+    },
+    {
+      "sl_no": "",
+      "refinery": "ONGC_TOTAL",
+      "commissioned_year": "",
+      "group": "ONGC",
+      "installed_capacity_mmtpa_2026_04_01": "18.1",
+      "crude_processed_fy2024_25": "16.8",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.5",
+      "crude_processed_aug_2026_27_target": "1.5",
+      "crude_processed_aug_2026_27_p": "1.2",
+      "crude_processed_apr_aug_2025_26_p": "6.5",
+      "crude_processed_apr_aug_2026_27_target": "6.6",
+      "crude_processed_apr_aug_2026_27_p": "7.0"
+    },
+    {
+      "sl_no": "18",
+      "refinery": "Mumbai",
+      "commissioned_year": "1954",
+      "group": "HPCL",
+      "installed_capacity_mmtpa_2026_04_01": "10.0",
+      "crude_processed_fy2024_25": "10.0",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "0.9",
+      "crude_processed_aug_2026_27_target": "0.8",
+      "crude_processed_aug_2026_27_p": "0.9",
+      "crude_processed_apr_aug_2025_26_p": "4.2",
+      "crude_processed_apr_aug_2026_27_target": "4.1",
+      "crude_processed_apr_aug_2026_27_p": "4.3"
+    },
+    {
+      "sl_no": "19",
+      "refinery": "Visakh",
+      "commissioned_year": "1957",
+      "group": "HPCL",
+      "installed_capacity_mmtpa_2026_04_01": "15.3",
+      "crude_processed_fy2024_25": "16.0",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.3",
+      "crude_processed_aug_2026_27_target": "1.3",
+      "crude_processed_aug_2026_27_p": "1.3",
+      "crude_processed_apr_aug_2025_26_p": "6.9",
+      "crude_processed_apr_aug_2026_27_target": "6.2",
+      "crude_processed_apr_aug_2026_27_p": "6.5"
+    },
+    {
+      "sl_no": "",
+      "refinery": "HPCL_TOTAL",
+      "commissioned_year": "",
+      "group": "HPCL",
+      "installed_capacity_mmtpa_2026_04_01": "25.3",
+      "crude_processed_fy2024_25": "26.0",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "2.2",
+      "crude_processed_aug_2026_27_target": "2.1",
+      "crude_processed_aug_2026_27_p": "2.2",
+      "crude_processed_apr_aug_2025_26_p": "11.1",
+      "crude_processed_apr_aug_2026_27_target": "10.4",
+      "crude_processed_apr_aug_2026_27_p": "10.8"
+    },
+    {
+      "sl_no": "20",
+      "refinery": "HMEL-Bathinda",
+      "commissioned_year": "2012",
+      "group": "HMEL",
+      "installed_capacity_mmtpa_2026_04_01": "13.0",
+      "crude_processed_fy2024_25": "11.7",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.1",
+      "crude_processed_aug_2026_27_target": "1.1",
+      "crude_processed_aug_2026_27_p": "1.1",
+      "crude_processed_apr_aug_2025_26_p": "5.2",
+      "crude_processed_apr_aug_2026_27_target": "5.5",
+      "crude_processed_apr_aug_2026_27_p": "5.6"
+    },
+    {
+      "sl_no": "21",
+      "refinery": "HRRL-Pachpadra",
+      "commissioned_year": "2026",
+      "group": "HRRL",
+      "installed_capacity_mmtpa_2026_04_01": "0.0",
+      "crude_processed_fy2024_25": "0.0",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "",
+      "crude_processed_aug_2026_27_target": "",
+      "crude_processed_aug_2026_27_p": "",
+      "crude_processed_apr_aug_2025_26_p": "",
+      "crude_processed_apr_aug_2026_27_target": "",
+      "crude_processed_apr_aug_2026_27_p": "0.3"
+    },
+    {
+      "sl_no": "22",
+      "refinery": "RIL-Jamnagar (DTA)",
+      "commissioned_year": "1999",
+      "group": "RIL",
+      "installed_capacity_mmtpa_2026_04_01": "35.0",
+      "crude_processed_fy2024_25": "33.6",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "3.0",
+      "crude_processed_aug_2026_27_target": "2.9",
+      "crude_processed_aug_2026_27_p": "3.0",
+      "crude_processed_apr_aug_2025_26_p": "13.3",
+      "crude_processed_apr_aug_2026_27_target": "14.6",
+      "crude_processed_apr_aug_2026_27_p": "12.9"
+    },
+    {
+      "sl_no": "23",
+      "refinery": "RIL-Jamnagar (SEZ)",
+      "commissioned_year": "2008",
+      "group": "RIL",
+      "installed_capacity_mmtpa_2026_04_01": "31.2",
+      "crude_processed_fy2024_25": "33.7",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "2.9",
+      "crude_processed_aug_2026_27_target": "2.5",
+      "crude_processed_aug_2026_27_p": "3.3",
+      "crude_processed_apr_aug_2025_26_p": "14.4",
+      "crude_processed_apr_aug_2026_27_target": "12.8",
+      "crude_processed_apr_aug_2026_27_p": "15.8"
+    },
+    {
+      "sl_no": "24",
+      "refinery": "NEL-Vadinar",
+      "commissioned_year": "2006",
+      "group": "NEL",
+      "installed_capacity_mmtpa_2026_04_01": "20.5",
+      "crude_processed_fy2024_25": "18.9",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "1.4",
+      "crude_processed_aug_2026_27_target": "1.8",
+      "crude_processed_aug_2026_27_p": "1.7",
+      "crude_processed_apr_aug_2025_26_p": "8.2",
+      "crude_processed_apr_aug_2026_27_target": "8.5",
+      "crude_processed_apr_aug_2026_27_p": "6.0"
+    },
+    {
+      "sl_no": "",
+      "refinery": "ALL_INDIA_TOTAL_MMT",
+      "commissioned_year": "",
+      "group": "ALL",
+      "installed_capacity_mmtpa_2026_04_01": "268.6",
+      "crude_processed_fy2024_25": "272.0",
+      "crude_processed_fy2025_26_p": "",
+      "crude_processed_fy2026_27_target": "",
+      "crude_processed_aug_2025_26_p": "22.3",
+      "crude_processed_aug_2026_27_target": "21.5",
+      "crude_processed_aug_2026_27_p": "23.1",
+      "crude_processed_apr_aug_2025_26_p": "113.0",
+      "crude_processed_apr_aug_2026_27_target": "109.3",
+      "crude_processed_apr_aug_2026_27_p": "113.0"
+    }
+  ],
+  "table09_crude_product_pipeline_network": [
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "ONGC",
+      "length_km": "1284",
+      "capacity_mmtpa": "60.6"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "OIL",
+      "length_km": "1196",
+      "capacity_mmtpa": "9.0"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "Cairn/Others",
+      "length_km": "688",
+      "capacity_mmtpa": "10.7"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "HMEL",
+      "length_km": "1017",
+      "capacity_mmtpa": "11.3"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "IOCL",
+      "length_km": "5322",
+      "capacity_mmtpa": "63.8"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "BPCL",
+      "length_km": "937",
+      "capacity_mmtpa": "7.8"
+    },
+    {
+      "pipeline_type": "crude_oil",
+      "operator": "TOTAL",
+      "length_km": "10443",
+      "capacity_mmtpa": "163.1"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "ONGC",
+      "length_km": "654",
+      "capacity_mmtpa": "1.7"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "IOCL",
+      "length_km": "13347",
+      "capacity_mmtpa": "80.6"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "BPCL",
+      "length_km": "3025",
+      "capacity_mmtpa": "25.2"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "HPCL",
+      "length_km": "5439",
+      "capacity_mmtpa": "42.6"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "Others",
+      "length_km": "2399",
+      "capacity_mmtpa": "10.2"
+    },
+    {
+      "pipeline_type": "products",
+      "operator": "TOTAL",
+      "length_km": "24864",
+      "capacity_mmtpa": "160.3"
+    }
+  ],
+  "table10_gross_refining_margins": [
+    {
+      "company": "IOCL",
+      "fy2021_22": "11.25",
+      "fy2022_23": "19.52",
+      "fy2023_24": "12.05",
+      "fy2024_25": "4.8",
+      "fy2025_26": "",
+      "apr_jun_2026_27": "2.15"
+    },
+    {
+      "company": "BPCL",
+      "fy2021_22": "9.09",
+      "fy2022_23": "20.24",
+      "fy2023_24": "14.14",
+      "fy2024_25": "6.82",
+      "fy2025_26": "11.74",
+      "apr_jun_2026_27": "4.88"
+    },
+    {
+      "company": "HPCL",
+      "fy2021_22": "7.19",
+      "fy2022_23": "12.09",
+      "fy2023_24": "9.08",
+      "fy2024_25": "5.74",
+      "fy2025_26": "8.79",
+      "apr_jun_2026_27": "3.08"
+    },
+    {
+      "company": "CPCL",
+      "fy2021_22": "8.85",
+      "fy2022_23": "12.48",
+      "fy2023_24": "8.64",
+      "fy2024_25": "4.22",
+      "fy2025_26": "9.28",
+      "apr_jun_2026_27": "3.22"
+    },
+    {
+      "company": "MRPL",
+      "fy2021_22": "8.72",
+      "fy2022_23": "9.88",
+      "fy2023_24": "10.36",
+      "fy2024_25": "4.45",
+      "fy2025_26": "",
+      "apr_jun_2026_27": "3.88"
+    },
+    {
+      "company": "NRL",
+      "fy2021_22": "43.46",
+      "fy2022_23": "35.82",
+      "fy2023_24": "29.72",
+      "fy2024_25": "19.95",
+      "fy2025_26": "29.2",
+      "apr_jun_2026_27": "21.41"
+    },
+    {
+      "company": "BORL",
+      "fy2021_22": "11.0",
+      "fy2022_23": "",
+      "fy2023_24": "",
+      "fy2024_25": "",
+      "fy2025_26": "",
+      "apr_jun_2026_27": ""
+    }
+  ],
+  "table11_production_consumption_by_product": [
+    {
+      "product": "LPG",
+      "fy2024_25_prod": "12.8",
+      "fy2024_25_cons": "31.3",
+      "fy2025_26_p_prod": "13.1",
+      "fy2025_26_p_cons": "33.2",
+      "aug_2025_prod": "1.1",
+      "aug_2025_cons": "2.8",
+      "aug_2026_prod": "1.2",
+      "aug_2026_cons": "2.3",
+      "apr_aug_2025_26_prod": "5.3",
+      "apr_aug_2025_26_cons": "13.4",
+      "apr_aug_2026_27_prod": "6.6",
+      "apr_aug_2026_27_cons": "11.2"
+    },
+    {
+      "product": "MS",
+      "fy2024_25_prod": "48.3",
+      "fy2024_25_cons": "40.0",
+      "fy2025_26_p_prod": "49.8",
+      "fy2025_26_p_cons": "42.6",
+      "aug_2025_prod": "4.3",
+      "aug_2025_cons": "3.5",
+      "aug_2026_prod": "4.1",
+      "aug_2026_cons": "3.8",
+      "apr_aug_2025_26_prod": "20.5",
+      "apr_aug_2025_26_cons": "17.8",
+      "apr_aug_2026_27_prod": "20.2",
+      "apr_aug_2026_27_cons": "19.0"
+    },
+    {
+      "product": "NAPHTHA",
+      "fy2024_25_prod": "17.9",
+      "fy2024_25_cons": "13.2",
+      "fy2025_26_p_prod": "18.4",
+      "fy2025_26_p_cons": "11.7",
+      "aug_2025_prod": "1.4",
+      "aug_2025_cons": "1.1",
+      "aug_2026_prod": "1.5",
+      "aug_2026_cons": "0.8",
+      "apr_aug_2025_26_prod": "7.9",
+      "apr_aug_2025_26_cons": "4.9",
+      "apr_aug_2026_27_prod": "7.5",
+      "apr_aug_2026_27_cons": "4.2"
+    },
+    {
+      "product": "ATF",
+      "fy2024_25_prod": "17.8",
+      "fy2024_25_cons": "9.0",
+      "fy2025_26_p_prod": "16.4",
+      "fy2025_26_p_cons": "9.2",
+      "aug_2025_prod": "1.4",
+      "aug_2025_cons": "0.7",
+      "aug_2026_prod": "1.1",
+      "aug_2026_cons": "0.7",
+      "apr_aug_2025_26_prod": "7.1",
+      "apr_aug_2025_26_cons": "3.7",
+      "apr_aug_2026_27_prod": "6.0",
+      "apr_aug_2026_27_cons": "3.7"
+    },
+    {
+      "product": "SKO",
+      "fy2024_25_prod": "1.0",
+      "fy2024_25_cons": "0.4",
+      "fy2025_26_p_prod": "1.0",
+      "fy2025_26_p_cons": "0.5",
+      "aug_2025_prod": "0.1",
+      "aug_2025_cons": "0.0",
+      "aug_2026_prod": "0.1",
+      "aug_2026_cons": "0.0",
+      "apr_aug_2025_26_prod": "0.5",
+      "apr_aug_2025_26_cons": "0.2",
+      "apr_aug_2026_27_prod": "0.4",
+      "apr_aug_2026_27_cons": "0.2"
+    },
+    {
+      "product": "HSD",
+      "fy2024_25_prod": "118.2",
+      "fy2024_25_cons": "91.4",
+      "fy2025_26_p_prod": "120.8",
+      "fy2025_26_p_cons": "94.7",
+      "aug_2025_prod": "9.7",
+      "aug_2025_cons": "6.6",
+      "aug_2026_prod": "10.1",
+      "aug_2026_cons": "7.0",
+      "apr_aug_2025_26_prod": "49.9",
+      "apr_aug_2025_26_cons": "38.9",
+      "apr_aug_2026_27_prod": "49.4",
+      "apr_aug_2026_27_cons": "40.8"
+    },
+    {
+      "product": "LDO",
+      "fy2024_25_prod": "0.6",
+      "fy2024_25_cons": "0.8",
+      "fy2025_26_p_prod": "0.7",
+      "fy2025_26_p_cons": "1.0",
+      "aug_2025_prod": "0.1",
+      "aug_2025_cons": "0.1",
+      "aug_2026_prod": "0.0",
+      "aug_2026_cons": "0.0",
+      "apr_aug_2025_26_prod": "0.3",
+      "apr_aug_2025_26_cons": "0.4",
+      "apr_aug_2026_27_prod": "0.2",
+      "apr_aug_2026_27_cons": "0.3"
+    },
+    {
+      "product": "LUBES",
+      "fy2024_25_prod": "1.3",
+      "fy2024_25_cons": "4.6",
+      "fy2025_26_p_prod": "1.5",
+      "fy2025_26_p_cons": "5.0",
+      "aug_2025_prod": "0.1",
+      "aug_2025_cons": "0.4",
+      "aug_2026_prod": "0.1",
+      "aug_2026_cons": "0.4",
+      "apr_aug_2025_26_prod": "0.6",
+      "apr_aug_2025_26_cons": "1.9",
+      "apr_aug_2026_27_prod": "0.7",
+      "apr_aug_2026_27_cons": "1.8"
+    },
+    {
+      "product": "FO_LSHS",
+      "fy2024_25_prod": "10.9",
+      "fy2024_25_cons": "6.5",
+      "fy2025_26_p_prod": "10.3",
+      "fy2025_26_p_cons": "6.4",
+      "aug_2025_prod": "1.0",
+      "aug_2025_cons": "0.5",
+      "aug_2026_prod": "1.2",
+      "aug_2026_cons": "0.5",
+      "apr_aug_2025_26_prod": "4.3",
+      "apr_aug_2025_26_cons": "2.5",
+      "apr_aug_2026_27_prod": "5.2",
+      "apr_aug_2026_27_cons": "2.7"
+    },
+    {
+      "product": "BITUMEN",
+      "fy2024_25_prod": "5.3",
+      "fy2024_25_cons": "8.3",
+      "fy2025_26_p_prod": "5.4",
+      "fy2025_26_p_cons": "8.7",
+      "aug_2025_prod": "0.2",
+      "aug_2025_cons": "0.4",
+      "aug_2026_prod": "0.3",
+      "aug_2026_cons": "0.4",
+      "apr_aug_2025_26_prod": "1.9",
+      "apr_aug_2025_26_cons": "3.2",
+      "apr_aug_2026_27_prod": "1.4",
+      "apr_aug_2026_27_cons": "2.2"
+    },
+    {
+      "product": "PET_COKE",
+      "fy2024_25_prod": "15.0",
+      "fy2024_25_cons": "22.1",
+      "fy2025_26_p_prod": "14.8",
+      "fy2025_26_p_cons": "18.4",
+      "aug_2025_prod": "1.2",
+      "aug_2025_cons": "2.2",
+      "aug_2026_prod": "1.2",
+      "aug_2026_cons": "1.6",
+      "apr_aug_2025_26_prod": "6.0",
+      "apr_aug_2025_26_cons": "8.8",
+      "apr_aug_2026_27_prod": "5.4",
+      "apr_aug_2026_27_cons": "6.8"
+    },
+    {
+      "product": "OTHERS",
+      "fy2024_25_prod": "34.8",
+      "fy2024_25_cons": "11.6",
+      "fy2025_26_p_prod": "32.7",
+      "fy2025_26_p_cons": "10.4",
+      "aug_2025_prod": "2.8",
+      "aug_2025_cons": "0.8",
+      "aug_2026_prod": "3.3",
+      "aug_2026_cons": "0.8",
+      "apr_aug_2025_26_prod": "13.3",
+      "apr_aug_2025_26_cons": "4.3",
+      "apr_aug_2026_27_prod": "12.9",
+      "apr_aug_2026_27_cons": "3.3"
+    },
+    {
+      "product": "ALL_INDIA",
+      "fy2024_25_prod": "283.8",
+      "fy2024_25_cons": "239.2",
+      "fy2025_26_p_prod": "284.9",
+      "fy2025_26_p_cons": "241.6",
+      "aug_2025_prod": "23.5",
+      "aug_2025_cons": "19.1",
+      "aug_2026_prod": "24.3",
+      "aug_2026_cons": "18.6",
+      "apr_aug_2025_26_prod": "117.7",
+      "apr_aug_2025_26_cons": "100.1",
+      "apr_aug_2026_27_prod": "116.1",
+      "apr_aug_2026_27_cons": "96.2"
+    }
+  ],
+  "table11a_pol_consumption_report_aug26": [
+    {
+      "category": "Sensitive",
+      "product": "LPG",
+      "aug_2025_tmt": "2833",
+      "aug_2026_tmt": "2347",
+      "aug_2026_pct_share": "12.6",
+      "aug_growth_pct": "-17.1",
+      "fy2025_26_tmt": "13423",
+      "fy2026_27_tmt": "11172",
+      "fy2026_27_growth_pct": "-16.8",
+      "fy2026_27_pct_share": "11.6"
+    },
+    {
+      "category": "Sensitive",
+      "product": "SKO",
+      "aug_2025_tmt": "34",
+      "aug_2026_tmt": "40",
+      "aug_2026_pct_share": "0.2",
+      "aug_growth_pct": "17.2",
+      "fy2025_26_tmt": "176",
+      "fy2026_27_tmt": "177",
+      "fy2026_27_growth_pct": "0.4",
+      "fy2026_27_pct_share": "0.2"
+    },
+    {
+      "category": "Sensitive",
+      "product": "Sub_Total",
+      "aug_2025_tmt": "2867",
+      "aug_2026_tmt": "2388",
+      "aug_2026_pct_share": "12.8",
+      "aug_growth_pct": "-16.7",
+      "fy2025_26_tmt": "13599",
+      "fy2026_27_tmt": "11349",
+      "fy2026_27_growth_pct": "-16.5",
+      "fy2026_27_pct_share": "11.8"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "HSD",
+      "aug_2025_tmt": "6577",
+      "aug_2026_tmt": "7023",
+      "aug_2026_pct_share": "37.7",
+      "aug_growth_pct": "6.8",
+      "fy2025_26_tmt": "38891",
+      "fy2026_27_tmt": "40774",
+      "fy2026_27_growth_pct": "4.8",
+      "fy2026_27_pct_share": "42.4"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "MS",
+      "aug_2025_tmt": "3544",
+      "aug_2026_tmt": "3836",
+      "aug_2026_pct_share": "20.6",
+      "aug_growth_pct": "8.2",
+      "fy2025_26_tmt": "17791",
+      "fy2026_27_tmt": "19029",
+      "fy2026_27_growth_pct": "7.0",
+      "fy2026_27_pct_share": "19.8"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "Naphtha",
+      "aug_2025_tmt": "1065",
+      "aug_2026_tmt": "828",
+      "aug_2026_pct_share": "4.4",
+      "aug_growth_pct": "-22.3",
+      "fy2025_26_tmt": "4891",
+      "fy2026_27_tmt": "4166",
+      "fy2026_27_growth_pct": "-14.8",
+      "fy2026_27_pct_share": "4.3"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "ATF",
+      "aug_2025_tmt": "710",
+      "aug_2026_tmt": "726",
+      "aug_2026_pct_share": "3.9",
+      "aug_growth_pct": "2.1",
+      "fy2025_26_tmt": "3698",
+      "fy2026_27_tmt": "3716",
+      "fy2026_27_growth_pct": "0.5",
+      "fy2026_27_pct_share": "3.9"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "Bitumen",
+      "aug_2025_tmt": "369",
+      "aug_2026_tmt": "442",
+      "aug_2026_pct_share": "2.4",
+      "aug_growth_pct": "20.0",
+      "fy2025_26_tmt": "3213",
+      "fy2026_27_tmt": "2166",
+      "fy2026_27_growth_pct": "-32.6",
+      "fy2026_27_pct_share": "2.3"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "FO_LSHS",
+      "aug_2025_tmt": "501",
+      "aug_2026_tmt": "525",
+      "aug_2026_pct_share": "2.8",
+      "aug_growth_pct": "4.9",
+      "fy2025_26_tmt": "2486",
+      "fy2026_27_tmt": "2733",
+      "fy2026_27_growth_pct": "9.9",
+      "fy2026_27_pct_share": "2.8"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "Lubes_Greases",
+      "aug_2025_tmt": "373",
+      "aug_2026_tmt": "416",
+      "aug_2026_pct_share": "2.2",
+      "aug_growth_pct": "11.6",
+      "fy2025_26_tmt": "1921",
+      "fy2026_27_tmt": "1820",
+      "fy2026_27_growth_pct": "-5.2",
+      "fy2026_27_pct_share": "1.9"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "LDO",
+      "aug_2025_tmt": "80",
+      "aug_2026_tmt": "47",
+      "aug_2026_pct_share": "0.3",
+      "aug_growth_pct": "-41.8",
+      "fy2025_26_tmt": "419",
+      "fy2026_27_tmt": "250",
+      "fy2026_27_growth_pct": "-40.3",
+      "fy2026_27_pct_share": "0.3"
+    },
+    {
+      "category": "Major_Decontrolled",
+      "product": "Sub_Total",
+      "aug_2025_tmt": "13219",
+      "aug_2026_tmt": "13843",
+      "aug_2026_pct_share": "74.4",
+      "aug_growth_pct": "4.7",
+      "fy2025_26_tmt": "73310",
+      "fy2026_27_tmt": "74654",
+      "fy2026_27_growth_pct": "1.8",
+      "fy2026_27_pct_share": "77.6"
+    },
+    {
+      "category": "Other_Minor",
+      "product": "Pet_Coke",
+      "aug_2025_tmt": "2239",
+      "aug_2026_tmt": "1599",
+      "aug_2026_pct_share": "8.6",
+      "aug_growth_pct": "-28.6",
+      "fy2025_26_tmt": "8835",
+      "fy2026_27_tmt": "6815",
+      "fy2026_27_growth_pct": "-22.9",
+      "fy2026_27_pct_share": "7.1"
+    },
+    {
+      "category": "Other_Minor",
+      "product": "Others",
+      "aug_2025_tmt": "818",
+      "aug_2026_tmt": "777",
+      "aug_2026_pct_share": "4.2",
+      "aug_growth_pct": "-5.0",
+      "fy2025_26_tmt": "4329",
+      "fy2026_27_tmt": "3342",
+      "fy2026_27_growth_pct": "-22.8",
+      "fy2026_27_pct_share": "3.5"
+    },
+    {
+      "category": "Other_Minor",
+      "product": "Sub_Total",
+      "aug_2025_tmt": "3056",
+      "aug_2026_tmt": "2376",
+      "aug_2026_pct_share": "12.8",
+      "aug_growth_pct": "-22.3",
+      "fy2025_26_tmt": "13164",
+      "fy2026_27_tmt": "10157",
+      "fy2026_27_growth_pct": "-22.8",
+      "fy2026_27_pct_share": "10.6"
+    },
+    {
+      "category": "Total",
+      "product": "Total",
+      "aug_2025_tmt": "19143",
+      "aug_2026_tmt": "18606",
+      "aug_2026_pct_share": "100.0",
+      "aug_growth_pct": "-2.8",
+      "fy2025_26_tmt": "100073",
+      "fy2026_27_tmt": "96160",
+      "fy2026_27_growth_pct": "-3.9",
+      "fy2026_27_pct_share": "100.0"
+    }
+  ],
+  "table11b_regionwise_consumption_aug26": [
+    {
+      "product": "MS",
+      "region": "TOTAL",
+      "fy2025_26_tmt": "6449",
+      "fy2026_27_tmt": "",
+      "growth_pct": "8.2"
+    },
+    {
+      "product": "MS",
+      "region": "EAST",
+      "fy2025_26_tmt": "393",
+      "fy2026_27_tmt": "430",
+      "growth_pct": "9.3"
+    },
+    {
+      "product": "MS",
+      "region": "NORTH",
+      "fy2025_26_tmt": "1184",
+      "fy2026_27_tmt": "1288",
+      "growth_pct": "8.8"
+    },
+    {
+      "product": "MS",
+      "region": "SOUTH",
+      "fy2025_26_tmt": "1072",
+      "fy2026_27_tmt": "1177",
+      "growth_pct": "9.8"
+    },
+    {
+      "product": "MS",
+      "region": "WEST",
+      "fy2025_26_tmt": "895",
+      "fy2026_27_tmt": "941",
+      "growth_pct": "5.1"
+    },
+    {
+      "product": "HSD",
+      "region": "TOTAL",
+      "fy2025_26_tmt": "6573",
+      "fy2026_27_tmt": "7020",
+      "growth_pct": "6.8"
+    },
+    {
+      "product": "HSD",
+      "region": "EAST",
+      "fy2025_26_tmt": "782",
+      "fy2026_27_tmt": "837",
+      "growth_pct": "7.1"
+    },
+    {
+      "product": "HSD",
+      "region": "NORTH",
+      "fy2025_26_tmt": "2002",
+      "fy2026_27_tmt": "2117",
+      "growth_pct": "5.7"
+    },
+    {
+      "product": "HSD",
+      "region": "SOUTH",
+      "fy2025_26_tmt": "2040",
+      "fy2026_27_tmt": "2182",
+      "growth_pct": "7.0"
+    },
+    {
+      "product": "HSD",
+      "region": "WEST",
+      "fy2025_26_tmt": "1749",
+      "fy2026_27_tmt": "1884",
+      "growth_pct": "7.7"
+    },
+    {
+      "product": "LPG",
+      "region": "TOTAL",
+      "fy2025_26_tmt": "2790",
+      "fy2026_27_tmt": "2338",
+      "growth_pct": "-16.2"
+    },
+    {
+      "product": "LPG",
+      "region": "EAST",
+      "fy2025_26_tmt": "499",
+      "fy2026_27_tmt": "417",
+      "growth_pct": "-16.5"
+    },
+    {
+      "product": "LPG",
+      "region": "NORTH",
+      "fy2025_26_tmt": "918",
+      "fy2026_27_tmt": "758",
+      "growth_pct": "-17.5"
+    },
+    {
+      "product": "LPG",
+      "region": "SOUTH",
+      "fy2025_26_tmt": "754",
+      "fy2026_27_tmt": "651",
+      "growth_pct": "-13.7"
+    },
+    {
+      "product": "LPG",
+      "region": "WEST",
+      "fy2025_26_tmt": "626",
+      "fy2026_27_tmt": "519",
+      "growth_pct": "-17.1"
+    },
+    {
+      "product": "ATF",
+      "region": "TOTAL",
+      "fy2025_26_tmt": "710",
+      "fy2026_27_tmt": "725",
+      "growth_pct": "2.1"
+    },
+    {
+      "product": "ATF",
+      "region": "EAST",
+      "fy2025_26_tmt": "47",
+      "fy2026_27_tmt": "41",
+      "growth_pct": "-12.9"
+    },
+    {
+      "product": "ATF",
+      "region": "NORTH",
+      "fy2025_26_tmt": "264",
+      "fy2026_27_tmt": "288",
+      "growth_pct": "9.4"
+    },
+    {
+      "product": "ATF",
+      "region": "SOUTH",
+      "fy2025_26_tmt": "224",
+      "fy2026_27_tmt": "214",
+      "growth_pct": "-4.4"
+    },
+    {
+      "product": "ATF",
+      "region": "WEST",
+      "fy2025_26_tmt": "176",
+      "fy2026_27_tmt": "182",
+      "growth_pct": "3.5"
+    }
+  ],
+  "table12_kerosene_allocation_upliftment": [
+    {
+      "fiscal_year": "2023-24",
+      "allocation_kl": "971796",
+      "upliftment_kl": "383479"
+    },
+    {
+      "fiscal_year": "2024-25",
+      "allocation_kl": "416784",
+      "upliftment_kl": "295277"
+    },
+    {
+      "fiscal_year": "2025-26",
+      "allocation_kl": "518430",
+      "upliftment_kl": "363466"
+    },
+    {
+      "fiscal_year": "2026-27_P",
+      "allocation_kl": "248753",
+      "upliftment_kl": "149326"
+    }
+  ],
+  "table13_ethanol_blending_summary": [
+    {
+      "ethanol_supply_year": "2023-24",
+      "ethanol_blended_cr_litres": "1022.4",
+      "ethanol_storage_cr_litres": "",
+      "ethanol_received_cr_litres": "1040.1",
+      "avg_blending_pct": ""
+    },
+    {
+      "ethanol_supply_year": "2024-25",
+      "ethanol_blended_cr_litres": "",
+      "ethanol_storage_cr_litres": "",
+      "ethanol_received_cr_litres": "",
+      "avg_blending_pct": ""
+    },
+    {
+      "ethanol_supply_year": "2025-26",
+      "ethanol_blended_cr_litres": "",
+      "ethanol_storage_cr_litres": "84.6",
+      "ethanol_received_cr_litres": "",
+      "avg_blending_pct": "20.0"
+    },
+    {
+      "ethanol_supply_year": "Nov25_Aug26",
+      "ethanol_blended_cr_litres": "894.7",
+      "ethanol_storage_cr_litres": "84.5",
+      "ethanol_received_cr_litres": "938.2",
+      "avg_blending_pct": "20.0"
+    }
+  ],
+  "table14_industry_marketing_infrastructure": [
+    {
+      "company": "IOCL",
+      "retail_outlets_total": "43270",
+      "rural_retail_outlets": "14061",
+      "sko_ldo_agencies": "3830",
+      "lpg_distributors_total": "12948",
+      "lpg_bottling_plants": "101",
+      "lpg_bottling_capacity_tmtpa": "11123"
+    },
+    {
+      "company": "BPCL",
+      "retail_outlets_total": "25592",
+      "rural_retail_outlets": "6835",
+      "sko_ldo_agencies": "927",
+      "lpg_distributors_total": "6284",
+      "lpg_bottling_plants": "57",
+      "lpg_bottling_capacity_tmtpa": "5400"
+    },
+    {
+      "company": "HPCL",
+      "retail_outlets_total": "25238",
+      "rural_retail_outlets": "6433",
+      "sko_ldo_agencies": "1638",
+      "lpg_distributors_total": "6393",
+      "lpg_bottling_plants": "56",
+      "lpg_bottling_capacity_tmtpa": "6515"
+    },
+    {
+      "company": "RIL_RBML_RSIL",
+      "retail_outlets_total": "2304",
+      "rural_retail_outlets": "135",
+      "sko_ldo_agencies": "",
+      "lpg_distributors_total": "",
+      "lpg_bottling_plants": "2",
+      "lpg_bottling_capacity_tmtpa": "180"
+    },
+    {
+      "company": "NEL",
+      "retail_outlets_total": "7108",
+      "rural_retail_outlets": "2162",
+      "sko_ldo_agencies": "",
+      "lpg_distributors_total": "",
+      "lpg_bottling_plants": "",
+      "lpg_bottling_capacity_tmtpa": ""
+    },
+    {
+      "company": "SHELL",
+      "retail_outlets_total": "338",
+      "rural_retail_outlets": "85",
+      "sko_ldo_agencies": "",
+      "lpg_distributors_total": "",
+      "lpg_bottling_plants": "",
+      "lpg_bottling_capacity_tmtpa": ""
+    },
+    {
+      "company": "MRPL_Others",
+      "retail_outlets_total": "287",
+      "rural_retail_outlets": "78",
+      "sko_ldo_agencies": "",
+      "lpg_distributors_total": "",
+      "lpg_bottling_plants": "",
+      "lpg_bottling_capacity_tmtpa": ""
+    },
+    {
+      "company": "TOTAL",
+      "retail_outlets_total": "104137",
+      "rural_retail_outlets": "29789",
+      "sko_ldo_agencies": "6395",
+      "lpg_distributors_total": "25625",
+      "lpg_bottling_plants": "216",
+      "lpg_bottling_capacity_tmtpa": "23218"
+    }
+  ],
+  "table14b_alternate_fuel_infrastructure": [
+    {
+      "fuel_type": "CNG_LNG",
+      "total_ros_with_alt_fuel": "7744"
+    },
+    {
+      "fuel_type": "EV_Charging",
+      "total_ros_with_alt_fuel": "29580"
+    },
+    {
+      "fuel_type": "Auto_LPG",
+      "total_ros_with_alt_fuel": "416"
+    },
+    {
+      "fuel_type": "Compressed_Bio_Gas_outlets",
+      "total_ros_with_alt_fuel": "503"
+    }
+  ],
+  "table15_lpg_consumption": [
+    {
+      "metric": "lpg_active_domestic_customers_lakh",
+      "fy2025_26": "",
+      "fy2026_27_p": "",
+      "aug_2025_26": "",
+      "aug_2026_27_p": "",
+      "apr_aug_2025_26": "",
+      "apr_aug_2026_27_p": ""
+    },
+    {
+      "metric": "lpg_consumption_tmt",
+      "fy2025_26": "13423.2",
+      "fy2026_27_p": "11172.3",
+      "aug_2025_26": "2833.1",
+      "aug_2026_27_p": "2347.4",
+      "apr_aug_2025_26": "",
+      "apr_aug_2026_27_p": ""
+    }
+  ],
+  "table16_lpg_marketing_timeseries": [
+    {
+      "as_on_date": "2014",
+      "lpg_active_domestic_customers_lakh": "1486",
+      "lpg_coverage_pct": "56.2",
+      "pmuy_beneficiaries_lakh": "",
+      "lpg_distributors_no": "13896",
+      "auto_lpg_dispensing_stations_no": "678",
+      "bottling_plants_no": "187"
+    },
+    {
+      "as_on_date": "2015",
+      "lpg_active_domestic_customers_lakh": "1663",
+      "lpg_coverage_pct": "61.9",
+      "pmuy_beneficiaries_lakh": "200.3",
+      "lpg_distributors_no": "15930",
+      "auto_lpg_dispensing_stations_no": "681",
+      "bottling_plants_no": "187"
+    },
+    {
+      "as_on_date": "2016",
+      "lpg_active_domestic_customers_lakh": "1988",
+      "lpg_coverage_pct": "72.8",
+      "pmuy_beneficiaries_lakh": "356",
+      "lpg_distributors_no": "17916",
+      "auto_lpg_dispensing_stations_no": "676",
+      "bottling_plants_no": "188"
+    },
+    {
+      "as_on_date": "2017",
+      "lpg_active_domestic_customers_lakh": "2243",
+      "lpg_coverage_pct": "80.9",
+      "pmuy_beneficiaries_lakh": "719",
+      "lpg_distributors_no": "18786",
+      "auto_lpg_dispensing_stations_no": "675",
+      "bottling_plants_no": "189"
+    },
+    {
+      "as_on_date": "2018",
+      "lpg_active_domestic_customers_lakh": "2654",
+      "lpg_coverage_pct": "94.3",
+      "pmuy_beneficiaries_lakh": "802",
+      "lpg_distributors_no": "20146",
+      "auto_lpg_dispensing_stations_no": "672",
+      "bottling_plants_no": "190"
+    },
+    {
+      "as_on_date": "2019",
+      "lpg_active_domestic_customers_lakh": "2787",
+      "lpg_coverage_pct": "97.5",
+      "pmuy_beneficiaries_lakh": "800",
+      "lpg_distributors_no": "23737",
+      "auto_lpg_dispensing_stations_no": "661",
+      "bottling_plants_no": "192"
+    },
+    {
+      "as_on_date": "2020",
+      "lpg_active_domestic_customers_lakh": "2895",
+      "lpg_coverage_pct": "99.8",
+      "pmuy_beneficiaries_lakh": "899.0",
+      "lpg_distributors_no": "24670",
+      "auto_lpg_dispensing_stations_no": "657",
+      "bottling_plants_no": "196"
+    },
+    {
+      "as_on_date": "2021",
+      "lpg_active_domestic_customers_lakh": "3053",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "958.6",
+      "lpg_distributors_no": "25083",
+      "auto_lpg_dispensing_stations_no": "651",
+      "bottling_plants_no": "200"
+    },
+    {
+      "as_on_date": "2022",
+      "lpg_active_domestic_customers_lakh": "3140",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1032.7",
+      "lpg_distributors_no": "25269",
+      "auto_lpg_dispensing_stations_no": "601",
+      "bottling_plants_no": "202"
+    },
+    {
+      "as_on_date": "2023",
+      "lpg_active_domestic_customers_lakh": "3242",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1033.0",
+      "lpg_distributors_no": "25386",
+      "auto_lpg_dispensing_stations_no": "526",
+      "bottling_plants_no": "208"
+    },
+    {
+      "as_on_date": "2024",
+      "lpg_active_domestic_customers_lakh": "3297",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1057.6",
+      "lpg_distributors_no": "25481",
+      "auto_lpg_dispensing_stations_no": "468",
+      "bottling_plants_no": "210"
+    },
+    {
+      "as_on_date": "2025",
+      "lpg_active_domestic_customers_lakh": "3339",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1057",
+      "lpg_distributors_no": "25566",
+      "auto_lpg_dispensing_stations_no": "443",
+      "bottling_plants_no": "211"
+    },
+    {
+      "as_on_date": "2026",
+      "lpg_active_domestic_customers_lakh": "3277",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1058",
+      "lpg_distributors_no": "25607",
+      "auto_lpg_dispensing_stations_no": "364",
+      "bottling_plants_no": "214"
+    },
+    {
+      "as_on_date": "2026-09-01",
+      "lpg_active_domestic_customers_lakh": "",
+      "lpg_coverage_pct": "",
+      "pmuy_beneficiaries_lakh": "1057",
+      "lpg_distributors_no": "25625",
+      "auto_lpg_dispensing_stations_no": "334",
+      "bottling_plants_no": "216"
+    }
+  ],
+  "table17_regionwise_lpg_marketing": [
+    {
+      "region": "North",
+      "lpg_active_domestic_customers_lakh": "993.0",
+      "non_pmuy_customers_lakh": "679.7",
+      "pmuy_beneficiaries_lakh": "313.3",
+      "lpg_distributors_no": "8196",
+      "auto_lpg_dispensing_stations_no": "54",
+      "bottling_plants_no": "66"
+    },
+    {
+      "region": "North-East",
+      "lpg_active_domestic_customers_lakh": "127.3",
+      "non_pmuy_customers_lakh": "63.5",
+      "pmuy_beneficiaries_lakh": "63.8",
+      "lpg_distributors_no": "1121",
+      "auto_lpg_dispensing_stations_no": "0",
+      "bottling_plants_no": "11"
+    },
+    {
+      "region": "East",
+      "lpg_active_domestic_customers_lakh": "675.6",
+      "non_pmuy_customers_lakh": "334.7",
+      "pmuy_beneficiaries_lakh": "340.9",
+      "lpg_distributors_no": "5219",
+      "auto_lpg_dispensing_stations_no": "27",
+      "bottling_plants_no": "34"
+    },
+    {
+      "region": "West",
+      "lpg_active_domestic_customers_lakh": "682.8",
+      "non_pmuy_customers_lakh": "455.8",
+      "pmuy_beneficiaries_lakh": "227.0",
+      "lpg_distributors_no": "5438",
+      "auto_lpg_dispensing_stations_no": "44",
+      "bottling_plants_no": "51"
+    },
+    {
+      "region": "South",
+      "lpg_active_domestic_customers_lakh": "798.7",
+      "non_pmuy_customers_lakh": "686.5",
+      "pmuy_beneficiaries_lakh": "112.2",
+      "lpg_distributors_no": "5651",
+      "auto_lpg_dispensing_stations_no": "209",
+      "bottling_plants_no": "54"
+    },
+    {
+      "region": "Total",
+      "lpg_active_domestic_customers_lakh": "3277.5",
+      "non_pmuy_customers_lakh": "2220.3",
+      "pmuy_beneficiaries_lakh": "1057.2",
+      "lpg_distributors_no": "25625",
+      "auto_lpg_dispensing_stations_no": "334",
+      "bottling_plants_no": "216"
+    }
+  ],
+  "table18_natural_gas_at_a_glance": [
+    {
+      "metric": "gross_production",
+      "fy2024_25": "36113",
+      "fy2025_26_p": "34776",
+      "aug_2025_26_p": "2971",
+      "aug_2026_27_target": "3029",
+      "aug_2026_27_p": "2830",
+      "apr_aug_2025_26_p": "11754",
+      "apr_aug_2026_27_target": "14817",
+      "apr_aug_2026_27_p": "14075"
+    },
+    {
+      "metric": "nomination_field",
+      "fy2024_25": "21971",
+      "fy2025_26_p": "21580",
+      "aug_2025_26_p": "1837",
+      "aug_2026_27_target": "1959",
+      "aug_2026_27_p": "1804",
+      "apr_aug_2025_26_p": "7200",
+      "apr_aug_2026_27_target": "9553",
+      "apr_aug_2026_27_p": "8890"
+    },
+    {
+      "metric": "private_jv",
+      "fy2024_25": "14143",
+      "fy2025_26_p": "13195",
+      "aug_2025_26_p": "1133",
+      "aug_2026_27_target": "1070",
+      "aug_2026_27_p": "1026",
+      "apr_aug_2025_26_p": "4555",
+      "apr_aug_2026_27_target": "5264",
+      "apr_aug_2026_27_p": "5185"
+    },
+    {
+      "metric": "net_production_excl_flare",
+      "fy2024_25": "35594",
+      "fy2025_26_p": "34326",
+      "aug_2025_26_p": "2935",
+      "aug_2026_27_target": "",
+      "aug_2026_27_p": "2792",
+      "apr_aug_2025_26_p": "11600",
+      "apr_aug_2026_27_target": "",
+      "apr_aug_2026_27_p": "13884"
+    },
+    {
+      "metric": "lng_import",
+      "fy2024_25": "35720",
+      "fy2025_26_p": "34427",
+      "aug_2025_26_p": "2912",
+      "aug_2026_27_target": "",
+      "aug_2026_27_p": "2915",
+      "apr_aug_2025_26_p": "11269",
+      "apr_aug_2026_27_target": "",
+      "apr_aug_2026_27_p": "14782"
+    },
+    {
+      "metric": "total_consumption_incl_internal",
+      "fy2024_25": "71314",
+      "fy2025_26_p": "68753",
+      "aug_2025_26_p": "5847",
+      "aug_2026_27_target": "",
+      "aug_2026_27_p": "5708",
+      "apr_aug_2025_26_p": "22869",
+      "apr_aug_2026_27_target": "",
+      "apr_aug_2026_27_p": "28666"
+    },
+    {
+      "metric": "total_consumption_bcm",
+      "fy2024_25": "71.3",
+      "fy2025_26_p": "68.8",
+      "aug_2025_26_p": "5.8",
+      "aug_2026_27_target": "",
+      "aug_2026_27_p": "5.7",
+      "apr_aug_2025_26_p": "22.9",
+      "apr_aug_2026_27_target": "",
+      "apr_aug_2026_27_p": "28.7"
+    },
+    {
+      "metric": "import_dependency_pct",
+      "fy2024_25": "50.1",
+      "fy2025_26_p": "50.1",
+      "aug_2025_26_p": "49.8",
+      "aug_2026_27_target": "",
+      "aug_2026_27_p": "51.1",
+      "apr_aug_2025_26_p": "49.3",
+      "apr_aug_2026_27_target": "",
+      "apr_aug_2026_27_p": "51.6"
+    }
+  ],
+  "table18b_natural_gas_yearly_trend": [
+    {
+      "metric": "gross_natural_gas_production_mmscm",
+      "fy2022_23": "34450",
+      "fy2023_24": "36438",
+      "fy2024_25": "36113",
+      "fy2025_26": "34776",
+      "apr_aug_2026_27_p": "14075"
+    },
+    {
+      "metric": "natural_gas_consumption_incl_internal_mmscm",
+      "fy2022_23": "59969",
+      "fy2023_24": "67512",
+      "fy2024_25": "71314",
+      "fy2025_26": "68542",
+      "apr_aug_2026_27_p": "28666"
+    }
+  ],
+  "table18c_gas_production_by_regime_share": [
+    {
+      "period": "Aug_2026",
+      "regime": "Nomination",
+      "pct_share": "64.2"
+    },
+    {
+      "period": "Aug_2026",
+      "regime": "PSC",
+      "pct_share": "32.5"
+    },
+    {
+      "period": "Aug_2026",
+      "regime": "RSC",
+      "pct_share": "0.7"
+    },
+    {
+      "period": "Aug_2026",
+      "regime": "CBM",
+      "pct_share": "2.6"
+    },
+    {
+      "period": "Aug_2025",
+      "regime": "Nomination",
+      "pct_share": "61.8"
+    },
+    {
+      "period": "Aug_2025",
+      "regime": "PSC",
+      "pct_share": "35.1"
+    },
+    {
+      "period": "Aug_2025",
+      "regime": "RSC",
+      "pct_share": "0.7"
+    },
+    {
+      "period": "Aug_2025",
+      "regime": "CBM",
+      "pct_share": "2.4"
+    },
+    {
+      "period": "Apr_Aug_2026",
+      "regime": "Nomination",
+      "pct_share": "63.2"
+    },
+    {
+      "period": "Apr_Aug_2026",
+      "regime": "PSC",
+      "pct_share": "33.6"
+    },
+    {
+      "period": "Apr_Aug_2026",
+      "regime": "RSC",
+      "pct_share": "0.7"
+    },
+    {
+      "period": "Apr_Aug_2026",
+      "regime": "CBM",
+      "pct_share": "2.5"
+    },
+    {
+      "period": "Apr_Aug_2025",
+      "regime": "Nomination",
+      "pct_share": "61.4"
+    },
+    {
+      "period": "Apr_Aug_2025",
+      "regime": "PSC",
+      "pct_share": "35.7"
+    },
+    {
+      "period": "Apr_Aug_2025",
+      "regime": "RSC",
+      "pct_share": "0.7"
+    },
+    {
+      "period": "Apr_Aug_2025",
+      "regime": "CBM",
+      "pct_share": "2.3"
+    }
+  ],
+  "table19_cbm_gas_development": [
+    {
+      "metric": "prognosticated_cbm_resources",
+      "value": "91.8",
+      "unit": "TCF"
+    },
+    {
+      "metric": "established_cbm_resources",
+      "value": "12.1",
+      "unit": "TCF"
+    },
+    {
+      "metric": "cbm_resources_33_blocks",
+      "value": "62.4",
+      "unit": "TCF"
+    },
+    {
+      "metric": "total_coal_bearing_area_mopng_dgh",
+      "value": "21177",
+      "unit": "sq_km"
+    },
+    {
+      "metric": "area_awarded",
+      "value": "14536",
+      "unit": "sq_km"
+    },
+    {
+      "metric": "blocks_awarded",
+      "value": "40",
+      "unit": "nos (one block awarded twice)"
+    },
+    {
+      "metric": "exploration_initiated_area",
+      "value": "11578",
+      "unit": "sq_km"
+    },
+    {
+      "metric": "production_cbm_aug_2026",
+      "value": "73.56",
+      "unit": "MMSCM"
+    },
+    {
+      "metric": "production_cbm_apr_aug_2026",
+      "value": "347.22",
+      "unit": "MMSCM"
+    }
+  ],
+  "table19a_cbg_status": [
+    {
+      "metric": "cbg_plants_commissioned_sale_started",
+      "value": "",
+      "unit": "No. of plants"
+    },
+    {
+      "metric": "sale_of_cbg_2022_23",
+      "value": "12.1",
+      "unit": "TMT"
+    },
+    {
+      "metric": "sale_of_cbg_2023_24",
+      "value": "",
+      "unit": "TMT"
+    },
+    {
+      "metric": "sale_of_cbg_2024_25",
+      "value": "",
+      "unit": "TMT"
+    },
+    {
+      "metric": "sale_of_cbg_2025_26",
+      "value": "",
+      "unit": "TMT"
+    },
+    {
+      "metric": "sale_of_cbg_2026_27_apr_aug",
+      "value": "",
+      "unit": "TMT"
+    },
+    {
+      "metric": "cgd_network_ga_with_cbg_sale",
+      "value": "598",
+      "unit": "Nos (Tripartite Agreements)"
+    }
+  ],
+  "table20_common_carrier_gas_pipeline": [
+    {
+      "operator": "GAIL",
+      "operational_length_km": "18302",
+      "operational_capacity_mmscmd": "240.1",
+      "under_construction_length_km": "823"
+    },
+    {
+      "operator": "GSPL",
+      "operational_length_km": "2894",
+      "operational_capacity_mmscmd": "74.8",
+      "under_construction_length_km": "337"
+    },
+    {
+      "operator": "PIL",
+      "operational_length_km": "1485",
+      "operational_capacity_mmscmd": "85.0",
+      "under_construction_length_km": "310"
+    },
+    {
+      "operator": "IOCL",
+      "operational_length_km": "1370",
+      "operational_capacity_mmscmd": "25.2",
+      "under_construction_length_km": "784"
+    },
+    {
+      "operator": "AGCL",
+      "operational_length_km": "107",
+      "operational_capacity_mmscmd": "2.4",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "RGPL",
+      "operational_length_km": "304",
+      "operational_capacity_mmscmd": "3.5",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "GGL",
+      "operational_length_km": "73",
+      "operational_capacity_mmscmd": "5.1",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "DFPCL",
+      "operational_length_km": "42",
+      "operational_capacity_mmscmd": "0.7",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "ONGC",
+      "operational_length_km": "30",
+      "operational_capacity_mmscmd": "3.5",
+      "under_construction_length_km": "220"
+    },
+    {
+      "operator": "GIGL",
+      "operational_length_km": "1419",
+      "operational_capacity_mmscmd": "42.1",
+      "under_construction_length_km": "1172"
+    },
+    {
+      "operator": "GTIL",
+      "operational_length_km": "0",
+      "operational_capacity_mmscmd": "",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "Others",
+      "operational_length_km": "321",
+      "operational_capacity_mmscmd": "",
+      "under_construction_length_km": ""
+    },
+    {
+      "operator": "TOTAL_OPERATIONAL",
+      "operational_length_km": "26348",
+      "operational_capacity_mmscmd": "",
+      "under_construction_length_km": "3646"
+    }
+  ],
+  "table21_lng_terminals": [
+    {
+      "location": "Dahej",
+      "promoter": "Petronet LNG Ltd (PLL)",
+      "capacity_mmtpa_2026_09_01": "22.5",
+      "capacity_utilisation_pct_apr_aug26": "68.21"
+    },
+    {
+      "location": "Hazira",
+      "promoter": "Shell Energy India Pvt Ltd",
+      "capacity_mmtpa_2026_09_01": "6.0",
+      "capacity_utilisation_pct_apr_aug26": "27.3"
+    },
+    {
+      "location": "Dabhol",
+      "promoter": "Konkan LNG Limited",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": "6.1"
+    },
+    {
+      "location": "Kochi",
+      "promoter": "Petronet LNG Ltd (PLL)",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": "24.26"
+    },
+    {
+      "location": "Ennore",
+      "promoter": "Indian Oil LNG Pvt Ltd",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": ""
+    },
+    {
+      "location": "Mundra",
+      "promoter": "Adani Total Private Limited",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": "45.2"
+    },
+    {
+      "location": "Dhamra",
+      "promoter": "HPCL LNG Limited",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": ""
+    },
+    {
+      "location": "Chhara",
+      "promoter": "GSPC LNG Limited",
+      "capacity_mmtpa_2026_09_01": "5.0",
+      "capacity_utilisation_pct_apr_aug26": ""
+    },
+    {
+      "location": "TOTAL",
+      "promoter": "",
+      "capacity_mmtpa_2026_09_01": "58.5",
+      "capacity_utilisation_pct_apr_aug26": ""
+    }
+  ],
+  "table22_state_png_cng_status": [
+    {
+      "state_ut": "Andhra Pradesh",
+      "cng_stations": "222",
+      "png_domestic": "293633",
+      "png_commercial": "756",
+      "png_industrial": "68"
+    },
+    {
+      "state_ut": "Andhra Pradesh, Karnataka & Tamil Nadu",
+      "cng_stations": "52",
+      "png_domestic": "18894",
+      "png_commercial": "66",
+      "png_industrial": "53"
+    },
+    {
+      "state_ut": "Assam",
+      "cng_stations": "49",
+      "png_domestic": "81180",
+      "png_commercial": "1652",
+      "png_industrial": "492"
+    },
+    {
+      "state_ut": "Bihar",
+      "cng_stations": "212",
+      "png_domestic": "284185",
+      "png_commercial": "402",
+      "png_industrial": "65"
+    },
+    {
+      "state_ut": "Bihar & Jharkhand",
+      "cng_stations": "42",
+      "png_domestic": "15549",
+      "png_commercial": "36",
+      "png_industrial": "1"
+    },
+    {
+      "state_ut": "Bihar & Uttar Pradesh",
+      "cng_stations": "36",
+      "png_domestic": "64196",
+      "png_commercial": "0",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Chandigarh (UT), Haryana, Punjab & Himachal Pradesh",
+      "cng_stations": "37",
+      "png_domestic": "34529",
+      "png_commercial": "290",
+      "png_industrial": "102"
+    },
+    {
+      "state_ut": "Chhattisgarh",
+      "cng_stations": "70",
+      "png_domestic": "21956",
+      "png_commercial": "2",
+      "png_industrial": "22"
+    },
+    {
+      "state_ut": "Dadra & Nagar Haveli (UT)",
+      "cng_stations": "6",
+      "png_domestic": "15922",
+      "png_commercial": "80",
+      "png_industrial": "70"
+    },
+    {
+      "state_ut": "Daman & Diu (UT)",
+      "cng_stations": "4",
+      "png_domestic": "5621",
+      "png_commercial": "146",
+      "png_industrial": "72"
+    },
+    {
+      "state_ut": "Daman and Diu & Gujarat",
+      "cng_stations": "21",
+      "png_domestic": "12503",
+      "png_commercial": "121",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Goa",
+      "cng_stations": "16",
+      "png_domestic": "20891",
+      "png_commercial": "124",
+      "png_industrial": "62"
+    },
+    {
+      "state_ut": "Gujarat",
+      "cng_stations": "1090",
+      "png_domestic": "3968551",
+      "png_commercial": "26082",
+      "png_industrial": "5997"
+    },
+    {
+      "state_ut": "Haryana",
+      "cng_stations": "576",
+      "png_domestic": "618942",
+      "png_commercial": "2163",
+      "png_industrial": "3224"
+    },
+    {
+      "state_ut": "Haryana & Himachal Pradesh",
+      "cng_stations": "12",
+      "png_domestic": "820",
+      "png_commercial": "12",
+      "png_industrial": "5"
+    },
+    {
+      "state_ut": "Haryana & Punjab",
+      "cng_stations": "31",
+      "png_domestic": "3540",
+      "png_commercial": "13",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Himachal Pradesh",
+      "cng_stations": "21",
+      "png_domestic": "14405",
+      "png_commercial": "73",
+      "png_industrial": "20"
+    },
+    {
+      "state_ut": "Jharkhand",
+      "cng_stations": "136",
+      "png_domestic": "191443",
+      "png_commercial": "394",
+      "png_industrial": "45"
+    },
+    {
+      "state_ut": "Karnataka",
+      "cng_stations": "522",
+      "png_domestic": "619668",
+      "png_commercial": "1067",
+      "png_industrial": "508"
+    },
+    {
+      "state_ut": "Kerala",
+      "cng_stations": "226",
+      "png_domestic": "148452",
+      "png_commercial": "436",
+      "png_industrial": "52"
+    },
+    {
+      "state_ut": "Kerala & Puducherry",
+      "cng_stations": "33",
+      "png_domestic": "14490",
+      "png_commercial": "41",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Madhya Pradesh",
+      "cng_stations": "385",
+      "png_domestic": "339049",
+      "png_commercial": "957",
+      "png_industrial": "720"
+    },
+    {
+      "state_ut": "Madhya Pradesh and Chhattisgarh",
+      "cng_stations": "9",
+      "png_domestic": "0",
+      "png_commercial": "0",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Madhya Pradesh and Rajasthan",
+      "cng_stations": "44",
+      "png_domestic": "2897",
+      "png_commercial": "8",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Madhya Pradesh and Uttar Pradesh",
+      "cng_stations": "22",
+      "png_domestic": "105",
+      "png_commercial": "2",
+      "png_industrial": "5"
+    },
+    {
+      "state_ut": "Maharashtra",
+      "cng_stations": "1224",
+      "png_domestic": "4533745",
+      "png_commercial": "6645",
+      "png_industrial": "1427"
+    },
+    {
+      "state_ut": "Maharashtra & Gujarat",
+      "cng_stations": "114",
+      "png_domestic": "239130",
+      "png_commercial": "48",
+      "png_industrial": "79"
+    },
+    {
+      "state_ut": "Maharashtra and Madhya Pradesh",
+      "cng_stations": "19",
+      "png_domestic": "283",
+      "png_commercial": "1",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Meghalaya",
+      "cng_stations": "4",
+      "png_domestic": "0",
+      "png_commercial": "0",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "National Capital Territory of Delhi (UT)",
+      "cng_stations": "459",
+      "png_domestic": "1994439",
+      "png_commercial": "5080",
+      "png_industrial": "1909"
+    },
+    {
+      "state_ut": "Odisha",
+      "cng_stations": "161",
+      "png_domestic": "192425",
+      "png_commercial": "347",
+      "png_industrial": "12"
+    },
+    {
+      "state_ut": "Puducherry",
+      "cng_stations": "11",
+      "png_domestic": "0",
+      "png_commercial": "0",
+      "png_industrial": "4"
+    },
+    {
+      "state_ut": "Puducherry & Tamil Nadu",
+      "cng_stations": "9",
+      "png_domestic": "920",
+      "png_commercial": "14",
+      "png_industrial": "1"
+    },
+    {
+      "state_ut": "Punjab",
+      "cng_stations": "264",
+      "png_domestic": "134906",
+      "png_commercial": "1207",
+      "png_industrial": "416"
+    },
+    {
+      "state_ut": "Punjab & Rajasthan",
+      "cng_stations": "35",
+      "png_domestic": "41422",
+      "png_commercial": "0",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Rajasthan",
+      "cng_stations": "455",
+      "png_domestic": "516804",
+      "png_commercial": "826",
+      "png_industrial": "1936"
+    },
+    {
+      "state_ut": "Tamil Nadu",
+      "cng_stations": "494",
+      "png_domestic": "137414",
+      "png_commercial": "255",
+      "png_industrial": "157"
+    },
+    {
+      "state_ut": "Telangana",
+      "cng_stations": "235",
+      "png_domestic": "266977",
+      "png_commercial": "273",
+      "png_industrial": "221"
+    },
+    {
+      "state_ut": "Telangana and Karnataka",
+      "cng_stations": "15",
+      "png_domestic": "146",
+      "png_commercial": "6",
+      "png_industrial": "8"
+    },
+    {
+      "state_ut": "Tripura",
+      "cng_stations": "30",
+      "png_domestic": "71872",
+      "png_commercial": "569",
+      "png_industrial": "48"
+    },
+    {
+      "state_ut": "UT of Jammu and Kashmir",
+      "cng_stations": "3",
+      "png_domestic": "0",
+      "png_commercial": "0",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Uttar Pradesh",
+      "cng_stations": "1297",
+      "png_domestic": "2314764",
+      "png_commercial": "4693",
+      "png_industrial": "4406"
+    },
+    {
+      "state_ut": "Uttar Pradesh & Rajasthan",
+      "cng_stations": "57",
+      "png_domestic": "34541",
+      "png_commercial": "140",
+      "png_industrial": "352"
+    },
+    {
+      "state_ut": "Uttar Pradesh and Uttarakhand",
+      "cng_stations": "41",
+      "png_domestic": "19424",
+      "png_commercial": "4",
+      "png_industrial": "0"
+    },
+    {
+      "state_ut": "Uttarakhand",
+      "cng_stations": "46",
+      "png_domestic": "86902",
+      "png_commercial": "257",
+      "png_industrial": "182"
+    },
+    {
+      "state_ut": "West Bengal",
+      "cng_stations": "249",
+      "png_domestic": "169376",
+      "png_commercial": "58",
+      "png_industrial": "11"
+    },
+    {
+      "state_ut": "Grand_Total",
+      "cng_stations": "9096",
+      "png_domestic": "17546911",
+      "png_commercial": "55346",
+      "png_industrial": "22752"
+    }
+  ],
+  "table23_domestic_gas_price_ceiling": [
+    {
+      "period": "Apr2024-Sep2024",
+      "domestic_gas_calculated_price_usd_mmbtu": "6.75",
+      "gas_ceiling_price_ongc_oil_usd_mmbtu": "6.5",
+      "hp_ht_ceiling_price_usd_mmbtu": ""
+    },
+    {
+      "period": "Oct2024-Mar2025",
+      "domestic_gas_calculated_price_usd_mmbtu": "6.75",
+      "gas_ceiling_price_ongc_oil_usd_mmbtu": "6.5",
+      "hp_ht_ceiling_price_usd_mmbtu": ""
+    },
+    {
+      "period": "Apr2025-Sep2025",
+      "domestic_gas_calculated_price_usd_mmbtu": "6.75",
+      "gas_ceiling_price_ongc_oil_usd_mmbtu": "6.5",
+      "hp_ht_ceiling_price_usd_mmbtu": ""
+    },
+    {
+      "period": "Oct2025-Mar2026",
+      "domestic_gas_calculated_price_usd_mmbtu": "6.75",
+      "gas_ceiling_price_ongc_oil_usd_mmbtu": "6.5",
+      "hp_ht_ceiling_price_usd_mmbtu": "9.72"
+    },
+    {
+      "period": "Apr2026-Sep2026",
+      "domestic_gas_calculated_price_usd_mmbtu": "6.75",
+      "gas_ceiling_price_ongc_oil_usd_mmbtu": "6.5",
+      "hp_ht_ceiling_price_usd_mmbtu": "8.9"
+    }
+  ],
+  "table24_cng_png_prices_selected_cities": [
+    {
+      "city": "Delhi",
+      "cng_rs_kg": "",
+      "png_rs_scm": "53.0",
+      "source_date": "August 26"
+    },
+    {
+      "city": "Mumbai",
+      "cng_rs_kg": "88.0",
+      "png_rs_scm": "",
+      "source_date": "August 26"
+    }
+  ],
+  "table26_psu_capex": [
+    {
+      "company": "ONGC_Ltd",
+      "fy2023_24": "34551",
+      "fy2024_25": "61110",
+      "fy2025_26": "34939",
+      "fy2026_27_target": "30000",
+      "apr_aug_2026_27_p": "12103"
+    },
+    {
+      "company": "ONGC_Videsh_Ltd_OVL",
+      "fy2023_24": "3262",
+      "fy2024_25": "5023",
+      "fy2025_26": "5387",
+      "fy2026_27_target": "7265",
+      "apr_aug_2026_27_p": "3504"
+    },
+    {
+      "company": "Oil_India_Ltd_OIL",
+      "fy2023_24": "5390",
+      "fy2024_25": "7624",
+      "fy2025_26": "11623",
+      "fy2026_27_target": "8653",
+      "apr_aug_2026_27_p": "4510"
+    },
+    {
+      "company": "GAIL_India_Ltd",
+      "fy2023_24": "10388",
+      "fy2024_25": "10258",
+      "fy2025_26": "8669",
+      "fy2026_27_target": "11518",
+      "apr_aug_2026_27_p": "6855"
+    },
+    {
+      "company": "Indian_Oil_Corp_Ltd_IOCL",
+      "fy2023_24": "38660",
+      "fy2024_25": "37557",
+      "fy2025_26": "31411",
+      "fy2026_27_target": "32700",
+      "apr_aug_2026_27_p": "8823"
+    },
+    {
+      "company": "Bharat_Petroleum_Corp_Ltd_BPCL",
+      "fy2023_24": "11002",
+      "fy2024_25": "16508",
+      "fy2025_26": "19863",
+      "fy2026_27_target": "25000",
+      "apr_aug_2026_27_p": "8859"
+    },
+    {
+      "company": "Hindustan_Petroleum_Corp_Ltd_HPCL",
+      "fy2023_24": "13842",
+      "fy2024_25": "13630",
+      "fy2025_26": "14358",
+      "fy2026_27_target": "9641",
+      "apr_aug_2026_27_p": "2264"
+    },
+    {
+      "company": "Mangalore_Refinery_Petrochem_Ltd_MRPL",
+      "fy2023_24": "1513",
+      "fy2024_25": "1006",
+      "fy2025_26": "1316",
+      "fy2026_27_target": "836",
+      "apr_aug_2026_27_p": "293"
+    },
+    {
+      "company": "Chennai_Petroleum_Corp_Ltd_CPCL",
+      "fy2023_24": "561",
+      "fy2024_25": "660",
+      "fy2025_26": "694",
+      "fy2026_27_target": "610",
+      "apr_aug_2026_27_p": "171"
+    },
+    {
+      "company": "Numaligarh_Refinery_Ltd_NRL",
+      "fy2023_24": "8585",
+      "fy2024_25": "9038",
+      "fy2025_26": "8317",
+      "fy2026_27_target": "7500",
+      "apr_aug_2026_27_p": "2339"
+    },
+    {
+      "company": "Balmer_Lawrie_Co_Ltd_BL",
+      "fy2023_24": "47",
+      "fy2024_25": "50",
+      "fy2025_26": "59",
+      "fy2026_27_target": "40",
+      "apr_aug_2026_27_p": "17"
+    },
+    {
+      "company": "Engineers_India_Ltd_EIL",
+      "fy2023_24": "108",
+      "fy2024_25": "72",
+      "fy2025_26": "86",
+      "fy2026_27_target": "60",
+      "apr_aug_2026_27_p": "10"
+    },
+    {
+      "company": "TOTAL",
+      "fy2023_24": "127908",
+      "fy2024_25": "162537",
+      "fy2025_26": "136721",
+      "fy2026_27_target": "133823",
+      "apr_aug_2026_27_p": "49748"
+    }
+  ],
+  "table27a_weight_to_volume_conversion": [
+    {
+      "product": "LPG",
+      "weight_mt": "1",
+      "volume_kl": "1.844",
+      "barrel_bbl": "11.6"
+    },
+    {
+      "product": "Petrol_MS",
+      "weight_mt": "1",
+      "volume_kl": "1.411",
+      "barrel_bbl": "8.88"
+    },
+    {
+      "product": "Furnace_Oil_FO",
+      "weight_mt": "1",
+      "volume_kl": "1.21",
+      "barrel_bbl": "7.61"
+    },
+    {
+      "product": "Diesel_HSD",
+      "weight_mt": "1",
+      "volume_kl": "1.285",
+      "barrel_bbl": "8.08"
+    },
+    {
+      "product": "Kerosene_SKO",
+      "weight_mt": "1",
+      "volume_kl": "1.288",
+      "barrel_bbl": "8.1"
+    },
+    {
+      "product": "ATF",
+      "weight_mt": "1",
+      "volume_kl": "1.172",
+      "barrel_bbl": "7.37"
+    },
+    {
+      "product": "LDO",
+      "weight_mt": "1",
+      "volume_kl": "1.0424",
+      "barrel_bbl": "6.74"
+    },
+    {
+      "product": "Crude_Oil",
+      "weight_mt": "1",
+      "volume_kl": "1.17",
+      "barrel_bbl": "7.33"
+    }
+  ],
+  "table27b_general_conversions": [
+    {
+      "from_unit": "1 US Barrel (bbl)",
+      "to_unit": "litres",
+      "factor": "159"
+    },
+    {
+      "from_unit": "1 US Barrel (bbl)",
+      "to_unit": "US Gallons",
+      "factor": "42"
+    },
+    {
+      "from_unit": "1 Kilocalorie (kcal)",
+      "to_unit": "kJ",
+      "factor": "4.187"
+    },
+    {
+      "from_unit": "1 US Gallon",
+      "to_unit": "litres",
+      "factor": "3.78"
+    },
+    {
+      "from_unit": "1 Kilo litre (KL)",
+      "to_unit": "bbl",
+      "factor": "6.29"
+    },
+    {
+      "from_unit": "1 Million barrels per day",
+      "to_unit": "MMTPA",
+      "factor": "49.8"
+    },
+    {
+      "from_unit": "1 Kilocalorie (kcal)",
+      "to_unit": "Btu",
+      "factor": "3.968"
+    },
+    {
+      "from_unit": "1 Kilowatt-hour (kWh)",
+      "to_unit": "kcal",
+      "factor": "860"
+    },
+    {
+      "from_unit": "1 Standard Cubic Metre (SCM)",
+      "to_unit": "Cubic Feet",
+      "factor": "35.31"
+    },
+    {
+      "from_unit": "1 MMBTU",
+      "to_unit": "SCM (@10000 kcal/SCM)",
+      "factor": "25.2"
+    },
+    {
+      "from_unit": "1 Billion Cubic Metres (BCM)/year of Gas",
+      "to_unit": "MMSCMD",
+      "factor": "2.74"
+    },
+    {
+      "from_unit": "1 Trillion Cubic Feet (TCF) of Gas Reserve",
+      "to_unit": "MMSCMD",
+      "factor": "3.88"
+    },
+    {
+      "from_unit": "1 Million Metric Tonne Per Annum (MMTPA) of LNG",
+      "to_unit": "MMSCMD",
+      "factor": "3.6"
+    },
+    {
+      "from_unit": "1 MT of LNG",
+      "to_unit": "SCM",
+      "factor": "1325"
+    },
+    {
+      "from_unit": "1 Kilowatt-hour (kWh)",
+      "to_unit": "Btu",
+      "factor": "3412"
+    },
+    {
+      "from_unit": "Power generation from 1 MMSCMD of gas",
+      "to_unit": "MW",
+      "factor": "220"
+    },
+    {
+      "from_unit": "Gas required for 1 MW power generation",
+      "to_unit": "SCM/day",
+      "factor": "4541"
+    },
+    {
+      "from_unit": "200 Nautical Miles",
+      "to_unit": "Kilometers",
+      "factor": "370.4"
+    }
+  ]
+}

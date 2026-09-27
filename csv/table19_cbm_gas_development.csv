@@ -1,0 +1,10 @@
+metric,value,unit
+prognosticated_cbm_resources,91.8,TCF
+established_cbm_resources,12.1,TCF
+cbm_resources_33_blocks,62.4,TCF
+total_coal_bearing_area_mopng_dgh,21177,sq_km
+area_awarded,14536,sq_km
+blocks_awarded,40,nos (one block awarded twice)
+exploration_initiated_area,11578,sq_km
+production_cbm_aug_2026,73.56,MMSCM
+production_cbm_apr_aug_2026,347.22,MMSCM

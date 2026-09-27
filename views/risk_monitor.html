@@ -1,0 +1,489 @@
+<div class="flex flex-col w-full pb-16">
+  <!-- Subtle ambient glow -->
+  <div class="relative w-full overflow-hidden">
+    <!-- Header & Live Telemetry Context -->
+    <section class="relative z-10 pt-2 pb-6 px-1 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 mb-1.5">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Subsurface Risk Intelligence • DGH NDR Real-Time Node</span>
+        </div>
+        <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Proactive Drilling Risk Monitor</h1>
+        <div class="flex flex-wrap items-center gap-y-1 gap-x-3 mt-1.5 text-secondary font-body-sm text-xs font-mono">
+          <span>Active Target: <strong id="rm-active-name" class="text-primary font-semibold">Nahorkatiya NHK-01</strong></span>
+          <span class="text-outline-variant">•</span>
+          <span>Depth: <strong id="rm-active-depth" class="text-primary font-semibold">2,810 m MD</strong></span>
+          <span class="text-outline-variant">•</span>
+          <span>Formation: <strong id="rm-active-formation" class="text-primary font-semibold">Tipam / Barail Sandstone Pay</strong></span>
+          <span class="text-outline-variant">•</span>
+          <span id="rm-active-status" class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-primary-container text-surface font-label-sm text-[10px] font-semibold tracking-wider uppercase">
+            DRILLING AHEAD
+          </span>
+        </div>
+      </div>
+      <!-- Action toolbar -->
+      <div class="flex items-center gap-2">
+        <select id="rm-well-switcher" onchange="switchRMWell(this.value)" class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-sans text-xs sm:text-sm font-bold border border-outline-variant/40 focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer shadow-xs">
+          <option value="WELL-NHK-01" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Nahorkatiya NHK-01 (Assam OIL)</option>
+          <option value="WELL-MH-H1-1" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Mumbai High H-1-1 (ONGC)</option>
+          <option value="WELL-DGB-01" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Digboi Well No. 1 (Asia's First, 1889)</option>
+          <option value="WELL-MGL-01" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Mangala-1 (Barmer Basin)</option>
+          <option value="WELL-ANK-01" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Ankleshwar-1 'Vasudhara' (Cambay ONGC)</option>
+          <option value="WELL-KGD6-D1" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">KG-DWN-98/3 Dhirubhai-1</option>
+          <option value="WELL-VOLVE-F12" class="text-xs sm:text-sm font-medium text-primary bg-surface-container-lowest py-1">Volve 15/9-F-12 (Benchmark)</option>
+        </select>
+        <button onclick="location.hash='scenario-lab'" class="px-3.5 py-1.5 rounded-lg bg-primary-container hover:bg-secondary text-surface font-label-md text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-[16px]">science</span>
+          <span>Test in Scenario Lab</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Grid: Section 1 & Section 2 -->
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-5 mb-5">
+      <!-- SECTION 1: CURRENT RISK STATE MATRIX (4 Cols) -->
+      <div class="lg:col-span-4 rounded-xl p-5 bg-surface-container-low/85 backdrop-blur-xl shadow-sm flex flex-col justify-between border border-surface-container-high/60">
+        <div>
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-surface-container-highest/60">
+            <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Risk Assessment State</span>
+            <span id="rm-risk-badge" class="px-2 py-0.5 rounded bg-error-container text-error font-label-sm text-[10px] font-bold tracking-wider uppercase">
+              HIGH VULNERABILITY
+            </span>
+          </div>
+          <h2 id="rm-risk-title" class="font-headline-sm text-lg font-bold text-primary mb-2">Imminent Fracture Loss Horizon</h2>
+          <p id="rm-risk-desc" class="text-xs text-secondary leading-relaxed mb-4">
+            Borehole is penetrating lower Tipam transition at 2,810 m. Historical offset correlation indicates natural micro-fracture thief zones intersecting the Burhi Dihing fault splays within next 52 meters.
+          </p>
+
+          <!-- Core Metrology Blocks -->
+          <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+            <div class="p-3 rounded-lg bg-surface-container">
+              <span class="text-[10px] text-secondary uppercase block mb-0.5">CURRENT DEPTH</span>
+              <span id="rm-depth-val" class="font-bold text-primary text-base">2,810 m</span>
+              <span id="rm-depth-sub" class="text-[10px] text-secondary block mt-0.5">MWD-Gamma Active</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface-container">
+              <span class="text-[10px] text-secondary uppercase block mb-0.5">HAZARD WINDOW</span>
+              <span id="rm-hazard-window-val" class="font-bold text-primary text-base">2,810 – 2,880 m</span>
+              <span id="rm-hazard-window-sub" class="text-[10px] text-error font-semibold block mt-0.5">Δ 70 m Loss Zone</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface-container">
+              <span class="text-[10px] text-secondary uppercase block mb-0.5">ECD SAFETY MARGIN</span>
+              <span id="rm-ecd-margin-val" class="font-bold text-emerald-700 text-base">0.04 SG</span>
+              <span id="rm-ecd-margin-sub" class="text-[10px] text-secondary block mt-0.5">1.34 vs 1.38 Frac</span>
+            </div>
+            <div class="p-3 rounded-lg bg-surface-container">
+              <span class="text-[10px] text-secondary uppercase block mb-0.5">LCM READINESS</span>
+              <span id="rm-lcm-readiness-val" class="font-bold text-primary text-base">60 bbl Staged</span>
+              <span id="rm-lcm-readiness-sub" class="text-[10px] text-secondary block mt-0.5">Nut plug + CaCO3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-surface-container-highest/60 flex items-center justify-between text-xs text-secondary font-mono">
+          <span id="rm-stress-footer">Tectonic Compressive Stress: High</span>
+          <span class="text-emerald-700 font-bold">100% Calibrated</span>
+        </div>
+      </div>
+
+      <!-- SECTION 2: PRIMARY ALERT CARD (8 Cols Visual Focal Point) -->
+      <div class="lg:col-span-8 rounded-xl p-6 bg-surface-container-low/90 backdrop-blur-xl shadow-md border border-surface-container-high/60 flex flex-col justify-between">
+        <div>
+          <!-- Upper Alert Ribbon -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-surface-container-highest/70">
+            <div class="flex items-center gap-2">
+              <span id="rm-alert-dot" class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+              <span id="rm-alert-ribbon" class="font-label-sm text-xs font-bold uppercase tracking-widest text-error">Precedent Alert: Severe Fluid Circulation Loss</span>
+            </div>
+            <span id="rm-alert-priority" class="px-2.5 py-0.5 rounded bg-surface-container text-primary font-mono text-[10px] font-bold">
+              PRIORITY 1 SUBSURFACE HAZARD
+            </span>
+          </div>
+
+          <!-- Main Vulnerability Narrative -->
+          <div class="mb-4">
+            <h3 id="rm-alert-title" class="font-headline-sm text-xl font-bold text-primary tracking-tight">Tipam / Barail Fault Fracture Thief Zone Imminent</h3>
+            <p id="rm-alert-desc" class="text-xs text-secondary leading-relaxed mt-1">
+              Historical DDR #42 of Nahorkatiya-1 documented a sudden drop in standpipe pressure of 460 psi and 420 bbl total mud loss at 2,862 m MD. Simultaneous offset records in Mumbai High (962m break) and Volve (3,315m loss) confirm that crossing tectonic fault boundaries creates severe lost-circulation pathways.
+            </p>
+          </div>
+
+          <!-- Correlated Offset Records Sub-cards -->
+          <div id="rm-offset-grid" class="grid grid-cols-1 md:grid-cols-3 gap-3 my-3">
+            <!-- Dynamically populated per well -->
+          </div>
+        </div>
+
+        <!-- Real-Time Telemetry Curve Strip -->
+        <div class="mt-4 pt-3 border-t border-surface-container-highest/70 flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-secondary uppercase">Hydraulic Safety Threshold</span>
+            <span id="rm-standpipe-text" class="text-emerald-700 font-bold">Current Standpipe: 2,850 psi (Normal)</span>
+          </div>
+          <div class="w-full h-2 rounded-full bg-secondary-container/50 relative overflow-hidden">
+            <div id="rm-standpipe-bar" class="h-full bg-emerald-500 rounded-full transition-all duration-700" style="width: 72%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: PROACTIVE ENGINEERING MITIGATION PROTOCOL -->
+    <div class="w-full rounded-xl p-5 bg-surface-container-low/80 backdrop-blur-xl border border-surface-container-high/60 shadow-sm flex flex-col gap-4">
+      <div class="flex items-center justify-between pb-2 border-b border-surface-container-high">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-wider text-secondary">OPERATIONAL MITIGATION PROTOCOL</span>
+          <h4 id="rm-protocol-title" class="font-headline-sm text-base font-bold text-primary">Pre-Drill Actions Before Penetrating 2,840 m</h4>
+        </div>
+        <button onclick="location.hash='reports'" class="text-xs text-primary font-semibold hover:underline flex items-center gap-1 cursor-pointer">
+          <span>Export to Formal Regulatory Dossier</span>
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </button>
+      </div>
+
+      <div id="rm-protocol-grid" class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+        <!-- Dynamically populated per well -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const RM_WELL_DATA = {
+    'WELL-NHK-01': {
+      depth_text: '2,810 m MD',
+      formation: 'Tipam / Barail Sandstone Pay',
+      status: 'DRILLING AHEAD',
+      badge: 'HIGH VULNERABILITY',
+      risk_title: 'Imminent Fracture Loss Horizon',
+      risk_desc: 'Borehole is penetrating lower Tipam transition at 2,810 m. Historical offset correlation indicates natural micro-fracture thief zones intersecting the Burhi Dihing fault splays within next 52 meters.',
+      depth_val: '2,810 m', depth_sub: 'MWD-Gamma Active',
+      hazard_val: '2,810 – 2,880 m', hazard_sub: 'Δ 70 m Loss Zone',
+      ecd_val: '0.04 SG', ecd_sub: '1.34 vs 1.38 Frac',
+      lcm_val: '60 bbl Staged', lcm_sub: 'Nut plug + CaCO3',
+      stress: 'Tectonic Compressive Stress: High (Naga Thrust)',
+      alert_ribbon: 'Precedent Alert: Severe Fluid Circulation Loss',
+      alert_priority: 'PRIORITY 1 SUBSURFACE HAZARD',
+      alert_title: 'Tipam / Barail Fault Fracture Thief Zone Imminent',
+      alert_desc: 'Historical DDR #42 of Nahorkatiya-1 documented a sudden drop in standpipe pressure of 460 psi and 420 bbl total mud loss at 2,862 m MD. Simultaneous offset records in Mumbai High (962m break) and Volve (3,315m loss) confirm that crossing tectonic fault boundaries creates severe lost-circulation pathways.',
+      offsets: [
+        { name: 'Nahorkatiya-1', stat: '420 bbl LOST', stat_color: 'text-error', desc: '2,862 m MD • Natural fracture network. Standpipe dropped 460 psi.', cured: 'Cured: 60 bbl LCM pill' },
+        { name: 'Mumbai High H-1-1', stat: '520 bbl LOST', stat_color: 'text-error', desc: '962 m MD • Cavernous karstic limestone breakthrough + gas kick.', cured: 'Cured: Annular + Kill Mud' },
+        { name: 'Mangala-1', stat: 'STICKING RISK', stat_color: 'text-amber-700', desc: '680 m MD • Differential sticking in 5-Darcy Fatehgarh sandstone.', cured: 'Cured: Surfactant Soak' }
+      ],
+      standpipe_text: 'Current Standpipe: 2,850 psi (Normal)',
+      standpipe_pct: '72%',
+      protocol_title: 'Pre-Drill Actions Before Penetrating 2,840 m (Barail Member)',
+      protocols: [
+        { title: '1. Flow Rate Throttling', text: 'Reduce pump delivery from 2,800 LPM to 2,200 LPM to trim annular friction and suppress ECD below 1.35 SG.' },
+        { title: '2. LCM Pre-Staging', text: 'Stage 60 bbl high-viscosity pill with coarse calcium carbonate (50 ppb) and cellulose fiber in auxiliary slug pit.' },
+        { title: '3. Bit RPM Moderation', text: 'Cap rotary speed at 100 RPM when ROP exceeds 20 m/hr to prevent sudden torsional bit stall upon crossing faults.' },
+        { title: '4. Pit Volume Alarms', text: 'Set active pit loss threshold to ±5 bbl with automated audio-visual siren linked to automated diverter control.' }
+      ]
+    },
+    'WELL-MH-H1-1': {
+      depth_text: '1,420 m MD',
+      formation: 'L-III Carbonate Limestone Reservoir (Early Miocene)',
+      status: 'OFFSHORE DRILLING',
+      badge: 'CRITICAL KARST RISK',
+      risk_title: 'Cavernous Vuggy Karst & Gas Kick Zone',
+      risk_desc: 'Offshore drillstring is approaching the Miocene L-III carbonate buildup at 962–1,420 m. Seismic inversion identifies extensive subsea paleokarst dissolution voids draped over Deccan basalt basement with high risk of sudden mud drop and gas cut.',
+      depth_val: '1,420 m', depth_sub: 'Sagar Samrat Jackup',
+      hazard_val: '960 – 1,150 m', hazard_sub: 'Δ 190 m Karst Horizon',
+      ecd_val: '0.06 SG', ecd_sub: '1.22 vs 1.28 Frac',
+      lcm_val: '80 bbl Staged', lcm_sub: 'Walnut shell + Carbonate',
+      stress: 'Marine Swell Heave: High (Arabian Sea Currents)',
+      alert_ribbon: 'Precedent Alert: Karst Cavity Breakthrough & Gas Cut',
+      alert_priority: 'PRIORITY 1 OFFSHORE INFLUX HAZARD',
+      alert_title: 'L-III Limestone Dissolution Void Breakthrough Alert',
+      alert_desc: 'Historical DDR of Mumbai High H-1-1 recorded a sudden drilling break at 962 m with ROP surging from 4 to 28 m/hr, followed by cavernous mud loss of 520 bbl into karst voids and background gas spiking from 0.8% to 22%. Remediated via annular shut-in and batch-pumping LCM kill pill.',
+      offsets: [
+        { name: 'Mumbai High H-1-1', stat: '520 bbl LOST', stat_color: 'text-error', desc: '962 m MD • Cavernous karstic limestone breakthrough + 22% gas cut.', cured: 'Cured: Annular + Kill Mud' },
+        { name: 'Nahorkatiya-1', stat: '420 bbl LOST', stat_color: 'text-error', desc: '2,862 m MD • Fault fracture thief zone with 460 psi standpipe drop.', cured: 'Cured: 60 bbl LCM pill' },
+        { name: 'Volve 15/9-F-12', stat: '220 bbl LOST', stat_color: 'text-error', desc: '3,315 m MD • Micro-fracture loss in Hugin sandstone reservoir.', cured: 'Cured: CaCO3 Pill' }
+      ],
+      standpipe_text: 'Current Standpipe: 2,240 psi (Normal)',
+      standpipe_pct: '60%',
+      protocol_title: 'Pre-Drill Actions Before Entering L-III Limestone (960 m)',
+      protocols: [
+        { title: '1. LSND Brine Conversion', text: 'Convert mud system to low-solids non-dispersed brine to prevent carbonate matrix contamination and bit balling.' },
+        { title: '2. Heavy Kill Pill Standby', text: 'Prepare 120 bbl 1.25 SG weighted barite-brine kill pill in reserve mud pit for immediate well control.' },
+        { title: '3. Annular BOP Finger-Trigger', text: 'Conduct daily function test of subsea Hydril annular preventer and confirm choke manifold alignment.' },
+        { title: '4. Mud Gas Degasser', text: 'Engage vacuum degasser and align continuous hydrocarbon chromatograph C1-C5 gas monitoring.' }
+      ]
+    },
+    'WELL-DGB-01': {
+      depth_text: '202 m MD',
+      formation: 'Digboi Tipam Sandstone Series (Miocene)',
+      status: 'HERITAGE BENCHMARK',
+      badge: 'SHALLOW GAS SEEPAGE',
+      risk_title: 'Shallow Hydrocarbon Seepage & Hole Caving',
+      risk_desc: 'Walking-beam cable tool percussion approaching 54 m into upper Tipam sandstone. Highly weathered alluvial gravels and steep anticlinal dip angles (>50°) create severe bit deflection, water ingress, and surface methane pockets.',
+      depth_val: '202 m', depth_sub: 'Steam Percussion Rig',
+      hazard_val: '45 – 90 m', hazard_sub: 'Δ 45 m Seepage Horizon',
+      ecd_val: '0.07 SG', ecd_sub: '1.08 vs 1.15 Frac',
+      lcm_val: 'Clay Pack Staged', lcm_sub: 'Cast-Iron Screw Liner',
+      stress: 'Naga Thrust Fold Angle: 55° Dip Deflection',
+      alert_ribbon: 'Precedent Alert: Steep Dip Dogleg Deflection',
+      alert_priority: 'PRIORITY 1 HERITAGE BOREHOLE INTEGRITY',
+      alert_title: 'Steep Dip Dogleg Deflection & Shallow Gas Influx',
+      alert_desc: 'Digboi discovery logs from 1889 by engineer W.L. Lake record severe borehole deviation due to 55° dipping folded strata and pungent hydrocarbon gas venting from shallow fissures that caused steam boiler asphyxiation risks.',
+      offsets: [
+        { name: 'Digboi-1 (1889)', stat: 'GAS SEEPAGE', stat_color: 'text-amber-700', desc: '54 m MD • Shallow gas venting and water influx in Tipam sandstone.', cured: 'Cured: Screw-joint casing' },
+        { name: 'Nahorkatiya-1', stat: '420 bbl LOST', stat_color: 'text-error', desc: '2,862 m MD • Fault-associated mud loss into Barail sand.', cured: 'Cured: Fibrous LCM' },
+        { name: 'Ankleshwar-1', stat: 'CAVING RISK', stat_color: 'text-amber-700', desc: '640 m MD • Tarapur shale spalling and borehole washouts.', cured: 'Cured: Chrome Lignite' }
+      ],
+      standpipe_text: 'Walking-Beam Stroke: 45 SPM (Nominal)',
+      standpipe_pct: '45%',
+      protocol_title: 'Heritage Drilling Protocols for Exposed Anticlinal Strata',
+      protocols: [
+        { title: '1. Cast-Iron Liner Seating', text: 'Drive heavy cast-iron casing shoe firmly into competent claystone to seal surface aquifer gravels.' },
+        { title: '2. Boiler Flue Separation', text: 'Position steam engine boiler 30 m upwind of wooden derrick to eliminate flammable gas ignition sources.' },
+        { title: '3. Frequent Bailing Cycles', text: 'Bail rock pulverized cuttings every 4 feet of percussion stroke to prevent chisel bit jamming.' },
+        { title: '4. Timber Bracing Re-alignment', text: 'Reinforce wooden derrick guy-wires after monsoon storms to maintain vertical hole plumb line.' }
+      ]
+    },
+    'WELL-MGL-01': {
+      depth_text: '1,180 m MD',
+      formation: 'Fatehgarh Formation Sandstone (Paleocene)',
+      status: 'DESERT DRILLING',
+      badge: 'HIGH STICKING RISK',
+      risk_title: 'High-Permeability Differential Sticking Horizon',
+      risk_desc: 'Entering exceptional multi-Darcy Fatehgarh fluvial sandstone (up to 5,000 mD permeability) at 680 m. High overbalance pressure creates rapid mud filtrate invasion, thick filter cake, and severe pipe sticking hazard during wiper trips.',
+      depth_val: '1,180 m', depth_sub: 'National 110-UE Desert',
+      hazard_val: '610 – 850 m', hazard_sub: 'Δ 240 m High-Perm Sand',
+      ecd_val: '0.07 SG', ecd_sub: '1.18 vs 1.25 Frac',
+      lcm_val: '40 bbl Surfactant', lcm_sub: 'KCl Polymer Low-Solids',
+      stress: 'Desert Ambient Heat: 48°C (High Wax Solidification)',
+      alert_ribbon: 'Precedent Alert: Differential Sticking & Thick Cake',
+      alert_priority: 'PRIORITY 1 STICKING & CAKE BUILDUP',
+      alert_title: 'Fatehgarh 5-Darcy Sandstone Differential Sticking Alert',
+      alert_desc: 'Drilling DDRs from Mangala-1 noted that whenever drillstring rotation ceased in the porous Fatehgarh sandstone, thick filter cake created intense differential pressure sticking (>80,000 lbs pull over string weight). Successfully freed by spotting high-viscosity surfactant soaking pill.',
+      offsets: [
+        { name: 'Mangala-1', stat: 'STICKING RISK', stat_color: 'text-error', desc: '680 m MD • 80k lbs overpull in 5-Darcy Fatehgarh sand.', cured: 'Cured: Surfactant Soak' },
+        { name: 'Ankleshwar-1', stat: 'STICKING RISK', stat_color: 'text-amber-700', desc: '890 m MD • Multi-layer deltaic sandstone sticking.', cured: 'Cured: Starch mud' },
+        { name: 'Volve 15/9-F-12', stat: '220 bbl LOST', stat_color: 'text-error', desc: '3,315 m MD • Micro-fracture mud loss in Hugin sandstone.', cured: 'Cured: CaCO3 Pill' }
+      ],
+      standpipe_text: 'Current Standpipe: 1,950 psi (Normal)',
+      standpipe_pct: '55%',
+      protocol_title: 'Pre-Drill Actions in High-Permeability Fatehgarh Formation',
+      protocols: [
+        { title: '1. KCl Polymer Filter Cake Control', text: 'Maintain high-grade PAC polymer additives to ensure API fluid loss remains strictly below 4.0 cc/30min.' },
+        { title: '2. Pipe Rotation Mandate', text: 'Prohibit stationary drillstring on bottom for >3 minutes; maintain continuous string oscillation during connections.' },
+        { title: '3. Pre-Mixed Surfactant Slug', text: 'Keep 40 bbl lubricating surfactant spotting fluid pre-mixed in auxiliary tank for instant release.' },
+        { title: '4. Waxy Pour-Point Heating', text: 'Maintain drillpipe temperature and circulate heated mud to prevent 32°C waxy crude coagulation.' }
+      ]
+    },
+    'WELL-ANK-01': {
+      depth_text: '1,200 m MD',
+      formation: 'Ankleshwar Sandstone Formation (Middle Eocene)',
+      status: 'ONSHORE PRODUCING',
+      badge: 'SHALE SWELLING HAZARD',
+      risk_title: 'Tarapur Reactive Shale Swelling & Squeeze Zone',
+      risk_desc: 'Drilling through the smectite-rich marine Tarapur Shale overlying the Ankleshwar sandstone reservoir. High chemical water sensitivity causes swelling, tight hole, bit balling, and hole sloughing.',
+      depth_val: '1,200 m', depth_sub: 'Uralmash-3D Saphala',
+      hazard_val: '640 – 950 m', hazard_sub: 'Δ 310 m Reactive Shale',
+      ecd_val: '0.06 SG', ecd_sub: '1.24 vs 1.30 Frac',
+      lcm_val: '50 bbl Chrome Lignite', lcm_sub: 'Starch + Bentonite',
+      stress: 'Narmada Fault Cross-Fault Strike-Slip: Moderate',
+      alert_ribbon: 'Precedent Alert: Reactive Shale Swelling & Sloughing',
+      alert_priority: 'PRIORITY 1 BOREHOLE STABILITY',
+      alert_title: 'Tarapur Reactive Marine Shale Swelling & Sloughing',
+      alert_desc: 'ONGC drilling logs from Ankleshwar-1 recorded recurring tight hole on connections and high reaming torque in Tarapur shale due to water hydration and swelling. Stabilized by treating mud system with bentonite, starch, and chrome lignite inhibitors.',
+      offsets: [
+        { name: 'Ankleshwar-1', stat: 'CAVING RISK', stat_color: 'text-error', desc: '640 m MD • Tarapur shale hydration and tight hole on trips.', cured: 'Cured: Chrome Lignite' },
+        { name: 'Nahorkatiya-1', stat: '420 bbl LOST', stat_color: 'text-error', desc: '2,862 m MD • Natural fracture loss zone.', cured: 'Cured: Fibrous LCM' },
+        { name: 'Mangala-1', stat: 'STICKING RISK', stat_color: 'text-amber-700', desc: '680 m MD • Differential sticking in Fatehgarh sand.', cured: 'Cured: Surfactant Soak' }
+      ],
+      standpipe_text: 'Current Standpipe: 1,820 psi (Normal)',
+      standpipe_pct: '60%',
+      protocol_title: 'Operational Protocols for Tarapur Shale Stability',
+      protocols: [
+        { title: '1. Chrome Lignite Inhibition', text: 'Maintain 3.5% chrome lignite and starch concentration to suppress clay hydration and swelling.' },
+        { title: '2. Controlled Trip Speeds', text: 'Limit tripping out speeds to 15 m/min to prevent mechanical surge/swab pressure fluctuations.' },
+        { title: '3. Back-Reaming Protocol', text: 'Perform wiper back-reaming every 100 m drilled to verify 8-3/4 inch hole gauge integrity.' },
+        { title: '4. Gas Cap Weighting', text: 'Maintain mud weight at 1.25 SG to contain associated gas cap pressure without fracturing sand.' }
+      ]
+    },
+    'WELL-KGD6-D1': {
+      depth_text: '2,940 m MD',
+      formation: 'Pliocene Channel-Levee Complex (D1/D3)',
+      status: 'DEEPWATER SUBSEA',
+      badge: 'DEEPWATER NARROW ECD',
+      risk_title: 'Subsea Gas Hydrate & Narrow Pore-Frac Window',
+      risk_desc: 'Operating in 1,024 m water depth. Cold seabed temperatures (4°C) create severe methane hydrate crystallization hazards in choke/kill lines, combined with an ultra-narrow pore-fracture pressure margin (<0.04 SG) in bathyal silts.',
+      depth_val: '2,940 m', depth_sub: 'DP-2 Drillship MWD/LWD',
+      hazard_val: '2,400 – 3,100 m', hazard_sub: 'Δ 700 m Turbidite Gas Fan',
+      ecd_val: '0.04 SG', ecd_sub: '1.42 vs 1.46 Frac',
+      lcm_val: '100 bbl SOBM Kill Pill', lcm_sub: 'Glycol + Synthetic Oil',
+      stress: 'Bay of Bengal 4-Knot Currents & Loop Eddies',
+      alert_ribbon: 'Precedent Alert: Narrow Deepwater ECD Margin',
+      alert_priority: 'PRIORITY 1 CRITICAL SUBSEA HAZARD',
+      alert_title: 'Narrow Deepwater Window & High Gas Flow Potential',
+      alert_desc: 'Deepwater Frontier drilling records in KG-D6 documented sudden 280 bbl synthetic mud loss into turbiditic micro-fractures when circulating flow rates surged above 2,600 LPM, accompanied by immediate risk of seafloor shallow water flow (SWF) breaching.',
+      offsets: [
+        { name: 'KG-D6 Dhirubhai-1', stat: '280 bbl LOST', stat_color: 'text-error', desc: '2,940 m MD • Narrow ECD window (<0.04 SG) in bathyal gas fan.', cured: 'Cured: SOBM Pill' },
+        { name: 'Mumbai High H-1-1', stat: '520 bbl LOST', stat_color: 'text-error', desc: '962 m MD • Offshore karstic limestone breakthrough.', cured: 'Cured: Annular + Kill Mud' },
+        { name: 'Volve 15/9-F-12', stat: '220 bbl LOST', stat_color: 'text-error', desc: '3,315 m MD • High-angle deviated wellbore fracture loss.', cured: 'Cured: CaCO3 Pill' }
+      ],
+      standpipe_text: 'Current Standpipe: 3,400 psi (Normal)',
+      standpipe_pct: '82%',
+      protocol_title: 'Deepwater Managed Pressure & Hydrate Protocols',
+      protocols: [
+        { title: '1. Glycol Hydrate Suppression', text: 'Continuously inject monoethylene glycol (MEG) into subsea choke/kill lines to prevent gas hydrate plugging.' },
+        { title: '2. Managed Pressure Drilling (MPD)', text: 'Utilize automated backpressure chokes to maintain bottomhole pressure within ±0.02 SG envelope.' },
+        { title: '3. Dual-Gradient Sweeps', text: 'Circulate low-density sweeps through marine riser to prevent riser collapse and reduce annular friction.' },
+        { title: '4. Acoustic Subsea BOP Watch', text: 'Maintain continuous acoustic and multiplex umbilical telemetry to dual annular preventers.' }
+      ]
+    },
+    'WELL-VOLVE-F12': {
+      depth_text: '3,480 m MD',
+      formation: 'Hugin Formation Sandstone (Middle Jurassic)',
+      status: 'BENCHMARK DEV',
+      badge: 'HIGH-ANGLE RSS RISK',
+      risk_title: 'Deviated Wellbore Drag & Chalk Micro-Fracture Loss',
+      risk_desc: 'High-angle deviated wellbore (up to 62° inclination) penetrating overpressured Shetland Group chalk into Hugin sandstone reservoir. Radial salt tectonics faulting creates localized stress rotations and dynamic fracture losses.',
+      depth_val: '3,480 m', depth_sub: 'RSS Steerable Telemetry',
+      hazard_val: '3,180 – 3,804 m', hazard_sub: 'Δ 624 m Deviated Reservoir',
+      ecd_val: '0.06 SG', ecd_sub: '1.44 vs 1.50 Frac',
+      lcm_val: '75 bbl Carbo-Sea SOBM', lcm_sub: 'Coarse CaCO3 15 m3',
+      stress: 'Salt Diapir Flank Fault Rotation: High',
+      alert_ribbon: 'Precedent Alert: Deviated Micro-Fracture Loss',
+      alert_priority: 'PRIORITY 1 BENCHMARK ML REFERENCE',
+      alert_title: 'Deviated Wellbore Micro-Fracture Mud Loss Alert',
+      alert_desc: 'Equinor Volve DDR #42 documents dynamic lost circulation of 35 m3 (220 bbl) of Carbo-Sea synthetic mud upon entering high-angle natural fractures in Hugin sandstones. Cured by batch pumping 15 m3 coarse calcium carbonate LCM pill under managed rotary steering.',
+      offsets: [
+        { name: 'Volve 15/9-F-12', stat: '220 bbl LOST', stat_color: 'text-error', desc: '3,315 m MD • Micro-fracture loss in Hugin sandstone.', cured: 'Cured: CaCO3 Pill' },
+        { name: 'Nahorkatiya-1', stat: '420 bbl LOST', stat_color: 'text-error', desc: '2,862 m MD • Natural fracture network in Barail pay.', cured: 'Cured: Fibrous LCM' },
+        { name: 'KG-D6 Dhirubhai-1', stat: '280 bbl LOST', stat_color: 'text-error', desc: '2,940 m MD • Narrow deepwater margin gas kick.', cured: 'Cured: Glycol SOBM' }
+      ],
+      standpipe_text: 'Current Standpipe: 3,150 psi (Normal)',
+      standpipe_pct: '75%',
+      protocol_title: 'Managed Steering & Fracture Remediation Protocols',
+      protocols: [
+        { title: '1. Rotary Steerable Optimization', text: 'Maintain continuous MWD gamma and resistivity telemetry to steer along sweet-spot sandstone channel axis.' },
+        { title: '2. Carbo-Sea SOBM Conditioning', text: 'Keep synthetic oil-to-water ratio at 85/15 and mud weight at 1.44 SG to stabilize reactive chalk.' },
+        { title: '3. Torque & Drag Modeling', text: 'Perform continuous real-time comparison of measured surface torque against soft-string drag model.' },
+        { title: '4. Machine Learning Loss Detector', text: 'Run automated threshold ML pipeline on active pit volume and flow-out paddle sensors.' }
+      ]
+    }
+  };
+
+  window.switchRMWell = function(wellId) {
+    if (window.NWISDataStore) {
+      window.NWISDataStore.setActiveWell(wellId);
+    }
+    renderRMWell(wellId);
+  };
+
+  function renderRMWell(wellId) {
+    const data = RM_WELL_DATA[wellId] || RM_WELL_DATA['WELL-NHK-01'];
+    let well = null;
+    if (window.NWISDataStore) {
+      well = window.NWISDataStore.getWellById(wellId);
+    }
+
+    // Top context
+    const nameEl = document.getElementById('rm-active-name');
+    const depthEl = document.getElementById('rm-active-depth');
+    const formationEl = document.getElementById('rm-active-formation');
+    const statusEl = document.getElementById('rm-active-status');
+    const sw = document.getElementById('rm-well-switcher');
+
+    if (nameEl) nameEl.textContent = well ? well.name : wellId;
+    if (depthEl) depthEl.textContent = data.depth_text;
+    if (formationEl) formationEl.textContent = data.formation;
+    if (statusEl) statusEl.textContent = data.status;
+    if (sw) sw.value = wellId;
+
+    // Section 1: Risk Assessment State
+    const riskBadge = document.getElementById('rm-risk-badge');
+    const riskTitle = document.getElementById('rm-risk-title');
+    const riskDesc = document.getElementById('rm-risk-desc');
+    const depthVal = document.getElementById('rm-depth-val');
+    const depthSub = document.getElementById('rm-depth-sub');
+    const hazardVal = document.getElementById('rm-hazard-window-val');
+    const hazardSub = document.getElementById('rm-hazard-window-sub');
+    const ecdVal = document.getElementById('rm-ecd-margin-val');
+    const ecdSub = document.getElementById('rm-ecd-margin-sub');
+    const lcmVal = document.getElementById('rm-lcm-readiness-val');
+    const lcmSub = document.getElementById('rm-lcm-readiness-sub');
+    const stressFooter = document.getElementById('rm-stress-footer');
+
+    if (riskBadge) riskBadge.textContent = data.badge;
+    if (riskTitle) riskTitle.textContent = data.risk_title;
+    if (riskDesc) riskDesc.textContent = data.risk_desc;
+    if (depthVal) depthVal.textContent = data.depth_val;
+    if (depthSub) depthSub.textContent = data.depth_sub;
+    if (hazardVal) hazardVal.textContent = data.hazard_val;
+    if (hazardSub) hazardSub.textContent = data.hazard_sub;
+    if (ecdVal) ecdVal.textContent = data.ecd_val;
+    if (ecdSub) ecdSub.textContent = data.ecd_sub;
+    if (lcmVal) lcmVal.textContent = data.lcm_val;
+    if (lcmSub) lcmSub.textContent = data.lcm_sub;
+    if (stressFooter) stressFooter.textContent = data.stress;
+
+    // Section 2: Primary Alert Card
+    const alertRibbon = document.getElementById('rm-alert-ribbon');
+    const alertPriority = document.getElementById('rm-alert-priority');
+    const alertTitle = document.getElementById('rm-alert-title');
+    const alertDesc = document.getElementById('rm-alert-desc');
+    const offsetGrid = document.getElementById('rm-offset-grid');
+    const standpipeText = document.getElementById('rm-standpipe-text');
+    const standpipeBar = document.getElementById('rm-standpipe-bar');
+
+    if (alertRibbon) alertRibbon.textContent = data.alert_ribbon;
+    if (alertPriority) alertPriority.textContent = data.alert_priority;
+    if (alertTitle) alertTitle.textContent = data.alert_title;
+    if (alertDesc) alertDesc.textContent = data.alert_desc;
+    if (standpipeText) standpipeText.textContent = data.standpipe_text;
+    if (standpipeBar) standpipeBar.style.width = data.standpipe_pct;
+
+    if (offsetGrid && data.offsets) {
+      offsetGrid.innerHTML = data.offsets.map(off => `
+        <div class="p-3 rounded-lg bg-surface-container border border-surface-container-high flex flex-col justify-between text-xs">
+          <div>
+            <div class="flex justify-between items-center mb-1">
+              <span class="font-bold text-primary font-mono">${off.name}</span>
+              <span class="text-[10px] ${off.stat_color} font-bold font-mono">${off.stat}</span>
+            </div>
+            <p class="text-[11px] text-secondary">${off.desc}</p>
+          </div>
+          <span class="text-[10px] font-mono text-primary font-semibold mt-2">${off.cured}</span>
+        </div>
+      `).join('');
+    }
+
+    // Section 3: Operational Mitigation Protocol
+    const protocolTitle = document.getElementById('rm-protocol-title');
+    const protocolGrid = document.getElementById('rm-protocol-grid');
+
+    if (protocolTitle) protocolTitle.textContent = data.protocol_title;
+    if (protocolGrid && data.protocols) {
+      protocolGrid.innerHTML = data.protocols.map(p => `
+        <div class="p-3 rounded-lg bg-surface-container border border-surface-container-high/60">
+          <span class="font-bold text-primary block mb-1">${p.title}</span>
+          <p class="text-secondary leading-relaxed">${p.text}</p>
+        </div>
+      `).join('');
+    }
+  }
+
+  // Global listener for active well changes
+  window.addEventListener('nwis:activeWellChanged', e => {
+    if (e.detail && e.detail.id) {
+      renderRMWell(e.detail.id);
+    }
+  });
+
+  // Initial load
+  setTimeout(() => {
+    let activeId = 'WELL-NHK-01';
+    if (window.NWISDataStore) {
+      const active = window.NWISDataStore.getActiveWell();
+      if (active) activeId = active.id;
+    }
+    renderRMWell(activeId);
+  }, 100);
+})();
+</script>

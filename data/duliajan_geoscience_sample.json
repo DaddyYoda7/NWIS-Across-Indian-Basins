@@ -1,0 +1,79 @@
+{
+  "basin": "Assam-Arakan Basin (Category I)",
+  "target_location": {
+    "name": "Duliajan Sector (Upper Assam)",
+    "latitude": 27.35,
+    "longitude": 95.32
+  },
+  "ngdr_geological_strata_identified": [
+    {
+      "id": "geology_2m_gcs_ngdr_20_5.fid-37c72474_194d994005c_1e96",
+      "supergroup": null,
+      "group": null,
+      "stratigraphy": "289,UNDIFF.FLUVIAL / AEOLIAN / COASTA & GLACIAL  SEDIMENTS,QUATERNARY",
+      "age": "QUATERNARY",
+      "shape_area": 919177468290.0,
+      "bbox": {
+        "xmin": 68.13439953,
+        "ymin": 19.05656864,
+        "xmax": 96.3860686,
+        "ymax": 33.29635341
+      }
+    },
+    {
+      "id": "geology_2m_gcs_ngdr_20_5.fid-37c72474_194d994005c_2011",
+      "supergroup": null,
+      "group": "TIPAM",
+      "stratigraphy": "312,TIPAM SANDSTONE Fm.,MIOCENE - PLIOCENE",
+      "age": "MIOCENE - PLIOCENE",
+      "shape_area": 703958418.212,
+      "bbox": {
+        "xmin": 95.11330028,
+        "ymin": 26.94537939,
+        "xmax": 96.12704368,
+        "ymax": 27.42403931
+      }
+    }
+  ],
+  "ngdr_lithology_50k_system": {
+    "num_rows": 3966842,
+    "num_columns": 30,
+    "columns": [
+      "id",
+      "gid",
+      "objectid",
+      "input_cent",
+      "toposheet_",
+      "edition_nu",
+      "geometry_i",
+      "age",
+      "supergroup",
+      "group_name",
+      "formation",
+      "member",
+      "lithologic",
+      "sub_group",
+      "new_geom_i",
+      "uid_notati",
+      "intrusive",
+      "script",
+      "notation",
+      "stratigrap",
+      "area",
+      "area1",
+      "notation12",
+      "shape_leng",
+      "shape_area",
+      "stratigraphy_new",
+      "sld_name",
+      "notation_lithology",
+      "geometry",
+      "bbox"
+    ],
+    "file_size_mb": 587.05
+  },
+  "data_providers": {
+    "GSI_NGDR": "National Geoscience Data Repository (1:2M Pan-India + 1:50k Quadrangle)",
+    "DGH_NDR": "Directorate General of Hydrocarbons National Data Repository (LAS, DLIS, WCR)"
+  }
+}

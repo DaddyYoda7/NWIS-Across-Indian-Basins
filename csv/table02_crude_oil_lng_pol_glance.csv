@@ -1,0 +1,22 @@
+metric,unit,fy2024_25,fy2025_26_p,aug_2025,aug_2026,apr_aug_2025_26,apr_aug_2026_27
+oil_oil_equiv_gas_production,MTOE,64.8,62.7,5.4,5.1,23.7,25.5
+crude_oil_production_india,MMT,28.7,28.0,2.4,2.3,11.9,11.4
+consumption_petroleum_products,MMT,239.2,241.6,19.1,18.6,100.1,96.2
+production_petroleum_products,MMT,283.8,284.9,23.5,24.3,117.7,116.1
+gross_natural_gas_production,MMSCM,36113,34776,2971,2830,11754,14075
+natural_gas_consumption,MMSCM,71314,68753,5847,5708,22869,28666
+gross_petroleum_imports_mmt,MMT,243.2,245.8,19.6,19.0,101.1,100.7
+gross_petroleum_imports_usd_bn,USD Billion,137.2,123.4,9.9,11.7,50.4,74.8
+crude_oil_imports_mmt,MMT,294.1,292.0,24.1,21.7,122.1,111.9
+crude_oil_imports_usd_bn,USD Billion,160.8,144.2,11.7,13.0,59.8,81.8
+pol_export_mmt,MMT,50.9,46.2,4.5,2.7,21.0,11.2
+pol_export_usd_bn,USD Billion,23.7,20.8,1.8,1.4,9.4,6.9
+pol_imports_mmt,MMT,65.1,61.4,5.7,4.9,25.7,21.5
+pol_imports_usd_bn,USD Billion,44.4,41.1,3.5,5.0,15.9,21.7
+lng_imports_mmscm,MMSCM,35720,34427,2912,2915,11269,14782
+lng_imports_usd_bn,USD Billion,14.9,13.4,1.2,1.2,5.6,6.8
+net_oil_gas_imports_usd_bn,USD Billion,131.3,116.4,9.3,9.3,49.6,66.8
+petroleum_imports_pct_gross_imports,%,22.3,18.6,18.8,18.4,19.5,22.5
+petroleum_exports_pct_gross_exports,%,10.2,9.3,10.1,11.3,8.7,10.1
+import_dependency_crude_oil,%,88.3,88.7,87.6,87.5,88.3,88.1
+import_dependency_oil_gas,%,80.0,80.7,79.2,79.4,81.5,80.2
