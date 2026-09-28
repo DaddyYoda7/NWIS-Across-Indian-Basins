@@ -6,13 +6,13 @@
     <!-- FREE LIVE GEOSPATIAL SATELLITE MAP ENGINE (Esri World Imagery Live Geo-Sat Layer) -->
     <div id="explorer-leaflet-map" class="absolute inset-0 w-full h-full bg-[#0a151d]"></div>
 
-    <!-- Top Left Floating Header Strip & Basin Switcher (Static Snug Layout) -->
-    <div class="absolute top-4 left-4 z-[1000] flex flex-col items-start gap-2 pointer-events-auto w-fit max-w-[calc(100%-2rem)]">
-      <div class="w-fit max-w-full px-3.5 py-2 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-outline-variant/40 flex items-center gap-3 shrink-0">
+    <!-- Top Left Floating Header Strip & Basin Switcher (Static Fixed Layout) -->
+    <div class="absolute top-4 left-4 z-[1000] flex flex-col items-start gap-2 pointer-events-auto max-w-[calc(100%-2rem)]">
+      <div class="w-[420px] max-w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-outline-variant/40 flex items-center gap-3 shrink-0">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-        <div class="min-w-0">
+        <div class="min-w-0 flex-1">
           <span class="text-[10px] uppercase font-bold tracking-wider text-secondary block">Sedimentary Basin Explorer</span>
-          <span id="exp-header-basin" class="text-xs font-bold text-primary block whitespace-nowrap">Upper Assam Shelf • OIL Asset</span>
+          <span id="exp-header-basin" class="text-xs font-bold text-primary block truncate" title="Active Basin">Upper Assam Shelf • OIL Asset</span>
         </div>
       </div>
 
