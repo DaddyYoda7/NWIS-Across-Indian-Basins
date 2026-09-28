@@ -6,22 +6,22 @@
     <!-- FREE LIVE GEOSPATIAL SATELLITE MAP ENGINE (Esri World Imagery Live Geo-Sat Layer) -->
     <div id="explorer-leaflet-map" class="absolute inset-0 w-full h-full bg-[#0a151d]"></div>
 
-    <!-- Top Left Floating Header Strip & Basin Switcher (Static Fixed Layout) -->
-    <div class="absolute top-4 left-4 z-[1000] flex flex-col gap-2 pointer-events-auto w-[480px] max-w-[calc(100%-2rem)]">
-      <div class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-outline-variant/40 flex items-center gap-3 shrink-0">
+    <!-- Top Left Floating Header Strip & Basin Switcher (Static Snug Layout) -->
+    <div class="absolute top-4 left-4 z-[1000] flex flex-col items-start gap-2 pointer-events-auto w-fit max-w-[calc(100%-2rem)]">
+      <div class="w-fit max-w-full px-3.5 py-2 rounded-xl bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl border border-outline-variant/40 flex items-center gap-3 shrink-0">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-        <div class="min-w-0 flex-1">
+        <div class="min-w-0">
           <span class="text-[10px] uppercase font-bold tracking-wider text-secondary block">Sedimentary Basin Explorer</span>
-          <span id="exp-header-basin" class="text-xs font-bold text-primary block truncate">Upper Assam Shelf • OIL Asset</span>
+          <span id="exp-header-basin" class="text-xs font-bold text-primary block whitespace-nowrap">Upper Assam Shelf • OIL Asset</span>
         </div>
       </div>
 
-      <!-- Basin Switcher Pill Bar (Static Equal-Width Grid) -->
-      <div class="w-full grid grid-cols-4 gap-1.5 bg-surface-container-lowest/95 backdrop-blur-xl p-1.5 rounded-xl shadow-xl border border-outline-variant/40 text-xs shrink-0">
-        <button onclick="inspectExplorerWell('WELL-NHK-01')" class="exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg bg-primary text-on-primary font-semibold text-[11px] cursor-pointer shadow-xs transition-colors truncate" data-well="WELL-NHK-01">Assam-Arakan</button>
-        <button onclick="inspectExplorerWell('WELL-MH-H1-1')" class="exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] cursor-pointer transition-colors truncate" data-well="WELL-MH-H1-1">Western Offshore</button>
-        <button onclick="inspectExplorerWell('WELL-MGL-01')" class="exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] cursor-pointer transition-colors truncate" data-well="WELL-MGL-01">Barmer Basin</button>
-        <button onclick="inspectExplorerWell('WELL-KGD6-D1')" class="exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] cursor-pointer transition-colors truncate" data-well="WELL-KGD6-D1">KG Deepwater</button>
+      <!-- Basin Switcher Pill Bar (Snug & Static Width with No Empty Space) -->
+      <div class="w-fit inline-flex items-center gap-1 bg-surface-container-lowest/95 backdrop-blur-xl p-1 rounded-xl shadow-xl border border-outline-variant/40 text-xs shrink-0">
+        <button onclick="inspectExplorerWell('WELL-NHK-01')" class="exp-basin-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer shadow-xs transition-colors" data-well="WELL-NHK-01">Assam-Arakan</button>
+        <button onclick="inspectExplorerWell('WELL-MH-H1-1')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer transition-colors" data-well="WELL-MH-H1-1">Western Offshore</button>
+        <button onclick="inspectExplorerWell('WELL-MGL-01')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer transition-colors" data-well="WELL-MGL-01">Barmer Basin</button>
+        <button onclick="inspectExplorerWell('WELL-KGD6-D1')" class="exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer transition-colors" data-well="WELL-KGD6-D1">KG Deepwater</button>
       </div>
     </div>
   </div>
@@ -234,8 +234,8 @@
     document.querySelectorAll('.exp-basin-btn').forEach(btn => {
       const match = btn.getAttribute('data-well') === wellId;
       btn.className = match
-        ? 'exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg bg-primary text-on-primary font-semibold text-[11px] cursor-pointer shadow-xs transition-colors truncate'
-        : 'exp-basin-btn w-full py-1.5 px-1 text-center rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] cursor-pointer transition-colors truncate';
+        ? 'exp-basin-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer shadow-xs transition-colors'
+        : 'exp-basin-btn px-3 py-1.5 rounded-lg hover:bg-surface-container text-primary font-semibold text-[11px] whitespace-nowrap cursor-pointer transition-colors';
     });
 
     const coords = EXPLORER_WELLS[wellId];
