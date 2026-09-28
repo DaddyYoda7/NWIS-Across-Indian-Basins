@@ -341,4 +341,10 @@ body.is-gateway #main-layout-wrapper {
   padding-left: 0 !important;
 }
 
+/* Ensure dropdown selects always have ample clearance for the chevron arrow */
+select {
+  padding-right: 2.25rem !important;
+  background-position: right 0.65rem center !important;
+}
+
 
