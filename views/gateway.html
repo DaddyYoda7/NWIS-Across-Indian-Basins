@@ -17,6 +17,12 @@
     <!-- Query Input (starts empty for user input) -->
     <input id="gateway-search-input" oninput="handleGatewaySearchInput(this.value)" class="flex-1 bg-transparent border-0 text-sm sm:text-[14.5px] font-medium text-astral placeholder-meditative focus:ring-0 focus:outline-none px-2.5 py-0.5" placeholder="Search Indian basin, field, borehole ID (e.g. NHK-01, Digboi-1, Mumbai High), formation..." type="text" value="" autocomplete="off">
     
+    <!-- Functional Mic Voice Search Button -->
+    <button id="gateway-voice-btn" type="button" onclick="toggleGatewayVoiceRecognition()" class="p-1.5 text-meditative hover:text-astral transition-all rounded-lg hover:bg-reflection/30 relative cursor-pointer group" title="Speak to Search (Voice Input)">
+      <span id="gateway-voice-mic-icon" class="material-symbols-outlined text-[19px] group-hover:text-astral transition-colors">mic</span>
+      <span id="gateway-voice-pulse-ring" class="hidden absolute inset-0 rounded-full bg-rose-500/30 animate-ping pointer-events-none"></span>
+    </button>
+
     <!-- Functional Clear Search 'X' Button -->
     <button id="gateway-clear-btn" type="button" onclick="clearGatewaySearch()" class="p-1.5 text-meditative hover:text-astral transition-all rounded-lg hover:bg-reflection/30 hidden cursor-pointer" title="Clear query">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -611,7 +617,147 @@
     }
   };
 
+  // Gateway Real-Time Voice Search Engine
+  let gwRecognition = null;
+  let gwIsRecording = false;
+  let gwBaseInputText = '';
+
+  window.toggleGatewayVoiceRecognition = async function() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const micIcon = document.getElementById('gateway-voice-mic-icon');
+    const pulseRing = document.getElementById('gateway-voice-pulse-ring');
+    const input = document.getElementById('gateway-search-input');
+    const clearBtn = document.getElementById('gateway-clear-btn');
+
+    if (gwIsRecording) {
+      stopGatewayVoiceUI();
+      return;
+    }
+
+    if (!SpeechRecognition) {
+      alert('Speech recognition is not supported in this browser. Please open NWIS in Google Chrome, Microsoft Edge, or a Web Speech-compatible browser.');
+      return;
+    }
+
+    try {
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(t => t.stop());
+      }
+    } catch (permErr) {
+      console.warn('Gateway mic permission check notice:', permErr);
+      if (permErr.name === 'NotAllowedError' || permErr.name === 'PermissionDeniedError') {
+        alert('Microphone access was denied. Please allow microphone permissions in your browser URL bar.');
+        stopGatewayVoiceUI();
+        return;
+      }
+    }
+
+    try {
+      if (gwRecognition) {
+        try { gwRecognition.abort(); } catch (e) {}
+        gwRecognition = null;
+      }
+
+      gwRecognition = new SpeechRecognition();
+      gwRecognition.lang = navigator.language || 'en-US';
+      gwRecognition.continuous = true;
+      gwRecognition.interimResults = true;
+      gwRecognition.maxAlternatives = 1;
+
+      gwBaseInputText = input ? input.value.trim() : '';
+
+      gwRecognition.onstart = function() {
+        gwIsRecording = true;
+        if (micIcon) {
+          micIcon.classList.remove('text-meditative');
+          micIcon.classList.add('text-rose-500');
+        }
+        if (pulseRing) pulseRing.classList.remove('hidden');
+        if (input) {
+          input.placeholder = '🎙️ Listening... speak basin or well name';
+          input.focus();
+        }
+      };
+
+      gwRecognition.onresult = function(event) {
+        let sessionFinal = '';
+        let sessionInterim = '';
+
+        for (let i = 0; i < event.results.length; ++i) {
+          const res = event.results[i];
+          if (res.isFinal) {
+            sessionFinal += res[0].transcript + ' ';
+          } else {
+            sessionInterim += res[0].transcript;
+          }
+        }
+
+        if (input) {
+          const spoken = (sessionFinal + sessionInterim).trim();
+          if (gwBaseInputText && spoken) {
+            input.value = gwBaseInputText + ' ' + spoken;
+          } else if (spoken) {
+            input.value = spoken;
+          }
+          if (clearBtn) clearBtn.classList.remove('hidden');
+        }
+      };
+
+      gwRecognition.onerror = function(event) {
+        console.warn('Gateway speech recognition notice:', event.error);
+        if (event.error === 'no-speech') {
+          if (gwIsRecording) return;
+        } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+          alert('Microphone access was blocked. Please enable microphone permissions in your browser.');
+          stopGatewayVoiceUI();
+        } else if (event.error === 'audio-capture') {
+          alert('No microphone was detected on your device.');
+          stopGatewayVoiceUI();
+        } else {
+          stopGatewayVoiceUI();
+        }
+      };
+
+      gwRecognition.onend = function() {
+        if (gwIsRecording) {
+          try {
+            gwRecognition.start();
+          } catch (e) {
+            stopGatewayVoiceUI();
+          }
+        }
+      };
+
+      gwRecognition.start();
+
+    } catch (err) {
+      console.error('Failed to start gateway speech recognition:', err);
+      stopGatewayVoiceUI();
+    }
+  };
+
+  function stopGatewayVoiceUI() {
+    gwIsRecording = false;
+    if (gwRecognition) {
+      try { gwRecognition.stop(); } catch (e) {}
+    }
+    const micIcon = document.getElementById('gateway-voice-mic-icon');
+    const pulseRing = document.getElementById('gateway-voice-pulse-ring');
+    const input = document.getElementById('gateway-search-input');
+
+    if (micIcon) {
+      micIcon.classList.remove('text-rose-500');
+      micIcon.classList.add('text-meditative');
+    }
+    if (pulseRing) pulseRing.classList.add('hidden');
+    if (input) {
+      input.placeholder = 'Search Indian basin, field, borehole ID (e.g. NHK-01, Digboi-1, Mumbai High), formation...';
+    }
+  }
+
   window.setGatewayQuery = function(query) {
+    stopGatewayVoiceUI();
     window.populateAndSearchGateway(query, 'WELL-NHK-01');
     window.location.hash = 'command-center';
   };

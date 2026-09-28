@@ -146,27 +146,48 @@
       setTimeout(() => queryInput.focus(), 150);
     }
 
-    // Real-Time Live Streaming Speech Recognition Engine
+    // Real-Time Live Streaming Speech Recognition Engine with getUserMedia permission handshake
     let baseInputText = '';
 
-    window.toggleVoiceRecognition = function() {
+    window.toggleVoiceRecognition = async function() {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      if (!SpeechRecognition) {
-        alert('Speech recognition is not supported in this browser. Please use Google Chrome or Microsoft Edge.');
-        return;
-      }
-
+      
       const micIcon = document.getElementById('voice-mic-icon');
       const pulseRing = document.getElementById('voice-pulse-ring');
       const input = document.getElementById('nwis-ai-query-input');
 
       // If already listening, stop
-      if (isRecording && recognition) {
+      if (isRecording) {
         stopVoiceUI();
         return;
       }
 
+      if (!SpeechRecognition) {
+        alert('Speech recognition is not supported in this browser. Please open NWIS in Google Chrome, Microsoft Edge, or a Web Speech-compatible browser.');
+        return;
+      }
+
+      // Explicitly request / check microphone permission via getUserMedia
       try {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          stream.getTracks().forEach(t => t.stop());
+        }
+      } catch (permErr) {
+        console.warn('Microphone permission check notice:', permErr);
+        if (permErr.name === 'NotAllowedError' || permErr.name === 'PermissionDeniedError') {
+          alert('Microphone access was denied. Please allow microphone permissions by clicking the padlock or settings icon in your browser address bar.');
+          stopVoiceUI();
+          return;
+        }
+      }
+
+      try {
+        if (recognition) {
+          try { recognition.abort(); } catch (e) {}
+          recognition = null;
+        }
+
         recognition = new SpeechRecognition();
         recognition.lang = navigator.language || 'en-US';
         recognition.continuous = true;
@@ -213,15 +234,26 @@
 
         recognition.onerror = function(event) {
           console.warn('Speech recognition notice:', event.error);
-          if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-            alert('Microphone access was denied. Please allow microphone permissions in your browser URL bar.');
+          if (event.error === 'no-speech') {
+            if (isRecording) return; // Ignore temporary pauses
+          } else if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+            alert('Microphone access was blocked. Please allow microphone permissions in your browser URL bar.');
+            stopVoiceUI();
+          } else if (event.error === 'audio-capture') {
+            alert('No microphone was detected on your system. Please verify your microphone hardware connection.');
+            stopVoiceUI();
+          } else {
+            stopVoiceUI();
           }
-          stopVoiceUI();
         };
 
         recognition.onend = function() {
           if (isRecording) {
-            stopVoiceUI();
+            try {
+              recognition.start();
+            } catch (e) {
+              stopVoiceUI();
+            }
           }
         };
 
